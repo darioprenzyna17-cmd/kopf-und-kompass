@@ -2,3 +2,11 @@
 .DS_Store
 __pycache__/
 *.pyc
+# Base-Bilder bleiben lokal für freies Re-render
+**/slide-*-base.png
+# Lokale Claude-Code Permission-Overrides
+.claude/settings.local.json
+_overlays/
+_raw_seedance.mp4
+**/_overlays/
+**/_raw_seedance.mp4
