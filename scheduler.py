@@ -1,17 +1,36 @@
 """
-Tagesläufer für @montagsluege.
+DC-Autopilot Laeufer. Wird regelmaessig (GitHub-Actions-Cron) aufgerufen.
 
-Wird einmal pro Tag von GitHub Actions aufgerufen. Liest queue.jsonl, sucht
-heute's Eintrag, postet ihn, markiert ihn als posted, schreibt queue zurück.
+Liest queue.jsonl, postet alle faelligen Eintraege (Zeitpunkt erreicht, Status
+pending) je nach Format (image / carousel / reel), markiert sie als posted und
+schreibt die Queue zurueck. Idempotent ueber den Status.
 
-Idempotent: prüft erst, ob heute schon gepostet wurde, bevor irgendwas läuft.
+Sicherheit: Standard ist Trockenlauf. Echt gepostet wird nur mit --live.
+
+Queue-Eintrag (eine JSON-Zeile pro Post):
+  {
+    "id": "2026-08-05-0730",
+    "datetime": "2026-08-05T07:30:00",     # Europe/Zurich, lokale Zeit
+    "theme": "Fachkraeftemangel",
+    "format": "carousel",                    # image | carousel | reel
+    "image_urls": ["https://.../1.jpg", ...],# bei image genau 1, bei carousel 2-10
+    "video_url": "https://.../reel.mp4",     # nur bei reel
+    "caption": "…",
+    "status": "pending"
+  }
 """
 import json
 import sys
-from datetime import date, datetime
+from datetime import datetime
 from pathlib import Path
 
-from lib_meta import post_reel, post_carousel, media_posted_today
+try:
+    from zoneinfo import ZoneInfo
+    TZ = ZoneInfo("Europe/Zurich")
+except Exception:
+    TZ = None
+
+from lib_meta import publish_entry, find_live_by_caption
 
 QUEUE = Path(__file__).parent / "queue.jsonl"
 
@@ -19,61 +38,88 @@ QUEUE = Path(__file__).parent / "queue.jsonl"
 def load_queue():
     if not QUEUE.exists():
         return []
-    return [json.loads(line) for line in QUEUE.read_text().splitlines() if line.strip()]
+    return [json.loads(l) for l in QUEUE.read_text().splitlines() if l.strip()]
 
 
 def save_queue(entries):
-    QUEUE.write_text("\n".join(json.dumps(e, ensure_ascii=False) for e in entries) + "\n")
+    QUEUE.write_text(
+        "\n".join(json.dumps(e, ensure_ascii=False) for e in entries) + "\n"
+    )
 
 
-def find_today(entries):
-    today = date.today().isoformat()
+def now():
+    return datetime.now(TZ) if TZ else datetime.now()
+
+
+def due(entries, now_dt):
+    out = []
     for e in entries:
-        if e.get("date") == today and e.get("status", "pending") == "pending":
-            return e
-    return None
+        if e.get("status", "pending") != "pending":
+            continue
+        try:
+            when = datetime.fromisoformat(e["datetime"])
+            if TZ and when.tzinfo is None:
+                when = when.replace(tzinfo=TZ)
+        except Exception:
+            print(f"WARN ungueltiges datetime bei {e.get('id')}", file=sys.stderr)
+            continue
+        if when <= now_dt:
+            out.append(e)
+    return out
 
 
-def main():
-    print(f"=== Scheduler läuft: {datetime.now().isoformat(timespec='seconds')} ===")
-
-    if media_posted_today():
-        print("⏭  Heute wurde bereits gepostet — skip.")
-        return 0
-
+def main(live):
     entries = load_queue()
-    today_entry = find_today(entries)
-    if not today_entry:
-        print(f"⏭  Kein pending Eintrag für {date.today().isoformat()} in queue.jsonl.")
+    now_dt = now()
+    todo = due(entries, now_dt)
+    print(f"=== DC-Autopilot {now_dt.isoformat(timespec='seconds')} | Modus: {'LIVE' if live else 'DRY-RUN'} ===")
+    if not todo:
+        print("Keine faelligen Posts.")
         return 0
 
-    print(f"📅 Heute: {today_entry.get('format')} | Pillar: {today_entry.get('pillar')}")
-    fmt = today_entry["format"]
-    caption = today_entry["caption"]
-
-    try:
-        if fmt == "reel":
-            media_id, link = post_reel(today_entry["video_url"], caption)
-        elif fmt == "carousel":
-            media_id, link = post_carousel(today_entry["image_urls"], caption)
-        else:
-            raise ValueError(f"Unbekanntes Format: {fmt}")
-
-        today_entry["status"] = "posted"
-        today_entry["posted_at"] = datetime.now().isoformat(timespec="seconds")
-        today_entry["media_id"] = media_id
-        today_entry["permalink"] = link
+    rc = 0
+    for e in todo:
+        label = f"{e.get('id')} [{e.get('format','image')}] {e.get('theme','')}"
+        if not live:
+            print(f"DRY-RUN wuerde posten: {label}")
+            continue
+        # Idempotenz-Vorpruefung: ist dieser Post (gleicher Hook) schon live? Dann nicht doppelt posten.
+        dup_id, dup_link = find_live_by_caption(e.get("caption", ""))
+        if dup_id:
+            e["status"] = "posted"
+            e["media_id"] = dup_id
+            e["permalink"] = dup_link
+            e["posted_at"] = now_dt.isoformat(timespec="seconds")
+            e["note"] = "bereits live gefunden, kein Doppel-Post"
+            print(f"SKIP {label}: bereits live {dup_link}")
+            save_queue(entries)
+            continue
+        try:
+            media_id, link = publish_entry(e)
+            e["status"] = "posted"
+            e["media_id"] = media_id
+            e["permalink"] = link
+            e["posted_at"] = now_dt.isoformat(timespec="seconds")
+            print(f"LIVE {label}: {link}")
+        except Exception as ex:
+            # Nach Fehler pruefen, ob der Post trotzdem live ging (haeufig 400 bei Carousel).
+            dup_id, dup_link = find_live_by_caption(e.get("caption", ""))
+            if dup_id:
+                e["status"] = "posted"
+                e["media_id"] = dup_id
+                e["permalink"] = dup_link
+                e["posted_at"] = now_dt.isoformat(timespec="seconds")
+                e["error"] = str(ex)
+                e["note"] = "API-Fehler, aber Post ging live"
+                print(f"RECOVER {label}: live trotz Fehler ({ex}) -> {dup_link}")
+            else:
+                e["status"] = "failed"
+                e["error"] = str(ex)
+                rc = 1
+                print(f"FEHLER {label}: {ex}", file=sys.stderr)
         save_queue(entries)
-        print(f"\n✅ LIVE: {link}")
-        return 0
-
-    except Exception as e:
-        today_entry["status"] = "failed"
-        today_entry["error"] = str(e)
-        save_queue(entries)
-        print(f"\n❌ Fehler: {e}", file=sys.stderr)
-        return 1
+    return rc
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit(main(live="--live" in sys.argv))

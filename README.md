@@ -1,42 +1,24 @@
-# montagsluege-autopilot
+# Kopf & Kompass — Instagram-Autopilot
 
-Auto-Posting-Pipeline für Instagram `@montagsluege`.
+Autonomer Betrieb von **@kopfundkompass** (35k Follower), vollständig in der Cloud (kein Mac nötig).
+Baugleich mit dem DC-Group-Autopilot, aber **strikt getrennt**: eigenes Repo, eigenes Meta-Portfolio,
+eigene App, eigener System-User-Token.
 
-## Wie es funktioniert
+## Status
+- ✅ Meta-Anbindung steht (Portfolio „Dario Prenzyna", App „Kopf und Kompass", System-User „KopfKompass Bot", dauerhafter Token).
+- ✅ GitHub-Secrets gesetzt: `IG_USER_ID`, `IG_ACCESS_TOKEN` (+ `KIE_API_KEY` für Reel-Generierung nachtragen).
+- ✅ DC-Maschinerie portiert (Poster, Reel-Engine, Cheap-Content, Lern-Loop, Abnahme-Gate).
+- ⏳ **Inhalt offen** — Themen, Look, Ton, CTA werden mit Dario besprochen, dann in `reel_pipeline.json` + `AUTOPILOT_RULES.md` eingetragen. Bis dahin postet nichts autonom (approved[] leer).
 
-GitHub Actions triggert täglich um **18:00 MEZ** (`scheduler.py`).
-Der Scheduler:
-1. Prüft, ob heute schon gepostet wurde → ja: skip
-2. Sucht in `queue.jsonl` den Eintrag mit `date == heute, status == pending`
-3. Postet je nach `format` ein Reel oder Carousel via Instagram Graph API
-4. Markiert den Eintrag als `posted` (oder `failed` mit Error)
-5. Committed `queue.jsonl` zurück ins Repo
+## Wichtigste Dateien
+| Datei | Zweck |
+|---|---|
+| `scheduler.py` | Poster (Queue → Instagram) |
+| `build_video_reel.py` | Reel-Engine (Veo-Footage + Overlay + Musik + Schlusskarte) |
+| `generate_week.py` | Cheap-Content (Bild/Carousel/Animation) |
+| `reel_pipeline.json` | Reel-Vorrat (approved → built) |
+| `used_reels.json` | Dubletten-Ledger |
+| `AUTOPILOT_RULES.md` | Verbindliche Regeln + offene Inhalts-Punkte |
+| `.claude/agents/kk-abnahme.md` | Abnahme-/Logik-Prüfer (Domäne noch anzupassen) |
 
-## Queue-Format
-
-`queue.jsonl` — eine Zeile pro Tag, JSON-Object:
-
-```json
-{"date": "2026-05-03", "format": "carousel", "pillar": "montagsluege", "image_urls": ["https://...slide1.png", "https://...slide2.png"], "caption": "Hook + Tiefe + CTA", "status": "pending"}
-{"date": "2026-05-04", "format": "reel", "pillar": "vater-sohn", "video_url": "https://...reel.mp4", "caption": "...", "status": "pending"}
-```
-
-## Secrets
-
-Im Repo unter `Settings → Secrets and variables → Actions`:
-
-- `META_IG_BUSINESS_ACCOUNT_ID` — Instagram Business Account ID
-- `META_PAGE_ACCESS_TOKEN` — Page Access Token (Long-Lived)
-
-## Manuell triggern
-
-Bei `Actions → Daily Post → Run workflow` kannst du den Scheduler sofort
-laufen lassen — z.B. zum Testen oder wenn der Cron einen Tag verpasst hat.
-
-## Lokal testen
-
-```bash
-export META_IG_BUSINESS_ACCOUNT_ID=...
-export META_PAGE_ACCESS_TOKEN=...
-python3 scheduler.py
-```
+Siehe `AUTOPILOT_RULES.md` für die vollständigen Regeln und die offenen Inhalts-Entscheidungen.
