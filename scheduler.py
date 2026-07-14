@@ -1,5 +1,5 @@
 """
-DC-Autopilot Laeufer. Wird regelmaessig (GitHub-Actions-Cron) aufgerufen.
+Kopf-&-Kompass-Autopilot Laeufer. Wird regelmaessig (GitHub-Actions-Cron) aufgerufen.
 
 Liest queue.jsonl, postet alle faelligen Eintraege (Zeitpunkt erreicht, Status
 pending) je nach Format (image / carousel / reel), markiert sie als posted und
@@ -72,7 +72,7 @@ def main(live):
     entries = load_queue()
     now_dt = now()
     todo = due(entries, now_dt)
-    print(f"=== DC-Autopilot {now_dt.isoformat(timespec='seconds')} | Modus: {'LIVE' if live else 'DRY-RUN'} ===")
+    print(f"=== Kopf-&-Kompass-Autopilot {now_dt.isoformat(timespec='seconds')} | Modus: {'LIVE' if live else 'DRY-RUN'} ===")
     if not todo:
         print("Keine faelligen Posts.")
         return 0

@@ -1,35 +1,35 @@
-# Kopf & Kompass — Autopilot-Regeln (autonomer Betrieb)
+# Kopf & Kompass — Autopilot-Regeln (autonomer Mindset-Account)
 
-Account: **@kopfundkompass** (IG-Business-ID 17841472104283157, FB-Seite „Kopfundkompass").
-Aufbau **exakt wie DC-Group**, aber strikt getrennt: eigenes Repo, eigenes Meta-Portfolio
-(„Dario Prenzyna"), eigene Meta-App („Kopf und Kompass"), eigener System-User-Token.
-**Niemals mit DC vermischen** (kein geteilter Token, kein geteilter Content, kein geteiltes Ledger).
+Account: **@kopfundkompass**. Ziel: ein Mindset-Account, der **langfristig viral** geht,
+aus den eigenen Zahlen lernt und sich weiterentwickelt. Nordstern: nicht Likes, sondern
+**Save + Share + Follow** (Content, den Leute weiterschicken und behalten wollen).
 
-## Was schon steht (Maschinerie = „die Art und Weise von DC")
-- **Poster** `scheduler.py --live` (GitHub Action `post.yml`, alle 30 Min) postet faellige Eintraege aus `queue.jsonl`.
-- **Reel-Engine** `build_video_reel.py --pipeline` (Action `reel.yml`) baut das naechste approved-Konzept: echtes KI-Footage (Veo via kie.ai) + Overlay + Musik + Schlusskarte, Einschlag-Effekt, harte Textschnitte.
-- **Cheap-Content** `generate_week.py` (Action `generate.yml`) fuellt Nicht-Reel-Tage (Bild/Carousel/Animation).
-- **Abnahme-Gate** Agent `kk-abnahme` (Scaffold aus DC uebernommen): jedes Konzept muss PASS bekommen, bevor teures Video generiert wird.
-- **Lern-Loop** `track_performance.py` + `perf.py` + `learn_times.py`: Reichweite/Interaktion je Typ/Tag/Zeit auswerten, Gewinner ausbauen.
-- **Dubletten-Ledger** `used_reels.json` (`used_topics`, `used_hooks`).
-- **Watchdog** `watchdog.py` faengt leere Tage mit Evergreen ab.
+## Stil (fixiert)
+- **Ton:** ruhig, tief, ehrlich, leicht männlich-warm, klar. Bringt zum Nachdenken UND richtet auf. Nie kitschig-platt, nie Kalenderspruch.
+- **Bild:** cineastisches, ruhiges KI-Footage (Veo), atmosphärisch, filmische Farbwelt (dunkel, warm). Einsame Figuren, Natur, Licht, Alltagsmomente mit Tiefe. 9:16.
+- **Text:** EIN Gedanke, in Beats aufgebaut (Haken → Vertiefung → Wende/Aufrichtung). Serifen-Schrift für den Gedanken, harte Textschnitte (kein Weg-Bluren), Text bleibt lesbar stehen. Du-Ansprache.
+- **Hook (Sek 1):** Kontrast- oder Wahrheits-Satz, der stoppt (Vorbild: „Der Ruhigste im Raum ist fast nie der Schwächste"). Anstossend, nicht brav.
+- **Musik:** tief, warm, cineastisch (Piano/Ambient), ruhig, nie aggressiv. Je Thema variieren.
+- **Schluss:** leise Wortmarke „Kopf & Kompass" + Kernsatz + dezenter CTA. Kein lautes Logo oben (kollidiert mit dem Instagram-Header).
 
-## Harte Gates vor JEDEM Post (wie DC)
-1. **Abnahme-Gate:** Konzept durch `kk-abnahme`, Verdikt PASS noetig.
-2. **Grammatik/Sprache:** korrektes Deutsch. Keine langen Gedankenstriche. Kein Komma vor „und".
-3. **Keine Dubletten:** Thema, Hook und Kernsatz nicht wiederholen (gegen `used_reels.json` + Live-Captions).
-4. **Marken-Fit + Sog:** muss zu Kopf & Kompass passen und wirklich sehenswert/anstossend sein.
+## Inhaltssäulen
+Selbstwert & innere Ruhe · stille Stärke & Disziplin · Echtheit & Charakter · Klarheit & Fokus ·
+Loslassen & Vergangenheit · Mut & eigener Weg · Geduld & langfristiges Denken · Grenzen & Umgang mit Menschen.
 
-## OFFEN — wird mit Dario besprochen (nachher), DANN hier eingetragen
-> Bis das steht, laeuft NUR die Maschinerie; `reel_pipeline.json` approved[] bleibt leer, es wird nichts autonom gepostet.
+## Harte Gates vor JEDEM Post
+1. **Abnahme-Gate:** Konzept durch `kk-abnahme`, Verdikt PASS nötig (Tiefe, Logik, Lesbarkeit).
+2. **Sprache:** korrektes Deutsch. **Keine langen Gedankenstriche.** **Kein Komma vor „und".** Kein leeres Phrasendreschen (Barnum/Toxic Positivity).
+3. **Keine Dubletten:** Thema, Hook und Kernsatz nicht wiederholen (gegen `used_reels.json` + Live-Captions von @kopfundkompass).
+4. **Eigenständig:** keine fremden Marken, keine Firma, kein Recruiting. Reiner Mindset-/Nachdenk-Content.
 
-- **Inhaltssaeulen / Themen:** nachdenklich, anstossend, „gutes Leben" / Reflexion (NICHT Recruiting wie DC). Genaue Saeulen offen.
-- **Marken-Look:** Farben, Typo, Overlay-Stil, Schlusskarte, Logo-Regel fuer @kopfundkompass (DC-Gold/Navy gilt NICHT — eigener Look).
-- **Ton & Zielgruppe:** Stimme, Ansprache, Pattern-Interrupt-Grad, Musik-Welt.
-- **CTA / Funnel:** was soll ein Post ausloesen (Follow, Save, Share, DM, Link)?
-- **Abnahme-Domaene:** `kk-abnahme` auf die Kopf-&-Kompass-Themen umschreiben (aktuell noch DC-Handwerk-Logik).
-- **Wochen-Routine / Postzeiten:** `generate_week.py` SCHEDULE + `posting_times.json` an die 35k-Bestands-Audience anpassen.
+## Viral- und Lern-Logik
+- **Trigger:** Identifikation („das bin ich"), unbequeme Wahrheiten, stille Stärke, Kontrast, eine Frage, die im Kopf bleibt.
+- **Nach jedem Zyklus** `track_performance.py` auswerten: welches Thema/Hook zog die meisten **Saves/Shares/Profilbesuche/Follows**. Gewinner-Muster doppeln (neues Thema, gleiche Technik), Verlierer streichen. `perf.py` gewichtet Motive automatisch.
+- **Zeiten** lernen sich über `learn_times.py` aus den Insights je Wochentag.
+- **Kaltstart-Disziplin:** solange kaum Daten, gleichmässig Themen streuen und nichts überinterpretieren. Sobald echte Daten da sind: SCHEDULE + Zeiten an die Audience anpassen.
+- **A/B:** immer nur EINE Variable ändern (Hook ODER Bildwelt ODER Zeit).
 
-## Sicherheit
-- Getrennt von DC: eigener Token als GitHub-Secret `IG_ACCESS_TOKEN`, IG-ID als `IG_USER_ID` im Repo `kopf-und-kompass`.
-- Alles wird protokolliert (`used_reels.json`, Metrics), damit Dario jederzeit auditieren kann.
+## Betrieb
+- Reel-Vorrat immer ≥ 4 approved halten (Konzept → `kk-abnahme` → committen).
+- Footage-Reels erst nach PASS bauen, dann via Queue einplanen, mp4 + Queue committen/pushen.
+- Alles wird protokolliert (`used_reels.json`, Metrics), damit jederzeit auditierbar bleibt.

@@ -1,5 +1,78 @@
 {
-  "_hinweis": "Kopf & Kompass — Reel-Vorrat. Gleiche Mechanik wie DC (Konzept -> Abnahme kk-abnahme -> approved -> build_video_reel.py --pipeline -> built). INHALTE werden mit Dario besprochen und danach hier eingetragen. approved[] absichtlich leer bis dahin.",
-  "approved": [],
+  "_hinweis": "Reel-Vorrat fuer @kopfundkompass. Konzept -> Abnahme kk-abnahme -> approved -> build_video_reel.py --pipeline -> built. Schema je Konzept: name, theme, prompt, hook[2], beats[2], outro_hl, outro_cta, music, caption, seg_len.",
+  "approved": [
+    {
+      "name": "selbstwert_leiser_beweis",
+      "theme": "Selbstwert & innere Ruhe",
+      "prompt": "Cinematic vertical 9:16, a lone figure sits at the edge of a still mountain lake at dawn, warm golden light breaking softly through low mist, faint steam rising from the calm mirror-like water, very slow subtle push-in, dark and warm tones, shallow depth of field, real and quiet, minimal movement, plenty of calm empty space in the frame, no on-screen text, no captions.",
+      "hook": ["SELBSTWERT", "Dein Wert steigt nicht mit Applaus."],
+      "beats": ["Wer sich ständig beweisen muss|glaubt insgeheim, er sei zu wenig.", "Doch der ruhigste Mensch im Raum|braucht Bestätigung am wenigsten."],
+      "outro_hl": "Innere Ruhe ist der leiseste|Beweis von echtem Selbstwert.",
+      "outro_cta": "Folge für Klarheit",
+      "music": "deep warm cinematic ambient, soft piano, slow, reflective, calm, no vocals",
+      "caption": "Du suchst Bestätigung im Aussen, weil du vergessen hast, dass sie längst in dir wohnt. Innere Ruhe entsteht nicht, wenn alle klatschen, sondern wenn du dich selbst nicht mehr beweisen musst. Dein Wert war nie eine Frage. Er war nur lange übertönt.\n\n#mindset #selbstwert #innereruhe #klarheit #achtsamkeit",
+      "seg_len": 2.6
+    },
+    {
+      "name": "mut_eigener_weg",
+      "theme": "Mut & eigener Weg",
+      "prompt": "Cinematic vertical 9:16, a lone figure walking up a narrow foggy mountain trail at first light, warm golden sun breaking softly through the mist, dark surrounding pines, slow tracking shot from behind, shallow depth of field, dark and warm tones, gentle film grain, realistic, quiet and still, no on-screen text, no captions.",
+      "hook": ["MUT", "Der eigene Weg beginnt ohne Applaus."],
+      "beats": ["Am Anfang steht keiner neben dir.|Nur deine Zweifel.", "Der falsche Weg ist voller Menschen.|Der richtige oft leer."],
+      "outro_hl": "Geh trotzdem.|Leer heisst nicht falsch.",
+      "outro_cta": "Speichern und erinnern",
+      "music": "deep warm cinematic ambient, low strings, slow build, hopeful, calm, no vocals",
+      "caption": "Der eigene Weg wird dir nicht leicht gemacht. Am Anfang wirst du oft alleine stehen, während andere in der Menge bleiben. Doch Leere ist kein Beweis, dass du falsch liegst. Manchmal ist sie der Beweis, dass du endlich ehrlich gehst.\n\n#mut #eigenerweg #mindset #selbstwert #neuanfang #achtsamkeit",
+      "seg_len": 2.6
+    },
+    {
+      "name": "klarheit_durch_weglassen",
+      "theme": "Klarheit & Fokus",
+      "prompt": "Cinematic vertical 9:16, a single wooden desk near a large window in a dim quiet room at dawn, one cup of coffee steaming slowly, warm low light falling across an empty surface, dust drifting in a soft sunbeam, very slow lateral camera drift, real textures of wood and ceramic, dark and warm palette, shallow depth of field with the room fading into shadow, still and calm composition leaving open space for text in the upper frame, no on-screen text, no captions.",
+      "hook": ["FOKUS", "Klarheit ist Mut zum Weglassen."],
+      "beats": ["Du siehst nicht klarer,|wenn du mehr weisst.", "Du siehst klar,|wenn du weniger willst."],
+      "outro_hl": "Fokus ist nicht mehr tun.|Es ist weniger meinen.",
+      "outro_cta": "Speichern und erinnern",
+      "music": "deep warm cinematic ambient, soft piano, slow, reflective, calm, no vocals",
+      "caption": "Wir suchen Klarheit, indem wir mehr sammeln: mehr Wissen, mehr Optionen, mehr Meinungen. Doch Klarheit entsteht nicht durch Hinzufügen, sondern durch den Mut, das Meiste loszulassen. Nimm heute eine Sache weg statt eine dazu. Was bleibt, war schon immer das Wichtige.\n\n#mindset #klarheit #fokus #achtsamkeit #reduktion #tiefe",
+      "seg_len": 2.6
+    },
+    {
+      "name": "loslassen_hoffnung",
+      "theme": "Loslassen & Vergangenheit",
+      "prompt": "Cinematic vertical 9:16, a lone figure standing at a rain-streaked window at dusk, warm dim interior light behind, cold blue evening fading outside, slow subtle push-in, shallow depth of field, soft dust motes drifting in the air, dark and warm tones, gentle film grain, realistic, quiet and still, no on-screen text, no captions.",
+      "hook": ["LOSLASSEN", "Du hältst nicht fest. Du hoffst noch."],
+      "beats": ["Nicht die Vergangenheit hält dich fest.|Du hältst sie.", "Loslassen heisst nicht vergessen.|Es heisst: aufhören zu warten."],
+      "outro_hl": "Der Frieden beginnt,|wo das Warten endet.",
+      "outro_cta": "Folge für Klarheit",
+      "music": "deep warm cinematic ambient, soft piano, slow, reflective, calm, no vocals",
+      "caption": "Loslassen fühlt sich zuerst nicht wie Freiheit an. Es fühlt sich wie Verlust an. Doch was dich wirklich festhält, ist selten die Vergangenheit selbst. Es ist die leise Hoffnung, dass sie nachträglich noch anders wird.\n\n#loslassen #mindset #achtsamkeit #neuanfang #selbstwert #frieden",
+      "seg_len": 2.6
+    },
+    {
+      "name": "stille_staerke_dranbleiben",
+      "theme": "stille Stärke & Disziplin",
+      "prompt": "Cinematic vertical 9:16, a solitary figure walks a quiet empty road through cold morning fog at first light, breath faintly visible in the air, warm streetlight glow against deep blue shadows, slow steady tracking shot from behind, dark and warm tones, shallow depth of field, real and grounded, calm minimal motion, uncluttered composition, no on-screen text, no captions.",
+      "hook": ["DISZIPLIN", "Disziplin beginnt, wo die Lust endet."],
+      "beats": ["Nicht der Lauteste ist stark|sondern der, der leise dranbleibt.", "Wahre Stärke sieht niemand|sie geschieht, wenn keiner zuschaut."],
+      "outro_hl": "Diszipliniert sein heisst|dir selbst nie mehr wegzulaufen.",
+      "outro_cta": "Speichern und erinnern",
+      "music": "deep warm cinematic ambient, low cello, slow, steady, reflective, calm, no vocals",
+      "caption": "Die stärksten Menschen erkennst du nicht am Lärm, sondern an der Ruhe, mit der sie weitermachen. Disziplin ist kein Zwang, sie ist Selbstachtung in Bewegung. Du brauchst keine Motivation, du brauchst ein Versprechen an dich, das du nicht mehr brichst. Genau dort beginnt Freiheit.\n\n#mindset #disziplin #stillestärke #selbstdisziplin #fokus #achtsamkeit",
+      "seg_len": 2.6
+    },
+    {
+      "name": "charakter_ohne_publikum",
+      "theme": "Echtheit & Charakter",
+      "prompt": "Cinematic vertical 9:16, a lone figure stands at the edge of a misty pine forest at first light, seen from behind, wrapped in a dark wool coat, warm amber sun bleeding softly through the fog, slow subtle push-in camera, still and quiet air, real skin and fabric texture, dark and warm tones, shallow depth of field with the background dissolving into haze, calm enough for text to sit clearly over the upper frame, no on-screen text, no captions.",
+      "hook": ["CHARAKTER", "Charakter zeigt sich ohne Publikum."],
+      "beats": ["Jeder ist echt,|wenn es leicht ist.", "Wer bleibt,|wenn es kostet, meint es ernst."],
+      "outro_hl": "Du bist nicht, was du zeigst.|Du bist, was bleibt.",
+      "outro_cta": "Folge für Tiefe",
+      "music": "deep warm cinematic ambient, soft piano, slow, reflective, calm, no vocals",
+      "caption": "Es ist leicht, ehrlich zu sein, solange es nichts kostet. Dein wahrer Charakter zeigt sich erst da, wo niemand applaudiert und niemand zusieht. Genau dort entscheidet sich, wer du wirklich bist. Bleib der Mensch, der du auch im Stillen sein willst.\n\n#mindset #charakter #echtheit #selbstwert #achtsamkeit #tiefe",
+      "seg_len": 2.6
+    }
+  ],
   "built": []
 }

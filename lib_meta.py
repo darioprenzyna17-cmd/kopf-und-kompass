@@ -1,5 +1,5 @@
 """
-Instagram Graph API Helfer fuer den DC-Autopilot.
+Instagram Graph API Helfer fuer den Kopf-&-Kompass-Autopilot.
 Unterstuetzt: Einzelbild, Carousel (2-10 Bilder), Reel (Video).
 
 Zugangsdaten aus Umgebungsvariablen (lokal via .env exportiert, in der Cloud via GitHub-Secrets):
@@ -50,7 +50,7 @@ def _kie_upload(path):
     data = base64.b64encode(raw).decode("ascii")
     body = json.dumps({
         "base64Data": f"data:{mime};base64,{data}",
-        "uploadPath": "dc-autopilot",
+        "uploadPath": "kk-autopilot",
         "fileName": f"{uniq}_{p.name}",
     }).encode("utf-8")
     req = urllib.request.Request(

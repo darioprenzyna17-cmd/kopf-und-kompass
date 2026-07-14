@@ -1,13 +1,13 @@
 """
-Performance-Tracker fuer @digital_century_group.
+Performance-Tracker fuer @kopfundkompass.
 
 Zieht bei jedem Lauf die Zahlen aller Posts (Basis-Felder + Insights, falls
 berechtigt), haengt einen Zeit-Schnappschuss an metrics_history.jsonl an
 (so wird Wachstum ueber Zeit sichtbar, nicht nur der Ist-Stand) und gibt eine
 Rangliste aus: welches FORMAT und welches THEMA am besten performt.
 
-Diese Datei liefert die Datengrundlage, damit generate_week.py kuenftig
-Themen/Formate nach echter Performance gewichten kann (statt stumpf zu rotieren).
+Diese Datei liefert die Datengrundlage, damit der Autopilot kuenftig
+Themen nach echter Performance gewichten kann (statt stumpf zu rotieren).
 
 Voraussetzung fuer die vollen Zahlen (Reichweite/Saves/Shares): Token mit
 Berechtigung 'instagram_manage_insights'. Ohne die laeuft der Tracker trotzdem,
@@ -33,13 +33,14 @@ GRAPH = "https://graph.facebook.com/v21.0"
 
 # Themen-Erkennung aus der Caption (grob, Stichworte -> Thema-Label).
 TOPIC_KEYWORDS = {
-    "fachkraeftemangel": ["fachkräfte", "fachkraft", "arbeitskräfte", "leute fehlen", "mangel"],
-    "social_recruiting": ["social recruiting", "recruiting ist marketing", "social media"],
-    "kosten_offene_stelle": ["kostet", "leerer stuhl", "jeden tag geld"],
-    "prozess_schritte": ["schritten", "schritte", "so einfach", "swipe"],
-    "recruiting_fehler": ["fehler", "reicht nicht", "inserat"],
-    "branche_handwerk": ["werkstatt", "maler", "handwerk", "lager", "küche", "saison"],
-    "employer_branding": ["employer branding", "sichtbar", "arbeitgeber"],
+    "selbstwert": ["selbstwert", "dein wert", "genug", "bestätigung", "applaus"],
+    "innere_ruhe": ["ruhe", "ruhig", "gelassen", "frieden", "still"],
+    "disziplin": ["disziplin", "dranbleiben", "gewohnheit", "durchhalten", "selbstachtung"],
+    "echtheit": ["echt", "charakter", "ehrlich", "maske", "authentisch"],
+    "klarheit_fokus": ["klarheit", "fokus", "weglassen", "reduktion", "einfach"],
+    "loslassen": ["loslassen", "vergangenheit", "warten", "vergeben", "festhalten"],
+    "mut": ["mut", "eigener weg", "angst", "wagen", "trotzdem"],
+    "beziehungen": ["grenzen", "menschen", "nähe", "respekt", "vertrauen"],
 }
 
 
