@@ -208,7 +208,7 @@ GRADE = ("eq=saturation=0.82:contrast=1.08:brightness=0.01:gamma=1.02,"
          "curves=m='0/0.055 0.22/0.16 0.5/0.5 0.78/0.85 1/0.97',"
          "colorbalance=rs=-0.03:gs=0.01:bs=0.05:rm=0.04:gm=0.0:bm=-0.03:rh=0.06:gh=0.02:bh=-0.05,"
          "colorchannelmixer=rr=1.02:gg=1.0:bb=0.97,"
-         "noise=alls=9:allf=t+u,vignette=PI/5:mode=backward,gblur=sigma=0.3")
+         "noise=alls=8,vignette=PI/5:mode=backward")
 
 
 def compose_montage(clips, cl, out):

@@ -1,21 +1,29 @@
 {
   "_hinweis": "Automatisch aus Instagram-Insights. Nordstern: Save+Share+Follow. cloud_build_post.py priorisiert Gewinner-Themen.",
   "updated_utc": null,
-  "n_reels_mit_daten": 2,
+  "n_reels_mit_daten": 3,
   "themen_rang": [
     {
       "thema": "Charakter",
-      "score_avg": 5.37,
+      "score_avg": 5.36,
       "n": 1,
-      "reichweite": 187,
+      "reichweite": 192,
       "saves": 1,
       "shares": 0
     },
     {
       "thema": "Selbstwert",
-      "score_avg": 0.51,
+      "score_avg": 2.23,
       "n": 1,
-      "reichweite": 3,
+      "reichweite": 26,
+      "saves": 0,
+      "shares": 0
+    },
+    {
+      "thema": "Disziplin",
+      "score_avg": 0.0,
+      "n": 1,
+      "reichweite": 0,
       "saves": 0,
       "shares": 0
     }
@@ -31,22 +39,32 @@
     {
       "name": "charakter_statt_besitz",
       "theme": "Charakter",
-      "score": 5.37,
-      "reach": 187,
+      "score": 5.36,
+      "reach": 192,
       "saved": 1,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 3774
+      "ig_reels_avg_watch_time": 3726
     },
     {
       "name": "hundert_gruende",
       "theme": "Selbstwert",
-      "score": 0.51,
-      "reach": 3,
+      "score": 2.23,
+      "reach": 26,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 1014
+      "ig_reels_avg_watch_time": 4412
+    },
+    {
+      "name": "stille_disziplin",
+      "theme": "Disziplin",
+      "score": 0.0,
+      "reach": 0,
+      "saved": 0,
+      "shares": 0,
+      "total_interactions": 0,
+      "ig_reels_avg_watch_time": 0
     }
   ]
 }

@@ -2,25 +2,6 @@
   "_hinweis": "Archivkino-Schema (Text-first, klar): name, theme, kicker (kurzes klares Wort, optional), thoughts[3-4] (klare Saetze, | = Zeilenumbruch), endcard_term (optional, meist leer), cta (klar: 'Folge fuer mehr.' / 'Speichern.' / 'Teile das.'), clips[3] (vollflaechig, keine Gesichter), music, caption. Zeilen aus bewaehrten Referenz-Accounts, KEIN erfundener Jargon.",
   "approved": [
     {
-      "name": "momente_zu_spaet",
-      "theme": "Achtsamkeit",
-      "kicker": "ACHTSAMKEIT",
-      "thoughts": [
-        "Die wichtigsten Momente|erkennst du zu spät.",
-        "Erst, wenn sie|vorbei sind.",
-        "Das Schönste fühlt sich|oft ganz gewöhnlich an.",
-        "Sieh heute genauer hin."
-      ],
-      "cta": "Speichern.",
-      "clips": [
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a warm dim kitchen at dawn with soft steam rising slowly from a cup on a wooden table, gentle window light, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, soft late afternoon light falling across a lived-in room, dust drifting slowly in the warm beam, quiet and still, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a calm garden at golden dusk with slow branches moving in a light breeze, warm low sun, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
-      ],
-      "music": "neoclassical cinematic ambient, warm and nostalgic, solo felt piano with warm strings, soft sub drone, slow gentle arc, 66 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
-      "caption": "Du erkennst die wichtigsten Momente deines Lebens fast immer erst, wenn sie vorbei sind. Das Tragische ist: Das Schönste fühlt sich im Alltag oft ganz gewöhnlich an. Sieh heute etwas genauer hin.\n\n#achtsamkeit #mindset #kopfundkompass #dankbarkeit #gegenwart"
-    },
-    {
       "name": "satz_den_du_brauchst",
       "theme": "Wahrheit",
       "kicker": "WAHRHEIT",
@@ -84,6 +65,11 @@
       "name": "stille_disziplin",
       "theme": "Disziplin",
       "permalink": "https://www.instagram.com/reel/Da1FPydCLZx/"
+    },
+    {
+      "name": "momente_zu_spaet",
+      "theme": "Achtsamkeit",
+      "permalink": "https://www.instagram.com/reel/Da1HcWbFH7N/"
     }
   ]
 }
