@@ -1,33 +1,52 @@
 {
   "_hinweis": "Automatisch aus Instagram-Insights. Nordstern: Save+Share+Follow. cloud_build_post.py priorisiert Gewinner-Themen.",
   "updated_utc": null,
-  "n_reels_mit_daten": 1,
+  "n_reels_mit_daten": 2,
   "themen_rang": [
     {
       "thema": "Charakter",
-      "score_avg": 5.34,
+      "score_avg": 5.37,
       "n": 1,
-      "reichweite": 175,
+      "reichweite": 187,
       "saves": 1,
+      "shares": 0
+    },
+    {
+      "thema": "Selbstwert",
+      "score_avg": 0.51,
+      "n": 1,
+      "reichweite": 3,
+      "saves": 0,
       "shares": 0
     }
   ],
   "begriff_rang": [],
   "gewinner_themen": [
-    "Charakter"
+    "Charakter",
+    "Selbstwert"
   ],
   "verlierer_themen": [],
-  "empfehlung": "Ausbauen: Charakter.",
+  "empfehlung": "Ausbauen: Charakter, Selbstwert.",
   "per_reel": [
     {
       "name": "charakter_statt_besitz",
       "theme": "Charakter",
-      "score": 5.34,
-      "reach": 175,
+      "score": 5.37,
+      "reach": 187,
       "saved": 1,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 3737
+      "ig_reels_avg_watch_time": 3774
+    },
+    {
+      "name": "hundert_gruende",
+      "theme": "Selbstwert",
+      "score": 0.51,
+      "reach": 3,
+      "saved": 0,
+      "shares": 0,
+      "total_interactions": 0,
+      "ig_reels_avg_watch_time": 1014
     }
   ]
 }

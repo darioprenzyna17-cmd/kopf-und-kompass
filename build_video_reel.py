@@ -233,7 +233,7 @@ def compose_montage(clips, cl, out):
     parts.append(f"[m]{GRADE},setsar=1,format=yuv420p[out]")
     fc = ";".join(parts)
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", *ins, "-filter_complex", fc,
-                    "-map", "[out]", "-c:v", "libx264", "-preset", "medium", "-crf", "17",
+                    "-map", "[out]", "-c:v", "libx264", "-preset", "veryfast", "-crf", "17",
                     "-pix_fmt", "yuv420p", str(out)], check=True, timeout=600)
 
 
@@ -266,7 +266,7 @@ def compose_final(montage, cards, endcard_png, music, out, foot_len):
     fc = ";".join(parts)
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", *ins, "-filter_complex", fc,
                     "-map", "[v]", "-map", "[a]", "-t", str(total),
-                    "-c:v", "libx264", "-preset", "medium", "-crf", "18", "-b:v", "15M",
+                    "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-b:v", "15M",
                     "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "320k", str(out)],
                    check=True, timeout=600)
     return total

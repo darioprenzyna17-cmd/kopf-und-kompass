@@ -2,25 +2,6 @@
   "_hinweis": "Archivkino-Schema (Text-first, klar): name, theme, kicker (kurzes klares Wort, optional), thoughts[3-4] (klare Saetze, | = Zeilenumbruch), endcard_term (optional, meist leer), cta (klar: 'Folge fuer mehr.' / 'Speichern.' / 'Teile das.'), clips[3] (vollflaechig, keine Gesichter), music, caption. Zeilen aus bewaehrten Referenz-Accounts, KEIN erfundener Jargon.",
   "approved": [
     {
-      "name": "stille_disziplin",
-      "theme": "Disziplin",
-      "kicker": "DISZIPLIN",
-      "thoughts": [
-        "Stille Disziplin spricht|lauter als jeder Ruhm.",
-        "Die Fortschritte,|die keiner sieht,",
-        "sind am Ende|die wertvollsten.",
-        "Sie bauen, wer du wirst."
-      ],
-      "cta": "Folge für mehr.",
-      "clips": [
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a single narrow path crossing a wide field in the first grey light before sunrise, quiet and still, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a wooden workbench in half darkness with a single tool laid down and a soft shaft of light with warm centre and cool edge, fine dust floating, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a calm mountain lake at dawn with mist lifting slowly off the still water, warm faint light behind dark peaks, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
-      ],
-      "music": "neoclassical cinematic ambient, warm and steady, solo felt piano with low cello, soft sub drone, slow arc from minor to major, 70 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
-      "caption": "Stille Disziplin spricht am Ende lauter als jeder Ruhm. Die leisen Fortschritte, die niemand sieht, sind oft die wertvollsten. Sie bauen genau den Menschen, der du werden willst.\n\n#disziplin #mindset #kopfundkompass #stille #wachstum"
-    },
-    {
       "name": "momente_zu_spaet",
       "theme": "Achtsamkeit",
       "kicker": "ACHTSAMKEIT",
@@ -98,6 +79,11 @@
       "name": "hundert_gruende",
       "theme": "Selbstwert",
       "permalink": "https://www.instagram.com/reel/Da1DMmdgZBf/"
+    },
+    {
+      "name": "stille_disziplin",
+      "theme": "Disziplin",
+      "permalink": "https://www.instagram.com/reel/Da1FPydCLZx/"
     }
   ]
 }

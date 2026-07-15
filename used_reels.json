@@ -4,12 +4,14 @@
     "Selbstwert & Orientierung",
     "Ablenkung / Abdrift",
     "Charakter",
-    "Selbstwert"
+    "Selbstwert",
+    "Disziplin"
   ],
   "used_hooks": [
     "Nicht du bist verloren.|Nur die Peilung.",
     "Kurz aufs Handy.|Zwei Stunden Abdrift.",
     "Die meisten zeigen,|was sie haben.",
-    "Manche geben dir|hundert Gründe zu zweifeln."
+    "Manche geben dir|hundert Gründe zu zweifeln.",
+    "Stille Disziplin spricht|lauter als jeder Ruhm."
   ]
 }
