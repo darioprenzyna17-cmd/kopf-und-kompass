@@ -286,16 +286,27 @@ def produce(name, r):
     cl = round((foot_len + HEADROOM + (len(r["clips"]) - 1) * DISSOLVE) / len(r["clips"]), 3)
     (OUT / f"{name}.caption.txt").write_text(r["caption"], encoding="utf-8")
 
-    # 1) Footage
-    clips_raw = []
+    # 1) Footage + Musik PARALLEL erzeugen (kuerzt Bauzeit, vermeidet Timeouts)
+    import concurrent.futures as cf
+    clips_raw = [OUT / f"{name}_clip{i}_raw.mp4" for i in range(len(r["clips"]))]
+    mus = OUT / f"{name}_music.mp3"
+    jobs = []
     for i, cp in enumerate(r["clips"]):
-        cr = OUT / f"{name}_clip{i}_raw.mp4"
-        if cr.exists() and cr.stat().st_size > 100000:
-            print(f"[{name}] 1/5 Clip {i} vorhanden", flush=True)
-        else:
-            print(f"[{name}] 1/5 Clip {i+1}/{len(r['clips'])} (Veo) ...", flush=True)
-            veo_generate(cp, cr, duration=8)
-        clips_raw.append(cr)
+        cr = clips_raw[i]
+        if not (cr.exists() and cr.stat().st_size > 100000):
+            jobs.append(("clip", cp, cr))
+    music_ready = mus.exists() and mus.stat().st_size >= 10000
+    if not music_ready:
+        jobs.append(("music", r["music"], mus))
+    if jobs:
+        print(f"[{name}] 1/4 {len(jobs)} Assets (Veo/Suno) parallel ...", flush=True)
+        with cf.ThreadPoolExecutor(max_workers=4) as ex:
+            futs = [ex.submit(veo_generate, p, o, duration=8) if k == "clip"
+                    else ex.submit(gen_music, p, o) for (k, p, o) in jobs]
+            for f in cf.as_completed(futs):
+                f.result()
+    else:
+        print(f"[{name}] 1/4 Assets vorhanden", flush=True)
     # 2) Montage + Grade
     montage = OUT / f"{name}_montage.mp4"
     print(f"[{name}] 2/5 Montage + Grade + Korn ...", flush=True)
@@ -310,15 +321,8 @@ def produce(name, r):
         cards.append((png, s0, e0, HOOK_IN if i == 0 else FADE_IN))
     endcard = OUT / f"{name}_end.png"
     render_endcard(r.get("endcard_term", ""), r["cta"], endcard)
-    # 4) Musik
-    mus = OUT / f"{name}_music.mp3"
-    if not mus.exists() or mus.stat().st_size < 10000:
-        print(f"[{name}] 4/5 Musik (Suno) ...", flush=True)
-        gen_music(r["music"], mus)
-    else:
-        print(f"[{name}] 4/5 Musik vorhanden", flush=True)
-    # 5) Final
-    print(f"[{name}] 5/5 Compose final ...", flush=True)
+    # 4) Final (Musik wurde in Schritt 1 parallel erzeugt)
+    print(f"[{name}] 4/4 Compose final ...", flush=True)
     fin = OUT / f"{name}.mp4"
     dur = compose_final(montage, cards, endcard, mus, fin, foot_len)
     # Laengen-Check (§0)
