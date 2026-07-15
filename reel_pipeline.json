@@ -1,6 +1,121 @@
 {
   "_hinweis": "Archivkino-Schema (Text-first, klar): name, theme, kicker (kurzes klares Wort, optional), thoughts[3-4] (klare Saetze, | = Zeilenumbruch), endcard_term (optional, meist leer), cta (klar: 'Folge fuer mehr.' / 'Speichern.' / 'Teile das.'), clips[3] (vollflaechig, keine Gesichter), music, caption. Zeilen aus bewaehrten Referenz-Accounts, KEIN erfundener Jargon.",
-  "approved": [],
+  "approved": [
+    {
+      "name": "grenzen_setzen",
+      "theme": "Grenzen",
+      "kicker": "GRENZEN",
+      "thoughts": [
+        "Ein Nein zu anderen|ist ein Ja zu dir.",
+        "Du musst dich nicht erklären,|wenn du dich schützt.",
+        "Wer deine Grenze respektiert, bleibt.",
+        "Wer sie ignoriert, zeigt dir, wer er ist."
+      ],
+      "cta": "Speichern.",
+      "clips": [
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a weathered wooden fence line running through tall grass in soft morning fog on a quiet hillside, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, calm sea meeting a rocky shoreline where waves stop cleanly at the stone, low overcast light, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a heavy old wooden door slowly closing in a stone doorway with warm side light falling across the grain, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
+      ],
+      "music": "neoclassical cinematic ambient, warm and uplifting, solo felt piano with warm strings and cello, soft sub drone, slow arc from minor to major, 68 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
+      "caption": "Grenzen sind keine Mauern gegen andere. Sie sind der Weg zurück zu dir selbst. Du darfst Nein sagen, auch ohne Rechtfertigung. Wer dich wirklich schätzt, bleibt trotzdem.\n\n#grenzensetzen #neinsagen #selbstrespekt #mindset #kopfundkompass"
+    },
+    {
+      "name": "eigener_weg",
+      "theme": "Eigener Weg",
+      "kicker": "VERGLEICH",
+      "thoughts": [
+        "Du vergleichst dein Kapitel drei|mit ihrem Kapitel zwanzig.",
+        "Der andere Weg sieht nur leichter aus.",
+        "Niemand zeigt dir die Nächte dahinter.",
+        "Dein Tempo ist nicht dein Rückstand."
+      ],
+      "cta": "Teile das.",
+      "clips": [
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a single narrow trail winding up a green mountain slope disappearing into low cloud, soft diffuse light, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, two separate rivers flowing in different directions through a quiet valley seen from above, muted greens and greys, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a lone tree standing in an open field at dawn with long soft shadows across the grass, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
+      ],
+      "music": "neoclassical cinematic ambient, warm and uplifting, solo felt piano with warm strings and cello, soft sub drone, slow arc from minor to major, 68 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
+      "caption": "Der Vergleich stiehlt dir die Freude an deinem eigenen Fortschritt. Du siehst das Ergebnis der anderen, nie ihren Weg dorthin. Bleib auf deiner Spur. Dein Tempo ist genau richtig.\n\n#eigenerweg #vergleich #mindset #selbstvertrauen #kopfundkompass"
+    },
+    {
+      "name": "geduld_ernte",
+      "theme": "Geduld",
+      "kicker": "GEDULD",
+      "thoughts": [
+        "Alles Echte braucht Zeit|zum Wachsen.",
+        "Du giesst heute für eine Ernte,|die du noch nicht siehst.",
+        "Ungeduld reisst aus, was fast reif war.",
+        "Bleib dran, wenn es langsam wird."
+      ],
+      "cta": "Speichern.",
+      "clips": [
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a single green sprout pushing through dark soil in soft window light, shallow calm scene, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, slow water droplets falling and rippling into a still stone basin in a quiet courtyard, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, an ancient oak tree with wide bare branches standing in soft morning mist over a field, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
+      ],
+      "music": "neoclassical cinematic ambient, warm and uplifting, solo felt piano with warm strings and cello, soft sub drone, slow arc from minor to major, 68 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
+      "caption": "Geduld ist kein Warten. Sie ist Vertrauen in einen Prozess, den du noch nicht ganz siehst. Was du heute säst, erntest du morgen. Bleib dran, gerade wenn es langsam wird.\n\n#geduld #langfristigdenken #mindset #durchhalten #kopfundkompass"
+    },
+    {
+      "name": "selbstrespekt",
+      "theme": "Selbstrespekt",
+      "kicker": "SELBSTRESPEKT",
+      "thoughts": [
+        "Die Menschen behandeln dich so,|wie du es zulässt.",
+        "Dein Schweigen ist auch eine Antwort.",
+        "Was du duldest, wird zur Gewohnheit.",
+        "Respekt beginnt bei dir selbst."
+      ],
+      "cta": "Folge für mehr.",
+      "clips": [
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a still lake surface perfectly mirroring a grey mountain at dawn, glass calm water, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a single upright standing stone on a windswept coastal cliff under moving clouds, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, warm light falling across the worn pages of an open leather book on a wooden table, soft side light, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
+      ],
+      "music": "neoclassical cinematic ambient, warm and uplifting, solo felt piano with warm strings and cello, soft sub drone, slow arc from minor to major, 68 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
+      "caption": "Andere lernen von dir, wie sie mit dir umgehen dürfen. Was du duldest, wird zur Gewohnheit. Selbstrespekt heisst, nicht jeden Ton mitzumachen. Es beginnt bei dir.\n\n#selbstrespekt #selbstwert #grenzen #mindset #kopfundkompass"
+    },
+    {
+      "name": "ruhe_reagieren",
+      "theme": "Ruhe",
+      "kicker": "RUHE",
+      "thoughts": [
+        "Nicht jede Provokation|braucht deine Antwort.",
+        "Deine Ruhe ist deine Macht.",
+        "Zwischen Reiz und Reaktion|liegt ein Atemzug.",
+        "Wer dich aus der Ruhe bringt, beherrscht dich."
+      ],
+      "cta": "Speichern.",
+      "clips": [
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a deep still forest pond with fallen leaves resting motionless on the surface, soft green reflections, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, slow morning mist drifting across a calm valley between dark hills, soft even light, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a single candle flame burning steady and unmoving in a dim quiet room, soft warm glow, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
+      ],
+      "music": "neoclassical cinematic ambient, warm and calm, solo felt piano with warm strings and cello, soft sub drone, slow arc from minor to major, 66 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
+      "caption": "Nicht jede Provokation verdient deine Reaktion. Deine Ruhe ist keine Schwäche, sondern Kontrolle. Zwischen Reiz und Antwort liegt dein Atemzug. Nutze ihn.\n\n#ruhe #gelassenheit #mindset #selbstkontrolle #kopfundkompass"
+    },
+    {
+      "name": "wie_weit_gekommen",
+      "theme": "Fortschritt",
+      "kicker": "FORTSCHRITT",
+      "thoughts": [
+        "Schau kurz zurück,|nicht nur nach vorn.",
+        "Du hast Dinge überstanden,|die dich fast gebrochen hätten.",
+        "Der Mensch von damals|wäre stolz auf dich.",
+        "Du bist weiter, als du denkst."
+      ],
+      "cta": "Teile das.",
+      "clips": [
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a long winding path seen from a high ridge stretching back down through green hills into a distant valley, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, worn stone steps climbing up an old hillside covered in moss with soft light from above, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a wide sunrise slowly breaking over a distant mountain range with warm light spilling across the peaks, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
+      ],
+      "music": "neoclassical cinematic ambient, warm and hopeful, solo felt piano with warm strings and cello, soft sub drone, slow arc from minor to major, 68 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
+      "caption": "Manchmal starrst du so lange nach vorn, dass du vergisst, wie weit du schon gekommen bist. Du hast Dinge überstanden, die dich fast gebrochen hätten. Sei stolz. Du bist weiter, als du denkst.\n\n#fortschritt #dankbarkeit #mindset #wachstum #kopfundkompass"
+    }
+  ],
   "built": [
     {
       "name": "peilung_verloren",
