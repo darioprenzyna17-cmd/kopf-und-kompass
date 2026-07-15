@@ -151,8 +151,20 @@ body{{width:1080px;height:1920px;position:relative;font-family:'Fraunces',serif;
 def veo_generate(prompt, out_mp4, model="veo3_fast", res="1080p", duration=8):
     body = json.dumps({"prompt": prompt, "model": model, "aspect_ratio": "9:16",
                        "resolution": res, "duration": duration}).encode()
-    tid = json.loads(urllib.request.urlopen(urllib.request.Request(GEN, data=body, headers=KH, method="POST"),
-                                             timeout=60).read().decode())["data"]["taskId"]
+    tid = None
+    for attempt in range(5):
+        try:
+            resp = json.loads(urllib.request.urlopen(urllib.request.Request(
+                GEN, data=body, headers=KH, method="POST"), timeout=60).read().decode())
+        except Exception as e:
+            resp = {"err": str(e)}
+        tid = (resp.get("data") or {}).get("taskId")
+        if tid:
+            break
+        print(f"  Veo-Start ohne taskId ({resp.get('msg') or resp.get('message') or resp.get('err') or resp}), Retry {attempt+1}/5 ...", flush=True)
+        time.sleep(10 * (attempt + 1))
+    if not tid:
+        raise RuntimeError("Veo: kein taskId nach 5 Versuchen (API ueberlastet?)")
     print(f"  Veo-Task {tid} laeuft ...", flush=True)
     for _ in range(150):
         d = json.loads(urllib.request.urlopen(urllib.request.Request(
