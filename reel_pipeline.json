@@ -2,44 +2,6 @@
   "_hinweis": "Archivkino-Schema (Text-first, klar): name, theme, kicker (kurzes klares Wort, optional), thoughts[3-4] (klare Saetze, | = Zeilenumbruch), endcard_term (optional, meist leer), cta (klar: 'Folge fuer mehr.' / 'Speichern.' / 'Teile das.'), clips[3] (vollflaechig, keine Gesichter), music, caption. Zeilen aus bewaehrten Referenz-Accounts, KEIN erfundener Jargon.",
   "approved": [
     {
-      "name": "kampf_dahinter",
-      "theme": "Mitgefühl",
-      "kicker": "MITGEFÜHL",
-      "thoughts": [
-        "Wüsstest du,|welchen Kampf er trägt,",
-        "du würdest anders|mit ihm reden.",
-        "Wir sehen nur das Verhalten.",
-        "Nie die Geschichte dahinter."
-      ],
-      "cta": "Teile das.",
-      "clips": [
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a lone figure seen from far behind walking along a quiet rain-wet street at dusk, warm streetlight glow and cool blue shadows, reflections on the pavement, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no faces, no people facing camera, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, soft rain running down a dark window with a warm blurred room behind, quiet and still, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, an empty quiet park bench under bare trees in cold morning mist, warm faint light breaking through, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
-      ],
-      "music": "neoclassical cinematic ambient, warm and tender, solo felt piano with warm strings and cello, soft sub drone, slow emotional arc, 66 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
-      "caption": "Wenn du wüsstest, welchen Kampf ein Mensch gerade führt, würdest du wahrscheinlich anders mit ihm sprechen. Wir sehen das Verhalten. Aber fast nie die Geschichte dahinter.\n\n#mitgefühl #mindset #kopfundkompass #achtsamkeit #menschlichkeit"
-    },
-    {
-      "name": "hundert_gruende",
-      "theme": "Selbstwert",
-      "kicker": "SELBSTWERT",
-      "thoughts": [
-        "Manche geben dir|hundert Gründe zu zweifeln.",
-        "Und keinen einzigen,|zu bleiben.",
-        "Du musst nicht kämpfen,|um dazuzugehören.",
-        "Nicht dort, wo du|dich klein machst."
-      ],
-      "cta": "Speichern.",
-      "clips": [
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a single small wooden boat resting on vast still water at dawn, calm reflections, thin warm light on the horizon, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a lone standing stone on open moorland under a wide grey sky, wind moving the grass, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a quiet open road stretching into soft morning light between fields, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
-      ],
-      "music": "neoclassical cinematic ambient, warm and quietly reassuring, solo felt piano with warm strings and cello, soft sub drone, slow arc from minor to major, 68 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
-      "caption": "Manche Menschen geben dir hundert Gründe, an dir selbst zu zweifeln, und keinen einzigen, zu bleiben. Du musst nicht kämpfen, um irgendwo dazuzugehören, wo du dich klein und unerwünscht fühlst. Die richtigen Menschen lassen dich nicht darum kämpfen.\n\n#selbstwert #mindset #kopfundkompass #grenzen #achtsamkeit"
-    },
-    {
       "name": "stille_disziplin",
       "theme": "Disziplin",
       "kicker": "DISZIPLIN",
@@ -95,6 +57,25 @@
       ],
       "music": "neoclassical cinematic ambient, warm and honest, solo felt piano with warm strings and cello, soft sub drone, slow arc from minor to major, 68 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
       "caption": "Manchmal ist der Satz, den du heute lesen musst, genau der, den du eigentlich nicht hören wolltest. Nicht alles, was sich gut anfühlt, bringt dich weiter. Und nicht jede Wahrheit fühlt sich zuerst angenehm an.\n\n#wahrheit #mindset #kopfundkompass #wachstum #achtsamkeit"
+    },
+    {
+      "name": "kampf_dahinter",
+      "theme": "Mitgefühl",
+      "kicker": "MITGEFÜHL",
+      "thoughts": [
+        "Wüsstest du,|welchen Kampf er trägt,",
+        "du würdest anders|mit ihm reden.",
+        "Wir sehen nur das Verhalten.",
+        "Nie die Geschichte dahinter."
+      ],
+      "cta": "Teile das.",
+      "clips": [
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a lone figure seen from far behind walking along a quiet rain-wet street at dusk, warm streetlight glow and cool blue shadows, reflections on the pavement, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no faces, no people facing camera, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, soft rain running down a dark window with a warm blurred room behind, quiet and still, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, an empty quiet park bench under bare trees in cold morning mist, warm faint light breaking through, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
+      ],
+      "music": "neoclassical cinematic ambient, warm and tender, solo felt piano with warm strings and cello, soft sub drone, slow emotional arc, 66 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
+      "caption": "Wenn du wüsstest, welchen Kampf ein Mensch gerade führt, würdest du wahrscheinlich anders mit ihm sprechen. Wir sehen das Verhalten. Aber fast nie die Geschichte dahinter.\n\n#mitgefühl #mindset #kopfundkompass #achtsamkeit #menschlichkeit"
     }
   ],
   "built": [
@@ -112,6 +93,11 @@
       "name": "charakter_statt_besitz",
       "theme": "Charakter",
       "permalink": "https://www.instagram.com/reel/Da02qTnjCay/"
+    },
+    {
+      "name": "hundert_gruende",
+      "theme": "Selbstwert",
+      "permalink": "https://www.instagram.com/reel/Da1DMmdgZBf/"
     }
   ]
 }

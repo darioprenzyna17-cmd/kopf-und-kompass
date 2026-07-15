@@ -1,52 +1,33 @@
 {
   "_hinweis": "Automatisch aus Instagram-Insights. Nordstern: Save+Share+Follow. cloud_build_post.py priorisiert Gewinner-Themen.",
   "updated_utc": null,
-  "n_reels_mit_daten": 2,
+  "n_reels_mit_daten": 1,
   "themen_rang": [
     {
-      "thema": "Selbstwert & Orientierung",
-      "score_avg": 5.76,
+      "thema": "Charakter",
+      "score_avg": 5.34,
       "n": 1,
-      "reichweite": 220,
+      "reichweite": 175,
       "saves": 1,
-      "shares": 0
-    },
-    {
-      "thema": "Ablenkung / Abdrift",
-      "score_avg": 2.5,
-      "n": 1,
-      "reichweite": 294,
-      "saves": 0,
       "shares": 0
     }
   ],
   "begriff_rang": [],
   "gewinner_themen": [
-    "Selbstwert & Orientierung",
-    "Ablenkung / Abdrift"
+    "Charakter"
   ],
   "verlierer_themen": [],
-  "empfehlung": "Ausbauen: Selbstwert & Orientierung, Ablenkung / Abdrift.",
+  "empfehlung": "Ausbauen: Charakter.",
   "per_reel": [
     {
-      "name": "peilung_verloren",
-      "theme": "Selbstwert & Orientierung",
-      "score": 5.76,
-      "reach": 220,
+      "name": "charakter_statt_besitz",
+      "theme": "Charakter",
+      "score": 5.34,
+      "reach": 175,
       "saved": 1,
       "shares": 0,
-      "total_interactions": 2,
-      "ig_reels_avg_watch_time": 3876
-    },
-    {
-      "name": "leise_abdrift_handy",
-      "theme": "Ablenkung / Abdrift",
-      "score": 2.5,
-      "reach": 294,
-      "saved": 0,
-      "shares": 0,
-      "total_interactions": 0,
-      "ig_reels_avg_watch_time": 4415
+      "total_interactions": 1,
+      "ig_reels_avg_watch_time": 3737
     }
   ]
 }
