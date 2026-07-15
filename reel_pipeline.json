@@ -2,25 +2,15 @@
   "_hinweis": "Archivkino-Schema: name, theme, kicker (aktiver Lexikon-Begriff GROSS fuer Hook), thoughts[3-4] (max 7 Woerter, | = Zeilenumbruch, letzter = Killer), endcard_term (aktiver Begriff GROSS), cta (rotierend save/share/follow), clips[3] (VOLLFLAECHIG, keine Filmstreifen-Raender, keine Gesichter; Korn kommt vom Grade), music (Suno-Prompt), caption. Regeln: strategie/DESIGN.md.",
   "approved": [
     {
-      "name": "leise_abdrift_handy",
-      "theme": "Ablenkung / Abdrift",
-      "kicker": "ABDRIFT",
-      "thoughts": ["Kurz aufs Handy.|Zwei Stunden Abdrift.", "Nicht ein Ruck. Tausend kleine Blicke.", "Abends bist du weiter weg von dir.", "Zurück findest du nur mit Absicht."],
-      "endcard_term": "KURSKORREKTUR",
-      "cta": "Speichere das, bevor du wieder abdriftest.",
-      "clips": [
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a small empty rowboat drifting slowly away from a still wooden jetty in hazy morning light with the water moving in slow rings and cool teal reflections over warm low-key surroundings, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people facing camera, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a phone lying on a wooden nightstand slowly dimming its screen to black in a dim warm room with a faint cool residual glow fading on the wood, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people facing camera, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a wide calm river at dawn seen from the bank with an almost motionless surface and a slow current pulling the reflection gently sideways, cool blue-green shadows and warm light on the far shore, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people facing camera, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
-      ],
-      "music": "neoclassical cinematic ambient, warm and uplifting, solo felt piano with warm strings and cello, soft sub drone, slow emotional arc from minor to major, 70 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
-      "caption": "Es ist selten der grosse Bruch. Es sind die tausend kleinen Blicke aufs Display, das schnelle Ja, die halbe Aufmerksamkeit. Am Abend bist du ein Stück weiter weg von dir, ohne dass ein einziger Moment schuld war. Zurückfinden ist kein Zufall. Es ist eine Entscheidung.\n\n#abdrift #fokus #kopfundkompass #achtsamkeit #digitaldetox"
-    },
-    {
       "name": "wer_wendet",
       "theme": "Veränderung / Kurskorrektur",
       "kicker": "KURSKORREKTUR",
-      "thoughts": ["Eine Kurskorrektur sieht|aus wie Scheitern.", "Du erzählst noch|vom Plan von damals.", "Weil Zugeben teurer wirkt|als Weitermachen.", "Wer wendet, hat|endlich hingesehen."],
+      "thoughts": [
+        "Eine Kurskorrektur sieht|aus wie Scheitern.",
+        "Du erzählst noch|vom Plan von damals.",
+        "Weil Zugeben teurer wirkt|als Weitermachen.",
+        "Wer wendet, hat|endlich hingesehen."
+      ],
       "endcard_term": "PEILUNG",
       "cta": "Schick es jemandem, der eine neue Peilung braucht.",
       "clips": [
@@ -35,7 +25,12 @@
       "name": "deine_nadel_weiss",
       "theme": "Echtheit / wahrer Norden",
       "kicker": "DIE NADEL",
-      "thoughts": ["Deine Nadel weiss es.|Du fragst trotzdem.", "Jede fremde Meinung übertönt deine eigene.", "Zustimmung beruhigt dich,|sie führt dich nicht.", "Frag niemanden, ob du echt sein darfst."],
+      "thoughts": [
+        "Deine Nadel weiss es.|Du fragst trotzdem.",
+        "Jede fremde Meinung übertönt deine eigene.",
+        "Zustimmung beruhigt dich,|sie führt dich nicht.",
+        "Frag niemanden, ob du echt sein darfst."
+      ],
       "endcard_term": "WAHRER NORDEN",
       "cta": "Folge, wenn du die Nadel wieder hören willst.",
       "clips": [
@@ -50,7 +45,12 @@
       "name": "kurs_halten_woche_vier",
       "theme": "Disziplin / Kurs halten",
       "kicker": "KURS HALTEN",
-      "thoughts": ["Kurs halten|ist die vierte Woche.", "Woche eins trägt die Neugier.", "Woche vier trägt nur dich.", "Genau da wirst du gebaut."],
+      "thoughts": [
+        "Kurs halten|ist die vierte Woche.",
+        "Woche eins trägt die Neugier.",
+        "Woche vier trägt nur dich.",
+        "Genau da wirst du gebaut."
+      ],
       "endcard_term": "WAHRER NORDEN",
       "cta": "Speichere das, bevor du den Kurs verlässt.",
       "clips": [
@@ -65,7 +65,12 @@
       "name": "gegenwind_beweis",
       "theme": "Widerstand / Gegenwind",
       "kicker": "GEGENWIND",
-      "thoughts": ["Gegenwind spürst du|erst beim Vorwärtsgehen.", "Wer stehen bleibt, spürt nichts.", "Der Drachen steigt genau dagegen.", "Der Wind beweist: du gehst."],
+      "thoughts": [
+        "Gegenwind spürst du|erst beim Vorwärtsgehen.",
+        "Wer stehen bleibt, spürt nichts.",
+        "Der Drachen steigt genau dagegen.",
+        "Der Wind beweist: du gehst."
+      ],
       "endcard_term": "DIE NADEL",
       "cta": "Schick es jemandem, der die Nadel sucht.",
       "clips": [
@@ -80,7 +85,12 @@
       "name": "haende_frei",
       "theme": "Loslassen / losmachen",
       "kicker": "LOSMACHEN",
-      "thoughts": ["Losmachen fühlt sich|an wie Verrat.", "Du hältst den Groll|wie Treue.", "Er schützt dich vor|gar nichts mehr.", "Das Gewicht trägst|nur noch du."],
+      "thoughts": [
+        "Losmachen fühlt sich|an wie Verrat.",
+        "Du hältst den Groll|wie Treue.",
+        "Er schützt dich vor|gar nichts mehr.",
+        "Das Gewicht trägst|nur noch du."
+      ],
       "endcard_term": "WAHRER NORDEN",
       "cta": "Folge, wenn du zurück zu deinem Norden willst.",
       "clips": [
@@ -93,6 +103,15 @@
     }
   ],
   "built": [
-    { "name": "peilung_verloren", "theme": "Selbstwert & Orientierung", "permalink": "https://www.instagram.com/reel/Daz8Yr9II6I/" }
+    {
+      "name": "peilung_verloren",
+      "theme": "Selbstwert & Orientierung",
+      "permalink": "https://www.instagram.com/reel/Daz8Yr9II6I/"
+    },
+    {
+      "name": "leise_abdrift_handy",
+      "theme": "Ablenkung / Abdrift",
+      "permalink": "https://www.instagram.com/reel/Daz-18qEXdc/"
+    }
   ]
 }
