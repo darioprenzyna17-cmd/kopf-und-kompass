@@ -2,24 +2,15 @@
   "_hinweis": "Archivkino-Schema (Text-first, klar): name, theme, kicker (kurzes klares Wort, optional), thoughts[3-4] (klare Saetze, | = Zeilenumbruch), endcard_term (optional, meist leer), cta (klar: 'Folge fuer mehr.' / 'Speichern.' / 'Teile das.'), clips[3] (vollflaechig, keine Gesichter), music, caption. Zeilen aus bewaehrten Referenz-Accounts, KEIN erfundener Jargon.",
   "approved": [
     {
-      "name": "charakter_statt_besitz",
-      "theme": "Charakter",
-      "kicker": "CHARAKTER",
-      "thoughts": ["Die meisten zeigen,|was sie haben.", "Die wenigen zeigen,|wer sie sind.", "Besitz sieht jeder sofort.", "Charakter zeigt sich leiser."],
-      "cta": "Folge für mehr.",
-      "clips": [
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a calm northern sea meeting dark rocks at blue hour, slow gentle waves, thin warm light on the far horizon, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, an old worn leather book and a brass key resting on dark oak in low raking side light, fine dust in the air, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a quiet mountain ridge under soft dawn mist, layered silhouettes fading into warm grey, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
-      ],
-      "music": "neoclassical cinematic ambient, warm and uplifting, solo felt piano with warm strings and cello, soft sub drone, slow emotional arc from minor to major, 68 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
-      "caption": "Die meisten Menschen zeigen, was sie haben. Die wenigen zeigen, wer sie sind. Besitz sieht jeder sofort. Charakter zeigt sich leiser, aber er bleibt.\n\n#charakter #mindset #kopfundkompass #achtsamkeit #tiefe"
-    },
-    {
       "name": "kampf_dahinter",
       "theme": "Mitgefühl",
       "kicker": "MITGEFÜHL",
-      "thoughts": ["Wüsstest du,|welchen Kampf er trägt,", "du würdest anders|mit ihm reden.", "Wir sehen nur das Verhalten.", "Nie die Geschichte dahinter."],
+      "thoughts": [
+        "Wüsstest du,|welchen Kampf er trägt,",
+        "du würdest anders|mit ihm reden.",
+        "Wir sehen nur das Verhalten.",
+        "Nie die Geschichte dahinter."
+      ],
       "cta": "Teile das.",
       "clips": [
         "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a lone figure seen from far behind walking along a quiet rain-wet street at dusk, warm streetlight glow and cool blue shadows, reflections on the pavement, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no faces, no people facing camera, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
@@ -33,7 +24,12 @@
       "name": "hundert_gruende",
       "theme": "Selbstwert",
       "kicker": "SELBSTWERT",
-      "thoughts": ["Manche geben dir|hundert Gründe zu zweifeln.", "Und keinen einzigen,|zu bleiben.", "Du musst nicht kämpfen,|um dazuzugehören.", "Nicht dort, wo du|dich klein machst."],
+      "thoughts": [
+        "Manche geben dir|hundert Gründe zu zweifeln.",
+        "Und keinen einzigen,|zu bleiben.",
+        "Du musst nicht kämpfen,|um dazuzugehören.",
+        "Nicht dort, wo du|dich klein machst."
+      ],
       "cta": "Speichern.",
       "clips": [
         "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a single small wooden boat resting on vast still water at dawn, calm reflections, thin warm light on the horizon, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
@@ -47,7 +43,12 @@
       "name": "stille_disziplin",
       "theme": "Disziplin",
       "kicker": "DISZIPLIN",
-      "thoughts": ["Stille Disziplin spricht|lauter als jeder Ruhm.", "Die Fortschritte,|die keiner sieht,", "sind am Ende|die wertvollsten.", "Sie bauen, wer du wirst."],
+      "thoughts": [
+        "Stille Disziplin spricht|lauter als jeder Ruhm.",
+        "Die Fortschritte,|die keiner sieht,",
+        "sind am Ende|die wertvollsten.",
+        "Sie bauen, wer du wirst."
+      ],
       "cta": "Folge für mehr.",
       "clips": [
         "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a single narrow path crossing a wide field in the first grey light before sunrise, quiet and still, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
@@ -61,7 +62,12 @@
       "name": "momente_zu_spaet",
       "theme": "Achtsamkeit",
       "kicker": "ACHTSAMKEIT",
-      "thoughts": ["Die wichtigsten Momente|erkennst du zu spät.", "Erst, wenn sie|vorbei sind.", "Das Schönste fühlt sich|oft ganz gewöhnlich an.", "Sieh heute genauer hin."],
+      "thoughts": [
+        "Die wichtigsten Momente|erkennst du zu spät.",
+        "Erst, wenn sie|vorbei sind.",
+        "Das Schönste fühlt sich|oft ganz gewöhnlich an.",
+        "Sieh heute genauer hin."
+      ],
       "cta": "Speichern.",
       "clips": [
         "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a warm dim kitchen at dawn with soft steam rising slowly from a cup on a wooden table, gentle window light, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
@@ -75,7 +81,12 @@
       "name": "satz_den_du_brauchst",
       "theme": "Wahrheit",
       "kicker": "WAHRHEIT",
-      "thoughts": ["Manchmal ist der Satz,|den du brauchst,", "genau der,|den du nicht hören willst.", "Nicht alles Angenehme|bringt dich weiter.", "Und nicht jede Wahrheit|tut zuerst gut."],
+      "thoughts": [
+        "Manchmal ist der Satz,|den du brauchst,",
+        "genau der,|den du nicht hören willst.",
+        "Nicht alles Angenehme|bringt dich weiter.",
+        "Und nicht jede Wahrheit|tut zuerst gut."
+      ],
       "cta": "Teile das.",
       "clips": [
         "Cinematic vertical 9:16 footage filling the entire frame edge to edge, the pages of an open old book turning slowly in soft side light on a dark wooden desk, fine dust in the air, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
@@ -87,7 +98,20 @@
     }
   ],
   "built": [
-    { "name": "peilung_verloren", "theme": "Selbstwert & Orientierung", "permalink": "https://www.instagram.com/reel/Daz8Yr9II6I/" },
-    { "name": "leise_abdrift_handy", "theme": "Ablenkung / Abdrift", "permalink": "https://www.instagram.com/reel/Daz-18qEXdc/" }
+    {
+      "name": "peilung_verloren",
+      "theme": "Selbstwert & Orientierung",
+      "permalink": "https://www.instagram.com/reel/Daz8Yr9II6I/"
+    },
+    {
+      "name": "leise_abdrift_handy",
+      "theme": "Ablenkung / Abdrift",
+      "permalink": "https://www.instagram.com/reel/Daz-18qEXdc/"
+    },
+    {
+      "name": "charakter_statt_besitz",
+      "theme": "Charakter",
+      "permalink": "https://www.instagram.com/reel/Da02qTnjCay/"
+    }
   ]
 }

@@ -2,10 +2,12 @@
   "_hinweis": "Dubletten-Ledger fuer @kopfundkompass. Vor jeder Produktion pruefen: Thema/Hook/Kernsatz darf nicht schon hier stehen. Nach Freigabe ergaenzen. Zusaetzlich gegen die Live-Captions pruefen.",
   "used_topics": [
     "Selbstwert & Orientierung",
-    "Ablenkung / Abdrift"
+    "Ablenkung / Abdrift",
+    "Charakter"
   ],
   "used_hooks": [
     "Nicht du bist verloren.|Nur die Peilung.",
-    "Kurz aufs Handy.|Zwei Stunden Abdrift."
+    "Kurz aufs Handy.|Zwei Stunden Abdrift.",
+    "Die meisten zeigen,|was sie haben."
   ]
 }
