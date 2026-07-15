@@ -12,22 +12,45 @@ import build_video_reel as bvr   # noqa: E402
 import lib_meta as meta          # noqa: E402
 
 
+def pick(approved):
+    """Waehlt das naechste Konzept: bevorzugt ein Gewinner-Thema aus learnings.json,
+    sonst approved[0]. So wird die Produktion datenbasiert (entwickle dich weiter)."""
+    lp = HERE / "learnings.json"
+    if lp.exists():
+        try:
+            winners = json.loads(lp.read_text()).get("gewinner_themen", [])
+            for w in winners:
+                for cc in approved:
+                    if cc.get("theme") == w:
+                        print(f"Lern-Loop: waehle Gewinner-Thema '{w}'")
+                        return cc
+        except Exception:
+            pass
+    return approved[0]
+
+
 def main():
+    # 1) Erst lernen: echte Zahlen auswerten, learnings.json aktualisieren
+    try:
+        import learn_and_adapt
+        learn_and_adapt.main()
+    except Exception as e:
+        print("Lern-Schritt uebersprungen:", e)
     pf = HERE / "reel_pipeline.json"
     data = json.loads(pf.read_text())
     approved = data.get("approved", [])
     if not approved:
         print("Pipeline leer, nichts zu tun.")
         return
-    c = approved[0]
+    c = pick(approved)
     name = c["name"]
     print(f"=== BUILD {name} ===", flush=True)
     mp4 = bvr.produce(name, c)
     print(f"=== POST {name} ===", flush=True)
     mid, link = meta.post_reel(meta.ensure_public_url(str(mp4)), c["caption"])
     print(f"=== LIVE {name}: {mid} {link} ===", flush=True)
-    # Pipeline + Ledger
-    data["approved"] = approved[1:]
+    # Pipeline + Ledger (das GEWAEHLTE Konzept entfernen, nicht zwingend approved[0])
+    data["approved"] = [x for x in approved if x.get("name") != name]
     data.setdefault("built", []).append({"name": name, "theme": c.get("theme"), "permalink": link})
     pf.write_text(json.dumps(data, ensure_ascii=False, indent=2))
     ur = HERE / "used_reels.json"

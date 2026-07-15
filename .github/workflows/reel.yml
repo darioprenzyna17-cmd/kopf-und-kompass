@@ -38,10 +38,10 @@ jobs:
       - name: Ledger sichern
         if: always()
         run: |
-          if [[ -n "$(git status --porcelain reel_pipeline.json used_reels.json)" ]]; then
+          if [[ -n "$(git status --porcelain reel_pipeline.json used_reels.json learnings.json)" ]]; then
             git config user.name "kk-autopilot-bot"
             git config user.email "bot@users.noreply.github.com"
-            git add reel_pipeline.json used_reels.json
+            git add reel_pipeline.json used_reels.json learnings.json
             git commit -m "chore: reel gepostet $(date -u +%FT%TZ)"
             git push
           fi

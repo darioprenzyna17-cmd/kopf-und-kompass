@@ -1,0 +1,51 @@
+{
+  "_hinweis": "Automatisch aus Instagram-Insights. Nordstern: Save+Share+Follow. cloud_build_post.py priorisiert Gewinner-Themen.",
+  "updated_utc": null,
+  "n_reels_mit_daten": 2,
+  "themen_rang": [
+    {
+      "thema": "Selbstwert & Orientierung",
+      "score_avg": 1.93,
+      "n": 1,
+      "reichweite": 46,
+      "saves": 0,
+      "shares": 0
+    },
+    {
+      "thema": "Ablenkung / Abdrift",
+      "score_avg": 0.0,
+      "n": 1,
+      "reichweite": 0,
+      "saves": 0,
+      "shares": 0
+    }
+  ],
+  "begriff_rang": [],
+  "gewinner_themen": [
+    "Selbstwert & Orientierung"
+  ],
+  "verlierer_themen": [],
+  "empfehlung": "Ausbauen: Selbstwert & Orientierung.",
+  "per_reel": [
+    {
+      "name": "peilung_verloren",
+      "theme": "Selbstwert & Orientierung",
+      "score": 1.93,
+      "reach": 46,
+      "saved": 0,
+      "shares": 0,
+      "total_interactions": 0,
+      "ig_reels_avg_watch_time": 3776
+    },
+    {
+      "name": "leise_abdrift_handy",
+      "theme": "Ablenkung / Abdrift",
+      "score": 0.0,
+      "reach": 0,
+      "saved": 0,
+      "shares": 0,
+      "total_interactions": 0,
+      "ig_reels_avg_watch_time": 0
+    }
+  ]
+}
