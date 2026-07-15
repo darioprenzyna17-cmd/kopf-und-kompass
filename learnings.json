@@ -1,13 +1,13 @@
 {
   "_hinweis": "Automatisch aus Instagram-Insights. Nordstern: Save+Share+Follow. cloud_build_post.py priorisiert Gewinner-Themen.",
   "updated_utc": null,
-  "n_reels_mit_daten": 3,
+  "n_reels_mit_daten": 4,
   "themen_rang": [
     {
       "thema": "Charakter",
-      "score_avg": 5.36,
+      "score_avg": 5.35,
       "n": 1,
-      "reichweite": 192,
+      "reichweite": 203,
       "saves": 1,
       "shares": 0
     },
@@ -21,6 +21,14 @@
     },
     {
       "thema": "Disziplin",
+      "score_avg": 1.8,
+      "n": 1,
+      "reichweite": 9,
+      "saves": 0,
+      "shares": 0
+    },
+    {
+      "thema": "Achtsamkeit",
       "score_avg": 0.0,
       "n": 1,
       "reichweite": 0,
@@ -31,20 +39,21 @@
   "begriff_rang": [],
   "gewinner_themen": [
     "Charakter",
-    "Selbstwert"
+    "Selbstwert",
+    "Disziplin"
   ],
   "verlierer_themen": [],
-  "empfehlung": "Ausbauen: Charakter, Selbstwert.",
+  "empfehlung": "Ausbauen: Charakter, Selbstwert, Disziplin.",
   "per_reel": [
     {
       "name": "charakter_statt_besitz",
       "theme": "Charakter",
-      "score": 5.36,
-      "reach": 192,
+      "score": 5.35,
+      "reach": 203,
       "saved": 1,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 3726
+      "ig_reels_avg_watch_time": 3703
     },
     {
       "name": "hundert_gruende",
@@ -59,6 +68,16 @@
     {
       "name": "stille_disziplin",
       "theme": "Disziplin",
+      "score": 1.8,
+      "reach": 9,
+      "saved": 0,
+      "shares": 0,
+      "total_interactions": 0,
+      "ig_reels_avg_watch_time": 3591
+    },
+    {
+      "name": "momente_zu_spaet",
+      "theme": "Achtsamkeit",
       "score": 0.0,
       "reach": 0,
       "saved": 0,

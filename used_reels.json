@@ -6,7 +6,8 @@
     "Charakter",
     "Selbstwert",
     "Disziplin",
-    "Achtsamkeit"
+    "Achtsamkeit",
+    "Wahrheit"
   ],
   "used_hooks": [
     "Nicht du bist verloren.|Nur die Peilung.",
@@ -14,6 +15,7 @@
     "Die meisten zeigen,|was sie haben.",
     "Manche geben dir|hundert Gründe zu zweifeln.",
     "Stille Disziplin spricht|lauter als jeder Ruhm.",
-    "Die wichtigsten Momente|erkennst du zu spät."
+    "Die wichtigsten Momente|erkennst du zu spät.",
+    "Manchmal ist der Satz,|den du brauchst,"
   ]
 }

@@ -2,25 +2,6 @@
   "_hinweis": "Archivkino-Schema (Text-first, klar): name, theme, kicker (kurzes klares Wort, optional), thoughts[3-4] (klare Saetze, | = Zeilenumbruch), endcard_term (optional, meist leer), cta (klar: 'Folge fuer mehr.' / 'Speichern.' / 'Teile das.'), clips[3] (vollflaechig, keine Gesichter), music, caption. Zeilen aus bewaehrten Referenz-Accounts, KEIN erfundener Jargon.",
   "approved": [
     {
-      "name": "satz_den_du_brauchst",
-      "theme": "Wahrheit",
-      "kicker": "WAHRHEIT",
-      "thoughts": [
-        "Manchmal ist der Satz,|den du brauchst,",
-        "genau der,|den du nicht hören willst.",
-        "Nicht alles Angenehme|bringt dich weiter.",
-        "Und nicht jede Wahrheit|tut zuerst gut."
-      ],
-      "cta": "Teile das.",
-      "clips": [
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, the pages of an open old book turning slowly in soft side light on a dark wooden desk, fine dust in the air, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a single candle burning quietly in a dim warm room, soft flicker, deep calm shadows, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a still sea under a heavy grey sky slowly clearing to a thin band of warm light on the horizon, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
-      ],
-      "music": "neoclassical cinematic ambient, warm and honest, solo felt piano with warm strings and cello, soft sub drone, slow arc from minor to major, 68 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
-      "caption": "Manchmal ist der Satz, den du heute lesen musst, genau der, den du eigentlich nicht hören wolltest. Nicht alles, was sich gut anfühlt, bringt dich weiter. Und nicht jede Wahrheit fühlt sich zuerst angenehm an.\n\n#wahrheit #mindset #kopfundkompass #wachstum #achtsamkeit"
-    },
-    {
       "name": "kampf_dahinter",
       "theme": "Mitgefühl",
       "kicker": "MITGEFÜHL",
@@ -70,6 +51,11 @@
       "name": "momente_zu_spaet",
       "theme": "Achtsamkeit",
       "permalink": "https://www.instagram.com/reel/Da1HcWbFH7N/"
+    },
+    {
+      "name": "satz_den_du_brauchst",
+      "theme": "Wahrheit",
+      "permalink": "https://www.instagram.com/reel/Da1H9bugH30/"
     }
   ]
 }
