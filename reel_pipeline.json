@@ -1,26 +1,6 @@
 {
   "_hinweis": "Archivkino-Schema (Text-first, klar): name, theme, kicker (kurzes klares Wort, optional), thoughts[3-4] (klare Saetze, | = Zeilenumbruch), endcard_term (optional, meist leer), cta (klar: 'Folge fuer mehr.' / 'Speichern.' / 'Teile das.'), clips[3] (vollflaechig, keine Gesichter), music, caption. Zeilen aus bewaehrten Referenz-Accounts, KEIN erfundener Jargon.",
-  "approved": [
-    {
-      "name": "kampf_dahinter",
-      "theme": "Mitgefühl",
-      "kicker": "MITGEFÜHL",
-      "thoughts": [
-        "Wüsstest du,|welchen Kampf er trägt,",
-        "du würdest anders|mit ihm reden.",
-        "Wir sehen nur das Verhalten.",
-        "Nie die Geschichte dahinter."
-      ],
-      "cta": "Teile das.",
-      "clips": [
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a lone figure seen from far behind walking along a quiet rain-wet street at dusk, warm streetlight glow and cool blue shadows, reflections on the pavement, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no faces, no people facing camera, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, soft rain running down a dark window with a warm blurred room behind, quiet and still, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, an empty quiet park bench under bare trees in cold morning mist, warm faint light breaking through, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
-      ],
-      "music": "neoclassical cinematic ambient, warm and tender, solo felt piano with warm strings and cello, soft sub drone, slow emotional arc, 66 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
-      "caption": "Wenn du wüsstest, welchen Kampf ein Mensch gerade führt, würdest du wahrscheinlich anders mit ihm sprechen. Wir sehen das Verhalten. Aber fast nie die Geschichte dahinter.\n\n#mitgefühl #mindset #kopfundkompass #achtsamkeit #menschlichkeit"
-    }
-  ],
+  "approved": [],
   "built": [
     {
       "name": "peilung_verloren",
@@ -56,6 +36,11 @@
       "name": "satz_den_du_brauchst",
       "theme": "Wahrheit",
       "permalink": "https://www.instagram.com/reel/Da1H9bugH30/"
+    },
+    {
+      "name": "kampf_dahinter",
+      "theme": "Mitgefühl",
+      "permalink": "https://www.instagram.com/reel/Da1IpLaAnM4/"
     }
   ]
 }

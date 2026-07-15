@@ -1,7 +1,7 @@
 {
   "_hinweis": "Automatisch aus Instagram-Insights. Nordstern: Save+Share+Follow. cloud_build_post.py priorisiert Gewinner-Themen.",
   "updated_utc": null,
-  "n_reels_mit_daten": 4,
+  "n_reels_mit_daten": 5,
   "themen_rang": [
     {
       "thema": "Charakter",
@@ -13,9 +13,9 @@
     },
     {
       "thema": "Selbstwert",
-      "score_avg": 2.23,
+      "score_avg": 2.17,
       "n": 1,
-      "reichweite": 26,
+      "reichweite": 35,
       "saves": 0,
       "shares": 0
     },
@@ -29,6 +29,14 @@
     },
     {
       "thema": "Achtsamkeit",
+      "score_avg": 0.0,
+      "n": 1,
+      "reichweite": 0,
+      "saves": 0,
+      "shares": 0
+    },
+    {
+      "thema": "Wahrheit",
       "score_avg": 0.0,
       "n": 1,
       "reichweite": 0,
@@ -58,12 +66,12 @@
     {
       "name": "hundert_gruende",
       "theme": "Selbstwert",
-      "score": 2.23,
-      "reach": 26,
+      "score": 2.17,
+      "reach": 35,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 4412
+      "ig_reels_avg_watch_time": 4270
     },
     {
       "name": "stille_disziplin",
@@ -78,6 +86,16 @@
     {
       "name": "momente_zu_spaet",
       "theme": "Achtsamkeit",
+      "score": 0.0,
+      "reach": 0,
+      "saved": 0,
+      "shares": 0,
+      "total_interactions": 0,
+      "ig_reels_avg_watch_time": 0
+    },
+    {
+      "name": "satz_den_du_brauchst",
+      "theme": "Wahrheit",
       "score": 0.0,
       "reach": 0,
       "saved": 0,
