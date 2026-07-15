@@ -42,6 +42,7 @@ END_LEN = 3.5             # Schlusskarten-Standzeit
 END_XF = 1.0             # Dissolve in die Schlusskarte
 FADE_IN = 0.9; FADE_OUT = 0.7; HOOK_IN = 0.5
 OVERLAP = 0.25            # Karten-Ueberlappung (weich)
+HEADROOM = 1.5           # Montage-Puffer nach der Textphase (fuer sauberen End-Dissolve)
 ST_MIN = 3.5; ST_MAX = 5.0
 
 
@@ -214,7 +215,7 @@ def compose_montage(clips, cl, out):
         tag = f"x{i}" if i < k - 1 else "m"
         parts.append(f"[{prev}][c{i}]xfade=transition=fade:duration={DISSOLVE}:offset={off}[{tag}]")
         prev = tag
-    parts.append(f"[m]{GRADE},format=yuv420p[out]")
+    parts.append(f"[m]{GRADE},setsar=1,format=yuv420p[out]")
     fc = ";".join(parts)
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", *ins, "-filter_complex", fc,
                     "-map", "[out]", "-c:v", "libx264", "-preset", "slow", "-crf", "17",
@@ -223,10 +224,11 @@ def compose_montage(clips, cl, out):
 
 def compose_final(montage, cards, endcard_png, music, out, foot_len):
     """cards: Liste (png, s, e, fade_in). Overlay auf Montage, Dissolve in Schlusskarte, Musik loudnorm."""
-    total = round(foot_len + END_LEN - END_XF, 3)
+    total = round(foot_len + END_LEN, 3)
+    mont_len = round(foot_len + HEADROOM, 3)
     ins = ["-i", str(montage)]
     for (png, *_r) in cards:
-        ins += ["-loop", "1", "-t", str(foot_len), "-i", str(png)]
+        ins += ["-loop", "1", "-t", str(mont_len), "-i", str(png)]
     ins += ["-loop", "1", "-t", str(END_LEN), "-i", str(endcard_png), "-i", str(music)]
     n = len(cards)
     end_idx = 1 + n
@@ -241,9 +243,9 @@ def compose_final(montage, cards, endcard_png, music, out, foot_len):
         nxt = f"[o{i}]" if i < n - 1 else "[vtext]"
         parts.append(f"{chain}[c{i}]overlay=0:0{nxt}")
         chain = nxt
-    parts.append("[vtext]format=yuv420p[vt]")
-    parts.append(f"[{end_idx}:v]scale=1080:1920,setsar=1,fps=24,format=yuv420p[ve]")
-    parts.append(f"[vt][ve]xfade=transition=fade:duration={END_XF}:offset={round(foot_len-END_XF,3)}[v]")
+    parts.append("[vtext]fps=24,format=yuv420p,setsar=1,settb=AVTB[vt]")
+    parts.append(f"[{end_idx}:v]scale=1080:1920,fps=24,format=yuv420p,setsar=1,settb=AVTB[ve]")
+    parts.append(f"[vt][ve]xfade=transition=fade:duration={END_XF}:offset={round(foot_len,3)}[v]")
     parts.append(f"[{mus_idx}:a]atrim=0:{total},asetpts=PTS-STARTPTS,highpass=f=30,afftdn=nr=6,"
                  f"loudnorm=I=-14:TP=-1.5,afade=t=in:st=0:d=0.8,afade=t=out:st={round(total-2.0,3)}:d=2.0[a]")
     fc = ";".join(parts)
@@ -266,7 +268,7 @@ def produce(name, r):
         wins.append((s, round(s + st, 3)))
         s = round(s + st - OVERLAP, 3)
     foot_len = wins[-1][1]
-    cl = round((foot_len + (len(r["clips"]) - 1) * DISSOLVE) / len(r["clips"]), 3)
+    cl = round((foot_len + HEADROOM + (len(r["clips"]) - 1) * DISSOLVE) / len(r["clips"]), 3)
     (OUT / f"{name}.caption.txt").write_text(r["caption"], encoding="utf-8")
 
     # 1) Footage

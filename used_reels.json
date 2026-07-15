@@ -1,5 +1,9 @@
 {
   "_hinweis": "Dubletten-Ledger fuer @kopfundkompass. Vor jeder Produktion pruefen: Thema/Hook/Kernsatz darf nicht schon hier stehen. Nach Freigabe ergaenzen. Zusaetzlich gegen die Live-Captions pruefen.",
-  "used_topics": [],
-  "used_hooks": []
+  "used_topics": [
+    "Selbstwert & Orientierung"
+  ],
+  "used_hooks": [
+    "Nicht du bist verloren.|Nur die Peilung."
+  ]
 }

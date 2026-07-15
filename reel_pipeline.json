@@ -1,26 +1,11 @@
 {
-  "_hinweis": "Archivkino-Schema: name, theme, kicker (aktiver Lexikon-Begriff GROSS fuer Hook), thoughts[3-4] (max 7 Woerter, | = Zeilenumbruch, letzter = Killer), endcard_term (aktiver Begriff GROSS), cta (rotierend save/share/follow), clips[3] (16mm Motiv-Familie, keine Gesichter), music (Suno-Prompt), caption. Regeln: strategie/DESIGN.md.",
-  "approved": [
+  "_hinweis": "Archivkino-Schema: name, theme, kicker (aktiver Lexikon-Begriff GROSS fuer Hook), thoughts[3-4] (max 7 Woerter, | = Zeilenumbruch, letzter = Killer), endcard_term (aktiver Begriff GROSS), cta (rotierend save/share/follow), clips[3] (VOLLFLAECHIG, keine Filmstreifen-Raender, keine Gesichter; Korn kommt vom Grade), music (Suno-Prompt), caption. Regeln: strategie/DESIGN.md.",
+  "approved": [],
+  "built": [
     {
       "name": "peilung_verloren",
       "theme": "Selbstwert & Orientierung",
-      "kicker": "PEILUNG",
-      "thoughts": [
-        "Nicht du bist verloren.|Nur die Peilung.",
-        "Es geschieht leise.|Tag um Tag.",
-        "Merkst du es erst,|wenn nichts mehr zieht?",
-        "Finde die Nadel.|Sie zeigt noch."
-      ],
-      "endcard_term": "WAHRER NORDEN",
-      "cta": "Speichere das, bevor du wieder abdriftest.",
-      "clips": [
-        "abstract cinematic 16mm film texture, a rocky northern coastline at blue hour with slow dark waves washing over wet stone, warm faded colors, teal shadows, soft natural light, film grain, muted desaturated palette, no text, no people facing camera, no faces, no rain on glass, no bokeh lights, no window backlight, slow contemplative motion, 9:16 vertical, 24fps",
-        "abstract cinematic 16mm film texture, a weathered folded sea chart and a worn pencil on dark oak wood in raking low side light, dust in the air, warm faded colors, teal shadows, film grain, muted desaturated palette, no text, no people, no faces, no rain on glass, no bokeh lights, slow contemplative motion, 9:16 vertical, 24fps",
-        "abstract cinematic 16mm film texture, tall dune grass bending slowly in the wind on a grey misty dawn shore, warm faded colors, teal shadows, soft natural light, film grain, muted desaturated palette, no text, no people, no faces, no bokeh lights, no window backlight, slow contemplative motion, 9:16 vertical, 24fps"
-      ],
-      "music": "neoclassical cinematic ambient, warm and uplifting, solo felt piano with warm strings and cello, soft sub drone, slow emotional arc from minor to major resolution, 68 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity studio recording, instrumental",
-      "caption": "Du bist nicht verloren. Du hast nur die Peilung verloren. Das passiert nicht an einem Tag, sondern in vielen kleinen, in denen du dich selbst überhört hast. Die Nadel zeigt noch. Du musst nur wieder hinsehen.\n\n#mindset #klarheit #selbstwert #orientierung #achtsamkeit"
+      "permalink": "https://www.instagram.com/reel/Daz8Yr9II6I/"
     }
-  ],
-  "built": []
+  ]
 }
