@@ -262,10 +262,26 @@ def post_reel(video_url, caption):
     return _publish(ig, token, cid)
 
 
+def post_story(media_url, is_video=False):
+    """Story-Post (24h). Bild ODER Video, oeffentlich erreichbare URL."""
+    ig, token = _creds()
+    body = {"media_type": "STORIES", "access_token": token}
+    body["video_url" if is_video else "image_url"] = media_url
+    c = post_form(f"{GRAPH}/{ig}/media", body)
+    cid = c.get("id")
+    if not cid:
+        raise RuntimeError(f"Story-Container fehlgeschlagen: {c}")
+    wait_for_finished(cid, token, timeout_min=5)
+    return _publish(ig, token, cid)
+
+
 def publish_entry(entry):
     """Postet einen Queue-Eintrag je nach Format. Gibt (media_id, permalink) zurueck."""
     fmt = entry.get("format", "image")
     caption = entry.get("caption", "")
+    if fmt == "story":
+        src = entry.get("video_url") or entry["image_url"]
+        return post_story(ensure_public_url(src), is_video=bool(entry.get("video_url")))
     if fmt == "image":
         srcs = entry.get("image_urls") or ([entry["image_url"]] if entry.get("image_url") else [])
         if not srcs:

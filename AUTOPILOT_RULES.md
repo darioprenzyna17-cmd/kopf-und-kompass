@@ -4,6 +4,10 @@ Account: **@kopfundkompass**. Ziel: ein Mindset-Account, der **langfristig viral
 aus den eigenen Zahlen lernt und sich weiterentwickelt. Nordstern: nicht Likes, sondern
 **Save + Share + Follow** (Content, den Leute weiterschicken und behalten wollen).
 
+**Wachstumsziel: 40'000 Follower in 4 Wochen** (Start ~35k, rund 180 neue pro Tag netto).
+Dafür: hohe Reel-Frequenz, jedes Reel auf Save/Share optimiert, Gewinner-Themen schnell doppeln,
+schwache Muster sofort streichen. 2 Stories pro Tag halten die Bestands-Audience aktiv (Ranking-Signal).
+
 ## Stil (fixiert)
 - **Ton:** ruhig, tief, ehrlich, leicht männlich-warm, klar. Bringt zum Nachdenken UND richtet auf. Nie kitschig-platt, nie Kalenderspruch.
 - **Bild:** cineastisches, ruhiges KI-Footage (Veo), atmosphärisch, filmische Farbwelt (dunkel, warm). Einsame Figuren, Natur, Licht, Alltagsmomente mit Tiefe. 9:16.
@@ -28,6 +32,12 @@ Loslassen & Vergangenheit · Mut & eigener Weg · Geduld & langfristiges Denken 
 - **Zeiten** lernen sich über `learn_times.py` aus den Insights je Wochentag.
 - **Kaltstart-Disziplin:** solange kaum Daten, gleichmässig Themen streuen und nichts überinterpretieren. Sobald echte Daten da sind: SCHEDULE + Zeiten an die Audience anpassen.
 - **A/B:** immer nur EINE Variable ändern (Hook ODER Bildwelt ODER Zeit).
+
+## Stories (2 pro Tag)
+- **Story 1 (Teaser):** weist auf den neuen Feed-Beitrag hin (Repost-Logik), Marken-Story-Karte mit dem Hook-Satz. `build_story.py` -> `story_teaser`.
+- **Story 2 (Gedanke):** eigenständiger kurzer Impuls, lädt zum Antworten ein („Antworte mit einem Wort"). DM-Antworten sind ein starkes Ranking-Signal. `build_story.py` -> `story_gedanke`.
+- Look wie die Reels (dunkel, warm, Playfair/Inter, Wortmarke). Gepostet via `lib_meta.post_story` (media_type STORIES).
+- API-Grenze: native Sticker (Umfrage/Link/Beitrag-Sticker) sind über die Graph-API nicht setzbar, darum saubere Bild-Karten mit Text-Aufforderung.
 
 ## Betrieb
 - Reel-Vorrat immer ≥ 4 approved halten (Konzept → `kk-abnahme` → committen).
