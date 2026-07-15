@@ -13,9 +13,9 @@
     },
     {
       "thema": "Ablenkung / Abdrift",
-      "score_avg": 2.51,
+      "score_avg": 2.5,
       "n": 1,
-      "reichweite": 289,
+      "reichweite": 294,
       "saves": 0,
       "shares": 0
     }
@@ -41,12 +41,12 @@
     {
       "name": "leise_abdrift_handy",
       "theme": "Ablenkung / Abdrift",
-      "score": 2.51,
-      "reach": 289,
+      "score": 2.5,
+      "reach": 294,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 4447
+      "ig_reels_avg_watch_time": 4415
     }
   ]
 }
