@@ -1,117 +1,93 @@
 {
-  "_hinweis": "Archivkino-Schema: name, theme, kicker (aktiver Lexikon-Begriff GROSS fuer Hook), thoughts[3-4] (max 7 Woerter, | = Zeilenumbruch, letzter = Killer), endcard_term (aktiver Begriff GROSS), cta (rotierend save/share/follow), clips[3] (VOLLFLAECHIG, keine Filmstreifen-Raender, keine Gesichter; Korn kommt vom Grade), music (Suno-Prompt), caption. Regeln: strategie/DESIGN.md.",
+  "_hinweis": "Archivkino-Schema (Text-first, klar): name, theme, kicker (kurzes klares Wort, optional), thoughts[3-4] (klare Saetze, | = Zeilenumbruch), endcard_term (optional, meist leer), cta (klar: 'Folge fuer mehr.' / 'Speichern.' / 'Teile das.'), clips[3] (vollflaechig, keine Gesichter), music, caption. Zeilen aus bewaehrten Referenz-Accounts, KEIN erfundener Jargon.",
   "approved": [
     {
-      "name": "wer_wendet",
-      "theme": "Veränderung / Kurskorrektur",
-      "kicker": "KURSKORREKTUR",
-      "thoughts": [
-        "Eine Kurskorrektur sieht|aus wie Scheitern.",
-        "Du erzählst noch|vom Plan von damals.",
-        "Weil Zugeben teurer wirkt|als Weitermachen.",
-        "Wer wendet, hat|endlich hingesehen."
-      ],
-      "endcard_term": "PEILUNG",
-      "cta": "Schick es jemandem, der eine neue Peilung braucht.",
+      "name": "charakter_statt_besitz",
+      "theme": "Charakter",
+      "kicker": "CHARAKTER",
+      "thoughts": ["Die meisten zeigen,|was sie haben.", "Die wenigen zeigen,|wer sie sind.", "Besitz sieht jeder sofort.", "Charakter zeigt sich leiser."],
+      "cta": "Folge für mehr.",
       "clips": [
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, an empty ferry slowly pulling away from a stone quay at dawn, the wake drawing long calm lines across the harbour water, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people facing camera, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a coastal road curving gently into low morning mist, the guardrail tracing a single cool line into the warm grey, only the next stretch visible, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people facing camera, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, an old sea chart slowly unrolling on a wooden table in warm side light, only paper and wood, a cool light streak across the surface, no compass, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people facing camera, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
-      ],
-      "music": "neoclassical cinematic ambient, warm and quietly hopeful, solo felt piano with warm strings and cello, soft sub drone, slow emotional arc from minor lifting into major, 68 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
-      "caption": "Eine Kurskorrektur fühlt sich an wie Scheitern, dabei ist sie das Gegenteil. Den alten Plan zu verteidigen kostet dich mehr als das Zugeben, dass er nicht mehr stimmt. Wer wendet, hat endlich hingesehen.\n\n#kurskorrektur #veraenderung #neuanfang #kopfundkompass #mindset"
-    },
-    {
-      "name": "deine_nadel_weiss",
-      "theme": "Echtheit / wahrer Norden",
-      "kicker": "DIE NADEL",
-      "thoughts": [
-        "Deine Nadel weiss es.|Du fragst trotzdem.",
-        "Jede fremde Meinung übertönt deine eigene.",
-        "Zustimmung beruhigt dich,|sie führt dich nicht.",
-        "Frag niemanden, ob du echt sein darfst."
-      ],
-      "endcard_term": "WAHRER NORDEN",
-      "cta": "Folge, wenn du die Nadel wieder hören willst.",
-      "clips": [
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a quiet rocky coastline at blue hour with a calm sea breathing against dark stone and a thin cool teal rim of light on the horizon over warm near-black foreground, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people facing camera, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, an old unrolled nautical chart on a weathered wooden table in raking side light, fine paper grain and soft creases catching a cool highlight while warm shadow settles around the edges, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people facing camera, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a single hand seen from behind resting on worn wood beside a small brass object in a narrow shaft of raking light with fine dust drifting in the air, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people facing camera, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a calm northern sea meeting dark rocks at blue hour, slow gentle waves, thin warm light on the far horizon, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, an old worn leather book and a brass key resting on dark oak in low raking side light, fine dust in the air, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a quiet mountain ridge under soft dawn mist, layered silhouettes fading into warm grey, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
       ],
       "music": "neoclassical cinematic ambient, warm and uplifting, solo felt piano with warm strings and cello, soft sub drone, slow emotional arc from minor to major, 68 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
-      "caption": "Dein Inneres weiss meistens früher Bescheid als dein Kopf. Du fragst trotzdem noch drei Leute, weil fremde Zustimmung sich sicherer anfühlt als die eigene. Aber wahr wird deine Richtung nicht durch Applaus. Sie war schon vorher da.\n\n#echtheit #selbstwert #kopfundkompass #wahrernorden #achtsamkeit"
+      "caption": "Die meisten Menschen zeigen, was sie haben. Die wenigen zeigen, wer sie sind. Besitz sieht jeder sofort. Charakter zeigt sich leiser, aber er bleibt.\n\n#charakter #mindset #kopfundkompass #achtsamkeit #tiefe"
     },
     {
-      "name": "kurs_halten_woche_vier",
-      "theme": "Disziplin / Kurs halten",
-      "kicker": "KURS HALTEN",
-      "thoughts": [
-        "Kurs halten|ist die vierte Woche.",
-        "Woche eins trägt die Neugier.",
-        "Woche vier trägt nur dich.",
-        "Genau da wirst du gebaut."
-      ],
-      "endcard_term": "WAHRER NORDEN",
-      "cta": "Speichere das, bevor du den Kurs verlässt.",
+      "name": "kampf_dahinter",
+      "theme": "Mitgefühl",
+      "kicker": "MITGEFÜHL",
+      "thoughts": ["Wüsstest du,|welchen Kampf er trägt,", "du würdest anders|mit ihm reden.", "Wir sehen nur das Verhalten.", "Nie die Geschichte dahinter."],
+      "cta": "Teile das.",
       "clips": [
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a single narrow footpath crossing a wide open field at first dawn light, cold shadows in the trodden line, warm faint horizon, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people facing camera, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a wooden workbench in half darkness with a single hand tool laid down neatly, a soft shaft of light with warm centre and cool edge, fine dust floating slowly, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people facing camera, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a quiet coastline at blue hour with calm low waves rolling onto dark wet sand, warm faint light on the far edge, cold teal in the shadows, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people facing camera, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a lone figure seen from far behind walking along a quiet rain-wet street at dusk, warm streetlight glow and cool blue shadows, reflections on the pavement, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no faces, no people facing camera, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, soft rain running down a dark window with a warm blurred room behind, quiet and still, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, an empty quiet park bench under bare trees in cold morning mist, warm faint light breaking through, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
       ],
-      "music": "neoclassical cinematic ambient, warm and uplifting, solo felt piano with warm strings and cello, soft sub drone, slow emotional arc from minor to major, 68 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
-      "caption": "Die erste Woche schafft jeder. Die vierte Woche schaffst nur du. Disziplin ist kein Gefühl, sie ist das leise Weitermachen, wenn keiner mehr zuschaut.\n\n#kopfundkompass #kurshalten #disziplin #mindset #archivkino"
+      "music": "neoclassical cinematic ambient, warm and tender, solo felt piano with warm strings and cello, soft sub drone, slow emotional arc, 66 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
+      "caption": "Wenn du wüsstest, welchen Kampf ein Mensch gerade führt, würdest du wahrscheinlich anders mit ihm sprechen. Wir sehen das Verhalten. Aber fast nie die Geschichte dahinter.\n\n#mitgefühl #mindset #kopfundkompass #achtsamkeit #menschlichkeit"
     },
     {
-      "name": "gegenwind_beweis",
-      "theme": "Widerstand / Gegenwind",
-      "kicker": "GEGENWIND",
-      "thoughts": [
-        "Gegenwind spürst du|erst beim Vorwärtsgehen.",
-        "Wer stehen bleibt, spürt nichts.",
-        "Der Drachen steigt genau dagegen.",
-        "Der Wind beweist: du gehst."
-      ],
-      "endcard_term": "DIE NADEL",
-      "cta": "Schick es jemandem, der die Nadel sucht.",
+      "name": "hundert_gruende",
+      "theme": "Selbstwert",
+      "kicker": "SELBSTWERT",
+      "thoughts": ["Manche geben dir|hundert Gründe zu zweifeln.", "Und keinen einzigen,|zu bleiben.", "Du musst nicht kämpfen,|um dazuzugehören.", "Nicht dort, wo du|dich klein machst."],
+      "cta": "Speichern.",
       "clips": [
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, tall dry grass and reeds bending hard under a steady wind on an open headland at blue hour, cold teal shadows and warm low light, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people facing camera, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a single bare tree on an exposed hillside holding steady against a strong wind at dusk, cold teal in the shadows, warm faint light on the ridge, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people facing camera, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a single kite line pulled taut against a grey windy sky over dark water at dusk, warm faint light at the horizon, cold teal shadows, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people facing camera, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a single small wooden boat resting on vast still water at dawn, calm reflections, thin warm light on the horizon, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a lone standing stone on open moorland under a wide grey sky, wind moving the grass, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a quiet open road stretching into soft morning light between fields, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
       ],
-      "music": "neoclassical cinematic ambient, warm and quietly uplifting, solo felt piano with warm strings and cello, soft sub drone, slow emotional arc from minor to major, 70 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
-      "caption": "Gegenwind fühlt sich an wie ein Nein von aussen. Dabei spürst du ihn nur, weil du dich bewegst. Der Widerstand ist kein Stoppschild, er ist der Beweis.\n\n#kopfundkompass #gegenwind #mindset #durchhalten #archivkino"
+      "music": "neoclassical cinematic ambient, warm and quietly reassuring, solo felt piano with warm strings and cello, soft sub drone, slow arc from minor to major, 68 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
+      "caption": "Manche Menschen geben dir hundert Gründe, an dir selbst zu zweifeln, und keinen einzigen, zu bleiben. Du musst nicht kämpfen, um irgendwo dazuzugehören, wo du dich klein und unerwünscht fühlst. Die richtigen Menschen lassen dich nicht darum kämpfen.\n\n#selbstwert #mindset #kopfundkompass #grenzen #achtsamkeit"
     },
     {
-      "name": "haende_frei",
-      "theme": "Loslassen / losmachen",
-      "kicker": "LOSMACHEN",
-      "thoughts": [
-        "Losmachen fühlt sich|an wie Verrat.",
-        "Du hältst den Groll|wie Treue.",
-        "Er schützt dich vor|gar nichts mehr.",
-        "Das Gewicht trägst|nur noch du."
-      ],
-      "endcard_term": "WAHRER NORDEN",
-      "cta": "Folge, wenn du zurück zu deinem Norden willst.",
+      "name": "stille_disziplin",
+      "theme": "Disziplin",
+      "kicker": "DISZIPLIN",
+      "thoughts": ["Stille Disziplin spricht|lauter als jeder Ruhm.", "Die Fortschritte,|die keiner sieht,", "sind am Ende|die wertvollsten.", "Sie bauen, wer du wirst."],
+      "cta": "Folge für mehr.",
       "clips": [
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a wet mooring rope slowly sliding off a weathered wooden bollard on a quiet harbour at dawn, cool droplets catching the light, calm water below, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people facing camera, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a heavy anchor chain gliding link by link down through the hawse pipe into dark still water, cool wet metal against a warm deck, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people facing camera, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, two open empty hands resting and slowly relaxing on a worn wooden table in low side light, fine dust in the air, seen from behind, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people facing camera, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a single narrow path crossing a wide field in the first grey light before sunrise, quiet and still, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a wooden workbench in half darkness with a single tool laid down and a soft shaft of light with warm centre and cool edge, fine dust floating, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a calm mountain lake at dawn with mist lifting slowly off the still water, warm faint light behind dark peaks, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
       ],
-      "music": "neoclassical cinematic ambient, warm and uplifting, solo felt piano with warm strings and cello, soft sub drone, slow emotional arc from minor to major resolving at the end, 68 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
-      "caption": "Manches hältst du fest, weil Festhalten sich nach Treue anfühlt. Aber der Groll schützt dich vor nichts mehr. Losmachen heisst nicht vergessen, es heisst nur, die Hände wieder frei zu haben.\n\n#losmachen #loslassen #selbstwert #kopfundkompass #achtsamkeit"
+      "music": "neoclassical cinematic ambient, warm and steady, solo felt piano with low cello, soft sub drone, slow arc from minor to major, 70 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
+      "caption": "Stille Disziplin spricht am Ende lauter als jeder Ruhm. Die leisen Fortschritte, die niemand sieht, sind oft die wertvollsten. Sie bauen genau den Menschen, der du werden willst.\n\n#disziplin #mindset #kopfundkompass #stille #wachstum"
+    },
+    {
+      "name": "momente_zu_spaet",
+      "theme": "Achtsamkeit",
+      "kicker": "ACHTSAMKEIT",
+      "thoughts": ["Die wichtigsten Momente|erkennst du zu spät.", "Erst, wenn sie|vorbei sind.", "Das Schönste fühlt sich|oft ganz gewöhnlich an.", "Sieh heute genauer hin."],
+      "cta": "Speichern.",
+      "clips": [
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a warm dim kitchen at dawn with soft steam rising slowly from a cup on a wooden table, gentle window light, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, soft late afternoon light falling across a lived-in room, dust drifting slowly in the warm beam, quiet and still, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a calm garden at golden dusk with slow branches moving in a light breeze, warm low sun, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
+      ],
+      "music": "neoclassical cinematic ambient, warm and nostalgic, solo felt piano with warm strings, soft sub drone, slow gentle arc, 66 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
+      "caption": "Du erkennst die wichtigsten Momente deines Lebens fast immer erst, wenn sie vorbei sind. Das Tragische ist: Das Schönste fühlt sich im Alltag oft ganz gewöhnlich an. Sieh heute etwas genauer hin.\n\n#achtsamkeit #mindset #kopfundkompass #dankbarkeit #gegenwart"
+    },
+    {
+      "name": "satz_den_du_brauchst",
+      "theme": "Wahrheit",
+      "kicker": "WAHRHEIT",
+      "thoughts": ["Manchmal ist der Satz,|den du brauchst,", "genau der,|den du nicht hören willst.", "Nicht alles Angenehme|bringt dich weiter.", "Und nicht jede Wahrheit|tut zuerst gut."],
+      "cta": "Teile das.",
+      "clips": [
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, the pages of an open old book turning slowly in soft side light on a dark wooden desk, fine dust in the air, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a single candle burning quietly in a dim warm room, soft flicker, deep calm shadows, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
+        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a still sea under a heavy grey sky slowly clearing to a thin band of warm light on the horizon, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
+      ],
+      "music": "neoclassical cinematic ambient, warm and honest, solo felt piano with warm strings and cello, soft sub drone, slow arc from minor to major, 68 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
+      "caption": "Manchmal ist der Satz, den du heute lesen musst, genau der, den du eigentlich nicht hören wolltest. Nicht alles, was sich gut anfühlt, bringt dich weiter. Und nicht jede Wahrheit fühlt sich zuerst angenehm an.\n\n#wahrheit #mindset #kopfundkompass #wachstum #achtsamkeit"
     }
   ],
   "built": [
-    {
-      "name": "peilung_verloren",
-      "theme": "Selbstwert & Orientierung",
-      "permalink": "https://www.instagram.com/reel/Daz8Yr9II6I/"
-    },
-    {
-      "name": "leise_abdrift_handy",
-      "theme": "Ablenkung / Abdrift",
-      "permalink": "https://www.instagram.com/reel/Daz-18qEXdc/"
-    }
+    { "name": "peilung_verloren", "theme": "Selbstwert & Orientierung", "permalink": "https://www.instagram.com/reel/Daz8Yr9II6I/" },
+    { "name": "leise_abdrift_handy", "theme": "Ablenkung / Abdrift", "permalink": "https://www.instagram.com/reel/Daz-18qEXdc/" }
   ]
 }

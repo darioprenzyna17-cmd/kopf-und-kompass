@@ -121,6 +121,7 @@ body{{width:1080px;height:1920px;position:relative;font-family:'Fraunces',serif;
 
 
 def render_endcard(term, cta, out_png):
+    term_html = (f'<div class="term"><span class="tick"></span>{term}</div>' if term else "")
     html = f"""<!doctype html><html><head><meta charset="utf-8"><style>
 {_fonts_css()}
 *{{margin:0;padding:0;box-sizing:border-box;}}
@@ -130,14 +131,14 @@ body{{width:1080px;height:1920px;position:relative;font-family:'Fraunces',serif;
 .term{{font-weight:600;font-size:32px;letter-spacing:.30em;text-transform:uppercase;color:{META};
   margin-bottom:42px;}}
 .term .tick{{display:inline-block;width:24px;height:2px;background:{PETROL};vertical-align:middle;margin-right:16px;margin-bottom:6px;}}
-.mark{{font-weight:600;font-size:66px;letter-spacing:.14em;color:{PAPER};margin-bottom:44px;}}
+.mark{{font-weight:600;font-size:66px;letter-spacing:.14em;color:{PAPER};margin-bottom:40px;}}
 .cta{{font-style:italic;font-weight:440;font-size:40px;line-height:1.35;color:{META};}}
 .hair{{width:180px;height:2px;background:{PETROL};margin:52px auto 0;}}
 .handle{{position:absolute;left:0;right:0;bottom:150px;text-align:center;font-weight:500;
   font-size:30px;letter-spacing:.10em;color:#8A7C66;}}
 </style></head><body>
 <div class="mid">
-  <div class="term"><span class="tick"></span>{term}</div>
+  {term_html}
   <div class="mark">Kopf &amp; Kompass</div>
   <div class="cta">{cta}</div>
   <div class="hair"></div>
@@ -290,11 +291,11 @@ def produce(name, r):
     cards = []
     for i, t in enumerate(thoughts):
         png = OUT / f"{name}_card{i}.png"
-        render_card(r["kicker"] if i == 0 else "", t, png, hook=(i == 0))
+        render_card(r.get("kicker", "") if i == 0 else "", t, png, hook=(i == 0))
         s0, e0 = wins[i]
         cards.append((png, s0, e0, HOOK_IN if i == 0 else FADE_IN))
     endcard = OUT / f"{name}_end.png"
-    render_endcard(r["endcard_term"], r["cta"], endcard)
+    render_endcard(r.get("endcard_term", ""), r["cta"], endcard)
     # 4) Musik
     mus = OUT / f"{name}_music.mp3"
     if not mus.exists() or mus.stat().st_size < 10000:
