@@ -1,14 +1,12 @@
 """
-Kopf & Kompass — cineastisches Nachdenk-/Mindset-Reel.
-Ein ruhiges, atmosphaerisches KI-Footage (Veo 3.1) + kinetische Text-Beats,
-die einen Gedanken aufbauen (Haken -> Vertiefung -> Wende/Aufrichtung) + tiefe
-Musik + leise Wortmarken-Schlusskarte. Kein lautes Pattern-Interrupt, sondern Sog
-durch Bild, Wahrheit und Ruhe.
+Kopf & Kompass — Reel-Engine im Look "Archivkino".
+Warmes Filmschwarz, EIN kuehler Petrol-Akzent (nur Haarlinien/Tick), Serifenschrift
+Fraunces, weiche Cross-Dissolves (1,2s), ruhiger Text mit langer Standzeit (immer gut
+leserlich), Filmgrade + Korn + Vignette, Schlusskarte ohne Kompass, saubere Musik (loudnorm).
+Kein Hardcut, kein Shake, kein Blitz, kein Slow-Mo-Kitsch. Sog statt Reiz.
 
-Baut EIN Reel:  python3 build_video_reel.py <name>        (Name aus reel_pipeline.json)
-                python3 build_video_reel.py --pipeline     (naechstes approved-Konzept, dequeued)
-Footage wird gecacht (assets/video_reels/<name>_*.mp4); erneuter Lauf spart Veo-Credits.
-Postet NICHT (nur Erzeugung).
+Baut EIN Reel:  python3 build_video_reel.py <name>   |   --pipeline
+Spec: strategie/DESIGN.md (Archivkino), Zahlen in §0.
 """
 import base64
 import json
@@ -29,34 +27,27 @@ CHROME = os.environ.get("CHROME_BIN", "/Applications/Google Chrome.app/Contents/
 GEN = "https://api.kie.ai/api/v1/veo/generate"
 REC = "https://api.kie.ai/api/v1/veo/record-info"
 
-# --- Kopf & Kompass Look (bewusst anders als jeder andere Account: dunkel, warm, filmisch) ---
-BG = "#0b0c10"          # tiefes, warmes Nachtschwarz
-BG_RGB = "11,12,16"
-INK = "#f4efe6"         # warmes Elfenbein
-ACC = "#d8b57f"         # gedaempftes, edles Amber (nicht grell)
+# --- Archivkino-Palette (DESIGN.md §1) ---
+FILMBLACK = "#1A1712"; FB_RGB = "26,23,18"
+SHADOW = "#241C15"
+PAPER = "#F2E9D8"          # Kernaussagen
+LIGHT = "#E4D5BC"
+META = "#C9B79A"           # Kicker / Untertext
+PETROL = "#3B6E6A"         # einziger Akzent, nur Haarlinie/Tick
+PETROL_HI = "#5C9089"
 
-# Timing: ruhig, gut lesbar. Echtzeit (kein Slow-Mo), harte Textschnitte (kein Weg-Bluren).
-FOOT_SRC = 8.0
-SLOW = 1.0
-FOOT_LEN = FOOT_SRC * SLOW
-OUTRO_LEN = 3.6
-TOTAL = FOOT_LEN + OUTRO_LEN
-XF = 0.05
+# --- Timing (DESIGN.md §0) ---
+DISSOLVE = 1.2             # Cross-Dissolve zwischen Clips
+END_LEN = 3.5             # Schlusskarten-Standzeit
+END_XF = 1.0             # Dissolve in die Schlusskarte
+FADE_IN = 0.9; FADE_OUT = 0.7; HOOK_IN = 0.5
+OVERLAP = 0.25            # Karten-Ueberlappung (weich)
+ST_MIN = 3.5; ST_MAX = 5.0
 
 
-def make_windows(has_hook, n_beats):
-    """Gleichmaessige, ueberlappende Fenster ueber 0..FOOT_LEN, damit der Textbereich
-    durchgehend sichtbar bleibt (nur Inhalt wechselt). Hook = harter Cut ab Frame 1."""
-    k = (1 if has_hook else 0) + n_beats
-    seg = FOOT_LEN / k
-    wins = []
-    for i in range(k):
-        s = 0.0 if i == 0 else round(i * seg - XF, 2)
-        e = FOOT_LEN if i == k - 1 else round((i + 1) * seg + XF, 2)
-        din = 0.0 if (i == 0 and has_hook) else XF
-        dout = XF
-        wins.append((s, e, din, dout))
-    return wins
+def standzeit(text):
+    w = len(text.replace("|", " ").split())
+    return max(ST_MIN, min(ST_MAX, w * 0.42 + 1.6))
 
 
 def kie_key():
@@ -77,10 +68,10 @@ def _b64(p):
 
 
 def _fonts_css():
-    return (f"@font-face{{font-family:'Quote';src:url(data:font/ttf;base64,"
-            f"{_b64(FONTS/'PlayfairDisplay.ttf')}) format('truetype');}}"
-            f"@font-face{{font-family:'Sans';src:url(data:font/ttf;base64,"
-            f"{_b64(FONTS/'Inter.ttf')}) format('truetype');}}")
+    return (f"@font-face{{font-family:'Fraunces';font-weight:400 700;font-style:normal;"
+            f"src:url(data:font/ttf;base64,{_b64(FONTS/'Fraunces.ttf')}) format('truetype');}}"
+            f"@font-face{{font-family:'Fraunces';font-weight:400 700;font-style:italic;"
+            f"src:url(data:font/ttf;base64,{_b64(FONTS/'Fraunces-Italic.ttf')}) format('truetype');}}")
 
 
 def _shoot(html, out_png, transparent):
@@ -94,76 +85,61 @@ def _shoot(html, out_png, transparent):
     subprocess.run(args, check=True, capture_output=True)
 
 
-def render_beat(headline, out_png):
-    """Ein Gedanken-Beat: zwei Zeilen, ruhig und gross. Letzte Zeile im Amber-Akzent."""
-    l1, l2 = (headline.split("|") + [""])[:2]
+def _hero_size(text):
+    longest = max((len(l) for l in text.split("|")), default=0)
+    return 92 if longest <= 16 else 84 if longest <= 22 else 74 if longest <= 30 else 64
+
+
+def render_card(kicker, text, out_png, hook=False):
+    """Text im Band 40-65%, linksbuendig, Fraunces. Petrol-Haarlinie + optional Kicker."""
+    hs = _hero_size(text)
+    lines = "".join(f"<div>{l.strip()}</div>" for l in text.split("|"))
+    kick = ""
+    if kicker:
+        kick = (f'<div class="kick"><span class="tick"></span>{kicker}</div>')
     html = f"""<!doctype html><html><head><meta charset="utf-8"><style>
 {_fonts_css()}
 *{{margin:0;padding:0;box-sizing:border-box;}}
 html,body{{background:transparent;}}
-body{{width:1080px;height:1920px;position:relative;font-family:'Quote',serif;}}
-.topgrad{{position:absolute;left:0;right:0;top:0;height:260px;background:linear-gradient(to bottom,rgba({BG_RGB},.62),rgba({BG_RGB},0));}}
-.botgrad{{position:absolute;left:0;right:0;bottom:0;height:60%;background:linear-gradient(to top,rgba({BG_RGB},.97) 28%,rgba({BG_RGB},.8) 60%,rgba({BG_RGB},0));}}
-.wrap{{position:absolute;left:84px;right:84px;bottom:380px;}}
-.bar{{width:70px;height:5px;background:{ACC};margin-bottom:46px;opacity:.9;}}
-.h div{{font-weight:600;font-size:96px;line-height:1.12;letter-spacing:-.5px;color:{INK};}}
-.h div:last-child{{color:{ACC};font-style:italic;}}
-.handle{{position:absolute;left:84px;bottom:130px;font-family:'Sans';font-weight:500;font-size:32px;letter-spacing:.5px;color:rgba(244,239,230,.55);}}
+body{{width:1080px;height:1920px;position:relative;font-family:'Fraunces',serif;}}
+.scrim{{position:absolute;inset:0;background:
+  radial-gradient(120% 52% at 20% 58%,rgba({FB_RGB},.66),transparent 68%),
+  linear-gradient(to top,rgba({FB_RGB},.82) 6%,rgba({FB_RGB},0) 42%);}}
+.block{{position:absolute;left:108px;right:108px;bottom:712px;}}
+.rule{{width:64px;height:2px;background:{PETROL};margin-bottom:30px;}}
+.kick{{font-weight:600;font-size:30px;letter-spacing:.30em;text-transform:uppercase;
+  color:{META};margin-bottom:26px;display:flex;align-items:center;}}
+.tick{{display:inline-block;width:26px;height:2px;background:{PETROL};margin-right:16px;}}
+.hero div{{font-weight:460;font-size:{hs}px;line-height:1.26;letter-spacing:.01em;color:{PAPER};
+  text-shadow:0 2px 24px rgba(0,0,0,.55);text-wrap:balance;}}
 </style></head><body>
-<div class="topgrad"></div><div class="botgrad"></div>
-<div class="wrap"><div class="bar"></div><div class="h"><div>{l1}</div><div>{l2}</div></div></div>
-<div class="handle">@kopfundkompass</div>
+<div class="scrim"></div>
+<div class="block"><div class="rule"></div>{kick}<div class="hero">{lines}</div></div>
 </body></html>"""
     _shoot(html, out_png, transparent=True)
 
 
-def render_hook(top, line, out_png):
-    """Cold-Open-Hook: kurze Amber-Zeile + grosser Gedanke, hart eingeschnitten.
-    Groesse passt sich der Laenge an."""
-    tsize = 52 if len(top) <= 22 else 42
-    lsize = 108 if len(line) <= 22 else 86 if len(line) <= 40 else 68
+def render_endcard(term, cta, out_png):
     html = f"""<!doctype html><html><head><meta charset="utf-8"><style>
 {_fonts_css()}
 *{{margin:0;padding:0;box-sizing:border-box;}}
-html,body{{background:transparent;}}
-body{{width:1080px;height:1920px;position:relative;font-family:'Quote',serif;}}
-.topgrad{{position:absolute;left:0;right:0;top:0;height:260px;background:linear-gradient(to bottom,rgba({BG_RGB},.62),rgba({BG_RGB},0));}}
-.botgrad{{position:absolute;left:0;right:0;bottom:0;height:62%;background:linear-gradient(to top,rgba({BG_RGB},.97) 28%,rgba({BG_RGB},.82) 60%,rgba({BG_RGB},0));}}
-.wrap{{position:absolute;left:84px;right:84px;bottom:380px;}}
-.top{{font-family:'Sans';font-weight:600;font-size:{tsize}px;letter-spacing:3px;text-transform:uppercase;color:{ACC};margin-bottom:30px;}}
-.line{{font-weight:600;font-size:{lsize}px;line-height:1.1;letter-spacing:-.5px;color:{INK};}}
-.handle{{position:absolute;left:84px;bottom:130px;font-family:'Sans';font-weight:500;font-size:32px;letter-spacing:.5px;color:rgba(244,239,230,.55);}}
+body{{width:1080px;height:1920px;position:relative;font-family:'Fraunces',serif;
+  background:radial-gradient(90% 60% at 50% 46%,{SHADOW},{FILMBLACK} 72%);overflow:hidden;}}
+.mid{{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;padding:0 120px;}}
+.term{{font-weight:600;font-size:32px;letter-spacing:.30em;text-transform:uppercase;color:{META};
+  margin-bottom:42px;}}
+.term .tick{{display:inline-block;width:24px;height:2px;background:{PETROL};vertical-align:middle;margin-right:16px;margin-bottom:6px;}}
+.mark{{font-weight:600;font-size:66px;letter-spacing:.14em;color:{PAPER};margin-bottom:44px;}}
+.cta{{font-style:italic;font-weight:440;font-size:40px;line-height:1.35;color:{META};}}
+.hair{{width:180px;height:2px;background:{PETROL};margin:52px auto 0;}}
+.handle{{position:absolute;left:0;right:0;bottom:150px;text-align:center;font-weight:500;
+  font-size:30px;letter-spacing:.10em;color:#8A7C66;}}
 </style></head><body>
-<div class="topgrad"></div><div class="botgrad"></div>
-<div class="wrap"><div class="top">{top}</div><div class="line">{line}</div></div>
-<div class="handle">@kopfundkompass</div>
-</body></html>"""
-    _shoot(html, out_png, transparent=True)
-
-
-def render_outro(headline, cta, out_png):
-    """Leise, edle Schlusskarte: Wortmarke KOPF & KOMPASS, Kernsatz, dezenter CTA."""
-    l1, l2 = (headline.split("|") + [""])[:2]
-    html = f"""<!doctype html><html><head><meta charset="utf-8"><style>
-{_fonts_css()}
-*{{margin:0;padding:0;box-sizing:border-box;}}
-body{{width:1080px;height:1920px;position:relative;font-family:'Quote',serif;background:{BG};overflow:hidden;}}
-.glow{{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);width:1250px;height:1250px;background:radial-gradient(circle,rgba(216,181,127,.12),rgba({BG_RGB},0) 62%);}}
-.mid{{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;padding:0 100px;}}
-.mark{{font-family:'Sans';font-weight:700;font-size:38px;letter-spacing:8px;text-transform:uppercase;color:{INK};}}
-.rule{{width:66px;height:3px;background:{ACC};margin:34px auto 60px;}}
-.h div{{font-weight:600;font-size:92px;line-height:1.12;letter-spacing:-.5px;color:{INK};}}
-.h div:last-child{{color:{ACC};font-style:italic;}}
-.cta{{display:inline-block;margin-top:64px;border:2px solid rgba(216,181,127,.75);color:{ACC};font-family:'Sans';font-weight:600;font-size:38px;
-      padding:26px 54px;border-radius:60px;letter-spacing:.3px;}}
-.handle{{position:absolute;left:0;right:0;bottom:150px;text-align:center;font-family:'Sans';font-weight:500;font-size:36px;letter-spacing:.5px;color:rgba(244,239,230,.6);}}
-</style></head><body>
-<div class="glow"></div>
 <div class="mid">
+  <div class="term"><span class="tick"></span>{term}</div>
   <div class="mark">Kopf &amp; Kompass</div>
-  <div class="rule"></div>
-  <div class="h"><div>{l1}</div><div>{l2}</div></div>
   <div class="cta">{cta}</div>
+  <div class="hair"></div>
 </div>
 <div class="handle">@kopfundkompass</div>
 </body></html>"""
@@ -214,89 +190,139 @@ def gen_music(prompt, out):
     raise TimeoutError("music")
 
 
-def compose_story(raw, overlay_specs, outro_png, music, out):
-    """Ein Clip + Text-Beats + Schlusskarte, NUR unsere Musik als Ton (ruhig, kein Impact).
-    overlay_specs: Liste von (png_pfad, start, ende, fade_in, fade_out)."""
-    ins = ["-i", str(raw)]
-    for spec in overlay_specs:
-        ins += ["-loop", "1", "-t", str(FOOT_LEN), "-i", str(spec[0])]
-    ins += ["-loop", "1", "-t", str(OUTRO_LEN), "-i", str(outro_png), "-i", str(music)]
-    n = len(overlay_specs)
-    outro_idx = 1 + n
-    music_idx = 1 + n + 1
-    parts = [f"[0:v]trim=0:{FOOT_SRC},setpts={SLOW}*PTS,scale=1080:1920:force_original_aspect_ratio=increase,"
-             "crop=1080:1920,setsar=1,fps=30[v0]"]
-    for i, (_p, s, e, din, dout) in enumerate(overlay_specs):
-        idx = 1 + i
-        fi = max(din, 0.02)
-        parts.append(f"[{idx}:v]format=rgba,fade=t=in:st={s}:d={fi}:alpha=1,"
-                     f"fade=t=out:st={round(e-dout, 3)}:d={dout}:alpha=1[b{i}]")
-    chain = "[v0]"
-    for i in range(n):
-        nxt = f"[o{i}]" if i < n - 1 else "[vfoot_raw]"
-        parts.append(f"{chain}[b{i}]overlay=0:0{nxt}")
-        chain = nxt
-    parts.append("[vfoot_raw]format=yuv420p[vfoot]")
-    parts.append(f"[{outro_idx}:v]scale=1080:1920,setsar=1,fps=30,fade=t=in:st=0:d=0.5,format=yuv420p[vout]")
-    parts.append("[vfoot][vout]concat=n=2:v=1:a=0[vall]")
-    # Nur unsere Musik, ruhige Ein-/Ausblende. Kein Footage-Ton, kein Impact-Boom.
-    parts.append(f"[{music_idx}:a]atrim=0:{TOTAL},asetpts=PTS-STARTPTS,volume=0.9,"
-                 f"afade=t=in:st=0:d=0.6,afade=t=out:st={TOTAL-1.4}:d=1.4[a]")
+GRADE = ("eq=saturation=0.82:contrast=1.08:brightness=0.01:gamma=1.02,"
+         "curves=m='0/0.055 0.22/0.16 0.5/0.5 0.78/0.85 1/0.97',"
+         "colorbalance=rs=-0.03:gs=0.01:bs=0.05:rm=0.04:gm=0.0:bm=-0.03:rh=0.06:gh=0.02:bh=-0.05,"
+         "colorchannelmixer=rr=1.02:gg=1.0:bb=0.97,"
+         "noise=alls=9:allf=t+u,vignette=PI/5:mode=backward,gblur=sigma=0.3")
+
+
+def compose_montage(clips, cl, out):
+    """3 Clips -> weiche Cross-Dissolves (1,2s) -> Archivkino-Grade + Korn + Vignette."""
+    ins = []
+    for c in clips:
+        ins += ["-i", str(c)]
+    k = len(clips)
+    parts = []
+    for i in range(k):
+        parts.append(f"[{i}:v]trim=0:{cl},setpts=PTS-STARTPTS,scale=1080:1920:force_original_aspect_ratio="
+                     f"increase,crop=1080:1920,fps=24,setsar=1,format=yuv420p[c{i}]")
+    # xfade-Kette
+    prev = "c0"
+    for i in range(1, k):
+        off = round(i * cl - i * DISSOLVE, 3)
+        tag = f"x{i}" if i < k - 1 else "m"
+        parts.append(f"[{prev}][c{i}]xfade=transition=fade:duration={DISSOLVE}:offset={off}[{tag}]")
+        prev = tag
+    parts.append(f"[m]{GRADE},format=yuv420p[out]")
     fc = ";".join(parts)
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", *ins, "-filter_complex", fc,
-                    "-map", "[vall]", "-map", "[a]", "-t", str(TOTAL),
-                    "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-pix_fmt", "yuv420p",
-                    "-c:a", "aac", "-b:a", "192k", str(out)], check=True, timeout=300)
+                    "-map", "[out]", "-c:v", "libx264", "-preset", "slow", "-crf", "17",
+                    "-pix_fmt", "yuv420p", str(out)], check=True, timeout=600)
+
+
+def compose_final(montage, cards, endcard_png, music, out, foot_len):
+    """cards: Liste (png, s, e, fade_in). Overlay auf Montage, Dissolve in Schlusskarte, Musik loudnorm."""
+    total = round(foot_len + END_LEN - END_XF, 3)
+    ins = ["-i", str(montage)]
+    for (png, *_r) in cards:
+        ins += ["-loop", "1", "-t", str(foot_len), "-i", str(png)]
+    ins += ["-loop", "1", "-t", str(END_LEN), "-i", str(endcard_png), "-i", str(music)]
+    n = len(cards)
+    end_idx = 1 + n
+    mus_idx = 1 + n + 1
+    parts = []
+    for i, (_png, s, e, fin) in enumerate(cards):
+        idx = 1 + i
+        parts.append(f"[{idx}:v]format=rgba,fade=t=in:st={round(s,3)}:d={fin}:alpha=1,"
+                     f"fade=t=out:st={round(e-FADE_OUT,3)}:d={FADE_OUT}:alpha=1[c{i}]")
+    chain = "[0:v]"
+    for i in range(n):
+        nxt = f"[o{i}]" if i < n - 1 else "[vtext]"
+        parts.append(f"{chain}[c{i}]overlay=0:0{nxt}")
+        chain = nxt
+    parts.append("[vtext]format=yuv420p[vt]")
+    parts.append(f"[{end_idx}:v]scale=1080:1920,setsar=1,fps=24,format=yuv420p[ve]")
+    parts.append(f"[vt][ve]xfade=transition=fade:duration={END_XF}:offset={round(foot_len-END_XF,3)}[v]")
+    parts.append(f"[{mus_idx}:a]atrim=0:{total},asetpts=PTS-STARTPTS,highpass=f=30,afftdn=nr=6,"
+                 f"loudnorm=I=-14:TP=-1.5,afade=t=in:st=0:d=0.8,afade=t=out:st={round(total-2.0,3)}:d=2.0[a]")
+    fc = ";".join(parts)
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", *ins, "-filter_complex", fc,
+                    "-map", "[v]", "-map", "[a]", "-t", str(total),
+                    "-c:v", "libx264", "-preset", "slow", "-crf", "18", "-b:v", "15M",
+                    "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "320k", str(out)],
+                   check=True, timeout=600)
+    return total
 
 
 def produce(name, r):
-    global FOOT_LEN, TOTAL
-    seg_len = r.get("seg_len", 2.6)
-    FOOT_LEN = round(seg_len * ((1 if r.get("hook") else 0) + len(r["beats"])), 2)
-    FOOT_LEN = min(FOOT_LEN, FOOT_SRC)   # ein 8s-Clip traegt alle Beats
-    TOTAL = FOOT_LEN + OUTRO_LEN
-    raw = OUT / f"{name}_raw.mp4"; mus = OUT / f"{name}_music.mp3"; outro = OUT / f"{name}_outro.png"; fin = OUT / f"{name}.mp4"
+    thoughts = r["thoughts"]
+    n = len(thoughts)
+    # Standzeit-Fenster (weich ueberlappend)
+    wins = []
+    s = 0.0
+    for i, t in enumerate(thoughts):
+        st = standzeit(t)
+        wins.append((s, round(s + st, 3)))
+        s = round(s + st - OVERLAP, 3)
+    foot_len = wins[-1][1]
+    cl = round((foot_len + (len(r["clips"]) - 1) * DISSOLVE) / len(r["clips"]), 3)
     (OUT / f"{name}.caption.txt").write_text(r["caption"], encoding="utf-8")
-    if raw.exists() and raw.stat().st_size > 100000:
-        print(f"[{name}] 1/4 Footage vorhanden, Veo uebersprungen", flush=True)
-    else:
-        print(f"[{name}] 1/4 Footage (Veo) ...", flush=True)
-        veo_generate(r["prompt"], raw, duration=8)
-    print(f"[{name}] 2/4 Hook + Beats + Outro rendern ...", flush=True)
-    has_hook = bool(r.get("hook"))
-    wins = make_windows(has_hook, len(r["beats"]))
-    specs = []
-    if has_hook:
-        hp = OUT / f"{name}_hook.png"; render_hook(r["hook"][0], r["hook"][1], hp)
-        specs.append((hp, *wins[0]))
-    off = 1 if has_hook else 0
-    for i, b in enumerate(r["beats"]):
-        bp = OUT / f"{name}_beat{i}.png"; render_beat(b, bp)
-        specs.append((bp, *wins[off + i]))
-    render_outro(r["outro_hl"], r["outro_cta"], outro)
+
+    # 1) Footage
+    clips_raw = []
+    for i, cp in enumerate(r["clips"]):
+        cr = OUT / f"{name}_clip{i}_raw.mp4"
+        if cr.exists() and cr.stat().st_size > 100000:
+            print(f"[{name}] 1/5 Clip {i} vorhanden", flush=True)
+        else:
+            print(f"[{name}] 1/5 Clip {i+1}/{len(r['clips'])} (Veo) ...", flush=True)
+            veo_generate(cp, cr, duration=8)
+        clips_raw.append(cr)
+    # 2) Montage + Grade
+    montage = OUT / f"{name}_montage.mp4"
+    print(f"[{name}] 2/5 Montage + Grade + Korn ...", flush=True)
+    compose_montage(clips_raw, cl, montage)
+    # 3) Textkarten + Schlusskarte
+    print(f"[{name}] 3/5 Textkarten (Fraunces) ...", flush=True)
+    cards = []
+    for i, t in enumerate(thoughts):
+        png = OUT / f"{name}_card{i}.png"
+        render_card(r["kicker"] if i == 0 else "", t, png, hook=(i == 0))
+        s0, e0 = wins[i]
+        cards.append((png, s0, e0, HOOK_IN if i == 0 else FADE_IN))
+    endcard = OUT / f"{name}_end.png"
+    render_endcard(r["endcard_term"], r["cta"], endcard)
+    # 4) Musik
+    mus = OUT / f"{name}_music.mp3"
     if not mus.exists() or mus.stat().st_size < 10000:
-        print(f"[{name}] 3/4 Musik ...", flush=True)
+        print(f"[{name}] 4/5 Musik (Suno) ...", flush=True)
         gen_music(r["music"], mus)
     else:
-        print(f"[{name}] 3/4 Musik vorhanden, uebersprungen", flush=True)
-    print(f"[{name}] 4/4 Compose ...", flush=True)
-    compose_story(raw, specs, outro, mus, fin)
-    print(f"FERTIG -> {fin}", flush=True)
+        print(f"[{name}] 4/5 Musik vorhanden", flush=True)
+    # 5) Final
+    print(f"[{name}] 5/5 Compose final ...", flush=True)
+    fin = OUT / f"{name}.mp4"
+    dur = compose_final(montage, cards, endcard, mus, fin, foot_len)
+    # Laengen-Check (§0)
+    verdict = "OK"
+    if dur > 28.0:
+        verdict = f"FAIL hart ({dur:.1f}s > 28s)"
+    elif dur > 27.0:
+        verdict = f"WARN weich ({dur:.1f}s > 27s)"
+    elif dur < 18.0:
+        verdict = f"WARN kurz ({dur:.1f}s < 18s)"
+    print(f"FERTIG -> {fin}  ({dur:.1f}s, {verdict})", flush=True)
     return fin
 
 
 def _queue_today(name, caption):
-    """Haengt den fertigen Reel als heute faelligen Eintrag an queue.jsonl (Zeit aus posting_times.json)."""
     from datetime import date
-    QUEUE = HERE / "queue.jsonl"
-    PT = HERE / "posting_times.json"
-    wd = date.today().weekday()
-    tm = "12:00:00"
+    QUEUE = HERE / "queue.jsonl"; PT = HERE / "posting_times.json"
+    wd = date.today().weekday(); tm = "12:00:00"
     if PT.exists():
-        try:
-            tm = json.loads(PT.read_text()).get(str(wd), tm)
-        except Exception:
-            pass
+        try: tm = json.loads(PT.read_text()).get(str(wd), tm)
+        except Exception: pass
     day = date.today().strftime("%Y-%m-%d")
     entry = {"id": f"reel-{name}-{day}", "datetime": f"{day}T{tm}", "theme": name,
              "format": "reel", "video_url": f"assets/video_reels/{name}.mp4",
@@ -305,12 +331,12 @@ def _queue_today(name, caption):
         f.write(json.dumps(entry, ensure_ascii=False) + "\n")
 
 
-def _find_concept(name):
+def _find(name):
     data = json.loads((HERE / "reel_pipeline.json").read_text())
     for c in data.get("approved", []) + data.get("built", []):
         if c.get("name") == name:
             return c
-    raise KeyError(f"Konzept '{name}' nicht in reel_pipeline.json")
+    raise KeyError(name)
 
 
 def main():
@@ -320,19 +346,16 @@ def main():
         data = json.loads(pf.read_text())
         approved = data.get("approved", [])
         if not approved:
-            print("Pipeline leer, kein freigegebenes Konzept.")
-            return
-        concept = approved[0]
-        name = concept["name"]
-        produce(name, concept)
-        _queue_today(name, concept["caption"])
+            print("Pipeline leer."); return
+        c = approved[0]; name = c["name"]
+        produce(name, c)
+        _queue_today(name, c["caption"])
         data["approved"] = approved[1:]
-        data.setdefault("built", []).append({"name": name, "theme": concept.get("theme")})
+        data.setdefault("built", []).append({"name": name, "theme": c.get("theme")})
         pf.write_text(json.dumps(data, ensure_ascii=False, indent=2))
-        print(f"PIPELINE: {name} gebaut + fuer heute eingeplant, {len(data['approved'])} Konzepte verbleiben")
+        print(f"PIPELINE: {name} gebaut, {len(data['approved'])} verbleiben")
     elif args:
-        name = args[0]
-        produce(name, _find_concept(name))
+        produce(args[0], _find(args[0]))
     else:
         print("Aufruf: build_video_reel.py <name> | --pipeline")
 

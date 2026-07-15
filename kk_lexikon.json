@@ -1,0 +1,24 @@
+{
+  "_hinweis": "Einzige Begriffsquelle (Archivkino §2a). Generator zieht NUR aus status=aktiv. Hook und Schlusskarte tragen je einen aktiven Begriff (2 Pflicht-Anker). Reserve wird erst nach Blindtest auf aktiv gekippt.",
+  "begriffe": [
+    { "term": "Kurskorrektur", "gloss": "statt Veränderung", "status": "aktiv" },
+    { "term": "Peilung", "gloss": "statt Richtung/Fokus", "status": "aktiv" },
+    { "term": "Abdrift", "gloss": "statt sich verlieren", "status": "aktiv" },
+    { "term": "die Nadel", "gloss": "innerer Wert/Kompass", "status": "aktiv" },
+    { "term": "losmachen", "gloss": "statt loslassen", "status": "aktiv" },
+    { "term": "Kurs halten", "gloss": "Disziplin/Dranbleiben", "status": "aktiv" },
+    { "term": "Gegenwind", "gloss": "Widerstand von aussen", "status": "aktiv" },
+    { "term": "wahrer Norden", "gloss": "eigener, unbestechlicher Wert", "status": "aktiv" },
+    { "term": "blinder Kurs", "gloss": "Handeln ohne Selbstkenntnis", "status": "reserve" },
+    { "term": "Windschatten", "gloss": "Bequemlichkeit, stehenbleiben", "status": "reserve" },
+    { "term": "Landmarke", "gloss": "fixer Orientierungspunkt", "status": "reserve" },
+    { "term": "Beikommen", "gloss": "mühsames Näherkommen", "status": "reserve" },
+    { "term": "untief", "gloss": "trügerisch flach, verborgene Gefahr", "status": "reserve" },
+    { "term": "Schlagseite", "gloss": "aus dem Gleichgewicht", "status": "reserve" },
+    { "term": "die Bucht", "gloss": "geschützter Rückzug", "status": "reserve" },
+    { "term": "Ankerlast", "gloss": "Gewicht, das hält/niederdrückt", "status": "reserve" },
+    { "term": "Tiefgang", "gloss": "wie tief ein Gedanke reicht", "status": "reserve" },
+    { "term": "auf Sicht fahren", "gloss": "Schritt für Schritt ohne Gesamtplan", "status": "reserve" },
+    { "term": "Landfall", "gloss": "Ankommen nach langer Passage", "status": "reserve" }
+  ]
+}
