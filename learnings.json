@@ -5,47 +5,48 @@
   "themen_rang": [
     {
       "thema": "Selbstwert & Orientierung",
-      "score_avg": 1.93,
+      "score_avg": 5.76,
       "n": 1,
-      "reichweite": 46,
-      "saves": 0,
+      "reichweite": 220,
+      "saves": 1,
       "shares": 0
     },
     {
       "thema": "Ablenkung / Abdrift",
-      "score_avg": 0.0,
+      "score_avg": 2.51,
       "n": 1,
-      "reichweite": 0,
+      "reichweite": 289,
       "saves": 0,
       "shares": 0
     }
   ],
   "begriff_rang": [],
   "gewinner_themen": [
-    "Selbstwert & Orientierung"
+    "Selbstwert & Orientierung",
+    "Ablenkung / Abdrift"
   ],
   "verlierer_themen": [],
-  "empfehlung": "Ausbauen: Selbstwert & Orientierung.",
+  "empfehlung": "Ausbauen: Selbstwert & Orientierung, Ablenkung / Abdrift.",
   "per_reel": [
     {
       "name": "peilung_verloren",
       "theme": "Selbstwert & Orientierung",
-      "score": 1.93,
-      "reach": 46,
-      "saved": 0,
+      "score": 5.76,
+      "reach": 220,
+      "saved": 1,
       "shares": 0,
-      "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3776
+      "total_interactions": 2,
+      "ig_reels_avg_watch_time": 3876
     },
     {
       "name": "leise_abdrift_handy",
       "theme": "Ablenkung / Abdrift",
-      "score": 0.0,
-      "reach": 0,
+      "score": 2.51,
+      "reach": 289,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 0
+      "ig_reels_avg_watch_time": 4447
     }
   ]
 }
