@@ -1,11 +1,10 @@
-name: Kopf & Kompass Autopilot Reel-Builder
+name: Kopf & Kompass Autopilot Reel
 
-# Baut an den Reel-Tagen (Mo/Mi/Sa) das naechste freigegebene Konzept aus reel_pipeline.json
-# via Veo + Schnitt und plant es in queue.jsonl ein. Laeuft in der Cloud (Mac-off).
-# Der Poster (post.yml) veroeffentlicht es dann zur geplanten Zeit.
+# Baut taeglich das naechste approved-Konzept im Archivkino-Look und postet es direkt
+# nach @kopfundkompass. Komplett autonom, kein Mac noetig. Nur Ledger wird committet.
 on:
   schedule:
-    - cron: "0 6 * * 1,3,6"   # Mo/Mi/Sa 06:00 UTC (~08:00 Zurich), vor dem Post-Fenster
+    - cron: "0 6 * * *"     # taeglich 06:00 UTC (~08:00 Zurich)
   workflow_dispatch: {}
 
 permissions:
@@ -16,7 +15,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  reel:
+  build_post:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -28,23 +27,21 @@ jobs:
       - name: ffmpeg installieren
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
 
-      - name: Naechstes Reel bauen + einplanen
+      - name: Bauen + Posten
         env:
-          KIE_API_KEY: ${{ secrets.KIE_API_KEY }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          KIE_API_KEY: ${{ secrets.KIE_API_KEY }}
           CHROME_BIN: ${{ steps.chrome.outputs.chrome-path }}
-        run: |
-          git config user.name "kk-autopilot-bot"
-          git config user.email "bot@users.noreply.github.com"
-          git fetch -q origin main && git rebase -q origin/main || true
-          python3 build_video_reel.py --pipeline
+        run: python3 cloud_build_post.py
 
-      - name: Aenderungen sichern (Reel + Queue + Pipeline)
+      - name: Ledger sichern
         if: always()
         run: |
-          if [[ -n "$(git status --porcelain)" ]]; then
-            git add -A
-            git commit -m "chore: reel gebaut + eingeplant $(date -u +%FT%TZ)"
-            git push origin main || (git fetch -q origin main && git rebase -q origin/main && git push origin main)
+          if [[ -n "$(git status --porcelain reel_pipeline.json used_reels.json)" ]]; then
+            git config user.name "kk-autopilot-bot"
+            git config user.email "bot@users.noreply.github.com"
+            git add reel_pipeline.json used_reels.json
+            git commit -m "chore: reel gepostet $(date -u +%FT%TZ)"
+            git push
           fi
