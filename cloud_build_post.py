@@ -59,6 +59,7 @@ def main():
     u.setdefault("used_hooks", []).append(c["thoughts"][0])
     ur.write_text(json.dumps(u, ensure_ascii=False, indent=2))
     print(f"OK, {len(data['approved'])} Konzepte verbleiben.", flush=True)
+    return c
 
 
 if __name__ == "__main__":
