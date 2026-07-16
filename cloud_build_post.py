@@ -10,6 +10,7 @@ HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 import build_video_reel as bvr   # noqa: E402
 import lib_meta as meta          # noqa: E402
+import zeitplan                  # noqa: E402
 
 
 def pick(approved):
@@ -29,7 +30,13 @@ def pick(approved):
     return approved[0]
 
 
-def main():
+def main(ignoriere_slot: bool = False):
+    # 0) Zeit-Experiment: postet nur zum heutigen Slot, und nie zweimal am Tag
+    if not ignoriere_slot:
+        if zeitplan.schon_gepostet():
+            return
+        if not zeitplan.ist_mein_slot():
+            return
     # 1) Erst lernen: echte Zahlen auswerten, learnings.json aktualisieren
     try:
         import learn_and_adapt
@@ -49,6 +56,7 @@ def main():
     print(f"=== POST {name} ===", flush=True)
     mid, link = meta.post_reel(meta.ensure_public_url(str(mp4)), c["caption"])
     print(f"=== LIVE {name}: {mid} {link} ===", flush=True)
+    zeitplan.eintragen(mid, link, c.get("theme"))
     # Pipeline + Ledger (das GEWAEHLTE Konzept entfernen, nicht zwingend approved[0])
     data["approved"] = [x for x in approved if x.get("name") != name]
     data.setdefault("built", []).append({"name": name, "theme": c.get("theme"), "permalink": link})
