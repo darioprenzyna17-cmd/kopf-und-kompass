@@ -1,45 +1,53 @@
 {
   "_hinweis": "Automatisch aus Instagram-Insights. Nordstern: Save+Share+Follow. cloud_build_post.py priorisiert Gewinner-Themen.",
   "updated_utc": null,
-  "n_reels_mit_daten": 5,
+  "n_reels_mit_daten": 6,
   "themen_rang": [
     {
       "thema": "Charakter",
-      "score_avg": 5.35,
+      "score_avg": 5.34,
       "n": 1,
-      "reichweite": 203,
+      "reichweite": 209,
       "saves": 1,
       "shares": 0
     },
     {
       "thema": "Selbstwert",
-      "score_avg": 2.17,
+      "score_avg": 2.02,
       "n": 1,
-      "reichweite": 35,
+      "reichweite": 41,
       "saves": 0,
       "shares": 0
     },
     {
       "thema": "Disziplin",
-      "score_avg": 1.8,
+      "score_avg": 1.62,
       "n": 1,
-      "reichweite": 9,
+      "reichweite": 24,
+      "saves": 0,
+      "shares": 0
+    },
+    {
+      "thema": "Mitgefühl",
+      "score_avg": 1.55,
+      "n": 1,
+      "reichweite": 26,
       "saves": 0,
       "shares": 0
     },
     {
       "thema": "Achtsamkeit",
-      "score_avg": 0.0,
+      "score_avg": 1.52,
       "n": 1,
-      "reichweite": 0,
+      "reichweite": 11,
       "saves": 0,
       "shares": 0
     },
     {
       "thema": "Wahrheit",
-      "score_avg": 0.0,
+      "score_avg": 1.34,
       "n": 1,
-      "reichweite": 0,
+      "reichweite": 22,
       "saves": 0,
       "shares": 0
     }
@@ -56,52 +64,62 @@
     {
       "name": "charakter_statt_besitz",
       "theme": "Charakter",
-      "score": 5.35,
-      "reach": 203,
+      "score": 5.34,
+      "reach": 209,
       "saved": 1,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 3703
+      "ig_reels_avg_watch_time": 3663
     },
     {
       "name": "hundert_gruende",
       "theme": "Selbstwert",
-      "score": 2.17,
-      "reach": 35,
+      "score": 2.02,
+      "reach": 41,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 4270
+      "ig_reels_avg_watch_time": 3950
     },
     {
       "name": "stille_disziplin",
       "theme": "Disziplin",
-      "score": 1.8,
-      "reach": 9,
+      "score": 1.62,
+      "reach": 24,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3591
+      "ig_reels_avg_watch_time": 3186
     },
     {
       "name": "momente_zu_spaet",
       "theme": "Achtsamkeit",
-      "score": 0.0,
-      "reach": 0,
+      "score": 1.52,
+      "reach": 11,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 0
+      "ig_reels_avg_watch_time": 3026
     },
     {
       "name": "satz_den_du_brauchst",
       "theme": "Wahrheit",
-      "score": 0.0,
-      "reach": 0,
+      "score": 1.34,
+      "reach": 22,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 0
+      "ig_reels_avg_watch_time": 2644
+    },
+    {
+      "name": "kampf_dahinter",
+      "theme": "Mitgefühl",
+      "score": 1.55,
+      "reach": 26,
+      "saved": 0,
+      "shares": 0,
+      "total_interactions": 0,
+      "ig_reels_avg_watch_time": 3052
     }
   ]
 }

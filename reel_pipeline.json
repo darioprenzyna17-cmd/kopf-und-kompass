@@ -2,25 +2,6 @@
   "_hinweis": "Archivkino-Schema (Text-first, klar): name, theme, kicker (kurzes klares Wort, optional), thoughts[3-4] (klare Saetze, | = Zeilenumbruch), endcard_term (optional, meist leer), cta (klar: 'Folge fuer mehr.' / 'Speichern.' / 'Teile das.'), clips[3] (vollflaechig, keine Gesichter), music, caption. Zeilen aus bewaehrten Referenz-Accounts, KEIN erfundener Jargon.",
   "approved": [
     {
-      "name": "grenzen_setzen",
-      "theme": "Grenzen",
-      "kicker": "GRENZEN",
-      "thoughts": [
-        "Ein Nein zu anderen|ist ein Ja zu dir.",
-        "Du musst dich nicht erklären,|wenn du dich schützt.",
-        "Wer deine Grenze respektiert, bleibt.",
-        "Wer sie ignoriert, zeigt dir, wer er ist."
-      ],
-      "cta": "Speichern.",
-      "clips": [
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a weathered wooden fence line running through tall grass in soft morning fog on a quiet hillside, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, calm sea meeting a rocky shoreline where waves stop cleanly at the stone, low overcast light, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a heavy old wooden door slowly closing in a stone doorway with warm side light falling across the grain, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
-      ],
-      "music": "neoclassical cinematic ambient, warm and uplifting, solo felt piano with warm strings and cello, soft sub drone, slow arc from minor to major, 68 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
-      "caption": "Grenzen sind keine Mauern gegen andere. Sie sind der Weg zurück zu dir selbst. Du darfst Nein sagen, auch ohne Rechtfertigung. Wer dich wirklich schätzt, bleibt trotzdem.\n\n#grenzensetzen #neinsagen #selbstrespekt #mindset #kopfundkompass"
-    },
-    {
       "name": "eigener_weg",
       "theme": "Eigener Weg",
       "kicker": "VERGLEICH",
@@ -156,6 +137,11 @@
       "name": "kampf_dahinter",
       "theme": "Mitgefühl",
       "permalink": "https://www.instagram.com/reel/Da1IpLaAnM4/"
+    },
+    {
+      "name": "grenzen_setzen",
+      "theme": "Grenzen",
+      "permalink": "https://www.instagram.com/reel/Da1NoikDj9j/"
     }
   ]
 }
