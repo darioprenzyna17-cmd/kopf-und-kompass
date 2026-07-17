@@ -61,7 +61,26 @@ def main():
             reif.append(p)
 
     print(f"=== Zeit-Experiment @kopfundkompass ===")
-    print(f"{len(reif)} auswertbare Posts (mind. {REIFE_TAGE} Tage alt), {jung} noch zu jung\n")
+    print(f"{len(reif)} auswertbare Posts (mind. {REIFE_TAGE} Tage alt), {jung} noch zu jung")
+
+    # Datenqualitaet: GitHub startet Laeufe manchmal 1-2h zu spaet. Dann gehoert der
+    # Post nicht mehr zu dem Slot, unter dem er verbucht ist. Das muss sichtbar sein,
+    # sonst bekommt ein Slot die Schuld fuer eine Uhrzeit, zu der nie gepostet wurde.
+    schief = []
+    for p_ in reif:
+        soll_h, soll_m = map(int, p_["slot"].split(":"))
+        ist_h, ist_m = map(int, p_["echte_zeit"].split(":"))
+        abw = abs((ist_h * 60 + ist_m) - (soll_h * 60 + soll_m))
+        p_["abweichung"] = abw
+        if abw > 30:
+            schief.append(p_)
+    if schief:
+        print(f"ACHTUNG: {len(schief)} Post(s) mehr als 30 Min neben dem Soll-Slot:")
+        for p_ in schief:
+            print(f"  {p_['datum']}  Soll {p_['slot']}, tatsaechlich {p_['echte_zeit']}  "
+                  f"(+{p_['abweichung']} Min)")
+        print("  Diese Zeilen verfaelschen die Slot-Rangliste.")
+    print()
     if not reif:
         print("Noch nichts Reifes dabei. In ein paar Tagen nochmal.")
         return

@@ -34,18 +34,24 @@ def jetzt_zh() -> datetime:
     return datetime.now(ZH)
 
 
-def ist_mein_slot(toleranz_min: int = 20) -> bool:
-    """True, wenn der aktuelle Lauf zum heutigen Slot gehoert.
-    Der Workflow feuert zu allen Slots; nur der richtige postet."""
+def ist_mein_slot() -> bool:
+    """True, sobald der heutige Slot erreicht ODER ueberschritten ist.
+
+    Bewusst KEIN enges Zeitfenster: GitHub-Actions-Crons starten regelmaessig
+    1-2h zu spaet. Ein enges Fenster wuerde den Tag dann still ausfallen lassen.
+    Lieber etwas zu spaet posten als gar nicht - die tatsaechliche Uhrzeit wird
+    protokolliert und die Auswertung rechnet mit ihr, nicht mit dem Soll-Slot.
+    """
     now = jetzt_zh()
     soll = slot_fuer(now.date())
     sh, sm = map(int, soll.split(":"))
     soll_dt = now.replace(hour=sh, minute=sm, second=0, microsecond=0)
-    diff = abs((now - soll_dt).total_seconds()) / 60
-    if diff > toleranz_min:
-        print(f"Heutiger Slot ist {soll}, jetzt {now:%H:%M}. Dieser Lauf postet nicht.")
+    if now < soll_dt:
+        print(f"Heutiger Slot ist {soll}, jetzt {now:%H:%M}. Noch zu frueh.")
         return False
-    print(f"Heutiger Slot {soll} erreicht (jetzt {now:%H:%M}).")
+    verspaetung = int((now - soll_dt).total_seconds() / 60)
+    hinweis = f" ({verspaetung} Min nach Plan)" if verspaetung > 20 else ""
+    print(f"Heutiger Slot {soll} erreicht (jetzt {now:%H:%M}){hinweis}.")
     return True
 
 

@@ -2,15 +2,15 @@ name: Kopf & Kompass Autopilot Reel
 
 # Baut taeglich das naechste approved-Konzept im Archivkino-Look und postet es direkt
 # nach @kopfundkompass. Komplett autonom, kein Mac noetig. Nur Ledger wird committet.
+#
+# Zeitsteuerung laeuft NICHT ueber den Cron, sondern ueber zeitplan.py (rotierende
+# Slots). Der Cron schaut nur oft genug nach, damit der Slot des Tages zuverlaessig
+# getroffen wird: GitHub startet geplante Laeufe regelmaessig 1-2h zu spaet, ein enger
+# Cron liesse Tage still ausfallen. Der Slot-Check bricht sofort ab, wenn nichts
+# ansteht, darum kosten die Leerlaeufe nur Sekunden.
 on:
   schedule:
-    # Feuert zu ALLEN Kandidaten-Slots; zeitplan.py laesst nur den Slot des Tages durch.
-    # Zeiten in UTC, Zurich = UTC+2 (Sommerzeit). Im Winter jeweils +1h anpassen.
-    - cron: "0 5 * * *"     # 07:00 Zurich
-    - cron: "30 10 * * *"   # 12:30 Zurich
-    - cron: "0 15 * * *"    # 17:00 Zurich
-    - cron: "0 17 * * *"    # 19:00 Zurich
-    - cron: "30 19 * * *"   # 21:30 Zurich
+    - cron: "*/30 * * * *"
   workflow_dispatch: {}
 
 permissions:
@@ -26,14 +26,32 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Erst pruefen, ob heute etwas ansteht. Die teuren Installationsschritte laufen
+      # nur dann, sonst laedt jeder Leerlauf Chrome und ffmpeg herunter.
+      - name: Slot-Check
+        id: gate
+        run: |
+          if python3 -c "
+          import sys, zeitplan
+          sys.exit(0 if (not zeitplan.schon_gepostet() and zeitplan.ist_mein_slot()) else 1)
+          "; then
+            echo "post=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "post=false" >> "$GITHUB_OUTPUT"
+            echo "Heute steht nichts an, Lauf endet hier."
+          fi
+
       - name: Chrome installieren
         id: chrome
+        if: steps.gate.outputs.post == 'true'
         uses: browser-actions/setup-chrome@v1
 
       - name: ffmpeg installieren
+        if: steps.gate.outputs.post == 'true'
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
 
       - name: Bauen + Posten
+        if: steps.gate.outputs.post == 'true'
         env:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
@@ -42,12 +60,13 @@ jobs:
         run: python3 cloud_build_post.py
 
       - name: Ledger sichern
-        if: always()
+        if: always() && steps.gate.outputs.post == 'true'
         run: |
           if [[ -n "$(git status --porcelain reel_pipeline.json used_reels.json learnings.json zeit_experiment.json)" ]]; then
             git config user.name "kk-autopilot-bot"
             git config user.email "bot@users.noreply.github.com"
             git add reel_pipeline.json used_reels.json learnings.json zeit_experiment.json
             git commit -m "chore: reel gepostet $(date -u +%FT%TZ)"
+            git pull --rebase --autostash
             git push
           fi
