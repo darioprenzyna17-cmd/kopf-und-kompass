@@ -1,0 +1,21 @@
+{
+  "_hinweis": "Zeit-Experiment: welcher Slot an welchem Wochentag laeuft am besten? Auswertung mit kk_zeitreport.py (holt die Insights dazu).",
+  "slots": [
+    "07:00",
+    "12:30",
+    "17:00",
+    "19:00",
+    "21:30"
+  ],
+  "posts": [
+    {
+      "datum": "2026-07-17",
+      "wochentag": "Freitag",
+      "slot": "19:00",
+      "echte_zeit": "19:40",
+      "media_id": "17936859675319623",
+      "permalink": "https://www.instagram.com/reel/Da5xgYJE87S/",
+      "thema": "Eigener Weg"
+    }
+  ]
+}

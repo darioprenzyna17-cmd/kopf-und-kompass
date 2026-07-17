@@ -2,25 +2,6 @@
   "_hinweis": "Archivkino-Schema (Text-first, klar): name, theme, kicker (kurzes klares Wort, optional), thoughts[3-4] (klare Saetze, | = Zeilenumbruch), endcard_term (optional, meist leer), cta (klar: 'Folge fuer mehr.' / 'Speichern.' / 'Teile das.'), clips[3] (vollflaechig, keine Gesichter), music, caption. Zeilen aus bewaehrten Referenz-Accounts, KEIN erfundener Jargon.",
   "approved": [
     {
-      "name": "eigener_weg",
-      "theme": "Eigener Weg",
-      "kicker": "VERGLEICH",
-      "thoughts": [
-        "Du vergleichst dein Kapitel drei|mit ihrem Kapitel zwanzig.",
-        "Der andere Weg sieht nur leichter aus.",
-        "Niemand zeigt dir die Nächte dahinter.",
-        "Dein Tempo ist nicht dein Rückstand."
-      ],
-      "cta": "Teile das.",
-      "clips": [
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a single narrow trail winding up a green mountain slope disappearing into low cloud, soft diffuse light, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, two separate rivers flowing in different directions through a quiet valley seen from above, muted greens and greys, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a lone tree standing in an open field at dawn with long soft shadows across the grass, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
-      ],
-      "music": "neoclassical cinematic ambient, warm and uplifting, solo felt piano with warm strings and cello, soft sub drone, slow arc from minor to major, 68 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
-      "caption": "Der Vergleich stiehlt dir die Freude an deinem eigenen Fortschritt. Du siehst das Ergebnis der anderen, nie ihren Weg dorthin. Bleib auf deiner Spur. Dein Tempo ist genau richtig.\n\n#eigenerweg #vergleich #mindset #selbstvertrauen #kopfundkompass"
-    },
-    {
       "name": "geduld_ernte",
       "theme": "Geduld",
       "kicker": "GEDULD",
@@ -237,6 +218,11 @@
       "name": "grenzen_setzen",
       "theme": "Grenzen",
       "permalink": "https://www.instagram.com/reel/Da1NoikDj9j/"
+    },
+    {
+      "name": "eigener_weg",
+      "theme": "Eigener Weg",
+      "permalink": "https://www.instagram.com/reel/Da5xgYJE87S/"
     }
   ]
 }
