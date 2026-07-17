@@ -67,7 +67,32 @@ def main(ignoriere_slot: bool = False):
     u.setdefault("used_hooks", []).append(c["thoughts"][0])
     ur.write_text(json.dumps(u, ensure_ascii=False, indent=2))
     print(f"OK, {len(data['approved'])} Konzepte verbleiben.", flush=True)
+    post_stories(c)
     return c
+
+
+def post_stories(c):
+    """2 Stories: Teaser auf den neuen Reel + ein eigenstaendiger Gedanke.
+    Laeuft nach dem Reel; ein Story-Fehler darf den bereits live gegangenen Reel
+    nicht nachtraeglich kippen, darum alles in einem try."""
+    try:
+        import build_story as st
+        thoughts = c.get("thoughts", [])
+        if not thoughts:
+            print("Keine Gedanken im Konzept, keine Stories.", flush=True)
+            return
+        sdir = HERE / "assets" / "stories"
+        sdir.mkdir(parents=True, exist_ok=True)
+        p1 = st.story_teaser(thoughts[0], sdir / "daily_teaser.png",
+                             label="Neu im Feed", foot="Ganzer Gedanke im Feed")
+        meta.post_story(meta.ensure_public_url(str(p1)), is_video=False)
+        print("STORY teaser gepostet", flush=True)
+        p2 = st.story_gedanke(thoughts[-1], sdir / "daily_gedanke.png",
+                              foot="Antworte mit einem Wort.")
+        meta.post_story(meta.ensure_public_url(str(p2)), is_video=False)
+        print("STORY gedanke gepostet", flush=True)
+    except Exception as e:
+        print("STORY-FEHLER (Reel bleibt live):", repr(e)[:300], flush=True)
 
 
 if __name__ == "__main__":
