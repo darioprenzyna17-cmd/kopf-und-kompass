@@ -31,7 +31,7 @@
       "thema": "Charakter",
       "score_avg": 5.89,
       "n": 1,
-      "reichweite": 424,
+      "reichweite": 425,
       "saves": 1,
       "shares": 0
     },
@@ -47,13 +47,13 @@
       "thema": "Eigener Weg",
       "score_avg": 2.66,
       "n": 1,
-      "reichweite": 295,
+      "reichweite": 300,
       "saves": 0,
       "shares": 0
     },
     {
       "thema": "Selbstwert",
-      "score_avg": 2.43,
+      "score_avg": 2.42,
       "n": 1,
       "reichweite": 300,
       "saves": 0,
@@ -61,9 +61,9 @@
     },
     {
       "thema": "Wahrheit",
-      "score_avg": 2.17,
+      "score_avg": 2.16,
       "n": 1,
-      "reichweite": 265,
+      "reichweite": 268,
       "saves": 0,
       "shares": 0
     }
@@ -81,21 +81,21 @@
       "name": "charakter_statt_besitz",
       "theme": "Charakter",
       "score": 5.89,
-      "reach": 424,
+      "reach": 425,
       "saved": 1,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 3728
+      "ig_reels_avg_watch_time": 3731
     },
     {
       "name": "hundert_gruende",
       "theme": "Selbstwert",
-      "score": 2.43,
+      "score": 2.42,
       "reach": 300,
       "saved": 0,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 3652
+      "ig_reels_avg_watch_time": 3636
     },
     {
       "name": "stille_disziplin",
@@ -105,7 +105,7 @@
       "saved": 0,
       "shares": 0,
       "total_interactions": 3,
-      "ig_reels_avg_watch_time": 3977
+      "ig_reels_avg_watch_time": 3969
     },
     {
       "name": "momente_zu_spaet",
@@ -120,12 +120,12 @@
     {
       "name": "satz_den_du_brauchst",
       "theme": "Wahrheit",
-      "score": 2.17,
-      "reach": 265,
+      "score": 2.16,
+      "reach": 268,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3806
+      "ig_reels_avg_watch_time": 3791
     },
     {
       "name": "kampf_dahinter",
@@ -145,17 +145,17 @@
       "saved": 2,
       "shares": 3,
       "total_interactions": 12,
-      "ig_reels_avg_watch_time": 5082
+      "ig_reels_avg_watch_time": 5074
     },
     {
       "name": "eigener_weg",
       "theme": "Eigener Weg",
       "score": 2.66,
-      "reach": 295,
+      "reach": 300,
       "saved": 0,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 4122
+      "ig_reels_avg_watch_time": 4118
     }
   ]
 }
