@@ -1,61 +1,69 @@
 {
   "_hinweis": "Automatisch aus Instagram-Insights. Nordstern: Save+Share+Follow. cloud_build_post.py priorisiert Gewinner-Themen.",
   "updated_utc": null,
-  "n_reels_mit_daten": 7,
+  "n_reels_mit_daten": 8,
   "themen_rang": [
     {
       "thema": "Grenzen",
-      "score_avg": 24.55,
+      "score_avg": 24.56,
       "n": 1,
-      "reichweite": 391,
+      "reichweite": 422,
       "saves": 2,
       "shares": 3
     },
     {
       "thema": "Achtsamkeit",
-      "score_avg": 9.99,
+      "score_avg": 10.0,
       "n": 1,
-      "reichweite": 203,
+      "reichweite": 230,
       "saves": 2,
       "shares": 0
     },
     {
       "thema": "Mitgefühl",
-      "score_avg": 5.99,
+      "score_avg": 6.1,
       "n": 1,
-      "reichweite": 344,
+      "reichweite": 395,
       "saves": 1,
       "shares": 0
     },
     {
       "thema": "Charakter",
-      "score_avg": 5.87,
+      "score_avg": 5.89,
       "n": 1,
-      "reichweite": 407,
+      "reichweite": 424,
       "saves": 1,
       "shares": 0
     },
     {
       "thema": "Disziplin",
-      "score_avg": 3.13,
+      "score_avg": 3.18,
       "n": 1,
-      "reichweite": 262,
+      "reichweite": 296,
+      "saves": 0,
+      "shares": 0
+    },
+    {
+      "thema": "Eigener Weg",
+      "score_avg": 2.66,
+      "n": 1,
+      "reichweite": 295,
       "saves": 0,
       "shares": 0
     },
     {
       "thema": "Selbstwert",
-      "score_avg": 2.39,
+      "score_avg": 2.43,
       "n": 1,
-      "reichweite": 244,
+      "reichweite": 300,
       "saves": 0,
       "shares": 0
     },
     {
       "thema": "Wahrheit",
-      "score_avg": 2.23,
+      "score_avg": 2.17,
       "n": 1,
-      "reichweite": 230,
+      "reichweite": 265,
       "saves": 0,
       "shares": 0
     }
@@ -72,72 +80,82 @@
     {
       "name": "charakter_statt_besitz",
       "theme": "Charakter",
-      "score": 5.87,
-      "reach": 407,
+      "score": 5.89,
+      "reach": 424,
       "saved": 1,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 3730
+      "ig_reels_avg_watch_time": 3728
     },
     {
       "name": "hundert_gruende",
       "theme": "Selbstwert",
-      "score": 2.39,
-      "reach": 244,
+      "score": 2.43,
+      "reach": 300,
       "saved": 0,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 3693
+      "ig_reels_avg_watch_time": 3652
     },
     {
       "name": "stille_disziplin",
       "theme": "Disziplin",
-      "score": 3.13,
-      "reach": 262,
+      "score": 3.18,
+      "reach": 296,
       "saved": 0,
       "shares": 0,
       "total_interactions": 3,
-      "ig_reels_avg_watch_time": 3940
+      "ig_reels_avg_watch_time": 3977
     },
     {
       "name": "momente_zu_spaet",
       "theme": "Achtsamkeit",
-      "score": 9.99,
-      "reach": 203,
+      "score": 10.0,
+      "reach": 230,
       "saved": 2,
       "shares": 0,
       "total_interactions": 6,
-      "ig_reels_avg_watch_time": 3976
+      "ig_reels_avg_watch_time": 3944
     },
     {
       "name": "satz_den_du_brauchst",
       "theme": "Wahrheit",
-      "score": 2.23,
-      "reach": 230,
+      "score": 2.17,
+      "reach": 265,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 4006
+      "ig_reels_avg_watch_time": 3806
     },
     {
       "name": "kampf_dahinter",
       "theme": "Mitgefühl",
-      "score": 5.99,
-      "reach": 344,
+      "score": 6.1,
+      "reach": 395,
       "saved": 1,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 4092
+      "ig_reels_avg_watch_time": 4219
     },
     {
       "name": "grenzen_setzen",
       "theme": "Grenzen",
-      "score": 24.55,
-      "reach": 391,
+      "score": 24.56,
+      "reach": 422,
       "saved": 2,
       "shares": 3,
       "total_interactions": 12,
-      "ig_reels_avg_watch_time": 5121
+      "ig_reels_avg_watch_time": 5082
+    },
+    {
+      "name": "eigener_weg",
+      "theme": "Eigener Weg",
+      "score": 2.66,
+      "reach": 295,
+      "saved": 0,
+      "shares": 0,
+      "total_interactions": 1,
+      "ig_reels_avg_watch_time": 4122
     }
   ]
 }
