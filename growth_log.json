@@ -1,0 +1,14 @@
+{
+  "_hinweis": "Woechentliche Wachstums-Baseline. Nordstern: Reichweite-% (Ziel 8-10%), Sends/Reel, Follower.",
+  "snapshots": [
+    {
+      "date": "2026-07-19",
+      "followers": 35292,
+      "reels_gemessen": 8,
+      "avg_reach": 286.6,
+      "reach_pct": 0.81,
+      "avg_shares": 0.38,
+      "avg_saved": 0.75
+    }
+  ]
+}
