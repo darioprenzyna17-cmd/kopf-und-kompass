@@ -7,7 +7,7 @@
       "thema": "Grenzen",
       "score_avg": 24.57,
       "n": 1,
-      "reichweite": 428,
+      "reichweite": 433,
       "saves": 2,
       "shares": 3
     },
@@ -21,9 +21,9 @@
     },
     {
       "thema": "Mitgefühl",
-      "score_avg": 6.11,
+      "score_avg": 6.12,
       "n": 1,
-      "reichweite": 402,
+      "reichweite": 407,
       "saves": 1,
       "shares": 0
     },
@@ -39,7 +39,7 @@
       "thema": "Selbstwert",
       "score_avg": 5.74,
       "n": 1,
-      "reichweite": 308,
+      "reichweite": 309,
       "saves": 1,
       "shares": 0
     },
@@ -55,15 +55,15 @@
       "thema": "Eigener Weg",
       "score_avg": 2.66,
       "n": 1,
-      "reichweite": 309,
+      "reichweite": 312,
       "saves": 0,
       "shares": 0
     },
     {
       "thema": "Wahrheit",
-      "score_avg": 2.21,
+      "score_avg": 2.2,
       "n": 1,
-      "reichweite": 279,
+      "reichweite": 280,
       "saves": 0,
       "shares": 0
     }
@@ -91,7 +91,7 @@
       "name": "hundert_gruende",
       "theme": "Selbstwert",
       "score": 5.74,
-      "reach": 308,
+      "reach": 309,
       "saved": 1,
       "shares": 0,
       "total_interactions": 2,
@@ -115,47 +115,47 @@
       "saved": 2,
       "shares": 0,
       "total_interactions": 6,
-      "ig_reels_avg_watch_time": 3998
+      "ig_reels_avg_watch_time": 3989
     },
     {
       "name": "satz_den_du_brauchst",
       "theme": "Wahrheit",
-      "score": 2.21,
-      "reach": 279,
+      "score": 2.2,
+      "reach": 280,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3855
+      "ig_reels_avg_watch_time": 3847
     },
     {
       "name": "kampf_dahinter",
       "theme": "Mitgefühl",
-      "score": 6.11,
-      "reach": 402,
+      "score": 6.12,
+      "reach": 407,
       "saved": 1,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 4215
+      "ig_reels_avg_watch_time": 4218
     },
     {
       "name": "grenzen_setzen",
       "theme": "Grenzen",
       "score": 24.57,
-      "reach": 428,
+      "reach": 433,
       "saved": 2,
       "shares": 3,
       "total_interactions": 12,
-      "ig_reels_avg_watch_time": 5089
+      "ig_reels_avg_watch_time": 5080
     },
     {
       "name": "eigener_weg",
       "theme": "Eigener Weg",
       "score": 2.66,
-      "reach": 309,
+      "reach": 312,
       "saved": 0,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 4105
+      "ig_reels_avg_watch_time": 4093
     }
   ]
 }
