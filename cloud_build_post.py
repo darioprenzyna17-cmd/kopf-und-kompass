@@ -67,7 +67,10 @@ def main(ignoriere_slot: bool = False):
     u.setdefault("used_hooks", []).append(c["thoughts"][0])
     ur.write_text(json.dumps(u, ensure_ascii=False, indent=2))
     print(f"OK, {len(data['approved'])} Konzepte verbleiben.", flush=True)
-    post_stories(c)
+    # Stories laufen jetzt AUSSCHLIESSLICH ueber den eigenen Story-Cron (run_story.py /
+    # story.yml) = deterministisch genau 2/Tag. Kein zusaetzliches Story-Posten beim Reel,
+    # damit es an Reel-Tagen nicht auf 3-4 hochlaeuft (Dario-Vorgabe 2026-07-19).
+    # post_stories(c)  # bewusst deaktiviert
     return c
 
 
@@ -75,6 +78,9 @@ def post_stories(c):
     """2 Stories: Teaser auf den neuen Reel + ein eigenstaendiger Gedanke.
     Laeuft nach dem Reel; ein Story-Fehler darf den bereits live gegangenen Reel
     nicht nachtraeglich kippen, darum alles in einem try."""
+    # Deaktiviert: Stories kommen ausschliesslich vom Story-Cron (genau 2/Tag).
+    print("post_stories deaktiviert (Story-Cron uebernimmt, 2/Tag).", flush=True)
+    return
     try:
         import build_story as st
         thoughts = c.get("thoughts", [])
