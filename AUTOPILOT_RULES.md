@@ -12,7 +12,7 @@ schwache Muster sofort streichen. 2 Stories pro Tag halten die Bestands-Audience
 Auf @kopfundkompass sind **täglich mindestens zwei Stories** live und durchgehend mind. eine aktiv, nie eine Lücke.
 - **Zwei feste Läufe (morgens ~07:30 + abends ~17:30 Zürich)** via Cloud-Cron `story.yml`, jeder postet einen Impuls über `run_story.py`, unabhängig vom Reel-Lauf. Fällt ein Lauf aus, beim nächsten sofort nachholen.
 - Inhalt = eigenständiger Impuls im Archivkino-Ton (`build_story.story_gedanke`, tiefe Ein-Satz-Wahrheit, „Antworte mit einem Wort."), Rotation über eine Impuls-Bank mit `story_ledger.json` gegen Dubletten. Vorgerenderte, committete Kacheln in `assets/stories/daily/` → kein Chrome in CI.
-- Das ergänzt das Ziel „2 Stories/Tag" (Teaser via `cloud_build_post.py` beim Reel): der tägliche Impuls sichert die Untergrenze von mind. einer Story auch an reellosen Tagen.
+- Stories kommen AUSSCHLIESSLICH aus diesem Story-Cron (genau 2/Tag). Das reel-gekoppelte Story-Posten in `cloud_build_post.py` ist bewusst deaktiviert, damit es an Reel-Tagen nicht auf 3-4 hochläuft (Dario-Vorgabe 2026-07-19).
 
 ## Stil (fixiert)
 - **Ton:** ruhig, tief, ehrlich, leicht männlich-warm, klar. Bringt zum Nachdenken UND richtet auf. Nie kitschig-platt, nie Kalenderspruch.
