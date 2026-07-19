@@ -1,0 +1,40 @@
+name: KK Wachstums-Report (woechentlich)
+
+# Erfasst woechentlich eine Wachstums-Momentaufnahme (Follower, Reichweite-%, Sends/Reel)
+# und haengt sie an growth_log.json. Macht die Wachstumskurve belegbar.
+# Montag 05:00 UTC (~07:00 Zurich).
+on:
+  schedule:
+    - cron: "0 5 * * 1"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kk-report
+  cancel-in-progress: false
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Wachstum messen
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+        run: python3 growth_report.py
+
+      - name: Log sichern
+        if: always()
+        run: |
+          if [[ -n "$(git status --porcelain growth_log.json)" ]]; then
+            git config user.name "kk-autopilot-bot"
+            git config user.email "bot@users.noreply.github.com"
+            git add growth_log.json
+            git commit -m "chore: wachstums-snapshot $(date -u +%FT%TZ)"
+            git pull --rebase --autostash
+            git push
+          fi
