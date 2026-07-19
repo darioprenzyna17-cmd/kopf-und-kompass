@@ -8,6 +8,12 @@ aus den eigenen Zahlen lernt und sich weiterentwickelt. Nordstern: nicht Likes, 
 Dafür: hohe Reel-Frequenz, jedes Reel auf Save/Share optimiert, Gewinner-Themen schnell doppeln,
 schwache Muster sofort streichen. 2 Stories pro Tag halten die Bestands-Audience aktiv (Ranking-Signal).
 
+## Stories — IMMER mindestens eine aktiv (Dario-Vorgabe 2026-07-19)
+Auf @kopfundkompass ist **jederzeit mindestens eine Story live**, es darf nie eine Lücke geben.
+- Stories laufen nach 24 h ab → **täglich automatisch eine frische Story posten** (`run_story.py`, Cloud-Cron `story.yml`), unabhängig vom Reel-Lauf. Fällt ein Lauf aus, beim nächsten sofort nachholen.
+- Inhalt = eigenständiger Impuls im Archivkino-Ton (`build_story.story_gedanke`, tiefe Ein-Satz-Wahrheit, „Antworte mit einem Wort."), Rotation über eine Impuls-Bank mit `story_ledger.json` gegen Dubletten. Vorgerenderte, committete Kacheln in `assets/stories/daily/` → kein Chrome in CI.
+- Das ergänzt das Ziel „2 Stories/Tag" (Teaser via `cloud_build_post.py` beim Reel): der tägliche Impuls sichert die Untergrenze von mind. einer Story auch an reellosen Tagen.
+
 ## Stil (fixiert)
 - **Ton:** ruhig, tief, ehrlich, leicht männlich-warm, klar. Bringt zum Nachdenken UND richtet auf. Nie kitschig-platt, nie Kalenderspruch.
 - **Bild:** cineastisches, ruhiges KI-Footage (Veo), atmosphärisch, filmische Farbwelt (dunkel, warm). Einsame Figuren, Natur, Licht, Alltagsmomente mit Tiefe. 9:16.
