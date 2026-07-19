@@ -14,6 +14,11 @@ Auf @kopfundkompass sind **täglich mindestens zwei Stories** live und durchgehe
 - Inhalt = eigenständiger Impuls im Archivkino-Ton (`build_story.story_gedanke`, tiefe Ein-Satz-Wahrheit, „Antworte mit einem Wort."), Rotation über eine Impuls-Bank mit `story_ledger.json` gegen Dubletten. Vorgerenderte, committete Kacheln in `assets/stories/daily/` → kein Chrome in CI.
 - Stories kommen AUSSCHLIESSLICH aus diesem Story-Cron (genau 2/Tag). Das reel-gekoppelte Story-Posten in `cloud_build_post.py` ist bewusst deaktiviert, damit es an Reel-Tagen nicht auf 3-4 hochläuft (Dario-Vorgabe 2026-07-19).
 
+## Ton & Produktionsprinzip (Dario-Vorgabe 2026-07-19, verbindlich)
+- **Grundstimmung: nachdenklich, aber positiv und aufbauend.** Ernster, ruhiger Ton, nie düster-resigniert, nie kitschig-motivierend. Der Gedanke darf wehtun, muss aber am Ende aufrichten, nicht runterziehen.
+- **Grammatik ist Pflicht:** jeder Satz grammatikalisch einwandfrei, korrekte Rechtschreibung und Zeichensetzung. Keine langen Gedankenstriche, kein Komma vor „und". Vor jeder Freigabe Grammatik-Check.
+- **Lean produzieren, aus Daten lernen:** NICHT auf Wochen vorproduzieren. Immer nur wenige Tage Vorrat (Ziel: ~3-5 approved Konzepte), dann aus den echten Account-Zahlen lernen und winner-biased nachlegen. Bereits produzierte Konzepte weiterverwenden, nicht wegwerfen.
+
 ## Stil (fixiert)
 - **Ton:** ruhig, tief, ehrlich, leicht männlich-warm, klar. Bringt zum Nachdenken UND richtet auf. Nie kitschig-platt, nie Kalenderspruch.
 - **Bild:** cineastisches, ruhiges KI-Footage (Veo), atmosphärisch, filmische Farbwelt (dunkel, warm). Einsame Figuren, Natur, Licht, Alltagsmomente mit Tiefe. 9:16.
