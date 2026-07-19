@@ -1,0 +1,14 @@
+name: KK kie.ai Credits
+on:
+  workflow_dispatch: {}
+jobs:
+  credits:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Guthaben abfragen
+        env:
+          KIE_API_KEY: ${{ secrets.KIE_API_KEY }}
+        run: |
+          echo -n "KIE-CREDITS: "
+          curl -s -m 20 https://api.kie.ai/api/v1/chat/credit -H "Authorization: Bearer $KIE_API_KEY"
+          echo ""
