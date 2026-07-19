@@ -1,7 +1,7 @@
 {
   "_hinweis": "Automatisch aus Instagram-Insights. Nordstern: Save+Share+Follow. cloud_build_post.py priorisiert Gewinner-Themen.",
   "updated_utc": null,
-  "n_reels_mit_daten": 8,
+  "n_reels_mit_daten": 9,
   "themen_rang": [
     {
       "thema": "Grenzen",
@@ -39,13 +39,13 @@
       "thema": "Selbstwert",
       "score_avg": 5.75,
       "n": 1,
-      "reichweite": 312,
+      "reichweite": 313,
       "saves": 1,
       "shares": 0
     },
     {
       "thema": "Disziplin",
-      "score_avg": 3.19,
+      "score_avg": 3.18,
       "n": 1,
       "reichweite": 305,
       "saves": 0,
@@ -64,6 +64,14 @@
       "score_avg": 2.2,
       "n": 1,
       "reichweite": 281,
+      "saves": 0,
+      "shares": 0
+    },
+    {
+      "thema": "Geduld",
+      "score_avg": 0.0,
+      "n": 1,
+      "reichweite": 0,
       "saves": 0,
       "shares": 0
     }
@@ -91,21 +99,21 @@
       "name": "hundert_gruende",
       "theme": "Selbstwert",
       "score": 5.75,
-      "reach": 312,
+      "reach": 313,
       "saved": 1,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 3668
+      "ig_reels_avg_watch_time": 3667
     },
     {
       "name": "stille_disziplin",
       "theme": "Disziplin",
-      "score": 3.19,
+      "score": 3.18,
       "reach": 305,
       "saved": 0,
       "shares": 0,
       "total_interactions": 3,
-      "ig_reels_avg_watch_time": 3968
+      "ig_reels_avg_watch_time": 3956
     },
     {
       "name": "momente_zu_spaet",
@@ -156,6 +164,16 @@
       "shares": 0,
       "total_interactions": 1,
       "ig_reels_avg_watch_time": 4069
+    },
+    {
+      "name": "geduld_ernte",
+      "theme": "Geduld",
+      "score": 0.0,
+      "reach": 0,
+      "saved": 0,
+      "shares": 0,
+      "total_interactions": 0,
+      "ig_reels_avg_watch_time": 0
     }
   ]
 }
