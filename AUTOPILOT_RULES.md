@@ -8,9 +8,9 @@ aus den eigenen Zahlen lernt und sich weiterentwickelt. Nordstern: nicht Likes, 
 Dafür: hohe Reel-Frequenz, jedes Reel auf Save/Share optimiert, Gewinner-Themen schnell doppeln,
 schwache Muster sofort streichen. 2 Stories pro Tag halten die Bestands-Audience aktiv (Ranking-Signal).
 
-## Stories — IMMER mindestens eine aktiv (Dario-Vorgabe 2026-07-19)
-Auf @kopfundkompass ist **jederzeit mindestens eine Story live**, es darf nie eine Lücke geben.
-- Stories laufen nach 24 h ab → **täglich automatisch eine frische Story posten** (`run_story.py`, Cloud-Cron `story.yml`), unabhängig vom Reel-Lauf. Fällt ein Lauf aus, beim nächsten sofort nachholen.
+## Stories — IMMER mindestens ZWEI pro Tag (Dario-Vorgabe 2026-07-19)
+Auf @kopfundkompass sind **täglich mindestens zwei Stories** live und durchgehend mind. eine aktiv, nie eine Lücke.
+- **Zwei feste Läufe (morgens ~07:30 + abends ~17:30 Zürich)** via Cloud-Cron `story.yml`, jeder postet einen Impuls über `run_story.py`, unabhängig vom Reel-Lauf. Fällt ein Lauf aus, beim nächsten sofort nachholen.
 - Inhalt = eigenständiger Impuls im Archivkino-Ton (`build_story.story_gedanke`, tiefe Ein-Satz-Wahrheit, „Antworte mit einem Wort."), Rotation über eine Impuls-Bank mit `story_ledger.json` gegen Dubletten. Vorgerenderte, committete Kacheln in `assets/stories/daily/` → kein Chrome in CI.
 - Das ergänzt das Ziel „2 Stories/Tag" (Teaser via `cloud_build_post.py` beim Reel): der tägliche Impuls sichert die Untergrenze von mind. einer Story auch an reellosen Tagen.
 

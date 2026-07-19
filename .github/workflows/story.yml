@@ -1,10 +1,12 @@
 name: KK Story (taeglich)
 
-# Postet taeglich EINE Story, damit immer mind. eine aktiv ist (Stories laufen nach 24 h ab).
-# 05:30 UTC = ~07:30 Zurich (Sommer). Nutzt vorgerenderte committete Kacheln -> kein Chrome in CI.
+# Postet taeglich ZWEI Stories (morgens + abends), damit mind. 2/Tag laufen und
+# durchgehend eine aktiv ist (Stories laufen nach 24 h ab).
+# 05:30 + 15:30 UTC = ~07:30 + ~17:30 Zurich (Sommer). Vorgerenderte Kacheln -> kein Chrome in CI.
 on:
   schedule:
     - cron: "30 5 * * *"
+    - cron: "30 15 * * *"
   workflow_dispatch: {}   # manueller Test-Trigger
 
 permissions:

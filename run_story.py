@@ -35,6 +35,12 @@ BANK = [
     "Fokus ist,|*wozu du Nein sagst.",
     "Der Mut fehlt selten.|*Meist fehlt die Entscheidung.",
     "Du schuldest niemandem|*die Version, die er gewohnt ist.",
+    "Vergleich ist der Dieb|*jeder Zufriedenheit.",
+    "Du musst nicht laut sein,|*um gehört zu werden.",
+    "Manche Türen gehen zu,|*damit du weitergehst.",
+    "Selbstwert ist kein Applaus.|*Er ist eine Entscheidung.",
+    "Nein zu anderen|*ist oft Ja zu dir.",
+    "Ruhe ist die Antwort,|*die niemand erwartet.",
 ]
 
 
