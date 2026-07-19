@@ -102,4 +102,5 @@ def post_stories(c):
 
 
 if __name__ == "__main__":
-    main()
+    import os
+    main(ignoriere_slot=os.environ.get("FORCE_BUILD") == "1")

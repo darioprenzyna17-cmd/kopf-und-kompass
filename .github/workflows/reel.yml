@@ -11,7 +11,12 @@ name: Kopf & Kompass Autopilot Reel
 on:
   schedule:
     - cron: "*/30 * * * *"
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Sofort bauen+posten, Slot ignorieren (Test)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -31,7 +36,10 @@ jobs:
       - name: Slot-Check
         id: gate
         run: |
-          if python3 -c "
+          if [ "${{ inputs.force }}" = "true" ]; then
+            echo "post=true" >> "$GITHUB_OUTPUT"
+            echo "Force-Build: Slot ignoriert."
+          elif python3 -c "
           import sys, zeitplan
           sys.exit(0 if (not zeitplan.schon_gepostet() and zeitplan.ist_mein_slot()) else 1)
           "; then
@@ -57,6 +65,7 @@ jobs:
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
           KIE_API_KEY: ${{ secrets.KIE_API_KEY }}
           CHROME_BIN: ${{ steps.chrome.outputs.chrome-path }}
+          FORCE_BUILD: ${{ inputs.force && '1' || '0' }}
         run: python3 cloud_build_post.py
 
       - name: Ledger sichern
