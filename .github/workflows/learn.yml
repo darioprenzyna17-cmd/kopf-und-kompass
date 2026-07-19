@@ -1,0 +1,41 @@
+name: KK Lern-Loop (taeglich)
+
+# Zieht taeglich die echten Instagram-Insights, gewichtet nach Nordstern (Save+Share+Follow)
+# und schreibt learnings.json. cloud_build_post.py baut das naechste Reel bevorzugt aus einem
+# Gewinner-Thema -> der Account passt sich datenbasiert selbst an.
+# 04:00 UTC (~06:00 Zurich), vor den Reel-Slots, damit jeder Build mit frischen Daten laeuft.
+on:
+  schedule:
+    - cron: "0 4 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kk-learn
+  cancel-in-progress: false
+
+jobs:
+  learn:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Insights auswerten
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+        run: python3 learn_and_adapt.py
+
+      - name: Learnings sichern
+        if: always()
+        run: |
+          if [[ -n "$(git status --porcelain learnings.json)" ]]; then
+            git config user.name "kk-autopilot-bot"
+            git config user.email "bot@users.noreply.github.com"
+            git add learnings.json
+            git commit -m "chore: learnings aktualisiert $(date -u +%FT%TZ)"
+            git pull --rebase --autostash
+            git push
+          fi
