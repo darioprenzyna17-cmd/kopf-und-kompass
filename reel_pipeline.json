@@ -2,25 +2,6 @@
   "_hinweis": "Archivkino-Schema (Text-first, klar): name, theme, kicker (kurzes klares Wort, optional), thoughts[3-4] (klare Saetze, | = Zeilenumbruch), endcard_term (optional, meist leer), cta (klar: 'Folge fuer mehr.' / 'Speichern.' / 'Teile das.'), clips[3] (vollflaechig, keine Gesichter), music, caption. Zeilen aus bewaehrten Referenz-Accounts, KEIN erfundener Jargon.",
   "approved": [
     {
-      "name": "selbstrespekt",
-      "theme": "Selbstrespekt",
-      "kicker": "SELBSTRESPEKT",
-      "thoughts": [
-        "Die Menschen behandeln dich so,|wie du es zulässt.",
-        "Dein Schweigen ist auch eine Antwort.",
-        "Was du duldest, wird zur Gewohnheit.",
-        "Respekt beginnt bei dir selbst."
-      ],
-      "cta": "Schick das jemandem, der es gerade braucht.",
-      "clips": [
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a still lake surface perfectly mirroring a grey mountain at dawn, glass calm water, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a single upright standing stone on a windswept coastal cliff under moving clouds, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, warm light falling across the worn pages of an open leather book on a wooden table, soft side light, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
-      ],
-      "music": "neoclassical cinematic ambient, warm and uplifting, solo felt piano with warm strings and cello, soft sub drone, slow arc from minor to major, 68 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
-      "caption": "Andere lernen von dir, wie sie mit dir umgehen dürfen. Was du duldest, wird zur Gewohnheit. Selbstrespekt heisst, nicht jeden Ton mitzumachen. Es beginnt bei dir.\n\n#selbstrespekt #selbstwert #grenzen #mindset #kopfundkompass"
-    },
-    {
       "name": "ruhe_reagieren",
       "theme": "Ruhe",
       "kicker": "RUHE",
@@ -304,6 +285,11 @@
       "name": "geduld_ernte",
       "theme": "Geduld",
       "permalink": "https://www.instagram.com/reel/Da-CIBmCLiM/"
+    },
+    {
+      "name": "selbstrespekt",
+      "theme": "Selbstrespekt",
+      "permalink": "https://www.instagram.com/reel/DbAe4gnDfY3/"
     }
   ]
 }

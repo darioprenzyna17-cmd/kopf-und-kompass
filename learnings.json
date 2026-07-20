@@ -5,17 +5,17 @@
   "themen_rang": [
     {
       "thema": "Grenzen",
-      "score_avg": 24.62,
+      "score_avg": 24.61,
       "n": 1,
-      "reichweite": 469,
+      "reichweite": 470,
       "saves": 2,
       "shares": 3
     },
     {
       "thema": "Geduld",
-      "score_avg": 10.08,
+      "score_avg": 10.06,
       "n": 1,
-      "reichweite": 343,
+      "reichweite": 359,
       "saves": 1,
       "shares": 1
     },
@@ -29,17 +29,17 @@
     },
     {
       "thema": "Mitgefühl",
-      "score_avg": 6.18,
+      "score_avg": 6.2,
       "n": 1,
-      "reichweite": 445,
+      "reichweite": 448,
       "saves": 1,
       "shares": 0
     },
     {
       "thema": "Charakter",
-      "score_avg": 5.94,
+      "score_avg": 5.97,
       "n": 1,
-      "reichweite": 460,
+      "reichweite": 461,
       "saves": 1,
       "shares": 0
     },
@@ -47,7 +47,7 @@
       "thema": "Selbstwert",
       "score_avg": 5.74,
       "n": 1,
-      "reichweite": 335,
+      "reichweite": 337,
       "saves": 1,
       "shares": 0
     },
@@ -63,15 +63,15 @@
       "thema": "Eigener Weg",
       "score_avg": 2.7,
       "n": 1,
-      "reichweite": 360,
+      "reichweite": 362,
       "saves": 0,
       "shares": 0
     },
     {
       "thema": "Wahrheit",
-      "score_avg": 2.29,
+      "score_avg": 2.31,
       "n": 1,
-      "reichweite": 321,
+      "reichweite": 323,
       "saves": 0,
       "shares": 0
     }
@@ -88,22 +88,22 @@
     {
       "name": "charakter_statt_besitz",
       "theme": "Charakter",
-      "score": 5.94,
-      "reach": 460,
+      "score": 5.97,
+      "reach": 461,
       "saved": 1,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 3760
+      "ig_reels_avg_watch_time": 3825
     },
     {
       "name": "hundert_gruende",
       "theme": "Selbstwert",
       "score": 5.74,
-      "reach": 335,
+      "reach": 337,
       "saved": 1,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 3615
+      "ig_reels_avg_watch_time": 3605
     },
     {
       "name": "stille_disziplin",
@@ -128,52 +128,52 @@
     {
       "name": "satz_den_du_brauchst",
       "theme": "Wahrheit",
-      "score": 2.29,
-      "reach": 321,
+      "score": 2.31,
+      "reach": 323,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3941
+      "ig_reels_avg_watch_time": 3979
     },
     {
       "name": "kampf_dahinter",
       "theme": "Mitgefühl",
-      "score": 6.18,
-      "reach": 445,
+      "score": 6.2,
+      "reach": 448,
       "saved": 1,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 4279
+      "ig_reels_avg_watch_time": 4303
     },
     {
       "name": "grenzen_setzen",
       "theme": "Grenzen",
-      "score": 24.62,
-      "reach": 469,
+      "score": 24.61,
+      "reach": 470,
       "saved": 2,
       "shares": 3,
       "total_interactions": 12,
-      "ig_reels_avg_watch_time": 5098
+      "ig_reels_avg_watch_time": 5085
     },
     {
       "name": "eigener_weg",
       "theme": "Eigener Weg",
       "score": 2.7,
-      "reach": 360,
+      "reach": 362,
       "saved": 0,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 4087
+      "ig_reels_avg_watch_time": 4080
     },
     {
       "name": "geduld_ernte",
       "theme": "Geduld",
-      "score": 10.08,
-      "reach": 343,
+      "score": 10.06,
+      "reach": 359,
       "saved": 1,
       "shares": 1,
       "total_interactions": 3,
-      "ig_reels_avg_watch_time": 3666
+      "ig_reels_avg_watch_time": 3599
     }
   ]
 }
