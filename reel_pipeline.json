@@ -2,25 +2,6 @@
   "_hinweis": "Archivkino-Schema (Text-first, klar): name, theme, kicker (kurzes klares Wort, optional), thoughts[3-4] (klare Saetze, | = Zeilenumbruch), endcard_term (optional, meist leer), cta (klar: 'Folge fuer mehr.' / 'Speichern.' / 'Teile das.'), clips[3] (vollflaechig, keine Gesichter), music, caption. Zeilen aus bewaehrten Referenz-Accounts, KEIN erfundener Jargon.",
   "approved": [
     {
-      "name": "ruhe_reagieren",
-      "theme": "Ruhe",
-      "kicker": "RUHE",
-      "thoughts": [
-        "Nicht jede Provokation|braucht deine Antwort.",
-        "Zwischen Reiz und Reaktion|liegt ein Atemzug.",
-        "In diesem Atemzug|liegt deine Freiheit.",
-        "Deine Ruhe ist deine Macht."
-      ],
-      "cta": "Teile das mit jemandem, der es hören muss.",
-      "clips": [
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a deep still forest pond with fallen leaves resting motionless on the surface, soft green reflections, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, slow morning mist drifting across a calm valley between dark hills, soft even light, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a single candle flame burning steady and unmoving in a dim quiet room, soft warm glow, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
-      ],
-      "music": "neoclassical cinematic ambient, warm and calm, solo felt piano with warm strings and cello, soft sub drone, slow arc from minor to major, 66 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
-      "caption": "Nicht jede Provokation verdient deine Reaktion. Deine Ruhe ist keine Schwäche, sondern Kontrolle. Zwischen Reiz und Antwort liegt dein Atemzug. Nutze ihn.\n\n#ruhe #gelassenheit #mindset #selbstkontrolle #kopfundkompass"
-    },
-    {
       "name": "wie_weit_gekommen",
       "theme": "Fortschritt",
       "kicker": "FORTSCHRITT",
@@ -290,6 +271,11 @@
       "name": "selbstrespekt",
       "theme": "Selbstrespekt",
       "permalink": "https://www.instagram.com/reel/DbAe4gnDfY3/"
+    },
+    {
+      "name": "ruhe_reagieren",
+      "theme": "Ruhe",
+      "permalink": "https://www.instagram.com/reel/DbDfBA8jBg3/"
     }
   ]
 }

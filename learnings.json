@@ -5,9 +5,9 @@
   "themen_rang": [
     {
       "thema": "Grenzen",
-      "score_avg": 27.93,
+      "score_avg": 27.94,
       "n": 1,
-      "reichweite": 490,
+      "reichweite": 497,
       "saves": 3,
       "shares": 3
     },
@@ -15,31 +15,31 @@
       "thema": "Geduld",
       "score_avg": 13.38,
       "n": 1,
-      "reichweite": 396,
+      "reichweite": 400,
       "saves": 2,
       "shares": 1
     },
     {
       "thema": "Selbstrespekt",
-      "score_avg": 10.71,
+      "score_avg": 10.8,
       "n": 1,
-      "reichweite": 387,
+      "reichweite": 410,
       "saves": 2,
       "shares": 0
     },
     {
       "thema": "Achtsamkeit",
-      "score_avg": 9.99,
+      "score_avg": 9.98,
       "n": 1,
-      "reichweite": 270,
+      "reichweite": 277,
       "saves": 2,
       "shares": 0
     },
     {
       "thema": "Mitgefühl",
-      "score_avg": 6.26,
+      "score_avg": 6.27,
       "n": 1,
-      "reichweite": 479,
+      "reichweite": 489,
       "saves": 1,
       "shares": 0
     },
@@ -53,9 +53,9 @@
     },
     {
       "thema": "Selbstwert",
-      "score_avg": 5.74,
+      "score_avg": 5.76,
       "n": 1,
-      "reichweite": 350,
+      "reichweite": 360,
       "saves": 1,
       "shares": 0
     },
@@ -63,7 +63,7 @@
       "thema": "Disziplin",
       "score_avg": 3.22,
       "n": 1,
-      "reichweite": 357,
+      "reichweite": 362,
       "saves": 0,
       "shares": 0
     },
@@ -77,9 +77,9 @@
     },
     {
       "thema": "Wahrheit",
-      "score_avg": 2.3,
+      "score_avg": 2.31,
       "n": 1,
-      "reichweite": 338,
+      "reichweite": 347,
       "saves": 0,
       "shares": 0
     }
@@ -106,62 +106,62 @@
     {
       "name": "hundert_gruende",
       "theme": "Selbstwert",
-      "score": 5.74,
-      "reach": 350,
+      "score": 5.76,
+      "reach": 360,
       "saved": 1,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 3589
+      "ig_reels_avg_watch_time": 3605
     },
     {
       "name": "stille_disziplin",
       "theme": "Disziplin",
       "score": 3.22,
-      "reach": 357,
+      "reach": 362,
       "saved": 0,
       "shares": 0,
       "total_interactions": 3,
-      "ig_reels_avg_watch_time": 3933
+      "ig_reels_avg_watch_time": 3912
     },
     {
       "name": "momente_zu_spaet",
       "theme": "Achtsamkeit",
-      "score": 9.99,
-      "reach": 270,
+      "score": 9.98,
+      "reach": 277,
       "saved": 2,
       "shares": 0,
       "total_interactions": 6,
-      "ig_reels_avg_watch_time": 3832
+      "ig_reels_avg_watch_time": 3800
     },
     {
       "name": "satz_den_du_brauchst",
       "theme": "Wahrheit",
-      "score": 2.3,
-      "reach": 338,
+      "score": 2.31,
+      "reach": 347,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3923
+      "ig_reels_avg_watch_time": 3920
     },
     {
       "name": "kampf_dahinter",
       "theme": "Mitgefühl",
-      "score": 6.26,
-      "reach": 479,
+      "score": 6.27,
+      "reach": 489,
       "saved": 1,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 4358
+      "ig_reels_avg_watch_time": 4365
     },
     {
       "name": "grenzen_setzen",
       "theme": "Grenzen",
-      "score": 27.93,
-      "reach": 490,
+      "score": 27.94,
+      "reach": 497,
       "saved": 3,
       "shares": 3,
       "total_interactions": 13,
-      "ig_reels_avg_watch_time": 5086
+      "ig_reels_avg_watch_time": 5080
     },
     {
       "name": "eigener_weg",
@@ -177,21 +177,21 @@
       "name": "geduld_ernte",
       "theme": "Geduld",
       "score": 13.38,
-      "reach": 396,
+      "reach": 400,
       "saved": 2,
       "shares": 1,
       "total_interactions": 4,
-      "ig_reels_avg_watch_time": 3578
+      "ig_reels_avg_watch_time": 3566
     },
     {
       "name": "selbstrespekt",
       "theme": "Selbstrespekt",
-      "score": 10.71,
-      "reach": 387,
+      "score": 10.8,
+      "reach": 410,
       "saved": 2,
       "shares": 0,
       "total_interactions": 6,
-      "ig_reels_avg_watch_time": 5051
+      "ig_reels_avg_watch_time": 5183
     }
   ]
 }
