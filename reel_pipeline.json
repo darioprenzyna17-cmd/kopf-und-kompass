@@ -2,25 +2,6 @@
   "_hinweis": "Archivkino-Schema (Text-first, klar): name, theme, kicker (kurzes klares Wort, optional), thoughts[3-4] (klare Saetze, | = Zeilenumbruch), endcard_term (optional, meist leer), cta (klar: 'Folge fuer mehr.' / 'Speichern.' / 'Teile das.'), clips[3] (vollflaechig, keine Gesichter), music, caption. Zeilen aus bewaehrten Referenz-Accounts, KEIN erfundener Jargon.",
   "approved": [
     {
-      "name": "wie_weit_gekommen",
-      "theme": "Fortschritt",
-      "kicker": "FORTSCHRITT",
-      "thoughts": [
-        "Schau kurz zurück,|nicht nur nach vorn.",
-        "Du hast Dinge überstanden,|die dich fast gebrochen hätten.",
-        "Der Mensch von damals|wäre stolz auf dich.",
-        "Du bist weiter, als du denkst."
-      ],
-      "cta": "Speichern, für den Tag, an dem du es brauchst.",
-      "clips": [
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a long winding path seen from a high ridge stretching back down through green hills into a distant valley, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, worn stone steps climbing up an old hillside covered in moss with soft light from above, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a wide sunrise slowly breaking over a distant mountain range with warm light spilling across the peaks, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
-      ],
-      "music": "neoclassical cinematic ambient, warm and hopeful, solo felt piano with warm strings and cello, soft sub drone, slow arc from minor to major, 68 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
-      "caption": "Manchmal starrst du so lange nach vorn, dass du vergisst, wie weit du schon gekommen bist. Du hast Dinge überstanden, die dich fast gebrochen hätten. Sei stolz. Du bist weiter, als du denkst.\n\n#fortschritt #dankbarkeit #mindset #wachstum #kopfundkompass"
-    },
-    {
       "name": "charakter_allein",
       "theme": "Charakter",
       "kicker": "HALTUNG",
@@ -371,6 +352,11 @@
       "name": "ruhe_reagieren",
       "theme": "Ruhe",
       "permalink": "https://www.instagram.com/reel/DbDfBA8jBg3/"
+    },
+    {
+      "name": "wie_weit_gekommen",
+      "theme": "Fortschritt",
+      "permalink": "https://www.instagram.com/reel/DbGgRpDlHRb/"
     }
   ]
 }
