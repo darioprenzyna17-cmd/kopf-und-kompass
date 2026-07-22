@@ -1,85 +1,93 @@
 {
   "_hinweis": "Automatisch aus Instagram-Insights. Nordstern: Save+Share+Follow. cloud_build_post.py priorisiert Gewinner-Themen.",
   "updated_utc": null,
-  "n_reels_mit_daten": 10,
+  "n_reels_mit_daten": 11,
   "themen_rang": [
     {
       "thema": "Grenzen",
-      "score_avg": 27.94,
+      "score_avg": 28.22,
       "n": 1,
-      "reichweite": 497,
+      "reichweite": 508,
       "saves": 3,
       "shares": 3
     },
     {
       "thema": "Geduld",
-      "score_avg": 13.38,
+      "score_avg": 13.69,
       "n": 1,
-      "reichweite": 400,
+      "reichweite": 411,
       "saves": 2,
       "shares": 1
     },
     {
       "thema": "Selbstrespekt",
-      "score_avg": 10.8,
+      "score_avg": 11.18,
       "n": 1,
-      "reichweite": 410,
+      "reichweite": 449,
       "saves": 2,
       "shares": 0
     },
     {
       "thema": "Achtsamkeit",
-      "score_avg": 9.98,
+      "score_avg": 10.32,
       "n": 1,
-      "reichweite": 277,
+      "reichweite": 288,
       "saves": 2,
       "shares": 0
     },
     {
-      "thema": "Mitgefühl",
-      "score_avg": 6.27,
+      "thema": "Ruhe",
+      "score_avg": 7.55,
       "n": 1,
-      "reichweite": 489,
+      "reichweite": 298,
+      "saves": 0,
+      "shares": 1
+    },
+    {
+      "thema": "Mitgefühl",
+      "score_avg": 6.57,
+      "n": 1,
+      "reichweite": 497,
       "saves": 1,
       "shares": 0
     },
     {
       "thema": "Charakter",
-      "score_avg": 5.98,
+      "score_avg": 6.28,
       "n": 1,
-      "reichweite": 471,
+      "reichweite": 484,
       "saves": 1,
       "shares": 0
     },
     {
       "thema": "Selbstwert",
-      "score_avg": 5.76,
+      "score_avg": 6.11,
       "n": 1,
-      "reichweite": 360,
+      "reichweite": 373,
       "saves": 1,
       "shares": 0
     },
     {
       "thema": "Disziplin",
-      "score_avg": 3.22,
+      "score_avg": 3.61,
       "n": 1,
-      "reichweite": 362,
+      "reichweite": 384,
       "saves": 0,
       "shares": 0
     },
     {
       "thema": "Eigener Weg",
-      "score_avg": 2.71,
+      "score_avg": 3.02,
       "n": 1,
-      "reichweite": 371,
+      "reichweite": 398,
       "saves": 0,
       "shares": 0
     },
     {
       "thema": "Wahrheit",
-      "score_avg": 2.31,
+      "score_avg": 2.61,
       "n": 1,
-      "reichweite": 347,
+      "reichweite": 359,
       "saves": 0,
       "shares": 0
     }
@@ -96,102 +104,112 @@
     {
       "name": "charakter_statt_besitz",
       "theme": "Charakter",
-      "score": 5.98,
-      "reach": 471,
+      "score": 6.28,
+      "reach": 484,
       "saved": 1,
       "shares": 0,
-      "total_interactions": 2,
-      "ig_reels_avg_watch_time": 3818
+      "total_interactions": 3,
+      "ig_reels_avg_watch_time": 3791
     },
     {
       "name": "hundert_gruende",
       "theme": "Selbstwert",
-      "score": 5.76,
-      "reach": 360,
+      "score": 6.11,
+      "reach": 373,
       "saved": 1,
       "shares": 0,
-      "total_interactions": 2,
-      "ig_reels_avg_watch_time": 3605
+      "total_interactions": 3,
+      "ig_reels_avg_watch_time": 3674
     },
     {
       "name": "stille_disziplin",
       "theme": "Disziplin",
-      "score": 3.22,
-      "reach": 362,
+      "score": 3.61,
+      "reach": 384,
       "saved": 0,
       "shares": 0,
-      "total_interactions": 3,
-      "ig_reels_avg_watch_time": 3912
+      "total_interactions": 4,
+      "ig_reels_avg_watch_time": 4044
     },
     {
       "name": "momente_zu_spaet",
       "theme": "Achtsamkeit",
-      "score": 9.98,
-      "reach": 277,
+      "score": 10.32,
+      "reach": 288,
       "saved": 2,
       "shares": 0,
-      "total_interactions": 6,
-      "ig_reels_avg_watch_time": 3800
+      "total_interactions": 7,
+      "ig_reels_avg_watch_time": 3856
     },
     {
       "name": "satz_den_du_brauchst",
       "theme": "Wahrheit",
-      "score": 2.31,
-      "reach": 347,
+      "score": 2.61,
+      "reach": 359,
       "saved": 0,
       "shares": 0,
-      "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3920
+      "total_interactions": 1,
+      "ig_reels_avg_watch_time": 3901
     },
     {
       "name": "kampf_dahinter",
       "theme": "Mitgefühl",
-      "score": 6.27,
-      "reach": 489,
+      "score": 6.57,
+      "reach": 497,
       "saved": 1,
       "shares": 0,
-      "total_interactions": 2,
-      "ig_reels_avg_watch_time": 4365
+      "total_interactions": 3,
+      "ig_reels_avg_watch_time": 4349
     },
     {
       "name": "grenzen_setzen",
       "theme": "Grenzen",
-      "score": 27.94,
-      "reach": 497,
+      "score": 28.22,
+      "reach": 508,
       "saved": 3,
       "shares": 3,
-      "total_interactions": 13,
-      "ig_reels_avg_watch_time": 5080
+      "total_interactions": 14,
+      "ig_reels_avg_watch_time": 5028
     },
     {
       "name": "eigener_weg",
       "theme": "Eigener Weg",
-      "score": 2.71,
-      "reach": 371,
+      "score": 3.02,
+      "reach": 398,
       "saved": 0,
       "shares": 0,
-      "total_interactions": 1,
-      "ig_reels_avg_watch_time": 4072
+      "total_interactions": 2,
+      "ig_reels_avg_watch_time": 4036
     },
     {
       "name": "geduld_ernte",
       "theme": "Geduld",
-      "score": 13.38,
-      "reach": 400,
+      "score": 13.69,
+      "reach": 411,
       "saved": 2,
       "shares": 1,
-      "total_interactions": 4,
-      "ig_reels_avg_watch_time": 3566
+      "total_interactions": 5,
+      "ig_reels_avg_watch_time": 3554
     },
     {
       "name": "selbstrespekt",
       "theme": "Selbstrespekt",
-      "score": 10.8,
-      "reach": 410,
+      "score": 11.18,
+      "reach": 449,
       "saved": 2,
       "shares": 0,
-      "total_interactions": 6,
-      "ig_reels_avg_watch_time": 5183
+      "total_interactions": 7,
+      "ig_reels_avg_watch_time": 5259
+    },
+    {
+      "name": "ruhe_reagieren",
+      "theme": "Ruhe",
+      "score": 7.55,
+      "reach": 298,
+      "saved": 0,
+      "shares": 1,
+      "total_interactions": 5,
+      "ig_reels_avg_watch_time": 3510
     }
   ]
 }
