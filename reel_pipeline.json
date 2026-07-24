@@ -2,25 +2,6 @@
   "_hinweis": "Archivkino-Schema (Text-first, klar): name, theme, kicker (kurzes klares Wort, optional), thoughts[3-4] (klare Saetze, | = Zeilenumbruch), endcard_term (optional, meist leer), cta (klar: 'Folge fuer mehr.' / 'Speichern.' / 'Teile das.'), clips[3] (vollflaechig, keine Gesichter), music, caption. Zeilen aus bewaehrten Referenz-Accounts, KEIN erfundener Jargon.",
   "approved": [
     {
-      "name": "charakter_allein",
-      "theme": "Charakter",
-      "kicker": "HALTUNG",
-      "thoughts": [
-        "Charakter zeigt sich,|wenn niemand zusieht.",
-        "Vor anderen höflich sein ist leicht.",
-        "Allein ehrlich bleiben ist die Probe.",
-        "Das ist dein wahrer Wert."
-      ],
-      "cta": "Antworte mit einem Wort.",
-      "clips": [
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a narrow coastal footpath at dusk winding along dark cliffs with the sea below, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, an empty wooden chair standing alone on a weathered porch in soft evening light, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a heavy wooden door standing slightly ajar in an old stone wall with warm light spilling through the gap, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
-      ],
-      "music": "neoclassical cinematic ambient, warm and uplifting, solo felt piano with warm strings and cello, soft sub drone, slow arc from minor to major, 68 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
-      "caption": "Vor anderen bist du höflich. Allein zeigt sich, wer du wirklich bist. Charakter braucht kein Publikum. Er entsteht in den Momenten, die niemand sieht.\n\n#charakter #haltung #mindset #selbstwert #kopfundkompass"
-    },
-    {
       "name": "worte_die_halten",
       "theme": "Charakter",
       "kicker": "ZUVERLÄSSIGKEIT",
@@ -357,6 +338,11 @@
       "name": "wie_weit_gekommen",
       "theme": "Fortschritt",
       "permalink": "https://www.instagram.com/reel/DbGgRpDlHRb/"
+    },
+    {
+      "name": "charakter_allein",
+      "theme": "Charakter",
+      "permalink": "https://www.instagram.com/reel/DbMExkoDnz3/"
     }
   ]
 }
