@@ -204,24 +204,65 @@ def gen_music(prompt, out):
     raise TimeoutError("music")
 
 
-GRADE = ("eq=saturation=0.82:contrast=1.08:brightness=0.01:gamma=1.02,"
-         "curves=m='0/0.055 0.22/0.16 0.5/0.5 0.78/0.85 1/0.97',"
-         "colorbalance=rs=-0.03:gs=0.01:bs=0.05:rm=0.04:gm=0.0:bm=-0.03:rh=0.06:gh=0.02:bh=-0.05,"
-         "colorchannelmixer=rr=1.02:gg=1.0:bb=0.97,"
-         "noise=alls=8,vignette=PI/5:mode=backward")
+# Der verwaschene Look wird NICHT abrupt entfernt, sondern von Video zu Video sanft
+# herausgenommen (Wunsch Dario 2026-07-25). Ein Schrittzaehler in grade_state.json
+# interpoliert von t=0 (aktueller, milchiger Look) zu t=1 (sauber: echtes Schwarz,
+# volle Saettigung, mehr Kontrast, weniger Korn/Vignette) ueber GRADE_STEPS Videos.
+GRADE_STEPS = 6
+GRADE_STATE = HERE / "grade_state.json"
+
+
+def _lerp(a, b, t):
+    return a + (b - a) * t
+
+
+def _grade_filter(t):
+    """t=0 = bisheriger verwaschener Look, t=1 = sauber. Dazwischen wird sanft entwaschen."""
+    sat = round(_lerp(0.82, 1.0, t), 3)     # Saettigung hoch
+    blk = round(_lerp(0.055, 0.0, t), 3)    # angehobenes Schwarz -> echtes Schwarz (Kern des Milch-Looks)
+    hi = round(_lerp(0.97, 1.0, t), 3)      # Highlights wieder bis weiss
+    con = round(_lerp(1.08, 1.14, t), 3)    # etwas mehr Kontrast/Punch
+    noi = int(round(_lerp(8, 3, t)))        # weniger Korn
+    vig = round(_lerp(5.0, 7.0, t), 2)      # weniger Vignette (groesserer Nenner = schwaecher)
+    return (f"eq=saturation={sat}:contrast={con}:brightness=0.01:gamma=1.02,"
+            f"curves=m='0/{blk} 0.22/0.16 0.5/0.5 0.78/0.85 1/{hi}',"
+            "colorbalance=rs=-0.03:gs=0.01:bs=0.05:rm=0.04:gm=0.0:bm=-0.03:rh=0.06:gh=0.02:bh=-0.05,"
+            "colorchannelmixer=rr=1.02:gg=1.0:bb=0.97,"
+            f"noise=alls={noi},vignette=PI/{vig}:mode=backward")
+
+
+def _next_grade():
+    """Liest den Schritt, liefert (grade-Filter, step, t). Schreibt NICHT (erst nach Erfolg)."""
+    step = 0
+    try:
+        if GRADE_STATE.exists():
+            step = int(json.loads(GRADE_STATE.read_text()).get("step", 0))
+    except Exception:
+        step = 0
+    t = min(1.0, step / GRADE_STEPS)
+    return _grade_filter(t), step, t
+
+
+def _advance_grade(step):
+    try:
+        GRADE_STATE.write_text(json.dumps({"step": min(step + 1, GRADE_STEPS)}))
+    except Exception:
+        pass
 
 
 def compose_montage(clips, cl, out):
-    """3 Clips -> weiche Cross-Dissolves (1,2s) -> Archivkino-Grade + Korn + Vignette."""
+    """3 Clips -> weiche Cross-Dissolves (1,2s) -> Grade + Korn + Vignette (schrittweise entwascht)."""
+    grade, step, t = _next_grade()
     ins = []
     for c in clips:
         ins += ["-i", str(c)]
     k = len(clips)
     parts = []
     for i in range(k):
-        # Leichter Zoom-Crop (~1.14x): entfernt zuverlaessig etwaige von Veo gerenderte
-        # Filmstreifen-/Rahmen-Raender, ohne Qualitaetsverlust.
-        parts.append(f"[{i}:v]trim=0:{cl},setpts=PTS-STARTPTS,scale=1231:2189:force_original_aspect_ratio="
+        # Staerkerer Zoom-Crop (~1.28x): schneidet den von Veo gerenderten Archiv-Film-
+        # Rahmen (inkl. des runden Elements links) zuverlaessig weg. Die Prompts sagen zwar
+        # "no film strip border", Veo rendert ihn aber trotzdem -> hier hart wegcroppen.
+        parts.append(f"[{i}:v]trim=0:{cl},setpts=PTS-STARTPTS,scale=1382:2458:force_original_aspect_ratio="
                      f"increase,crop=1080:1920,fps=24,setsar=1,format=yuv420p[c{i}]")
     # xfade-Kette
     prev = "c0"
@@ -230,11 +271,13 @@ def compose_montage(clips, cl, out):
         tag = f"x{i}" if i < k - 1 else "m"
         parts.append(f"[{prev}][c{i}]xfade=transition=fade:duration={DISSOLVE}:offset={off}[{tag}]")
         prev = tag
-    parts.append(f"[m]{GRADE},setsar=1,format=yuv420p[out]")
+    parts.append(f"[m]{grade},setsar=1,format=yuv420p[out]")
     fc = ";".join(parts)
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", *ins, "-filter_complex", fc,
                     "-map", "[out]", "-c:v", "libx264", "-preset", "veryfast", "-crf", "17",
                     "-pix_fmt", "yuv420p", str(out)], check=True, timeout=600)
+    print(f"  Entwaschen Schritt {step}/{GRADE_STEPS} (t={t:.2f})", flush=True)
+    _advance_grade(step)
 
 
 def compose_final(montage, cards, endcard_png, music, out, foot_len):
