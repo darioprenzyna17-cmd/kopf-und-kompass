@@ -1,13 +1,13 @@
 {
   "_hinweis": "Automatisch aus Instagram-Insights. Nordstern: Save+Share+Follow. cloud_build_post.py priorisiert Gewinner-Themen.",
   "updated_utc": null,
-  "n_reels_mit_daten": 13,
+  "n_reels_mit_daten": 14,
   "themen_rang": [
     {
       "thema": "Grenzen",
-      "score_avg": 28.53,
-      "n": 1,
-      "reichweite": 557,
+      "score_avg": 16.52,
+      "n": 2,
+      "reichweite": 582,
       "saves": 3,
       "shares": 3
     },
@@ -23,7 +23,7 @@
       "thema": "Fortschritt",
       "score_avg": 13.64,
       "n": 1,
-      "reichweite": 264,
+      "reichweite": 267,
       "saves": 2,
       "shares": 1
     },
@@ -45,9 +45,9 @@
     },
     {
       "thema": "Charakter",
-      "score_avg": 8.56,
+      "score_avg": 8.54,
       "n": 2,
-      "reichweite": 823,
+      "reichweite": 841,
       "saves": 1,
       "shares": 1
     },
@@ -172,12 +172,12 @@
     {
       "name": "grenzen_setzen",
       "theme": "Grenzen",
-      "score": 28.53,
+      "score": 28.52,
       "reach": 557,
       "saved": 3,
       "shares": 3,
       "total_interactions": 15,
-      "ig_reels_avg_watch_time": 4940
+      "ig_reels_avg_watch_time": 4936
     },
     {
       "name": "eigener_weg",
@@ -217,27 +217,37 @@
       "saved": 0,
       "shares": 1,
       "total_interactions": 5,
-      "ig_reels_avg_watch_time": 3405
+      "ig_reels_avg_watch_time": 3403
     },
     {
       "name": "wie_weit_gekommen",
       "theme": "Fortschritt",
       "score": 13.64,
-      "reach": 264,
+      "reach": 267,
       "saved": 2,
       "shares": 1,
       "total_interactions": 5,
-      "ig_reels_avg_watch_time": 3757
+      "ig_reels_avg_watch_time": 3753
     },
     {
       "name": "charakter_allein",
       "theme": "Charakter",
-      "score": 10.79,
-      "reach": 302,
+      "score": 10.75,
+      "reach": 320,
       "saved": 0,
       "shares": 1,
       "total_interactions": 11,
-      "ig_reels_avg_watch_time": 6385
+      "ig_reels_avg_watch_time": 6255
+    },
+    {
+      "name": "spaeter_antworten",
+      "theme": "Grenzen",
+      "score": 4.52,
+      "reach": 25,
+      "saved": 0,
+      "shares": 0,
+      "total_interactions": 0,
+      "ig_reels_avg_watch_time": 8989
     }
   ]
 }
