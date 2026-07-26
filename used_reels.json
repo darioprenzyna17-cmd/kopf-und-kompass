@@ -16,6 +16,7 @@
     "Ruhe",
     "Fortschritt",
     "Charakter",
+    "Grenzen",
     "Grenzen"
   ],
   "used_hooks": [
@@ -34,6 +35,7 @@
     "Nicht jede Provokation|braucht deine Antwort.",
     "Schau kurz zurück,|nicht nur nach vorn.",
     "Charakter zeigt sich,|wenn niemand zusieht.",
-    "Du antwortest noch um 22 Uhr.|Die Nachricht hätte warten können."
+    "Du antwortest noch um 22 Uhr.|Die Nachricht hätte warten können.",
+    "Du sagst es zum dritten Mal.|Das macht dich nicht schwierig."
   ]
 }
