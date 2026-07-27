@@ -17,7 +17,8 @@
     "Fortschritt",
     "Charakter",
     "Grenzen",
-    "Grenzen"
+    "Grenzen",
+    "Fortschritt"
   ],
   "used_hooks": [
     "Nicht du bist verloren.|Nur die Peilung.",
@@ -36,6 +37,7 @@
     "Schau kurz zurück,|nicht nur nach vorn.",
     "Charakter zeigt sich,|wenn niemand zusieht.",
     "Du antwortest noch um 22 Uhr.|Die Nachricht hätte warten können.",
-    "Du sagst es zum dritten Mal.|Das macht dich nicht schwierig."
+    "Du sagst es zum dritten Mal.|Das macht dich nicht schwierig.",
+    "Du siehst nur, was noch fehlt.|Nicht, was du schon geschafft hast."
   ]
 }
