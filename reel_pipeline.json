@@ -306,25 +306,6 @@
       "caption": "Der Himmel brennt orange und du schaust aufs Handy. Schöne Momente warten nicht auf dich, sie ziehen vorbei, ob du hinsiehst oder nicht. Sieh hin, bevor der Moment vorbei ist.\n\n#achtsamkeit #präsenz #moment #mindset #innereruhe #kopfundkompass"
     },
     {
-      "name": "schuldgefuehl_nach_nein",
-      "theme": "Grenzen",
-      "kicker": "RUHE",
-      "thoughts": [
-        "Du sagst Nein.|Und checkst danach ständig dein Handy.",
-        "Als könnte eine Nachricht das Nein zurücknehmen.",
-        "Aber ein Nein braucht keine Bestätigung.",
-        "Deine Ruhe ist wichtiger als ihre Zustimmung."
-      ],
-      "cta": "Speichere das für das nächste Nein.",
-      "clips": [
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a weathered wooden door left slightly ajar in a quiet stone hallway with soft light, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, calm still water in a stone harbor basin reflecting fading evening light, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a single closed wooden gate in a quiet garden wall at dusk, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
-      ],
-      "music": "neoclassical cinematic ambient, warm and uplifting, solo felt piano with warm strings and cello, soft sub drone, slow arc from minor to major, 68 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
-      "caption": "Ein Nein braucht keine Verteidigung. Trotzdem prüfst du danach dein Handy, als müsstest du dich rechtfertigen. Deine Ruhe zählt mehr als die Zustimmung der anderen.\n\n#grenzen #selbstrespekt #mindset #ruhe #kopfundkompass"
-    },
-    {
       "name": "entschuldigung_fuer_nichts",
       "theme": "Selbstrespekt",
       "kicker": "WÜRDE",
@@ -491,6 +472,11 @@
       "name": "blick_zurueck",
       "theme": "Fortschritt",
       "permalink": "https://www.instagram.com/reel/DbS8ogfEsoe/"
+    },
+    {
+      "name": "schuldgefuehl_nach_nein",
+      "theme": "Grenzen",
+      "permalink": "https://www.instagram.com/reel/DbV_NvGkdLj/"
     }
   ]
 }
