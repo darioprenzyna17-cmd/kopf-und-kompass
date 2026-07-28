@@ -1,85 +1,85 @@
 {
   "_hinweis": "Automatisch aus Instagram-Insights. Nordstern: Save+Share+Follow. cloud_build_post.py priorisiert Gewinner-Themen.",
   "updated_utc": null,
-  "n_reels_mit_daten": 15,
+  "n_reels_mit_daten": 16,
   "themen_rang": [
     {
+      "thema": "Grenzen",
+      "score_avg": 16.88,
+      "n": 3,
+      "reichweite": 1535,
+      "saves": 6,
+      "shares": 4
+    },
+    {
       "thema": "Selbstrespekt",
-      "score_avg": 14.63,
+      "score_avg": 14.67,
       "n": 1,
-      "reichweite": 553,
+      "reichweite": 560,
       "saves": 3,
       "shares": 0
     },
     {
-      "thema": "Grenzen",
-      "score_avg": 14.17,
-      "n": 3,
-      "reichweite": 1412,
-      "saves": 5,
-      "shares": 3
-    },
-    {
-      "thema": "Fortschritt",
-      "score_avg": 14.06,
+      "thema": "Geduld",
+      "score_avg": 13.8,
       "n": 1,
-      "reichweite": 310,
+      "reichweite": 463,
       "saves": 2,
       "shares": 1
     },
     {
-      "thema": "Geduld",
-      "score_avg": 13.76,
-      "n": 1,
-      "reichweite": 456,
-      "saves": 2,
+      "thema": "Fortschritt",
+      "score_avg": 13.71,
+      "n": 2,
+      "reichweite": 689,
+      "saves": 5,
       "shares": 1
     },
     {
       "thema": "Achtsamkeit",
-      "score_avg": 10.35,
+      "score_avg": 10.37,
       "n": 1,
-      "reichweite": 331,
+      "reichweite": 337,
       "saves": 2,
       "shares": 0
     },
     {
       "thema": "Charakter",
-      "score_avg": 8.99,
+      "score_avg": 9.02,
       "n": 2,
-      "reichweite": 1102,
+      "reichweite": 1137,
       "saves": 1,
       "shares": 1
     },
     {
       "thema": "Ruhe",
-      "score_avg": 8.01,
+      "score_avg": 8.05,
       "n": 1,
-      "reichweite": 400,
+      "reichweite": 408,
       "saves": 0,
       "shares": 1
     },
     {
       "thema": "Mitgefühl",
-      "score_avg": 6.9,
+      "score_avg": 6.91,
       "n": 1,
-      "reichweite": 538,
+      "reichweite": 542,
       "saves": 1,
       "shares": 0
     },
     {
       "thema": "Selbstwert",
-      "score_avg": 6.22,
+      "score_avg": 6.23,
       "n": 1,
-      "reichweite": 428,
+      "reichweite": 433,
       "saves": 1,
       "shares": 0
     },
     {
       "thema": "Disziplin",
-      "score_avg": 3.68,
+      "score_avg": 3.71,
       "n": 1,
-      "reichweite": 440,
+      "reichweite": 449,
       "saves": 0,
       "shares": 0
     },
@@ -87,177 +87,187 @@
       "thema": "Eigener Weg",
       "score_avg": 3.02,
       "n": 1,
-      "reichweite": 450,
+      "reichweite": 457,
       "saves": 0,
       "shares": 0
     },
     {
       "thema": "Wahrheit",
-      "score_avg": 2.68,
+      "score_avg": 2.72,
       "n": 1,
-      "reichweite": 412,
+      "reichweite": 422,
       "saves": 0,
       "shares": 0
     }
   ],
   "begriff_rang": [],
   "gewinner_themen": [
-    "Selbstrespekt",
     "Grenzen",
-    "Fortschritt"
+    "Selbstrespekt",
+    "Geduld"
   ],
   "verlierer_themen": [],
-  "empfehlung": "Ausbauen: Selbstrespekt, Grenzen, Fortschritt.",
+  "empfehlung": "Ausbauen: Grenzen, Selbstrespekt, Geduld.",
   "per_reel": [
     {
       "name": "charakter_statt_besitz",
       "theme": "Charakter",
-      "score": 6.34,
-      "reach": 531,
+      "score": 6.36,
+      "reach": 537,
       "saved": 1,
       "shares": 0,
       "total_interactions": 3,
-      "ig_reels_avg_watch_time": 3820
+      "ig_reels_avg_watch_time": 3837
     },
     {
       "name": "hundert_gruende",
       "theme": "Selbstwert",
-      "score": 6.22,
-      "reach": 428,
+      "score": 6.23,
+      "reach": 433,
       "saved": 1,
       "shares": 0,
       "total_interactions": 3,
-      "ig_reels_avg_watch_time": 3794
+      "ig_reels_avg_watch_time": 3797
     },
     {
       "name": "stille_disziplin",
       "theme": "Disziplin",
-      "score": 3.68,
-      "reach": 440,
+      "score": 3.71,
+      "reach": 449,
       "saved": 0,
       "shares": 0,
       "total_interactions": 4,
-      "ig_reels_avg_watch_time": 4074
+      "ig_reels_avg_watch_time": 4128
     },
     {
       "name": "momente_zu_spaet",
       "theme": "Achtsamkeit",
-      "score": 10.35,
-      "reach": 331,
+      "score": 10.37,
+      "reach": 337,
       "saved": 2,
       "shares": 0,
       "total_interactions": 7,
-      "ig_reels_avg_watch_time": 3837
+      "ig_reels_avg_watch_time": 3857
     },
     {
       "name": "satz_den_du_brauchst",
       "theme": "Wahrheit",
-      "score": 2.68,
-      "reach": 412,
+      "score": 2.72,
+      "reach": 422,
       "saved": 0,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 3930
+      "ig_reels_avg_watch_time": 3990
     },
     {
       "name": "kampf_dahinter",
       "theme": "Mitgefühl",
-      "score": 6.9,
-      "reach": 538,
+      "score": 6.91,
+      "reach": 542,
       "saved": 1,
       "shares": 0,
       "total_interactions": 4,
-      "ig_reels_avg_watch_time": 4323
+      "ig_reels_avg_watch_time": 4334
     },
     {
       "name": "grenzen_setzen",
       "theme": "Grenzen",
-      "score": 28.84,
-      "reach": 573,
+      "score": 28.83,
+      "reach": 589,
       "saved": 3,
       "shares": 3,
       "total_interactions": 16,
-      "ig_reels_avg_watch_time": 4926
+      "ig_reels_avg_watch_time": 4877
     },
     {
       "name": "eigener_weg",
       "theme": "Eigener Weg",
       "score": 3.02,
-      "reach": 450,
+      "reach": 457,
       "saved": 0,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 3931
+      "ig_reels_avg_watch_time": 3926
     },
     {
       "name": "geduld_ernte",
       "theme": "Geduld",
-      "score": 13.76,
-      "reach": 456,
+      "score": 13.8,
+      "reach": 463,
       "saved": 2,
       "shares": 1,
       "total_interactions": 5,
-      "ig_reels_avg_watch_time": 3615
+      "ig_reels_avg_watch_time": 3671
     },
     {
       "name": "selbstrespekt",
       "theme": "Selbstrespekt",
-      "score": 14.63,
-      "reach": 553,
+      "score": 14.67,
+      "reach": 560,
       "saved": 3,
       "shares": 0,
       "total_interactions": 8,
-      "ig_reels_avg_watch_time": 5352
+      "ig_reels_avg_watch_time": 5412
     },
     {
       "name": "ruhe_reagieren",
       "theme": "Ruhe",
-      "score": 8.01,
-      "reach": 400,
+      "score": 8.05,
+      "reach": 408,
       "saved": 0,
       "shares": 1,
       "total_interactions": 6,
-      "ig_reels_avg_watch_time": 3620
+      "ig_reels_avg_watch_time": 3681
     },
     {
       "name": "wie_weit_gekommen",
       "theme": "Fortschritt",
-      "score": 14.06,
-      "reach": 310,
+      "score": 14.16,
+      "reach": 317,
       "saved": 2,
       "shares": 1,
       "total_interactions": 6,
-      "ig_reels_avg_watch_time": 3906
+      "ig_reels_avg_watch_time": 4083
     },
     {
       "name": "charakter_allein",
       "theme": "Charakter",
-      "score": 11.64,
-      "reach": 571,
+      "score": 11.67,
+      "reach": 600,
       "saved": 0,
       "shares": 1,
       "total_interactions": 13,
-      "ig_reels_avg_watch_time": 6337
+      "ig_reels_avg_watch_time": 6340
     },
     {
       "name": "spaeter_antworten",
       "theme": "Grenzen",
-      "score": 6.92,
-      "reach": 431,
+      "score": 11.61,
+      "reach": 456,
       "saved": 1,
-      "shares": 0,
-      "total_interactions": 2,
-      "ig_reels_avg_watch_time": 5772
+      "shares": 1,
+      "total_interactions": 4,
+      "ig_reels_avg_watch_time": 5900
     },
     {
       "name": "grenze_wiederholen",
       "theme": "Grenzen",
-      "score": 6.74,
-      "reach": 408,
-      "saved": 1,
+      "score": 10.21,
+      "reach": 490,
+      "saved": 2,
       "shares": 0,
-      "total_interactions": 2,
-      "ig_reels_avg_watch_time": 5468
+      "total_interactions": 3,
+      "ig_reels_avg_watch_time": 5630
+    },
+    {
+      "name": "blick_zurueck",
+      "theme": "Fortschritt",
+      "score": 13.25,
+      "reach": 372,
+      "saved": 3,
+      "shares": 0,
+      "total_interactions": 6,
+      "ig_reels_avg_watch_time": 4161
     }
   ]
 }
