@@ -1,6 +1,7 @@
 {
   "used": [
-    0
+    0,
+    1
   ],
   "posted": [
     {
@@ -149,6 +150,13 @@
       "quote": "Du bist nicht zu viel.|*Du warst nur zu lange leise.",
       "media_id": "18399978133092599",
       "permalink": "https://www.instagram.com/stories/kopfundkompass/3951806986296115804"
+    },
+    {
+      "when": "2026-07-29T16:46:40Z",
+      "idx": 1,
+      "quote": "Ruhe ist keine Schwäche.|*Sie ist Kontrolle.",
+      "media_id": "18400686700089578",
+      "permalink": "https://www.instagram.com/stories/kopfundkompass/3952070895266273230"
     }
   ]
 }
