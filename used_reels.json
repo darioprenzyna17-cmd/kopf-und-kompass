@@ -20,7 +20,8 @@
     "Grenzen",
     "Fortschritt",
     "Grenzen",
-    "Selbstrespekt"
+    "Selbstrespekt",
+    "Geduld"
   ],
   "used_hooks": [
     "Nicht du bist verloren.|Nur die Peilung.",
@@ -42,6 +43,7 @@
     "Du sagst es zum dritten Mal.|Das macht dich nicht schwierig.",
     "Du siehst nur, was noch fehlt.|Nicht, was du schon geschafft hast.",
     "Du sagst Nein.|Und checkst danach ständig dein Handy.",
-    "Du entschuldigst dich für die späte Antwort.|Dabei hast du nichts falsch gemacht."
+    "Du entschuldigst dich für die späte Antwort.|Dabei hast du nichts falsch gemacht.",
+    "Heute bringt dich das kaum voran.|Trotzdem machst du weiter."
   ]
 }
