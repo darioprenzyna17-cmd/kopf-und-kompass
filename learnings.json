@@ -1,21 +1,13 @@
 {
   "_hinweis": "Automatisch aus Instagram-Insights. Nordstern: Save+Share+Follow. cloud_build_post.py priorisiert Gewinner-Themen.",
   "updated_utc": null,
-  "n_reels_mit_daten": 19,
+  "n_reels_mit_daten": 20,
   "themen_rang": [
-    {
-      "thema": "Fortschritt",
-      "score_avg": 13.76,
-      "n": 2,
-      "reichweite": 845,
-      "saves": 5,
-      "shares": 1
-    },
     {
       "thema": "Grenzen",
       "score_avg": 13.7,
       "n": 4,
-      "reichweite": 2277,
+      "reichweite": 2279,
       "saves": 6,
       "shares": 4
     },
@@ -28,10 +20,18 @@
       "shares": 0
     },
     {
+      "thema": "Fortschritt",
+      "score_avg": 9.69,
+      "n": 3,
+      "reichweite": 860,
+      "saves": 5,
+      "shares": 1
+    },
+    {
       "thema": "Selbstrespekt",
       "score_avg": 9.23,
       "n": 2,
-      "reichweite": 1085,
+      "reichweite": 1092,
       "saves": 3,
       "shares": 0
     },
@@ -45,9 +45,9 @@
     },
     {
       "thema": "Geduld",
-      "score_avg": 8.62,
+      "score_avg": 8.64,
       "n": 2,
-      "reichweite": 618,
+      "reichweite": 630,
       "saves": 2,
       "shares": 1
     },
@@ -102,12 +102,12 @@
   ],
   "begriff_rang": [],
   "gewinner_themen": [
-    "Fortschritt",
     "Grenzen",
-    "Achtsamkeit"
+    "Achtsamkeit",
+    "Fortschritt"
   ],
   "verlierer_themen": [],
-  "empfehlung": "Ausbauen: Fortschritt, Grenzen, Achtsamkeit.",
+  "empfehlung": "Ausbauen: Grenzen, Achtsamkeit, Fortschritt.",
   "per_reel": [
     {
       "name": "charakter_statt_besitz",
@@ -202,12 +202,12 @@
     {
       "name": "selbstrespekt",
       "theme": "Selbstrespekt",
-      "score": 14.71,
-      "reach": 597,
+      "score": 14.7,
+      "reach": 598,
       "saved": 3,
       "shares": 0,
       "total_interactions": 8,
-      "ig_reels_avg_watch_time": 5420
+      "ig_reels_avg_watch_time": 5413
     },
     {
       "name": "ruhe_reagieren",
@@ -217,7 +217,7 @@
       "saved": 0,
       "shares": 1,
       "total_interactions": 6,
-      "ig_reels_avg_watch_time": 3757
+      "ig_reels_avg_watch_time": 3755
     },
     {
       "name": "wie_weit_gekommen",
@@ -247,17 +247,17 @@
       "saved": 1,
       "shares": 1,
       "total_interactions": 4,
-      "ig_reels_avg_watch_time": 5893
+      "ig_reels_avg_watch_time": 5890
     },
     {
       "name": "grenze_wiederholen",
       "theme": "Grenzen",
       "score": 10.59,
-      "reach": 593,
+      "reach": 595,
       "saved": 2,
       "shares": 0,
       "total_interactions": 4,
-      "ig_reels_avg_watch_time": 5597
+      "ig_reels_avg_watch_time": 5592
     },
     {
       "name": "blick_zurueck",
@@ -282,22 +282,32 @@
     {
       "name": "entschuldigung_fuer_nichts",
       "theme": "Selbstrespekt",
-      "score": 3.75,
-      "reach": 488,
+      "score": 3.76,
+      "reach": 494,
       "saved": 0,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 5318
+      "ig_reels_avg_watch_time": 5327
     },
     {
       "name": "kleine_tage_zaehlen",
       "theme": "Geduld",
-      "score": 3.09,
-      "reach": 132,
+      "score": 3.13,
+      "reach": 144,
       "saved": 0,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 4724
+      "ig_reels_avg_watch_time": 4775
+    },
+    {
+      "name": "ein_jahr_zurueck",
+      "theme": "Fortschritt",
+      "score": 1.54,
+      "reach": 15,
+      "saved": 0,
+      "shares": 0,
+      "total_interactions": 0,
+      "ig_reels_avg_watch_time": 3046
     }
   ]
 }
