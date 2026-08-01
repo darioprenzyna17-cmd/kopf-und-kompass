@@ -5,17 +5,17 @@
   "themen_rang": [
     {
       "thema": "Grenzen",
-      "score_avg": 13.72,
+      "score_avg": 13.8,
       "n": 4,
-      "reichweite": 2405,
+      "reichweite": 2417,
       "saves": 6,
       "shares": 4
     },
     {
       "thema": "Geduld",
-      "score_avg": 10.85,
+      "score_avg": 10.84,
       "n": 2,
-      "reichweite": 788,
+      "reichweite": 789,
       "saves": 2,
       "shares": 2
     },
@@ -31,7 +31,7 @@
       "thema": "Fortschritt",
       "score_avg": 9.92,
       "n": 3,
-      "reichweite": 1272,
+      "reichweite": 1279,
       "saves": 5,
       "shares": 1
     },
@@ -39,7 +39,7 @@
       "thema": "Selbstrespekt",
       "score_avg": 9.48,
       "n": 2,
-      "reichweite": 1164,
+      "reichweite": 1167,
       "saves": 3,
       "shares": 0
     },
@@ -47,7 +47,7 @@
       "thema": "Charakter",
       "score_avg": 9.04,
       "n": 2,
-      "reichweite": 1222,
+      "reichweite": 1224,
       "saves": 1,
       "shares": 1
     },
@@ -203,11 +203,11 @@
       "name": "selbstrespekt",
       "theme": "Selbstrespekt",
       "score": 14.69,
-      "reach": 611,
+      "reach": 612,
       "saved": 3,
       "shares": 0,
       "total_interactions": 8,
-      "ig_reels_avg_watch_time": 5353
+      "ig_reels_avg_watch_time": 5346
     },
     {
       "name": "ruhe_reagieren",
@@ -222,92 +222,92 @@
     {
       "name": "wie_weit_gekommen",
       "theme": "Fortschritt",
-      "score": 14.23,
-      "reach": 359,
+      "score": 14.22,
+      "reach": 360,
       "saved": 2,
       "shares": 1,
       "total_interactions": 6,
-      "ig_reels_avg_watch_time": 4134
+      "ig_reels_avg_watch_time": 4128
     },
     {
       "name": "charakter_allein",
       "theme": "Charakter",
       "score": 11.7,
-      "reach": 674,
+      "reach": 676,
       "saved": 0,
       "shares": 1,
       "total_interactions": 13,
-      "ig_reels_avg_watch_time": 6244
+      "ig_reels_avg_watch_time": 6239
     },
     {
       "name": "spaeter_antworten",
       "theme": "Grenzen",
       "score": 11.63,
-      "reach": 553,
+      "reach": 556,
       "saved": 1,
       "shares": 1,
       "total_interactions": 4,
-      "ig_reels_avg_watch_time": 5763
+      "ig_reels_avg_watch_time": 5752
     },
     {
       "name": "grenze_wiederholen",
       "theme": "Grenzen",
       "score": 10.6,
-      "reach": 617,
+      "reach": 620,
       "saved": 2,
       "shares": 0,
       "total_interactions": 4,
-      "ig_reels_avg_watch_time": 5566
+      "ig_reels_avg_watch_time": 5562
     },
     {
       "name": "blick_zurueck",
       "theme": "Fortschritt",
-      "score": 13.28,
-      "reach": 513,
+      "score": 13.29,
+      "reach": 517,
       "saved": 3,
       "shares": 0,
       "total_interactions": 6,
-      "ig_reels_avg_watch_time": 3942
+      "ig_reels_avg_watch_time": 3946
     },
     {
       "name": "schuldgefuehl_nach_nein",
       "theme": "Grenzen",
-      "score": 3.82,
-      "reach": 624,
+      "score": 4.14,
+      "reach": 630,
       "saved": 0,
       "shares": 0,
-      "total_interactions": 2,
-      "ig_reels_avg_watch_time": 5192
+      "total_interactions": 3,
+      "ig_reels_avg_watch_time": 5225
     },
     {
       "name": "entschuldigung_fuer_nichts",
       "theme": "Selbstrespekt",
       "score": 4.28,
-      "reach": 553,
+      "reach": 555,
       "saved": 0,
       "shares": 0,
       "total_interactions": 3,
-      "ig_reels_avg_watch_time": 5645
+      "ig_reels_avg_watch_time": 5651
     },
     {
       "name": "kleine_tage_zaehlen",
       "theme": "Geduld",
-      "score": 7.55,
-      "reach": 295,
+      "score": 7.54,
+      "reach": 296,
       "saved": 0,
       "shares": 1,
       "total_interactions": 4,
-      "ig_reels_avg_watch_time": 4106
+      "ig_reels_avg_watch_time": 4088
     },
     {
       "name": "ein_jahr_zurueck",
       "theme": "Fortschritt",
       "score": 2.24,
-      "reach": 400,
+      "reach": 402,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3689
+      "ig_reels_avg_watch_time": 3680
     }
   ]
 }
