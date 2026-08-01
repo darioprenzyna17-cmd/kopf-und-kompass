@@ -7,15 +7,15 @@
       "thema": "Grenzen",
       "score_avg": 13.8,
       "n": 4,
-      "reichweite": 2417,
+      "reichweite": 2423,
       "saves": 6,
       "shares": 4
     },
     {
       "thema": "Geduld",
-      "score_avg": 10.84,
+      "score_avg": 10.85,
       "n": 2,
-      "reichweite": 789,
+      "reichweite": 793,
       "saves": 2,
       "shares": 2
     },
@@ -29,9 +29,9 @@
     },
     {
       "thema": "Fortschritt",
-      "score_avg": 9.92,
+      "score_avg": 9.94,
       "n": 3,
-      "reichweite": 1279,
+      "reichweite": 1286,
       "saves": 5,
       "shares": 1
     },
@@ -39,7 +39,7 @@
       "thema": "Selbstrespekt",
       "score_avg": 9.48,
       "n": 2,
-      "reichweite": 1167,
+      "reichweite": 1169,
       "saves": 3,
       "shares": 0
     },
@@ -47,7 +47,7 @@
       "thema": "Charakter",
       "score_avg": 9.04,
       "n": 2,
-      "reichweite": 1224,
+      "reichweite": 1227,
       "saves": 1,
       "shares": 1
     },
@@ -202,12 +202,12 @@
     {
       "name": "selbstrespekt",
       "theme": "Selbstrespekt",
-      "score": 14.69,
-      "reach": 612,
+      "score": 14.68,
+      "reach": 613,
       "saved": 3,
       "shares": 0,
       "total_interactions": 8,
-      "ig_reels_avg_watch_time": 5346
+      "ig_reels_avg_watch_time": 5343
     },
     {
       "name": "ruhe_reagieren",
@@ -222,38 +222,38 @@
     {
       "name": "wie_weit_gekommen",
       "theme": "Fortschritt",
-      "score": 14.22,
-      "reach": 360,
+      "score": 14.24,
+      "reach": 362,
       "saved": 2,
       "shares": 1,
       "total_interactions": 6,
-      "ig_reels_avg_watch_time": 4128
+      "ig_reels_avg_watch_time": 4161
     },
     {
       "name": "charakter_allein",
       "theme": "Charakter",
-      "score": 11.7,
-      "reach": 676,
+      "score": 11.69,
+      "reach": 679,
       "saved": 0,
       "shares": 1,
       "total_interactions": 13,
-      "ig_reels_avg_watch_time": 6239
+      "ig_reels_avg_watch_time": 6226
     },
     {
       "name": "spaeter_antworten",
       "theme": "Grenzen",
       "score": 11.63,
-      "reach": 556,
+      "reach": 559,
       "saved": 1,
       "shares": 1,
       "total_interactions": 4,
-      "ig_reels_avg_watch_time": 5752
+      "ig_reels_avg_watch_time": 5744
     },
     {
       "name": "grenze_wiederholen",
       "theme": "Grenzen",
       "score": 10.6,
-      "reach": 620,
+      "reach": 621,
       "saved": 2,
       "shares": 0,
       "total_interactions": 4,
@@ -262,52 +262,52 @@
     {
       "name": "blick_zurueck",
       "theme": "Fortschritt",
-      "score": 13.29,
-      "reach": 517,
+      "score": 13.3,
+      "reach": 520,
       "saved": 3,
       "shares": 0,
       "total_interactions": 6,
-      "ig_reels_avg_watch_time": 3946
+      "ig_reels_avg_watch_time": 3956
     },
     {
       "name": "schuldgefuehl_nach_nein",
       "theme": "Grenzen",
       "score": 4.14,
-      "reach": 630,
+      "reach": 632,
       "saved": 0,
       "shares": 0,
       "total_interactions": 3,
-      "ig_reels_avg_watch_time": 5225
+      "ig_reels_avg_watch_time": 5215
     },
     {
       "name": "entschuldigung_fuer_nichts",
       "theme": "Selbstrespekt",
-      "score": 4.28,
-      "reach": 555,
+      "score": 4.29,
+      "reach": 556,
       "saved": 0,
       "shares": 0,
       "total_interactions": 3,
-      "ig_reels_avg_watch_time": 5651
+      "ig_reels_avg_watch_time": 5670
     },
     {
       "name": "kleine_tage_zaehlen",
       "theme": "Geduld",
-      "score": 7.54,
-      "reach": 296,
+      "score": 7.56,
+      "reach": 300,
       "saved": 0,
       "shares": 1,
       "total_interactions": 4,
-      "ig_reels_avg_watch_time": 4088
+      "ig_reels_avg_watch_time": 4117
     },
     {
       "name": "ein_jahr_zurueck",
       "theme": "Fortschritt",
-      "score": 2.24,
-      "reach": 402,
+      "score": 2.28,
+      "reach": 404,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3680
+      "ig_reels_avg_watch_time": 3744
     }
   ]
 }
