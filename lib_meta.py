@@ -243,18 +243,35 @@ def post_carousel(image_urls, caption):
     return _publish(ig, token, pid)
 
 
-def post_reel(video_url, caption):
-    """Reel via oeffentlich erreichbare Video-URL."""
+def post_reel(video_url, caption, trial=None):
+    """Reel via oeffentlich erreichbare URL.
+
+    trial=True postet als Trial Reel: Instagram zeigt es ZUERST nur Nicht-Followern.
+    Laeuft es dort gut, wird es automatisch an die eigenen Follower ausgerollt
+    (graduation_strategy SS_PERFORMANCE), laeuft es schlecht, sehen die Follower es nie.
+
+    Warum das hier steht: Die 35k Bestandsfollower sind traege (Stand 02.08.2026 im
+    Schnitt 3,2 Likes und 0 Kommentare pro Reel bei 493 Reichweite). Bei einem normalen
+    Post besteht die erste Testgruppe des Algorithmus grossteils aus genau diesen
+    Followern. Reagieren sie nicht, stoppt die Verteilung, bevor je ein Fremder das Reel
+    sieht. Trial Reels umgehen diesen Flaschenhals. Die eigene Strategie-Studie vom
+    19.07.2026 nennt sie das strategisch wichtigste Werkzeug fuer diesen Account.
+    Standard ist AN, abschaltbar ueber KK_TRIAL_REELS=0.
+    """
     ig, token = _creds()
-    c = post_form(
-        f"{GRAPH}/{ig}/media",
-        {
-            "media_type": "REELS",
-            "video_url": video_url,
-            "caption": caption,
-            "access_token": token,
-        },
-    )
+    if trial is None:
+        trial = os.environ.get("KK_TRIAL_REELS", "1") != "0"
+    body = {
+        "media_type": "REELS",
+        "video_url": video_url,
+        "caption": caption,
+        "access_token": token,
+    }
+    if trial:
+        body["trial_params"] = json.dumps({"graduation_strategy": "SS_PERFORMANCE"})
+        print("Poste als TRIAL REEL (zuerst nur Nicht-Follower, "
+              "Ausrollen an Follower automatisch bei guter Leistung).", flush=True)
+    c = post_form(f"{GRAPH}/{ig}/media", body)
     cid = c.get("id")
     if not cid:
         raise RuntimeError(f"Reel-Container fehlgeschlagen: {c}")
