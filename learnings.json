@@ -5,9 +5,9 @@
   "themen_rang": [
     {
       "thema": "Grenzen",
-      "score_avg": 13.81,
+      "score_avg": 13.82,
       "n": 4,
-      "reichweite": 2450,
+      "reichweite": 2466,
       "saves": 6,
       "shares": 4
     },
@@ -15,7 +15,7 @@
       "thema": "Geduld",
       "score_avg": 10.87,
       "n": 2,
-      "reichweite": 805,
+      "reichweite": 807,
       "saves": 2,
       "shares": 2
     },
@@ -29,17 +29,17 @@
     },
     {
       "thema": "Fortschritt",
-      "score_avg": 9.96,
+      "score_avg": 9.97,
       "n": 3,
-      "reichweite": 1312,
+      "reichweite": 1329,
       "saves": 5,
       "shares": 1
     },
     {
       "thema": "Selbstrespekt",
-      "score_avg": 9.49,
+      "score_avg": 9.5,
       "n": 2,
-      "reichweite": 1183,
+      "reichweite": 1194,
       "saves": 3,
       "shares": 0
     },
@@ -47,7 +47,7 @@
       "thema": "Charakter",
       "score_avg": 9.04,
       "n": 2,
-      "reichweite": 1230,
+      "reichweite": 1233,
       "saves": 1,
       "shares": 1
     },
@@ -55,7 +55,7 @@
       "thema": "Ruhe",
       "score_avg": 8.11,
       "n": 1,
-      "reichweite": 456,
+      "reichweite": 459,
       "saves": 0,
       "shares": 1
     },
@@ -192,32 +192,32 @@
     {
       "name": "geduld_ernte",
       "theme": "Geduld",
-      "score": 14.14,
+      "score": 14.13,
       "reach": 493,
       "saved": 2,
       "shares": 1,
       "total_interactions": 6,
-      "ig_reels_avg_watch_time": 3686
+      "ig_reels_avg_watch_time": 3681
     },
     {
       "name": "selbstrespekt",
       "theme": "Selbstrespekt",
-      "score": 14.68,
-      "reach": 615,
+      "score": 14.67,
+      "reach": 618,
       "saved": 3,
       "shares": 0,
       "total_interactions": 8,
-      "ig_reels_avg_watch_time": 5329
+      "ig_reels_avg_watch_time": 5311
     },
     {
       "name": "ruhe_reagieren",
       "theme": "Ruhe",
       "score": 8.11,
-      "reach": 456,
+      "reach": 459,
       "saved": 0,
       "shares": 1,
       "total_interactions": 6,
-      "ig_reels_avg_watch_time": 3710
+      "ig_reels_avg_watch_time": 3693
     },
     {
       "name": "wie_weit_gekommen",
@@ -232,82 +232,82 @@
     {
       "name": "charakter_allein",
       "theme": "Charakter",
-      "score": 11.69,
-      "reach": 682,
+      "score": 11.68,
+      "reach": 685,
       "saved": 0,
       "shares": 1,
       "total_interactions": 13,
-      "ig_reels_avg_watch_time": 6207
+      "ig_reels_avg_watch_time": 6190
     },
     {
       "name": "spaeter_antworten",
       "theme": "Grenzen",
       "score": 11.64,
-      "reach": 568,
+      "reach": 572,
       "saved": 1,
       "shares": 1,
       "total_interactions": 4,
-      "ig_reels_avg_watch_time": 5741
+      "ig_reels_avg_watch_time": 5738
     },
     {
       "name": "grenze_wiederholen",
       "theme": "Grenzen",
       "score": 10.6,
-      "reach": 628,
+      "reach": 632,
       "saved": 2,
       "shares": 0,
       "total_interactions": 4,
-      "ig_reels_avg_watch_time": 5542
+      "ig_reels_avg_watch_time": 5536
     },
     {
       "name": "blick_zurueck",
       "theme": "Fortschritt",
       "score": 13.32,
-      "reach": 525,
+      "reach": 531,
       "saved": 3,
       "shares": 0,
       "total_interactions": 6,
-      "ig_reels_avg_watch_time": 3986
+      "ig_reels_avg_watch_time": 3981
     },
     {
       "name": "schuldgefuehl_nach_nein",
       "theme": "Grenzen",
-      "score": 4.16,
-      "reach": 643,
+      "score": 4.2,
+      "reach": 651,
       "saved": 0,
       "shares": 0,
       "total_interactions": 3,
-      "ig_reels_avg_watch_time": 5233
+      "ig_reels_avg_watch_time": 5288
     },
     {
       "name": "entschuldigung_fuer_nichts",
       "theme": "Selbstrespekt",
-      "score": 4.3,
-      "reach": 568,
+      "score": 4.33,
+      "reach": 576,
       "saved": 0,
       "shares": 0,
       "total_interactions": 3,
-      "ig_reels_avg_watch_time": 5665
+      "ig_reels_avg_watch_time": 5707
     },
     {
       "name": "kleine_tage_zaehlen",
       "theme": "Geduld",
-      "score": 7.6,
-      "reach": 312,
+      "score": 7.61,
+      "reach": 314,
       "saved": 0,
       "shares": 1,
       "total_interactions": 4,
-      "ig_reels_avg_watch_time": 4173
+      "ig_reels_avg_watch_time": 4197
     },
     {
       "name": "ein_jahr_zurueck",
       "theme": "Fortschritt",
-      "score": 2.3,
-      "reach": 420,
+      "score": 2.33,
+      "reach": 431,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3759
+      "ig_reels_avg_watch_time": 3789
     }
   ]
 }
