@@ -46,21 +46,28 @@ def gesperrte():
     return [k for k, v in _laden()["konzepte"].items() if v.get("status") == "gesperrt"]
 
 
-def fehler_vermerken(name, grund):
+def fehler_vermerken(name, grund, kostet=True, sofort_sperren=False):
     """Zaehlt einen Fehlschlag. Ab FEHLER_BIS_QUARANTAENE wird das Konzept gesperrt.
-    Zaehlt zusaetzlich das Tagesbudget an Fehlversuchen hoch (Auftrag 4.2)."""
+
+    kostet=False fuer Fehlschlaege, bei denen KEIN Geld geflossen ist, etwa eine
+    Konzeptpruefung vor dem Bau. Sonst wuerde ein kostenloser Textfehler das
+    Tagesbudget fuer bezahlte Bauversuche aufbrauchen.
+    sofort_sperren=True fuer Maengel, die sich von allein nie beheben (fehlerhafter
+    Text): ein zweiter Versuch waere Zeitverschwendung.
+    """
     d = _laden()
     e = d["konzepte"].setdefault(name, {"fehler": 0, "status": "frei", "gruende": []})
     e["fehler"] += 1
     e["gruende"] = (e.get("gruende", []) + [str(grund)[:300]])[-5:]
     e["zuletzt"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-    if e["fehler"] >= FEHLER_BIS_QUARANTAENE:
+    if sofort_sperren or e["fehler"] >= FEHLER_BIS_QUARANTAENE:
         e["status"] = "gesperrt"
         e["gesperrt_seit"] = e["zuletzt"]
-        print(f"QUARANTAENE: '{name}' nach {e['fehler']} Fehlschlaegen gesperrt.", flush=True)
-    heute = date.today().isoformat()
-    d["fehlversuche"][heute] = d["fehlversuche"].get(heute, 0) + 1
-    d["fehlversuche"] = {k: v for k, v in d["fehlversuche"].items() if k >= heute}
+        print(f"QUARANTAENE: '{name}' gesperrt ({e['fehler']} Fehlschlag/-schlaege).", flush=True)
+    if kostet:
+        heute = date.today().isoformat()
+        d["fehlversuche"][heute] = d["fehlversuche"].get(heute, 0) + 1
+        d["fehlversuche"] = {k: v for k, v in d["fehlversuche"].items() if k >= heute}
     _sichern(d)
     return e
 

@@ -11,6 +11,7 @@ HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 import build_video_reel as bvr   # noqa: E402
 import kk_budget as budget      # noqa: E402
+import kk_konzept as konzept     # noqa: E402
 import kk_lernen as lernen       # noqa: E402
 import kk_resilienz as res       # noqa: E402
 import lib_meta as meta          # noqa: E402
@@ -152,9 +153,31 @@ def _bauen(data, approved):
         print("STOPP:", ggrund, flush=True)
         res.status_schreiben(False, grund=ggrund)
         return None
-    c = pick(approved)
+    # Torwaechter VOR dem Bau: ein durchgefallenes Konzept kostet null, ein gebautes
+    # Video rund 70 Credits. Faellt eines durch, wird es gesperrt und das naechste geholt.
+    u = json.loads((HERE / "used_reels.json").read_text())
+    c = None
+    for _ in range(5):
+        kandidat = pick(approved)
+        if kandidat is None:
+            res.status_schreiben(False, grund="Alle Konzepte in Quarantaene.")
+            return None
+        fehler, warnungen = konzept.pruefe(kandidat, set(u.get("used_topics", []) or []),
+                                           u.get("used_hooks", []) or [])
+        if not fehler:
+            for x in warnungen[:2]:
+                print(f"  Hinweis zu '{kandidat['name']}': {x}", flush=True)
+            c = kandidat
+            break
+        print(f"KONZEPT DURCHGEFALLEN '{kandidat['name']}':", flush=True)
+        for x in fehler:
+            print(f"     - {x}", flush=True)
+        # kostet=False: hier ist kein Geld geflossen, das Tagesbudget bleibt unangetastet.
+        res.fehler_vermerken(kandidat["name"], "Konzeptpruefung: " + "; ".join(fehler)[:200],
+                             kostet=False, sofort_sperren=True)
+        approved = [x for x in approved if x.get("name") != kandidat["name"]]
     if c is None:
-        res.status_schreiben(False, grund="Alle Konzepte in Quarantaene.")
+        res.status_schreiben(False, grund="Kein Konzept hat die Pruefung bestanden.")
         return None
     name = c["name"]
     budget.buchen("bau")          # der Tag ist damit verbraucht, auch wenn es scheitert

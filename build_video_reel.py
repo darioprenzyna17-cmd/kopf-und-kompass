@@ -80,6 +80,8 @@ FRAGEN = {
     "Klarheit": "Welche Entscheidung schiebst du vor dir her?",
     "Präsenz": "Wann warst du zuletzt wirklich da?",
     "Achtsamkeit": "Woran bist du heute vorbeigegangen?",
+    "Eigene Bedürfnisse": "Wann hast du zuletzt etwas nur für dich gemacht?",
+    "Gesehen werden": "Wer fragt dich, wie es dir geht?",
     "Mut": "Wovor drückst du dich gerade?",
 }
 FRAGE_FALLBACK = "Was davon kennst du?"
@@ -429,9 +431,13 @@ def compose_montage(clips, cl, out):
         # 1080x1630 mit 146px Balken oben). cropdetect findet den echten Bildinhalt, der
         # wird weggeschnitten und nur noch um das Noetige hochgezogen. Lanczos haelt die
         # Kanten scharf.
+        # Nach dem Inhalts-Crop noch ein kleiner Sicherheitszoom von 5 Prozent. cropdetect
+        # misst an einzelnen Bildern und trifft den Rand nicht immer symmetrisch, dann
+        # bleiben duenne dunkle Streifen an den Kanten stehen. 5 Prozent kosten kaum
+        # Schaerfe und raeumen sie zuverlaessig weg.
         cd = _inhaltscrop(c)
         parts.append(f"[{i}:v]trim=0:{cl},setpts=PTS-STARTPTS,{cd}"
-                     f"scale=1080:1920:force_original_aspect_ratio=increase:flags=lanczos,"
+                     f"scale=1134:2016:force_original_aspect_ratio=increase:flags=lanczos,"
                      f"crop=1080:1920,fps=24,setsar=1,format=yuv420p[c{i}]")
     # xfade-Kette. Beim Kurzformat gibt es nur EINEN Clip, dann faellt sie weg und
     # [c0] geht direkt in den Grade. Ohne diesen Fall bleibt [m] unbelegt und ffmpeg
