@@ -102,7 +102,10 @@ def main(ignoriere_slot: bool = False):
     print(budget.bericht(), flush=True)
 
     # --- POSTEN ---
-    schon = zeitplan.schon_gepostet()
+    # ignoriere_slot (FORCE_BUILD=1) heisst: von Hand angestossen, Slot UND Tagessperre
+    # werden uebergangen. Ohne das laeuft ein Force-Lauf ins Leere, sobald an dem Tag
+    # schon gepostet wurde, und genau dann braucht man ihn.
+    schon = zeitplan.schon_gepostet() and not ignoriere_slot
     slot_da = ignoriere_slot or zeitplan.ist_mein_slot()
     gepostet = None
     if schon:
