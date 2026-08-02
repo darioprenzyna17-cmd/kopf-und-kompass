@@ -42,6 +42,22 @@ def pick(approved):
         except Exception:
             winners = []
 
+    # Solange das neue Lernsystem noch keine belegte Regel hat, haben Konzepte Vorrang,
+    # die nach dem aktuellen Standard gebaut sind (mit Ausloeser, Adressat, Hypothese).
+    # Die 'gewinner_themen' in learnings.json stammen aus dem alten 21-Sekunden-Format
+    # und aus Kennzahlen, die nicht mehr der Nordstern sind. Sie duerfen die Auswahl
+    # nicht laenger steuern, sonst baut der Account im neuen Format alten Text.
+    regeln = HERE / "regeln.md"
+    ohne_belege = not (regeln.exists() and regeln.read_text().count("- ") > 0)
+    if ohne_belege:
+        nach_standard = [c for c in frei if c.get("ausloeser") and c.get("hypothese")]
+        if nach_standard:
+            c = nach_standard[0]
+            print(f"STANDARD-VORRANG: '{c['name']}' ({c.get('theme')}), gebaut nach dem "
+                  f"aktuellen Auftrag. Alte Gewinner-Themen zaehlen erst wieder, wenn "
+                  f"regeln.md eigene Belege hat.")
+            return c
+
     bewaehrt = [c for c in frei if c.get("theme") in winners]
     neuland = [c for c in frei if c.get("theme") not in winners]
     gebraucht = {t for t in (json.loads((HERE / "used_reels.json").read_text())
