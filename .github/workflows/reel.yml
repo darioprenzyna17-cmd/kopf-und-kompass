@@ -77,7 +77,7 @@ jobs:
       - name: Ledger sichern
         if: always() && steps.gate.outputs.post == 'true'
         run: |
-          LEDGER="reel_pipeline.json used_reels.json learnings.json zeit_experiment.json quarantaene.json run_status.json budget.json vorrat.json"
+          LEDGER="reel_pipeline.json used_reels.json learnings.json zeit_experiment.json quarantaene.json run_status.json budget.json vorrat.json postings.jsonl regeln.md"
           if [[ -n "$(git status --porcelain $LEDGER)" ]]; then
             if [[ -f run_status.json ]] && python3 -c "import json,sys; sys.exit(0 if json.load(open('run_status.json'))['ok'] else 1)"; then
               MSG="reel bestaetigt online $(date -u +%FT%TZ)"
