@@ -19,6 +19,22 @@ Auf @kopfundkompass sind **täglich mindestens zwei Stories** live und durchgehe
 - **Grammatik ist Pflicht:** jeder Satz grammatikalisch einwandfrei, korrekte Rechtschreibung und Zeichensetzung. Keine langen Gedankenstriche, kein Komma vor „und". Vor jeder Freigabe Grammatik-Check.
 - **Lean produzieren, aus Daten lernen:** NICHT auf Wochen vorproduzieren. Immer nur wenige Tage Vorrat (Ziel: ~3-5 approved Konzepte), dann aus den echten Account-Zahlen lernen und winner-biased nachlegen. Bereits produzierte Konzepte weiterverwenden, nicht wegwerfen.
 
+## Kurzformat (Dario-Freigabe 2026-08-02, verbindlich)
+Gemessen über 14 Reels: Watchtime 3,8 bis 5,7 Sekunden bei rund 21 Sekunden Länge, also
+etwa 23 Prozent Completion. Instagram verteilt danach nicht weiter. Deshalb der Bruch:
+- **Rund 10 Sekunden statt 21.** Gate: 8 bis 13 Sekunden, hart ab 13,5.
+- **ZWEI Beats statt vier, EIN Bild statt drei.** Beat 1 ist der Aufbau (`thoughts[1]`),
+  Beat 2 die Pointe (`thoughts[-1]`). Die fertige Kernaussage (`thoughts[0]`) kommt bewusst
+  NICHT mehr an den Anfang: Wer die Auflösung in Sekunde eins liest, hat keinen Grund zu bleiben.
+- **Frage auf der Schlusskarte.** Über 14 Reels kamen null Kommentare, weil nie jemand
+  gefragt wurde. Fragen je Thema in `build_video_reel.FRAGEN`.
+- **Trial Reels sind Standard.** Jedes Reel geht zuerst nur an Nicht-Follower
+  (`graduation_strategy: SS_PERFORMANCE`) und rollt bei guter Leistung automatisch an die
+  Follower aus. Grund: Die 35k Bestandsfollower sind träge (3,2 Likes, 0 Kommentare pro
+  Reel), und als erste Testgruppe des Algorithmus würgen sie jede Verteilung ab.
+- Nebeneffekt: ein Veo-Clip statt drei, also rund ein Drittel der Produktionskosten.
+- Abschaltbar über `KK_KURZFORMAT=0` und `KK_TRIAL_REELS=0`.
+
 ## Stil (fixiert)
 - **Ton:** ruhig, tief, ehrlich, leicht männlich-warm, klar. Bringt zum Nachdenken UND richtet auf. Nie kitschig-platt, nie Kalenderspruch.
 - **Bild:** cineastisches, ruhiges KI-Footage (Veo), atmosphärisch, filmische Farbwelt (dunkel, warm). Einsame Figuren, Natur, Licht, Alltagsmomente mit Tiefe. 9:16.

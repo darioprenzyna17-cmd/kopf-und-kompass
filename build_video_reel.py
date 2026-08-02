@@ -47,9 +47,73 @@ HEADROOM = 1.5           # Montage-Puffer nach der Textphase (fuer sauberen End-
 ST_MIN = 3.5; ST_MAX = 5.0
 
 
-def standzeit(text):
+# --- Kurzformat (Dario-Freigabe 2026-08-02) ---------------------------------
+# Gemessen ueber 14 Reels: Watchtime 3,8 bis 5,7 Sekunden bei rund 21 Sekunden Laenge,
+# also etwa 23 Prozent Completion. Instagram verteilt danach nicht weiter. Das lange
+# Format zeigt Gedanke drei und vier an Menschen, die laengst weg sind.
+# Neu: ZWEI Beats, EIN Bild, rund 10 Sekunden. Spannung zuerst, Aufloesung zum Schluss,
+# Frage auf der Schlusskarte. Nebeneffekt: ein Veo-Clip statt drei, also ein Drittel
+# der Produktionskosten.
+KURZ = os.environ.get("KK_KURZFORMAT", "1") != "0"
+KURZ_ST_MIN, KURZ_ST_MAX = 2.9, 3.8
+KURZ_CLIP_MAX = 7.9        # Veo liefert 8 Sekunden, mehr geht mit einem Clip nicht
+
+# Ein echter Gesprächsanlass auf der Schlusskarte. Ueber 14 Reels kamen null
+# Kommentare, weil nie jemand gefragt wurde.
+FRAGEN = {
+    "Grenzen": "Wo fällt dir ein Nein bis heute schwer?",
+    "Nein ohne Erklärung": "Wem sagst du zu oft Ja?",
+    "Falsches Ja": "Wem sagst du zu oft Ja?",
+    "Geduld": "Worauf wartest du gerade?",
+    "Fortschritt": "Woran arbeitest du gerade leise?",
+    "Unsichtbares Wachstum": "Woran arbeitest du gerade leise?",
+    "Eigenes Tempo": "Wer gibt dir gerade dein Tempo vor?",
+    "Zeitgrenzen": "Wofür hast du zuletzt keine Zeit gehabt?",
+    "Selbstwert": "Wofür machst du dich zu klein?",
+    "Sich klein machen": "Wofür machst du dich zu klein?",
+    "Selbstrespekt": "Wofür machst du dich zu klein?",
+    "Selbstmitgefühl": "Wie redest du mit dir, wenn niemand zuhört?",
+    "Disziplin": "Was tust du auch ohne Lust?",
+    "Charakter": "Wessen Wort hält bei dir immer?",
+    "Loslassen": "Was trägst du länger mit als nötig?",
+    "Erwartungen": "Wessen Erwartung trägst du gerade?",
+    "Klarheit": "Welche Entscheidung schiebst du vor dir her?",
+    "Präsenz": "Wann warst du zuletzt wirklich da?",
+    "Achtsamkeit": "Woran bist du heute vorbeigegangen?",
+    "Mut": "Wovor drückst du dich gerade?",
+}
+FRAGE_FALLBACK = "Was davon kennst du?"
+
+
+def kurzfassung(r):
+    """Macht aus einem Vier-Beat-Konzept ein Zwei-Beat-Reel.
+
+    thoughts[0] ist die fertige Kernaussage. Genau die vorwegzunehmen war der Fehler:
+    wer die Aufloesung in Sekunde eins liest, hat keinen Grund zu bleiben. Deshalb
+    faengt es jetzt mit dem Aufbau an (thoughts[1]) und endet mit der Pointe
+    (thoughts[-1]).
+    """
+    th = r.get("thoughts") or []
+    if len(th) >= 4:
+        beats = [th[1], th[3]]
+    elif len(th) == 3:
+        beats = [th[1], th[2]]
+    elif len(th) == 2:
+        beats = list(th)
+    else:
+        beats = list(th)
+    k = dict(r)
+    k["thoughts"] = beats
+    k["clips"] = (r.get("clips") or [])[:1]
+    k["endcard_term"] = r.get("kicker", "") or r.get("endcard_term", "")
+    k["cta"] = FRAGEN.get(r.get("theme", ""), FRAGE_FALLBACK)
+    return k
+
+
+def standzeit(text, kurz=False):
     w = len(text.replace("|", " ").split())
-    return max(ST_MIN, min(ST_MAX, w * 0.42 + 1.6))
+    lo, hi = (KURZ_ST_MIN, KURZ_ST_MAX) if kurz else (ST_MIN, ST_MAX)
+    return max(lo, min(hi, w * 0.42 + 1.6))
 
 
 def kie_key():
@@ -268,18 +332,31 @@ def _lerp(a, b, t):
 
 
 def _grade_filter(t):
-    """t=0 = bisheriger verwaschener Look, t=1 = sauber. Dazwischen wird sanft entwaschen."""
-    sat = round(_lerp(0.82, 1.0, t), 3)     # Saettigung hoch
-    blk = round(_lerp(0.055, 0.0, t), 3)    # angehobenes Schwarz -> echtes Schwarz (Kern des Milch-Looks)
-    hi = round(_lerp(0.97, 1.0, t), 3)      # Highlights wieder bis weiss
-    con = round(_lerp(1.08, 1.14, t), 3)    # etwas mehr Kontrast/Punch
-    noi = int(round(_lerp(8, 3, t)))        # weniger Korn
-    vig = round(_lerp(5.0, 7.0, t), 2)      # weniger Vignette (groesserer Nenner = schwaecher)
-    return (f"eq=saturation={sat}:contrast={con}:brightness=0.01:gamma=1.02,"
-            f"curves=m='0/{blk} 0.22/0.16 0.5/0.5 0.78/0.85 1/{hi}',"
-            "colorbalance=rs=-0.03:gs=0.01:bs=0.05:rm=0.04:gm=0.0:bm=-0.03:rh=0.06:gh=0.02:bh=-0.05,"
-            "colorchannelmixer=rr=1.02:gg=1.0:bb=0.97,"
-            f"noise=alls={noi},vignette=PI/{vig}:mode=backward")
+    """t=0 = alter verwaschener Look, t=1 = HDR-Look (Dario-Vorgabe 2026-08-02).
+
+    Der alte Zielpunkt war "sauber". Das reichte nicht: Die Videos wirkten wie billige
+    Kopien. Drei Ursachen, alle hier behoben.
+      1. Angehobenes Schwarz (0.055) machte milchige Tiefen. Jetzt echtes Schwarz.
+      2. Korn (noise alls=8) liest als Kompressionsdreck, nicht als Film. Jetzt aus.
+      3. Saettigung unter 1 und flacher Kontrast nahmen jede Tiefe. Jetzt darueber.
+    Dazu kommt Mikrokontrast (unsharp), das ist der eigentliche HDR-Eindruck: tiefe
+    Schatten, helle Lichter, knackige Kanten.
+    """
+    sat = round(_lerp(0.82, 1.14, t), 3)    # ueber 1: satte, nicht grelle Farben
+    blk = round(_lerp(0.055, 0.0, t), 3)    # echtes Schwarz statt Milch
+    sh = round(_lerp(0.16, 0.09, t), 3)     # Schatten tiefer ziehen
+    hl = round(_lerp(0.85, 0.93, t), 3)     # Lichter anheben, groessere Spannweite
+    hi = round(_lerp(0.97, 1.0, t), 3)      # bis reinweiss
+    con = round(_lerp(1.08, 1.20, t), 3)
+    gam = round(_lerp(1.02, 0.97, t), 3)    # unter 1 = mehr Punch in den Mitten
+    vig = round(_lerp(5.0, 11.0, t), 2)     # groesserer Nenner = schwaechere Vignette
+    schaerfe = round(_lerp(0.0, 0.9, t), 2)  # Mikrokontrast, macht Kanten knackig
+    korn = "" if t >= 0.75 else f"noise=alls={int(round(_lerp(8, 0, t)))},"
+    return (f"eq=saturation={sat}:contrast={con}:brightness=0.0:gamma={gam},"
+            f"curves=m='0/{blk} 0.22/{sh} 0.5/0.5 0.78/{hl} 1/{hi}',"
+            "colorbalance=rs=-0.02:gs=0.01:bs=0.04:rm=0.03:gm=0.0:bm=-0.02:rh=0.04:gh=0.01:bh=-0.03,"
+            "colorchannelmixer=rr=1.01:gg=1.0:bb=0.98,"
+            f"{korn}unsharp=5:5:{schaerfe}:5:5:0.0,vignette=PI/{vig}:mode=backward")
 
 
 def _next_grade():
@@ -301,6 +378,38 @@ def _advance_grade(step):
         pass
 
 
+def _inhaltscrop(clip):
+    """Findet per cropdetect den echten Bildinhalt und gibt einen crop-Filter zurueck.
+
+    Veo rendert trotz Prompt oft einen Rahmen bzw. Letterbox in das 1080x1920-Bild
+    (gemessen am 16.07.: nur 1080x1630 echter Inhalt, 146px Balken oben). Wer das blind
+    wegzoomt, verliert Aufloesung und trifft es mal zu knapp, mal zu grosszuegig.
+    Faellt die Messung aus, wird nicht gecroppt und der Rahmen faellt beim Fuellen weg.
+    """
+    try:
+        p = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(clip),
+                            "-vf", "cropdetect=limit=24:round=2", "-frames:v", "120",
+                            "-f", "null", "-"], capture_output=True, text=True, timeout=120)
+        treffer = [l.split("crop=")[1].strip() for l in (p.stderr or "").splitlines()
+                   if "crop=" in l]
+        if not treffer:
+            return ""
+        w, h, x, y = (int(v) for v in treffer[-1].split(":"))
+        # Nur uebernehmen, wenn plausibel: mindestens 60 Prozent Hoehe, sonst schneidet
+        # eine dunkle Szene den halben Bildinhalt weg.
+        if w < 200 or h < 200 or h < 0.6 * 1920:
+            print(f"  cropdetect unplausibel ({w}x{h}), kein Inhalts-Crop.", flush=True)
+            return ""
+        if h >= 1900 and y <= 8:
+            return ""          # kein Rahmen vorhanden
+        print(f"  Inhalts-Crop {w}x{h}+{x}+{y} (Rahmen weg, "
+              f"Hochskalierung nur {1920 / h:.2f}x statt 1.28x)", flush=True)
+        return f"crop={w}:{h}:{x}:{y},"
+    except Exception as e:
+        print(f"  cropdetect fehlgeschlagen ({repr(e)[:100]}), kein Inhalts-Crop.", flush=True)
+        return ""
+
+
 def compose_montage(clips, cl, out):
     """3 Clips -> weiche Cross-Dissolves (1,2s) -> Grade + Korn + Vignette (schrittweise entwascht)."""
     grade, step, t = _next_grade()
@@ -313,16 +422,28 @@ def compose_montage(clips, cl, out):
         # Staerkerer Zoom-Crop (~1.28x): schneidet den von Veo gerenderten Archiv-Film-
         # Rahmen (inkl. des runden Elements links) zuverlaessig weg. Die Prompts sagen zwar
         # "no film strip border", Veo rendert ihn aber trotzdem -> hier hart wegcroppen.
-        parts.append(f"[{i}:v]trim=0:{cl},setpts=PTS-STARTPTS,scale=1382:2458:force_original_aspect_ratio="
-                     f"increase,crop=1080:1920,fps=24,setsar=1,format=yuv420p[c{i}]")
-    # xfade-Kette
+        # Frueher: blind auf 1382x2458 hochskalieren und auf 1080x1920 zurueckschneiden,
+        # also pauschal 1.28x. Das kostete echte Aufloesung und war die Unschaerfe, die
+        # wie eine billige Kopie aussah.
+        # Jetzt inhaltsgenau: Veo rendert das Bild letterboxed in den Rahmen (gemessen
+        # 1080x1630 mit 146px Balken oben). cropdetect findet den echten Bildinhalt, der
+        # wird weggeschnitten und nur noch um das Noetige hochgezogen. Lanczos haelt die
+        # Kanten scharf.
+        cd = _inhaltscrop(c)
+        parts.append(f"[{i}:v]trim=0:{cl},setpts=PTS-STARTPTS,{cd}"
+                     f"scale=1080:1920:force_original_aspect_ratio=increase:flags=lanczos,"
+                     f"crop=1080:1920,fps=24,setsar=1,format=yuv420p[c{i}]")
+    # xfade-Kette. Beim Kurzformat gibt es nur EINEN Clip, dann faellt sie weg und
+    # [c0] geht direkt in den Grade. Ohne diesen Fall bleibt [m] unbelegt und ffmpeg
+    # bricht mit "Filter 'format:default' has output 0 (c0) unconnected" ab.
     prev = "c0"
     for i in range(1, k):
         off = round(i * cl - i * DISSOLVE, 3)
         tag = f"x{i}" if i < k - 1 else "m"
         parts.append(f"[{prev}][c{i}]xfade=transition=fade:duration={DISSOLVE}:offset={off}[{tag}]")
         prev = tag
-    parts.append(f"[m]{grade},setsar=1,format=yuv420p[out]")
+    quelle = "m" if k > 1 else "c0"
+    parts.append(f"[{quelle}]{grade},setsar=1,format=yuv420p[out]")
     fc = ";".join(parts)
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", *ins, "-filter_complex", fc,
                     "-map", "[out]", "-c:v", "libx264", "-preset", "veryfast", "-crf", "17",
@@ -366,18 +487,45 @@ def compose_final(montage, cards, endcard_png, music, out, foot_len):
     return total
 
 
+def _fenster(thoughts, kurz):
+    sts = [standzeit(t, kurz) for t in thoughts]
+    wins, s = [], 0.0
+    for st in sts:
+        wins.append((round(s, 3), round(s + st, 3)))
+        s = round(s + st - OVERLAP, 3)
+    return wins, sts
+
+
 def produce(name, r):
+    kurz = KURZ
+    if kurz:
+        r = kurzfassung(r)
+        print(f"[{name}] Kurzformat: {len(r['thoughts'])} Beats, "
+              f"{len(r['clips'])} Clip, Frage \"{r['cta']}\"", flush=True)
     thoughts = r["thoughts"]
     n = len(thoughts)
-    # Standzeit-Fenster (weich ueberlappend)
-    wins = []
-    s = 0.0
-    for i, t in enumerate(thoughts):
-        st = standzeit(t)
-        wins.append((s, round(s + st, 3)))
-        s = round(s + st - OVERLAP, 3)
+    wins, sts = _fenster(thoughts, kurz)
     foot_len = wins[-1][1]
     cl = round((foot_len + HEADROOM + (len(r["clips"]) - 1) * DISSOLVE) / len(r["clips"]), 3)
+    # Ein Veo-Clip liefert 8 Sekunden. Passt die Textphase nicht hinein, werden die
+    # Standzeiten gestaucht statt einen zweiten Clip zu kaufen.
+    if kurz:
+        for _ in range(20):
+            if cl <= KURZ_CLIP_MAX:
+                break
+            skala = KURZ_CLIP_MAX / cl
+            sts = [max(2.4, round(st * skala, 3)) for st in sts]
+            wins, s = [], 0.0
+            for st in sts:
+                wins.append((round(s, 3), round(s + st, 3)))
+                s = round(s + st - OVERLAP, 3)
+            foot_len = wins[-1][1]
+            neu = round((foot_len + HEADROOM) / len(r["clips"]), 3)
+            if abs(neu - cl) < 0.01:
+                break
+            cl = neu
+        print(f"[{name}] Textphase {foot_len:.1f}s, Clip {cl:.1f}s, "
+              f"Gesamt rund {foot_len + END_LEN:.1f}s", flush=True)
     (OUT / f"{name}.caption.txt").write_text(r["caption"], encoding="utf-8")
 
     # 1) Footage + Musik PARALLEL erzeugen (kuerzt Bauzeit, vermeidet Timeouts)
@@ -458,13 +606,15 @@ def produce(name, r):
     fin = OUT / f"{name}.mp4"
     dur = compose_final(montage, cards, endcard, mus, fin, foot_len)
     # Laengen-Check (§0)
+    # Laengen-Gate haengt am Format: das Kurzformat SOLL 8 bis 13 Sekunden haben.
+    hart_max, weich_max, min_len = (13.5, 12.5, 8.0) if kurz else (28.0, 27.0, 18.0)
     verdict = "OK"
-    if dur > 28.0:
-        verdict = f"FAIL hart ({dur:.1f}s > 28s)"
-    elif dur > 27.0:
-        verdict = f"WARN weich ({dur:.1f}s > 27s)"
-    elif dur < 18.0:
-        verdict = f"WARN kurz ({dur:.1f}s < 18s)"
+    if dur > hart_max:
+        verdict = f"FAIL hart ({dur:.1f}s > {hart_max}s)"
+    elif dur > weich_max:
+        verdict = f"WARN weich ({dur:.1f}s > {weich_max}s)"
+    elif dur < min_len:
+        verdict = f"WARN kurz ({dur:.1f}s < {min_len}s)"
     print(f"FERTIG -> {fin}  ({dur:.1f}s, {verdict})", flush=True)
     return fin
 

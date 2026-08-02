@@ -23,7 +23,7 @@ BUDGET = HERE / "budget.json"
 VORRAT = HERE / "vorrat.json"
 
 # --- Die Grenzen. Aenderungen hier sind Geldentscheidungen, nicht Technik. ---
-MAX_VEO_PRO_TAG = 4        # ein Reel hat 3 Clips, einer bleibt als Reserve fuer EINEN Ersatzversuch
+MAX_VEO_PRO_TAG = 2        # Kurzformat braucht 1 Clip, einer bleibt als Reserve fuer EINEN Ersatzversuch
 MAX_MUSIK_PRO_TAG = 2      # ein Musikstueck pro Reel, eines in Reserve
 MAX_BAUTEN_PRO_TAG = 1     # hoechstens EIN Video pro Tag, Dario-Vorgabe
 MAX_VORRAT = 3             # hoechstens 3 Tage Vorlauf, Dario-Vorgabe
