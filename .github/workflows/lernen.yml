@@ -1,0 +1,55 @@
+name: KK Lernschleife
+
+# Content-Agent-Auftrag (Dario 2026-08-02), Abschnitt 6.
+# Taeglich: jedes Posting, das aelter als 48 Stunden ist, bekommt seine Zahlen, ein
+# Urteil zur Hypothese und eine Erkenntnis, die als REGEL formuliert ist.
+# Montags zusaetzlich: Wochenrueckblick, beste und schwaechste drei nebeneinander,
+# die unterscheidende Variable finden, Regeln nachziehen, drei neue Hypothesen.
+on:
+  schedule:
+    - cron: "40 5 * * *"       # taeglich, nach dem Lern-Loop und vor den Reel-Slots
+    - cron: "10 6 * * 1"       # montags zusaetzlich der Rueckblick
+  workflow_dispatch:
+    inputs:
+      woche:
+        description: "Wochenrueckblick statt Tagesauswertung"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kk-lernen
+  cancel-in-progress: false
+
+jobs:
+  lernen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Auswertung nach 48 Stunden
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+        run: python3 kk_lernen.py
+
+      - name: Wochenrueckblick
+        if: github.event.schedule == '10 6 * * 1' || inputs.woche
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+        run: python3 kk_lernen.py --woche
+
+      - name: Erkenntnisse sichern
+        if: always()
+        run: |
+          if [[ -n "$(git status --porcelain postings.jsonl regeln.md)" ]]; then
+            git config user.name "kk-autopilot-bot"
+            git config user.email "bot@users.noreply.github.com"
+            git add postings.jsonl regeln.md
+            git commit -m "lernen: Auswertung $(date -u +%FT%TZ)"
+            git pull --rebase --autostash
+            git push
+          fi

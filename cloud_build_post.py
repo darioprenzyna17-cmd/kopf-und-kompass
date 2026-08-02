@@ -11,6 +11,7 @@ HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 import build_video_reel as bvr   # noqa: E402
 import kk_budget as budget      # noqa: E402
+import kk_lernen as lernen       # noqa: E402
 import kk_resilienz as res       # noqa: E402
 import lib_meta as meta          # noqa: E402
 import zeitplan                  # noqa: E402
@@ -42,17 +43,26 @@ def pick(approved):
 
     bewaehrt = [c for c in frei if c.get("theme") in winners]
     neuland = [c for c in frei if c.get("theme") not in winners]
+    gebraucht = {t for t in (json.loads((HERE / "used_reels.json").read_text())
+                             .get("used_topics", []) or [])}
 
-    # Deterministisch ueber den Tag gestreut statt zufaellig, damit der Anteil ueber die
-    # Woche wirklich bei 70/30 landet und nicht am Zufall haengt.
-    erkunden = (date.today().toordinal() % 10) >= 7
-    if erkunden and neuland:
+    # Testverteilung 70/20/10 aus dem Content-Agent-Auftrag, deterministisch ueber den
+    # Tag gestreut. Ohne die 10 Prozent Wagnis findet der Account nie ein neues Muster,
+    # ohne die 70 Prozent Basis faellt die Leistung ab.
+    klasse = lernen.testklasse()
+    if klasse == "wagnis":
+        fremd = [c for c in neuland if c.get("theme") not in gebraucht] or neuland
+        if fremd:
+            c = fremd[0]
+            print(f"WAGNIS (10 Prozent): Thema '{c.get('theme')}', noch nie gepostet.")
+            return c
+    if klasse == "variation" and neuland:
         c = neuland[0]
-        print(f"Erkundung (30-Prozent-Anteil): Thema '{c.get('theme')}' ausserhalb der Gewinner.")
+        print(f"VARIATION (20 Prozent): Thema '{c.get('theme')}' ausserhalb der Gewinner.")
         return c
     if bewaehrt:
         c = bewaehrt[0]
-        print(f"Lern-Loop: waehle Gewinner-Thema '{c.get('theme')}'")
+        print(f"BASIS (70 Prozent): Gewinner-Thema '{c.get('theme')}'")
         return c
     print(f"Kein Gewinner-Thema verfuegbar, nehme '{frei[0].get('theme')}'.")
     return frei[0]
@@ -103,6 +113,32 @@ def main(ignoriere_slot: bool = False):
     return gepostet
 
 
+def _laenge(mp4):
+    try:
+        import subprocess
+        out = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
+                              "-of", "csv=p=0", str(mp4)], capture_output=True, text=True,
+                             timeout=60).stdout.strip()
+        return round(float(out), 1)
+    except Exception:
+        return None
+
+
+def _hypothese(klasse, c):
+    """Erwartung, die sich nach 48 Stunden widerlegen laesst. Kein Wunschsatz.
+    Die Testverteilung 70/20/10 steckt in lernen.testklasse()."""
+    thema = c.get("theme", "?")
+    if klasse == "basis":
+        return ("Das bewaehrte Kurzformat (rund 10s, Spannung zuerst, Frage am Schluss) haelt "
+                "den Watchtime-Anteil ueber dem Kontodurchschnitt.", "bewaehrtes Kurzformat")
+    if klasse == "variation":
+        return (f"Thema '{thema}' ausserhalb der bisherigen Gewinner erreicht einen "
+                "gleich hohen oder hoeheren Anteil an Nicht-Follower-Views.",
+                f"Thema {thema} statt Gewinner-Thema")
+    return (f"Ein Wagnis ausserhalb des Musters ('{thema}') findet ein neues Publikum und "
+            "hebt Sends pro Reichweite ueber den Schnitt.", f"Wagnis {thema}")
+
+
 def _bauen(data, approved):
     """Erzeugt HOECHSTENS ein Video und legt es in den Vorrat. Gibt den Vorratseintrag
     zurueck oder None. Kostet Geld, darum sitzen hier alle Bremsen."""
@@ -133,7 +169,15 @@ def _bauen(data, approved):
         print("Heute wird nichts mehr erzeugt. Der Vorrat traegt den Account.", flush=True)
         return None
     res.erfolg_vermerken(name)
-    budget.vorrat_zufuegen(name, url, c["caption"], c.get("theme"))
+    # Jedes Posting ist ein Experiment mit einer Erwartung (Auftrag Abschnitt 5 und 7:
+    # kein Posting ohne Hypothese). Klasse und Hypothese werden beim BAU festgelegt und
+    # wandern mit dem Video durch den Vorrat bis zum Posten.
+    klasse = lernen.testklasse()
+    hyp, variable = _hypothese(klasse, c)
+    budget.vorrat_zufuegen(
+        name, url, c["caption"], c.get("theme"),
+        laenge_sek=_laenge(mp4), testklasse=klasse, hypothese=hyp, variable=variable,
+        hook_typ="Spannung zuerst, Aufloesung zum Schluss" if bvr.KURZ else "Aussage zuerst")
     # Konzept ist verbraucht, sobald es gebaut ist, nicht erst beim Posten.
     data["approved"] = [x for x in approved if x.get("name") != name]
     (HERE / "reel_pipeline.json").write_text(json.dumps(data, ensure_ascii=False, indent=2))
@@ -163,6 +207,19 @@ def _posten(eintrag, data):
     except budget.BudgetErschoepft as e:
         print("Hinweis:", e, flush=True)
     res.status_schreiben(True, name=name, permalink=link)
+    try:
+        lernen.protokollieren({
+            "name": name, "media_id": mid, "permalink": link,
+            "thema": eintrag.get("theme"), "format": "Reel",
+            "laenge_sek": eintrag.get("laenge_sek"),
+            "hook_typ": eintrag.get("hook_typ"),
+            "testklasse": eintrag.get("testklasse"),
+            "variable": eintrag.get("variable"),
+            "hypothese": eintrag.get("hypothese") or "Kein Vermerk beim Bau, nachtraeglich offen.",
+            "postingzeit": zeitplan.jetzt_zh().strftime("%a %H:%M"),
+        })
+    except Exception as e:
+        print("Lern-Protokoll fehlgeschlagen (Post bleibt live):", repr(e)[:200], flush=True)
     zeitplan.eintragen(mid, link, eintrag.get("theme"))
     data.setdefault("built", []).append(
         {"name": name, "theme": eintrag.get("theme"), "permalink": link})

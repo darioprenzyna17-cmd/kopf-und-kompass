@@ -96,10 +96,10 @@ def _vorrat_sichern(videos):
          "videos": videos}, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
-def vorrat_zufuegen(name, url, caption, theme):
+def vorrat_zufuegen(name, url, caption, theme, **extra):
     v = vorrat()
     v.append({"name": name, "url": url, "caption": caption, "theme": theme,
-              "gebaut": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")})
+              "gebaut": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), **extra})
     _vorrat_sichern(v)
     print(f"  [Vorrat] '{name}' abgelegt, Vorrat jetzt {len(v)}/{MAX_VORRAT}.", flush=True)
     return v
