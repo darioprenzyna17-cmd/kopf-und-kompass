@@ -4,30 +4,57 @@ Zugang aus Umgebung (GitHub-Secrets IG_USER_ID, IG_ACCESS_TOKEN, KIE_API_KEY).
 Aufruf in reel.yml. Committen/Pushen der Ledger macht der Workflow."""
 import json
 import sys
+from datetime import date
 from pathlib import Path
 
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 import build_video_reel as bvr   # noqa: E402
+import kk_resilienz as res       # noqa: E402
 import lib_meta as meta          # noqa: E402
 import zeitplan                  # noqa: E402
 
 
 def pick(approved):
-    """Waehlt das naechste Konzept: bevorzugt ein Gewinner-Thema aus learnings.json,
-    sonst approved[0]. So wird die Produktion datenbasiert (entwickle dich weiter)."""
+    """Waehlt das naechste Konzept.
+
+    Auftrag 3.1: gesperrte Konzepte fallen raus.
+    Auftrag 6.2: rund 70 Prozent Gewinner-Muster, rund 30 Prozent bewusst neues Terrain.
+    Die alte Fassung nahm IMMER das erste Gewinner-Thema. Damit hat sich der Account auf
+    ein Thema festgefahren, die Bestands-Audience gesaettigt und nichts Neues mehr gelernt.
+    """
+    frei = [c for c in approved if not res.ist_gesperrt(c.get("name", ""))]
+    if not frei:
+        print("Alle Konzepte in Quarantaene, nichts baubar.")
+        return None
+    gesperrt = len(approved) - len(frei)
+    if gesperrt:
+        print(f"{gesperrt} Konzept(e) in Quarantaene uebersprungen.")
+
+    winners = []
     lp = HERE / "learnings.json"
     if lp.exists():
         try:
-            winners = json.loads(lp.read_text()).get("gewinner_themen", [])
-            for w in winners:
-                for cc in approved:
-                    if cc.get("theme") == w:
-                        print(f"Lern-Loop: waehle Gewinner-Thema '{w}'")
-                        return cc
+            winners = json.loads(lp.read_text()).get("gewinner_themen", []) or []
         except Exception:
-            pass
-    return approved[0]
+            winners = []
+
+    bewaehrt = [c for c in frei if c.get("theme") in winners]
+    neuland = [c for c in frei if c.get("theme") not in winners]
+
+    # Deterministisch ueber den Tag gestreut statt zufaellig, damit der Anteil ueber die
+    # Woche wirklich bei 70/30 landet und nicht am Zufall haengt.
+    erkunden = (date.today().toordinal() % 10) >= 7
+    if erkunden and neuland:
+        c = neuland[0]
+        print(f"Erkundung (30-Prozent-Anteil): Thema '{c.get('theme')}' ausserhalb der Gewinner.")
+        return c
+    if bewaehrt:
+        c = bewaehrt[0]
+        print(f"Lern-Loop: waehle Gewinner-Thema '{c.get('theme')}'")
+        return c
+    print(f"Kein Gewinner-Thema verfuegbar, nehme '{frei[0].get('theme')}'.")
+    return frei[0]
 
 
 def main(ignoriere_slot: bool = False):
@@ -50,12 +77,38 @@ def main(ignoriere_slot: bool = False):
         print("Pipeline leer, nichts zu tun.")
         return
     c = pick(approved)
+    if c is None:
+        res.status_schreiben(False, grund="Alle Konzepte in Quarantaene.")
+        return
     name = c["name"]
-    print(f"=== BUILD {name} ===", flush=True)
-    mp4 = bvr.produce(name, c)
-    print(f"=== POST {name} ===", flush=True)
-    mid, link = meta.post_reel(meta.ensure_public_url(str(mp4)), c["caption"])
-    print(f"=== LIVE {name}: {mid} {link} ===", flush=True)
+
+    # Auftrag 4: erst das Geld pruefen, dann bauen.
+    ok, grund = res.budget_ok()
+    if not ok:
+        print("STOPP:", grund, flush=True)
+        res.status_schreiben(False, name=name, grund=grund)
+        return
+
+    try:
+        print(f"=== BUILD {name} ===", flush=True)
+        mp4 = bvr.produce(name, c)
+        print(f"=== POST {name} ===", flush=True)
+        mid, link = meta.post_reel(meta.ensure_public_url(str(mp4)), c["caption"])
+    except Exception as e:
+        # Auftrag 3.1 + 1.2: Fehlschlag zaehlen, ehrlich hinterlegen, sauber abbrechen.
+        eintrag = res.fehler_vermerken(name, repr(e)[:300])
+        res.status_schreiben(False, name=name, grund=f"{type(e).__name__}: {str(e)[:200]}")
+        print(f"=== FEHLGESCHLAGEN {name} ({eintrag['fehler']}. Mal): {repr(e)[:300]} ===", flush=True)
+        raise
+
+    # Auftrag 1.1: nicht dem eigenen Exit-Code glauben, sondern Instagram fragen.
+    online, nachweis = res.wirklich_online(mid)
+    if not online:
+        res.status_schreiben(False, name=name, grund=f"Kein Nachweis bei Instagram: {nachweis}")
+        raise RuntimeError(f"Post gemeldet, aber bei Instagram nicht auffindbar: {nachweis}")
+    print(f"=== LIVE UND BESTAETIGT {name}: {mid} {link} ===", flush=True)
+    res.erfolg_vermerken(name)
+    res.status_schreiben(True, name=name, permalink=link)
     zeitplan.eintragen(mid, link, c.get("theme"))
     # Pipeline + Ledger (das GEWAEHLTE Konzept entfernen, nicht zwingend approved[0])
     data["approved"] = [x for x in approved if x.get("name") != name]

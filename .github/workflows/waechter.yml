@@ -1,0 +1,30 @@
+name: KK Waechter
+
+# AUTOPILOT_AUFTRAG.md Abschnitt 5: Einmal taeglich gegen Instagram pruefen, ob wirklich
+# etwas online gegangen ist. Nicht gegen das Log, nicht gegen die Git-Historie. Bei
+# Stillstand geht ein Push mit Ursache an Dario. Zusaetzlich alle 6 Stunden, damit ein
+# Ausfall nicht bis zum naechsten Morgen unbemerkt bleibt.
+on:
+  schedule:
+    - cron: "20 6,12,18 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kk-waechter
+  cancel-in-progress: false
+
+jobs:
+  waechter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Konto pruefen
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          KIE_API_KEY: ${{ secrets.KIE_API_KEY }}
+        run: python3 kk_waechter.py

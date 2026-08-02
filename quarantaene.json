@@ -1,0 +1,16 @@
+{
+  "_hinweis": "Konzepte, die beim Bauen scheitern. Ab 2 Fehlschlaegen gesperrt, bis Dario sie freigibt (status auf 'frei' setzen).",
+  "konzepte": {
+    "anruf_nicht_annehmen": {
+      "fehler": 2,
+      "status": "gesperrt",
+      "gruende": [
+        "kie.ai: 'public error video generation timed out' - ein Veo-Clip des Konzepts laesst sich nicht rendern. 8 Fehlschlaege am 01.08.2026.",
+        "kie.ai: 'public error video generation timed out' - ein Veo-Clip des Konzepts laesst sich nicht rendern. 8 Fehlschlaege am 01.08.2026."
+      ],
+      "zuletzt": "2026-08-02T08:19:40Z",
+      "gesperrt_seit": "2026-08-02T08:19:40Z"
+    }
+  },
+  "fehlversuche": {}
+}

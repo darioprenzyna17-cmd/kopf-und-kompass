@@ -11,6 +11,7 @@ Spec: strategie/DESIGN.md (Archivkino), Zahlen in §0.
 import base64
 import json
 import os
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -148,7 +149,14 @@ body{{width:1080px;height:1920px;position:relative;font-family:'Fraunces',serif;
     _shoot(html, out_png, transparent=False)
 
 
-def veo_generate(prompt, out_mp4, model="veo3_fast", res="1080p", duration=8):
+class VeoAusfall(RuntimeError):
+    """Ein Clip liess sich nicht erzeugen. Kein Grund, den ganzen Reel zu kippen."""
+
+
+def _veo_einmal(prompt, out_mp4, model, res, duration, poll_sek):
+    """Ein Anlauf. poll_sek MUSS groesser sein als das Zeitlimit des Anbieters,
+    sonst meldet man den eigenen Abbruch statt seines Fehlers (Auftrag 2.3).
+    kie.ai meldet 'video generation timed out' erst nach rund 640 Sekunden."""
     body = json.dumps({"prompt": prompt, "model": model, "aspect_ratio": "9:16",
                        "resolution": res, "duration": duration}).encode()
     tid = None
@@ -164,9 +172,9 @@ def veo_generate(prompt, out_mp4, model="veo3_fast", res="1080p", duration=8):
         print(f"  Veo-Start ohne taskId ({resp.get('msg') or resp.get('message') or resp.get('err') or resp}), Retry {attempt+1}/5 ...", flush=True)
         time.sleep(10 * (attempt + 1))
     if not tid:
-        raise RuntimeError("Veo: kein taskId nach 5 Versuchen (API ueberlastet?)")
+        raise VeoAusfall("Veo: kein taskId nach 5 Versuchen (API ueberlastet?)")
     print(f"  Veo-Task {tid} laeuft ...", flush=True)
-    for _ in range(150):
+    for _ in range(int(poll_sek / 4)):
         d = json.loads(urllib.request.urlopen(urllib.request.Request(
             f"{REC}?taskId={urllib.parse.quote(tid)}", headers=KH), timeout=60).read().decode()).get("data") or {}
         flag = d.get("successFlag")
@@ -177,14 +185,49 @@ def veo_generate(prompt, out_mp4, model="veo3_fast", res="1080p", duration=8):
                 urls = json.loads(urls)
             url = urls[0] if isinstance(urls, list) and urls else (urls if isinstance(urls, str) else None)
             if not url:
-                raise RuntimeError(f"Veo: keine Video-URL: {d}")
+                raise VeoAusfall(f"Veo: keine Video-URL: {d}")
             Path(out_mp4).write_bytes(urllib.request.urlopen(urllib.request.Request(
                 url, headers={"User-Agent": "Mozilla/5.0"}), timeout=300).read())
             return
         if flag in (2, 3):
-            raise RuntimeError(f"Veo fehlgeschlagen: {d.get('errorMessage') or d}")
+            raise VeoAusfall(f"Veo abgelehnt: {d.get('errorMessage') or d}")
         time.sleep(4)
-    raise TimeoutError("veo timeout")
+    raise VeoAusfall(f"Veo: kein Ergebnis nach {poll_sek}s (Anbieter haengt)")
+
+
+def _prompt_entschaerfen(prompt):
+    """Zweiter Anlauf mit ruhigerem, kuerzerem Prompt. Lange, verschachtelte
+    Szenenbeschreibungen sind es, an denen Veo haengen bleibt."""
+    kern = prompt.split(".")[0].strip()
+    return (f"{kern}. Ruhige, cineastische Aufnahme, 9:16, warmes gedaempftes Licht, "
+            f"langsame Kamerabewegung, keine Schrift im Bild.")
+
+
+def veo_generate(prompt, out_mp4, model="veo3_fast", res="1080p", duration=8):
+    """Auftrag 2.2: Zeitlimit, begrenzte Wiederholungen, definierter Ersatzweg.
+    Anlauf 1 mit dem Originalprompt und weitem Fenster, Anlauf 2 entschaerft."""
+    anlaeufe = [(prompt, 900), (_prompt_entschaerfen(prompt), 600)]
+    letzter = None
+    for i, (p, fenster) in enumerate(anlaeufe, 1):
+        try:
+            _veo_einmal(p, out_mp4, model, res, duration, fenster)
+            if i > 1:
+                print(f"  Clip erst im {i}. Anlauf erzeugt (entschaerfter Prompt).", flush=True)
+            return
+        except VeoAusfall as e:
+            letzter = e
+            print(f"  Veo-Anlauf {i}/{len(anlaeufe)} gescheitert: {str(e)[:160]}", flush=True)
+    raise VeoAusfall(str(letzter))
+
+
+def _ersatzclip(quelle, ziel):
+    """Auftrag 2.1: Faellt ein Clip aus, wird er ersetzt statt den Reel zu kippen.
+    Gespiegelt und leicht herangezoomt, damit es nicht als plumpe Wiederholung liest."""
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(quelle),
+                    "-vf", "hflip,scale=1188:2112,crop=1080:1920,setsar=1",
+                    "-c:v", "libx264", "-preset", "veryfast", "-crf", "18",
+                    "-pix_fmt", "yuv420p", "-an", str(ziel)], check=True, timeout=300)
+    print(f"  ERSATZ: {Path(ziel).name} aus {Path(quelle).name} (gespiegelt).", flush=True)
 
 
 def gen_music(prompt, out):
@@ -344,12 +387,41 @@ def produce(name, r):
     if jobs:
         print(f"[{name}] 1/4 {len(jobs)} Assets (Veo/Suno) parallel ...", flush=True)
         with cf.ThreadPoolExecutor(max_workers=4) as ex:
-            futs = [ex.submit(veo_generate, p, o, duration=8) if k == "clip"
-                    else ex.submit(gen_music, p, o) for (k, p, o) in jobs]
+            futs = {}
+            for (k, p, o) in jobs:
+                fut = (ex.submit(veo_generate, p, o, duration=8) if k == "clip"
+                       else ex.submit(gen_music, p, o))
+                futs[fut] = (k, o)
+            # Auftrag 2.1: Ausfaelle einsammeln statt den ersten Fehler durchschlagen
+            # zu lassen. Was fehlt, wird danach ersetzt.
             for f in cf.as_completed(futs):
-                f.result()
+                k, o = futs[f]
+                try:
+                    f.result()
+                except Exception as e:
+                    print(f"  ASSET-AUSFALL ({k}) {Path(o).name}: {repr(e)[:200]}", flush=True)
     else:
         print(f"[{name}] 1/4 Assets vorhanden", flush=True)
+
+    # --- Ersatzteil-Lager: fehlende Clips auffuellen (Auftrag 2.1) ---
+    def _da(p):
+        return p.exists() and p.stat().st_size > 100000
+    fehlend = [c for c in clips_raw if not _da(c)]
+    vorhanden = [c for c in clips_raw if _da(c)]
+    if fehlend:
+        if not vorhanden:
+            raise RuntimeError(f"Alle {len(clips_raw)} Clips ausgefallen, Reel nicht baubar.")
+        print(f"[{name}] {len(fehlend)} von {len(clips_raw)} Clips ausgefallen, "
+              f"ersetze aus den gelungenen.", flush=True)
+        for i, miss in enumerate(fehlend):
+            _ersatzclip(vorhanden[i % len(vorhanden)], miss)
+    if not (mus.exists() and mus.stat().st_size >= 10000):
+        alt = sorted(OUT.glob("*_music.mp3"), key=lambda p: p.stat().st_mtime, reverse=True)
+        alt = [a for a in alt if a != mus and a.stat().st_size >= 10000]
+        if not alt:
+            raise RuntimeError("Musik ausgefallen und kein Ersatz im Lager.")
+        shutil.copyfile(alt[0], mus)
+        print(f"  ERSATZ-MUSIK aus {alt[0].name}.", flush=True)
     # 2) Montage + Grade
     montage = OUT / f"{name}_montage.mp4"
     print(f"[{name}] 2/5 Montage + Grade + Korn ...", flush=True)
