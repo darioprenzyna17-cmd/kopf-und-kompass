@@ -2,9 +2,10 @@
   "_hinweis": "Taegliche Zaehler bezahlter Aufrufe. Grenzen stehen in kk_budget.py.",
   "tage": {
     "2026-08-02": {
-      "post": 1,
-      "bau": 1,
-      "musik": 1
+      "veo": 2,
+      "musik": 2,
+      "bau": 2,
+      "post": 2
     }
   }
 }
