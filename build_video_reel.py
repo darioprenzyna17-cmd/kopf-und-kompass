@@ -205,10 +205,16 @@ def _prompt_entschaerfen(prompt):
 
 def veo_generate(prompt, out_mp4, model="veo3_fast", res="1080p", duration=8):
     """Auftrag 2.2: Zeitlimit, begrenzte Wiederholungen, definierter Ersatzweg.
-    Anlauf 1 mit dem Originalprompt und weitem Fenster, Anlauf 2 entschaerft."""
+    Anlauf 1 mit dem Originalprompt und weitem Fenster, Anlauf 2 entschaerft.
+
+    Jeder Anlauf wird VOR dem Aufruf gebucht. Ist die Tagesgrenze erreicht, fliegt
+    BudgetErschoepft und wird bewusst nicht als 'Clip-Ausfall' behandelt, sondern
+    beendet den Lauf. Genau hier ist am 01.08.2026 das Geld verbrannt."""
+    import kk_budget as budget
     anlaeufe = [(prompt, 900), (_prompt_entschaerfen(prompt), 600)]
     letzter = None
     for i, (p, fenster) in enumerate(anlaeufe, 1):
+        budget.buchen("veo")          # wirft, bevor etwas kostet
         try:
             _veo_einmal(p, out_mp4, model, res, duration, fenster)
             if i > 1:
@@ -231,6 +237,8 @@ def _ersatzclip(quelle, ziel):
 
 
 def gen_music(prompt, out):
+    import kk_budget as budget
+    budget.buchen("musik")            # bezahlter Aufruf, wird vorher gebucht
     body = json.dumps({"prompt": prompt, "customMode": False, "instrumental": True, "model": "V4",
                        "callBackUrl": "https://example.com/cb"}).encode()
     tid = json.loads(urllib.request.urlopen(urllib.request.Request(
@@ -394,12 +402,21 @@ def produce(name, r):
                 futs[fut] = (k, o)
             # Auftrag 2.1: Ausfaelle einsammeln statt den ersten Fehler durchschlagen
             # zu lassen. Was fehlt, wird danach ersetzt.
+            import kk_budget as budget
+            budgetstop = None
             for f in cf.as_completed(futs):
                 k, o = futs[f]
                 try:
                     f.result()
+                except budget.BudgetErschoepft as e:
+                    # Die Ausgabenbremse ist KEIN Asset-Ausfall. Sie wird nicht durch
+                    # einen Ersatzclip geheilt, sondern beendet den Lauf.
+                    budgetstop = e
+                    print(f"  BUDGET-STOPP: {e}", flush=True)
                 except Exception as e:
                     print(f"  ASSET-AUSFALL ({k}) {Path(o).name}: {repr(e)[:200]}", flush=True)
+            if budgetstop is not None:
+                raise budgetstop
     else:
         print(f"[{name}] 1/4 Assets vorhanden", flush=True)
 

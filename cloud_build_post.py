@@ -10,6 +10,7 @@ from pathlib import Path
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 import build_video_reel as bvr   # noqa: E402
+import kk_budget as budget      # noqa: E402
 import kk_resilienz as res       # noqa: E402
 import lib_meta as meta          # noqa: E402
 import zeitplan                  # noqa: E402
@@ -58,13 +59,12 @@ def pick(approved):
 
 
 def main(ignoriere_slot: bool = False):
-    # 0) Zeit-Experiment: postet nur zum heutigen Slot, und nie zweimal am Tag
-    if not ignoriere_slot:
-        if zeitplan.schon_gepostet():
-            return
-        if not zeitplan.ist_mein_slot():
-            return
-    # 1) Erst lernen: echte Zahlen auswerten, learnings.json aktualisieren
+    """Zwei getrennte Aufgaben in fester Reihenfolge:
+       POSTEN  aus dem Vorrat, kostet nichts, hat Vorrang.
+       BAUEN   hoechstens ein Video pro Tag, nur wenn der Vorrat Platz hat.
+    Frueher war beides verschraenkt. Darum hat jeder Postversuch eine komplette
+    Produktion ausgeloest, und acht Fehlversuche am 01.08.2026 haben acht Produktionen
+    bezahlt, ohne dass ein Video online ging."""
     try:
         import learn_and_adapt
         learn_and_adapt.main()
@@ -72,59 +72,108 @@ def main(ignoriere_slot: bool = False):
         print("Lern-Schritt uebersprungen:", e)
     pf = HERE / "reel_pipeline.json"
     data = json.loads(pf.read_text())
-    approved = data.get("approved", [])
-    if not approved:
-        print("Pipeline leer, nichts zu tun.")
-        return
+    print(budget.bericht(), flush=True)
+
+    # --- POSTEN ---
+    schon = zeitplan.schon_gepostet()
+    slot_da = ignoriere_slot or zeitplan.ist_mein_slot()
+    gepostet = None
+    if schon:
+        print("Heute wurde bereits gepostet, kein zweiter Post.", flush=True)
+    elif not slot_da:
+        print("Slot noch nicht erreicht, kein Post.", flush=True)
+    else:
+        fertig = budget.vorrat_entnehmen()
+        if fertig is None:
+            print("Vorrat leer, es wird einmalig fuer heute gebaut.", flush=True)
+            fertig = _bauen(data, data.get("approved", []))
+            data = json.loads(pf.read_text())
+        if fertig is not None:
+            gepostet = _posten(fertig, data)
+
+    # --- BAUEN (Puffer), unabhaengig davon ob heute gepostet wurde ---
+    data = json.loads(pf.read_text())
+    darf, grund = budget.darf_bauen()
+    if darf:
+        print(f"Vorrat auffuellen: {grund}", flush=True)
+        _bauen(data, data.get("approved", []))
+    else:
+        print(f"Kein Bau: {grund}", flush=True)
+    print(budget.bericht(), flush=True)
+    return gepostet
+
+
+def _bauen(data, approved):
+    """Erzeugt HOECHSTENS ein Video und legt es in den Vorrat. Gibt den Vorratseintrag
+    zurueck oder None. Kostet Geld, darum sitzen hier alle Bremsen."""
+    darf, grund = budget.darf_bauen()
+    if not darf:
+        print(f"BAU GESPERRT: {grund}", flush=True)
+        res.status_schreiben(False, grund=f"Bau gesperrt: {grund}")
+        return None
+    ok, ggrund = res.budget_ok()
+    if not ok:
+        print("STOPP:", ggrund, flush=True)
+        res.status_schreiben(False, grund=ggrund)
+        return None
     c = pick(approved)
     if c is None:
         res.status_schreiben(False, grund="Alle Konzepte in Quarantaene.")
-        return
+        return None
     name = c["name"]
-
-    # Auftrag 4: erst das Geld pruefen, dann bauen.
-    ok, grund = res.budget_ok()
-    if not ok:
-        print("STOPP:", grund, flush=True)
-        res.status_schreiben(False, name=name, grund=grund)
-        return
-
+    budget.buchen("bau")          # der Tag ist damit verbraucht, auch wenn es scheitert
     try:
         print(f"=== BUILD {name} ===", flush=True)
         mp4 = bvr.produce(name, c)
-        print(f"=== POST {name} ===", flush=True)
-        mid, link = meta.post_reel(meta.ensure_public_url(str(mp4)), c["caption"])
+        url = meta.ensure_public_url(str(mp4))   # dauerhafte URL, Video muss nie neu gebaut werden
     except Exception as e:
-        # Auftrag 3.1 + 1.2: Fehlschlag zaehlen, ehrlich hinterlegen, sauber abbrechen.
         eintrag = res.fehler_vermerken(name, repr(e)[:300])
         res.status_schreiben(False, name=name, grund=f"{type(e).__name__}: {str(e)[:200]}")
-        print(f"=== FEHLGESCHLAGEN {name} ({eintrag['fehler']}. Mal): {repr(e)[:300]} ===", flush=True)
-        raise
+        print(f"=== BAU FEHLGESCHLAGEN {name} ({eintrag['fehler']}. Mal): {repr(e)[:300]} ===", flush=True)
+        print("Heute wird nichts mehr erzeugt. Der Vorrat traegt den Account.", flush=True)
+        return None
+    res.erfolg_vermerken(name)
+    budget.vorrat_zufuegen(name, url, c["caption"], c.get("theme"))
+    # Konzept ist verbraucht, sobald es gebaut ist, nicht erst beim Posten.
+    data["approved"] = [x for x in approved if x.get("name") != name]
+    (HERE / "reel_pipeline.json").write_text(json.dumps(data, ensure_ascii=False, indent=2))
+    return budget.vorrat()[-1]
 
-    # Auftrag 1.1: nicht dem eigenen Exit-Code glauben, sondern Instagram fragen.
+
+def _posten(eintrag, data):
+    """Postet einen fertigen Vorratseintrag. Kostet nichts und kann nicht am Bau scheitern."""
+    name = eintrag["name"]
+    print(f"=== POST {name} (aus Vorrat, gebaut {eintrag.get('gebaut')}) ===", flush=True)
+    try:
+        mid, link = meta.post_reel(eintrag["url"], eintrag["caption"])
+    except Exception as e:
+        # Nicht verloren geben: zurueck in den Vorrat, damit der naechste Lauf es erneut
+        # versucht, ohne dass ein einziger Franken neu ausgegeben wird.
+        budget.vorrat_zufuegen(name, eintrag["url"], eintrag["caption"], eintrag.get("theme"))
+        res.status_schreiben(False, name=name, grund=f"Posten fehlgeschlagen: {str(e)[:200]}")
+        print(f"POSTEN FEHLGESCHLAGEN, Video bleibt im Vorrat: {repr(e)[:200]}", flush=True)
+        raise
     online, nachweis = res.wirklich_online(mid)
     if not online:
         res.status_schreiben(False, name=name, grund=f"Kein Nachweis bei Instagram: {nachweis}")
         raise RuntimeError(f"Post gemeldet, aber bei Instagram nicht auffindbar: {nachweis}")
     print(f"=== LIVE UND BESTAETIGT {name}: {mid} {link} ===", flush=True)
-    res.erfolg_vermerken(name)
+    try:
+        budget.buchen("post")     # nur Buchhaltung, darf einen erfolgten Post nie kippen
+    except budget.BudgetErschoepft as e:
+        print("Hinweis:", e, flush=True)
     res.status_schreiben(True, name=name, permalink=link)
-    zeitplan.eintragen(mid, link, c.get("theme"))
-    # Pipeline + Ledger (das GEWAEHLTE Konzept entfernen, nicht zwingend approved[0])
-    data["approved"] = [x for x in approved if x.get("name") != name]
-    data.setdefault("built", []).append({"name": name, "theme": c.get("theme"), "permalink": link})
-    pf.write_text(json.dumps(data, ensure_ascii=False, indent=2))
+    zeitplan.eintragen(mid, link, eintrag.get("theme"))
+    data.setdefault("built", []).append(
+        {"name": name, "theme": eintrag.get("theme"), "permalink": link})
+    (HERE / "reel_pipeline.json").write_text(json.dumps(data, ensure_ascii=False, indent=2))
     ur = HERE / "used_reels.json"
     u = json.loads(ur.read_text())
-    u.setdefault("used_topics", []).append(c.get("theme"))
-    u.setdefault("used_hooks", []).append(c["thoughts"][0])
+    u.setdefault("used_topics", []).append(eintrag.get("theme"))
     ur.write_text(json.dumps(u, ensure_ascii=False, indent=2))
-    print(f"OK, {len(data['approved'])} Konzepte verbleiben.", flush=True)
-    # Stories laufen jetzt AUSSCHLIESSLICH ueber den eigenen Story-Cron (run_story.py /
-    # story.yml) = deterministisch genau 2/Tag. Kein zusaetzliches Story-Posten beim Reel,
-    # damit es an Reel-Tagen nicht auf 3-4 hochlaeuft (Dario-Vorgabe 2026-07-19).
-    # post_stories(c)  # bewusst deaktiviert
-    return c
+    # Stories laufen ausschliesslich ueber den eigenen Story-Cron (run_story.py /
+    # story.yml), deterministisch genau 2/Tag (Dario-Vorgabe 2026-07-19).
+    return eintrag
 
 
 def post_stories(c):

@@ -40,8 +40,11 @@ jobs:
             echo "post=true" >> "$GITHUB_OUTPUT"
             echo "Force-Build: Slot ignoriert."
           elif python3 -c "
-          import sys, zeitplan
-          sys.exit(0 if (not zeitplan.schon_gepostet() and zeitplan.ist_mein_slot()) else 1)
+          import sys, zeitplan, kk_budget
+          posten = (not zeitplan.schon_gepostet()) and zeitplan.ist_mein_slot()
+          bauen  = kk_budget.darf_bauen()[0]
+          print('posten:', posten, '| bauen:', bauen, '|', kk_budget.bericht())
+          sys.exit(0 if (posten or bauen) else 1)
           "; then
             echo "post=true" >> "$GITHUB_OUTPUT"
           else
@@ -74,7 +77,7 @@ jobs:
       - name: Ledger sichern
         if: always() && steps.gate.outputs.post == 'true'
         run: |
-          LEDGER="reel_pipeline.json used_reels.json learnings.json zeit_experiment.json quarantaene.json run_status.json"
+          LEDGER="reel_pipeline.json used_reels.json learnings.json zeit_experiment.json quarantaene.json run_status.json budget.json vorrat.json"
           if [[ -n "$(git status --porcelain $LEDGER)" ]]; then
             if [[ -f run_status.json ]] && python3 -c "import json,sys; sys.exit(0 if json.load(open('run_status.json'))['ok'] else 1)"; then
               MSG="reel bestaetigt online $(date -u +%FT%TZ)"
