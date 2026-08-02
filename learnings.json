@@ -1,13 +1,13 @@
 {
   "_hinweis": "Automatisch aus Instagram-Insights. Nordstern: Save+Share+Follow. cloud_build_post.py priorisiert Gewinner-Themen.",
   "updated_utc": null,
-  "n_reels_mit_daten": 20,
+  "n_reels_mit_daten": 21,
   "themen_rang": [
     {
       "thema": "Grenzen",
       "score_avg": 13.82,
       "n": 4,
-      "reichweite": 2472,
+      "reichweite": 2480,
       "saves": 6,
       "shares": 4
     },
@@ -15,23 +15,15 @@
       "thema": "Geduld",
       "score_avg": 10.87,
       "n": 2,
-      "reichweite": 809,
+      "reichweite": 812,
       "saves": 2,
       "shares": 2
-    },
-    {
-      "thema": "Achtsamkeit",
-      "score_avg": 10.41,
-      "n": 1,
-      "reichweite": 349,
-      "saves": 2,
-      "shares": 0
     },
     {
       "thema": "Fortschritt",
       "score_avg": 9.97,
       "n": 3,
-      "reichweite": 1341,
+      "reichweite": 1346,
       "saves": 5,
       "shares": 1
     },
@@ -39,7 +31,7 @@
       "thema": "Selbstrespekt",
       "score_avg": 9.5,
       "n": 2,
-      "reichweite": 1195,
+      "reichweite": 1201,
       "saves": 3,
       "shares": 0
     },
@@ -47,7 +39,7 @@
       "thema": "Charakter",
       "score_avg": 9.04,
       "n": 2,
-      "reichweite": 1234,
+      "reichweite": 1237,
       "saves": 1,
       "shares": 1
     },
@@ -55,7 +47,7 @@
       "thema": "Ruhe",
       "score_avg": 8.11,
       "n": 1,
-      "reichweite": 459,
+      "reichweite": 460,
       "saves": 0,
       "shares": 1
     },
@@ -65,6 +57,14 @@
       "n": 1,
       "reichweite": 550,
       "saves": 1,
+      "shares": 0
+    },
+    {
+      "thema": "Achtsamkeit",
+      "score_avg": 6.46,
+      "n": 2,
+      "reichweite": 448,
+      "saves": 2,
       "shares": 0
     },
     {
@@ -104,10 +104,10 @@
   "gewinner_themen": [
     "Grenzen",
     "Geduld",
-    "Achtsamkeit"
+    "Fortschritt"
   ],
   "verlierer_themen": [],
-  "empfehlung": "Ausbauen: Grenzen, Geduld, Achtsamkeit.",
+  "empfehlung": "Ausbauen: Grenzen, Geduld, Fortschritt.",
   "per_reel": [
     {
       "name": "charakter_statt_besitz",
@@ -203,61 +203,61 @@
       "name": "selbstrespekt",
       "theme": "Selbstrespekt",
       "score": 14.67,
-      "reach": 618,
+      "reach": 621,
       "saved": 3,
       "shares": 0,
       "total_interactions": 8,
-      "ig_reels_avg_watch_time": 5311
+      "ig_reels_avg_watch_time": 5301
     },
     {
       "name": "ruhe_reagieren",
       "theme": "Ruhe",
       "score": 8.11,
-      "reach": 459,
+      "reach": 460,
       "saved": 0,
       "shares": 1,
       "total_interactions": 6,
-      "ig_reels_avg_watch_time": 3695
+      "ig_reels_avg_watch_time": 3690
     },
     {
       "name": "wie_weit_gekommen",
       "theme": "Fortschritt",
-      "score": 14.25,
-      "reach": 367,
+      "score": 14.24,
+      "reach": 368,
       "saved": 2,
       "shares": 1,
       "total_interactions": 6,
-      "ig_reels_avg_watch_time": 4160
+      "ig_reels_avg_watch_time": 4151
     },
     {
       "name": "charakter_allein",
       "theme": "Charakter",
       "score": 11.68,
-      "reach": 686,
+      "reach": 689,
       "saved": 0,
       "shares": 1,
       "total_interactions": 13,
-      "ig_reels_avg_watch_time": 6184
+      "ig_reels_avg_watch_time": 6173
     },
     {
       "name": "spaeter_antworten",
       "theme": "Grenzen",
-      "score": 11.65,
-      "reach": 573,
+      "score": 11.66,
+      "reach": 576,
       "saved": 1,
       "shares": 1,
       "total_interactions": 4,
-      "ig_reels_avg_watch_time": 5762
+      "ig_reels_avg_watch_time": 5766
     },
     {
       "name": "grenze_wiederholen",
       "theme": "Grenzen",
       "score": 10.6,
-      "reach": 632,
+      "reach": 635,
       "saved": 2,
       "shares": 0,
       "total_interactions": 4,
-      "ig_reels_avg_watch_time": 5528
+      "ig_reels_avg_watch_time": 5531
     },
     {
       "name": "blick_zurueck",
@@ -267,23 +267,23 @@
       "saved": 3,
       "shares": 0,
       "total_interactions": 6,
-      "ig_reels_avg_watch_time": 3999
+      "ig_reels_avg_watch_time": 3994
     },
     {
       "name": "schuldgefuehl_nach_nein",
       "theme": "Grenzen",
       "score": 4.21,
-      "reach": 656,
+      "reach": 658,
       "saved": 0,
       "shares": 0,
       "total_interactions": 3,
-      "ig_reels_avg_watch_time": 5306
+      "ig_reels_avg_watch_time": 5298
     },
     {
       "name": "entschuldigung_fuer_nichts",
       "theme": "Selbstrespekt",
       "score": 4.33,
-      "reach": 577,
+      "reach": 580,
       "saved": 0,
       "shares": 0,
       "total_interactions": 3,
@@ -293,21 +293,31 @@
       "name": "kleine_tage_zaehlen",
       "theme": "Geduld",
       "score": 7.61,
-      "reach": 316,
+      "reach": 319,
       "saved": 0,
       "shares": 1,
       "total_interactions": 4,
-      "ig_reels_avg_watch_time": 4183
+      "ig_reels_avg_watch_time": 4188
     },
     {
       "name": "ein_jahr_zurueck",
       "theme": "Fortschritt",
-      "score": 2.32,
-      "reach": 436,
+      "score": 2.34,
+      "reach": 440,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3777
+      "ig_reels_avg_watch_time": 3805
+    },
+    {
+      "name": "vorbeigehen_am_schoenen",
+      "theme": "Achtsamkeit",
+      "score": 2.5,
+      "reach": 99,
+      "saved": 0,
+      "shares": 0,
+      "total_interactions": 0,
+      "ig_reels_avg_watch_time": 4794
     }
   ]
 }

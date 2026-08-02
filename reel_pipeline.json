@@ -2,43 +2,6 @@
   "_hinweis": "Archivkino-Schema (Text-first, klar): name, theme, kicker (kurzes klares Wort, optional), thoughts[3-4] (klare Saetze, | = Zeilenumbruch), endcard_term (optional, meist leer), cta (klar: 'Folge fuer mehr.' / 'Speichern.' / 'Teile das.'), clips[3] (vollflaechig, keine Gesichter), music, caption. Zeilen aus bewaehrten Referenz-Accounts, KEIN erfundener Jargon.",
   "approved": [
     {
-      "name": "passt_schon",
-      "theme": "Selbstrespekt",
-      "kicker": "ZWEI WÖRTER",
-      "ausloeser": "Erkennen",
-      "wer_schickt_wem": "Eine Frau schickt es der Freundin, die bei jedem Ärger sofort abwinkt.",
-      "hypothese": "Ein Hook, der zwei Wörter ankündigt aber nicht nennt, öffnet eine Spannungslücke und hebt den Watchtime-Anteil über den Kontodurchschnitt.",
-      "neuer_winkel": "Nicht Respekt von aussen, sondern der Satz, mit dem man sich selbst überstimmt.",
-      "thoughts": [
-        "Zwei Wörter, mit denen du|dich selbst überstimmst.",
-        "Passt schon.|Und es passt eben nicht."
-      ],
-      "cta": "Wofür machst du dich zu klein?",
-      "clips": [
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a single ceramic cup of tea going cold on a wooden kitchen table in the late afternoon light of a quiet apartment, shot on clean modern digital cinema with rich contrast and deep shadows, natural warm light, no on-screen text, no faces, no people looking at camera, no film strip border, no letterbox, no vignette frame, slow contemplative camera move, 24fps"
-      ],
-      "music": "neoclassical cinematic ambient, warm and uplifting, solo felt piano with soft cello, slow arc from minor to major, 66 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
-      "caption": "Zwei Wörter, die höflich klingen und teuer sind.\n\nPasst schon ist selten die Wahrheit. Es ist der schnellste Weg, ein Gespräch zu beenden, das dir wichtig wäre. Du sparst dem anderen die Unbequemlichkeit und bezahlst sie selbst.\n\nDu darfst sagen, was nicht passt.\n\n#selbstrespekt #grenzen #mindset #achtsamkeit #kopfundkompass"
-    },
-    {
-      "name": "wer_fragt_dich",
-      "theme": "Gesehen werden",
-      "kicker": "SONNTAGABEND",
-      "ausloeser": "Emotion mit Adressat",
-      "wer_schickt_wem": "Eine Tochter schickt es ihrer Mutter, die immer nur fragt, wie es allen anderen geht.",
-      "hypothese": "Ein Reel mit direktem Adressaten (schick das der Person, die immer fragt) hebt Sends pro Reichweite über den Schnitt, weil das Weiterschicken selbst die Botschaft ist.",
-      "thoughts": [
-        "Du hast heute oft gefragt,|wie es anderen geht.",
-        "Du darfst auch|gefragt werden."
-      ],
-      "cta": "Wer fragt dich, wie es dir geht?",
-      "clips": [
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a warm lit kitchen window seen from a dark garden at dusk, a silhouette moving inside, rain drops on the glass, shot on clean modern digital cinema with rich contrast and deep shadows, natural warm light, no on-screen text, no faces, no people looking at camera, no film strip border, no letterbox, no vignette frame, slow contemplative camera move, 24fps"
-      ],
-      "music": "neoclassical cinematic ambient, warm and uplifting, solo felt piano with soft cello, slow arc from minor to major, 62 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
-      "caption": "Zähl mal nach, wie oft du heute gefragt hast, wie es jemandem geht.\n\nUnd wie oft dich jemand gefragt hat.\n\nWer immer die Starke ist, wird irgendwann nicht mehr gefragt. Nicht aus Bosheit, sondern aus Gewohnheit. Man traut dir zu, dass du klarkommst. Das ist ein Kompliment und eine Einsamkeit zugleich.\n\nSchick das der Person, die dich zuletzt gefragt hat.\n\n#gesehenwerden #selbstwert #mindset #kopfundkompass"
-    },
-    {
       "name": "vier_geschmaecker",
       "theme": "Eigene Bedürfnisse",
       "kicker": "AM TISCH",
@@ -666,6 +629,11 @@
       "name": "vorbeigehen_am_schoenen",
       "theme": "Achtsamkeit",
       "permalink": "https://www.instagram.com/reel/Dbh-vUYESmO/"
+    },
+    {
+      "name": "passt_schon",
+      "theme": "Selbstrespekt",
+      "permalink": "https://www.instagram.com/reel/DbiNk41lPWL/"
     }
   ]
 }
