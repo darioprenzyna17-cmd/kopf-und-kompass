@@ -27,6 +27,15 @@
       "reach_pct": 1.25,
       "avg_shares": 0.5,
       "avg_saved": 1.12
+    },
+    {
+      "date": "2026-08-03",
+      "followers": 35114,
+      "reels_gemessen": 8,
+      "avg_reach": 471.5,
+      "reach_pct": 1.34,
+      "avg_shares": 0.12,
+      "avg_saved": 0.62
     }
   ]
 }
