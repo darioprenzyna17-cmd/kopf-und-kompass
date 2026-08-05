@@ -76,7 +76,14 @@ Reels werden normal gepostet. Der Trial-Reel-Modus von Instagram ist aus
 Ein eigener Lauf prüft das kie.ai-Guthaben und meldet sich, bevor es leer ist. Läuft der
 Schlüssel leer, fällt die Produktion aus, und zwar still.
 
-## 10. Beim gemeinsamen Entwickeln wird nichts produziert
+## 10. Just in time, kein Lager
+
+Es liegt höchstens **ein** fertiges Video auf Halde, und es wird höchstens **eines pro Tag**
+produziert (K&K: `MAX_VORRAT` und `MAX_BAUTEN_PRO_TAG` in `kk_budget.py`). Damit ist nie viel
+vorausbezahlt, und eine Änderung an Bau oder Look greift sofort beim nächsten Reel statt erst,
+wenn ein altes Lager abgearbeitet ist.
+
+## 11. Beim gemeinsamen Entwickeln wird nichts produziert
 
 Während Dario und ich am System arbeiten: nur Trockenläufe. Echte Produktion passiert
 über den Cron oder auf ausdrückliche Ansage.

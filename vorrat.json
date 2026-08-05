@@ -1,5 +1,5 @@
 {
-  "_hinweis": "Fertige, noch nicht gepostete Videos. Hoechstens 3 (Dario-Vorgabe).",
+  "_hinweis": "Fertige, noch nicht gepostete Videos. Hoechstens 1 (Dario-Vorgabe 05.08.2026). url ist ein PFAD IM REPO, keine kie.ai-Adresse: die verfaellt nach rund 3 Tagen. Die oeffentliche Adresse entsteht erst beim Posten (ensure_public_url).",
   "videos": [
     {
       "name": "vier_geschmaecker",

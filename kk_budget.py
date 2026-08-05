@@ -1,7 +1,9 @@
 """Harte Ausgabenbremse und Vorrats-Logik fuer @kopfundkompass.
 
-Dario-Vorgabe 2026-08-02: Es wird HOECHSTENS EIN Video pro Tag produziert, und der
-Vorrat geht nie ueber 2 bis 3 Tage hinaus. Niemals mehr. Am 01.08.2026 hat eine
+Dario-Vorgabe 2026-08-02, verschaerft am 05.08.2026: Es wird HOECHSTENS EIN Video pro Tag
+produziert, und es liegt hoechstens EIN fertiges Video auf Halde. Niemals mehr. Just in
+time statt Vorrat: so ist nie viel vorausbezahlt, und eine Aenderung an Bau oder Look
+greift sofort beim naechsten Reel. Am 01.08.2026 hat eine
 Fehlerschleife acht Baulaeufe gestartet und dabei zwei bis drei bezahlte Veo-Clips
 pro Lauf verbrannt, ohne dass ein einziges Video online ging.
 
@@ -10,8 +12,8 @@ nicht auf der Ebene "Bauversuch". Ein Bauversuch, der zur Haelfte durchlaeuft, k
 trotzdem Geld. Nur ein Zaehler direkt am Aufruf kann das begrenzen.
 
 Ablauf neu:
-  bauen  -> Video wird erzeugt, in den kie.ai-Speicher geladen, URL landet im Vorrat
-  posten -> nimmt den aeltesten Eintrag aus dem Vorrat, kostet nichts
+  bauen  -> Video wird erzeugt und im Repo abgelegt, der PFAD landet im Vorrat
+  posten -> nimmt den aeltesten Eintrag, laedt ihn erst jetzt hoch, kostet nichts
 Damit haengt das taegliche Posten nicht mehr davon ab, ob heute eine Produktion klappt.
 """
 import json
@@ -33,7 +35,10 @@ VORRAT = HERE / "vorrat.json"
 MAX_VEO_PRO_TAG = 2        # Kurzformat braucht 1 Clip, einer bleibt als Reserve fuer EINEN Ersatzversuch
 MAX_MUSIK_PRO_TAG = 2      # ein Musikstueck pro Reel, eines in Reserve
 MAX_BAUTEN_PRO_TAG = 1     # hoechstens EIN Video pro Tag, Dario-Vorgabe
-MAX_VORRAT = 3             # hoechstens 3 Tage Vorlauf, Dario-Vorgabe
+MAX_VORRAT = 1             # genau EIN fertiges Video auf Halde, Dario-Vorgabe 05.08.2026
+# Vorher 3. Dario hat auf 1 heruntergesetzt: just in time produzieren, nichts liegt lange
+# herum. Weniger vorausbezahlte Videos, und eine Aenderung an Bau oder Look greift sofort
+# beim naechsten Reel statt erst, wenn der alte Vorrat abgearbeitet ist.
 
 GRENZEN = {"veo": MAX_VEO_PRO_TAG, "musik": MAX_MUSIK_PRO_TAG,
            "bau": MAX_BAUTEN_PRO_TAG, "post": 1}
@@ -118,12 +123,12 @@ def rest(art):
 
 def vorrat():
     return _laden(VORRAT, {"_hinweis": "Fertige, noch nicht gepostete Videos. "
-                                       "Hoechstens 3 (Dario-Vorgabe).", "videos": []})["videos"]
+                                       f"Hoechstens {MAX_VORRAT} (Dario-Vorgabe).", "videos": []})["videos"]
 
 
 def _vorrat_sichern(videos):
     _atomar_schreiben(VORRAT, {"_hinweis": "Fertige, noch nicht gepostete Videos. "
-                                           "Hoechstens 3 (Dario-Vorgabe).", "videos": videos})
+                                           f"Hoechstens {MAX_VORRAT} (Dario-Vorgabe).", "videos": videos})
 
 
 def vorrat_zufuegen(name, url, caption, theme, **extra):
@@ -148,7 +153,7 @@ def vorrat_entnehmen():
 
 
 def darf_bauen():
-    """Auftrag 4 plus Dario-Vorgabe: 1 Bau pro Tag, hoechstens 3 Tage Vorlauf."""
+    """Auftrag 4 plus Dario-Vorgabe: 1 Bau pro Tag, hoechstens MAX_VORRAT auf Halde."""
     s = stand()
     if s["bau"] >= MAX_BAUTEN_PRO_TAG:
         return False, f"Heute wurde bereits {s['bau']}x gebaut (Grenze {MAX_BAUTEN_PRO_TAG})."
