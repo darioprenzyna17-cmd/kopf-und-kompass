@@ -172,9 +172,19 @@ def aktive_stories():
         return []
 
 
-def status_schreiben(ok, name=None, permalink=None, grund=""):
-    """Auftrag 1.2: der Lauf hinterlaesst eine ehrliche Spur, die der Workflow liest."""
+def status_schreiben(ok, name=None, permalink=None, grund="", gepostet=False):
+    """Auftrag 1.2: der Lauf hinterlaesst eine ehrliche Spur, die der Workflow liest.
+
+    'ok' heisst nur: der Lauf ist sauber durchgelaufen.
+    'gepostet' heisst: in DIESEM Lauf ging wirklich ein Reel online.
+
+    Die Trennung ist noetig. Vorher stand nur 'ok' in der Datei, und die blieb vom
+    letzten geglueckten Post stehen. Ein Lauf, der bloss gebaut hat, meldete deshalb
+    'reel bestaetigt online', obwohl nichts online ging. Genau die Sorte Luge, die der
+    Auftrag verbietet.
+    """
     LAUFSTATUS.write_text(json.dumps({
-        "ok": bool(ok), "konzept": name, "permalink": permalink, "grund": grund,
+        "ok": bool(ok), "gepostet": bool(gepostet), "konzept": name,
+        "permalink": permalink, "grund": grund,
         "zeit": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
     }, ensure_ascii=False, indent=2), encoding="utf-8")

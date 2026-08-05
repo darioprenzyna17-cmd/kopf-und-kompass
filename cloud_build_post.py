@@ -109,10 +109,15 @@ def main(ignoriere_slot: bool = False):
     schon = zeitplan.schon_gepostet() and not ignoriere_slot
     slot_da = ignoriere_slot or zeitplan.ist_mein_slot()
     gepostet = None
+    # Den Status dieses Laufs sofort setzen, sonst bleibt die Meldung des letzten
+    # geglueckten Posts stehen und der Lauf schmueckt sich mit fremden Federn.
+    res.status_schreiben(True, grund="Lauf gestartet, noch nichts gepostet")
     if schon:
         print("Heute wurde bereits gepostet, kein zweiter Post.", flush=True)
+        res.status_schreiben(True, grund="Heute wurde bereits gepostet.")
     elif not slot_da:
         print("Slot noch nicht erreicht, kein Post.", flush=True)
+        res.status_schreiben(True, grund="Slot noch nicht erreicht, kein Post faellig.")
     else:
         fertig = budget.vorrat_entnehmen()
         if fertig is None:
@@ -286,7 +291,7 @@ def _posten(eintrag, data):
         budget.buchen("post")     # nur Buchhaltung, darf einen erfolgten Post nie kippen
     except budget.BudgetErschoepft as e:
         print("Hinweis:", e, flush=True)
-    res.status_schreiben(True, name=name, permalink=link)
+    res.status_schreiben(True, name=name, permalink=link, gepostet=True)
     try:
         lernen.protokollieren({
             "name": name, "media_id": mid, "permalink": link,
