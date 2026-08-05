@@ -1,14 +1,22 @@
 name: KK kie.ai Credits
+
+# Bis zum 05.08.2026 hatte dieser Lauf KEINEN Zeitplan, er ging nur von Hand. Damit war
+# die Guthaben-Ueberwachung faktisch aus: der Schluessel konnte leerlaufen, ohne dass
+# sich jemand meldet, und die Produktion fiel still aus. Der DC-Autopilot prueft taeglich
+# um 06:00 UTC, K&K macht das jetzt genauso (PROZESS_STANDARD Punkt 9).
 on:
+  schedule:
+    - cron: "0 6 * * *"     # 06:00 UTC taeglich
   workflow_dispatch: {}
+
 jobs:
   credits:
     runs-on: ubuntu-latest
     steps:
-      - name: Guthaben abfragen
+      - uses: actions/checkout@v4
+
+      - name: Guthaben pruefen und bei Bedarf melden
         env:
           KIE_API_KEY: ${{ secrets.KIE_API_KEY }}
-        run: |
-          echo -n "KIE-CREDITS: "
-          curl -s -m 20 https://api.kie.ai/api/v1/chat/credit -H "Authorization: Bearer $KIE_API_KEY"
-          echo ""
+          CREDITS_MIN: "150"
+        run: python3 kk_credits.py

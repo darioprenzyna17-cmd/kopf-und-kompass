@@ -89,26 +89,10 @@ jobs:
             [[ -e "$f" ]] && LEDGER="$LEDGER $f"
           done
           if [[ -n "$LEDGER" && -n "$(git status --porcelain $LEDGER)" ]]; then
-            # Drei Faelle, drei Meldungen. "bestaetigt online" darf NUR dastehen, wenn in
-            # diesem Lauf wirklich ein Reel online ging. Vorher reichte ein altes ok:true
-            # aus einem frueheren Lauf, und ein reiner Bau-Lauf meldete einen Post, den es
-            # nie gab. Auftrag 1.2: die Historie sagt die Wahrheit.
-            MSG=$(python3 - <<'PY'
-import json, datetime
-jetzt = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-try:
-    s = json.load(open("run_status.json"))
-except Exception:
-    print(f"Ledger gesichert {jetzt} :: kein Laufstatus lesbar"); raise SystemExit
-grund = (s.get("grund") or "")[:120]
-if s.get("gepostet"):
-    print(f"reel bestaetigt online {jetzt} :: {s.get('konzept')}")
-elif s.get("ok"):
-    print(f"Lauf ok, kein Post faellig {jetzt} :: {grund}")
-else:
-    print(f"FEHLSCHLAG reel nicht gepostet {jetzt} :: {grund}")
-PY
-            )
+            # Die Meldung sagt, was wirklich passiert ist: online, nichts faellig oder
+            # Fehlschlag. Logik in kk_meldung.py, nicht als Heredoc hier drin, sonst
+            # beenden die Python-Zeilen auf Spalte 0 den YAML-Block.
+            MSG=$(python3 kk_meldung.py)
             git config user.name "kk-autopilot-bot"
             git config user.email "bot@users.noreply.github.com"
             git add $LEDGER
