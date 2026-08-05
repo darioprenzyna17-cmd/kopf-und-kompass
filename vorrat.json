@@ -1,4 +1,17 @@
 {
-  "_hinweis": "Fertige, noch nicht gepostete Videos. Hoechstens 3 (Dario-Vorgabe). url ist ein PFAD IM REPO, keine kie.ai-Adresse: die verfaellt nach rund 3 Tagen. Die oeffentliche Adresse entsteht erst beim Posten (ensure_public_url).",
-  "videos": []
+  "_hinweis": "Fertige, noch nicht gepostete Videos. Hoechstens 3 (Dario-Vorgabe).",
+  "videos": [
+    {
+      "name": "vier_geschmaecker",
+      "url": "assets/vorrat/vier_geschmaecker.mp4",
+      "caption": "Du weisst, wer keine Zwiebeln mag und wer die Kruste liebt.\n\nDu weisst es seit Jahren, ohne nachzudenken. Und wenn dich jemand fragt, worauf du selbst Lust hast, brauchst du einen Moment. Nicht weil es dir egal wäre, sondern weil dich lange niemand gefragt hat. Auch du nicht.\n\nKoch dir diese Woche einmal, was du willst.\n\n#eigenebeduerfnisse #selbstfürsorge #mindset #kopfundkompass",
+      "theme": "Eigene Bedürfnisse",
+      "gebaut": "2026-08-05T15:49:38Z",
+      "laenge_sek": 9.9,
+      "testklasse": "basis",
+      "hypothese": "Das bewaehrte Kurzformat (rund 10s, Spannung zuerst, Frage am Schluss) haelt den Watchtime-Anteil ueber dem Kontodurchschnitt.",
+      "variable": "bewaehrtes Kurzformat",
+      "hook_typ": "Spannung zuerst, Aufloesung zum Schluss"
+    }
+  ]
 }

@@ -2,24 +2,6 @@
   "_hinweis": "Archivkino-Schema (Text-first, klar): name, theme, kicker (kurzes klares Wort, optional), thoughts[3-4] (klare Saetze, | = Zeilenumbruch), endcard_term (optional, meist leer), cta (klar: 'Folge fuer mehr.' / 'Speichern.' / 'Teile das.'), clips[3] (vollflaechig, keine Gesichter), music, caption. Zeilen aus bewaehrten Referenz-Accounts, KEIN erfundener Jargon.",
   "approved": [
     {
-      "name": "vier_geschmaecker",
-      "theme": "Eigene Bedürfnisse",
-      "kicker": "AM TISCH",
-      "ausloeser": "Erkennen",
-      "wer_schickt_wem": "Eine Frau schickt es ihrer Schwester, die seit Jahren für alle kocht.",
-      "hypothese": "Eine sehr konkrete Alltagsszene (Kochen für vier Geschmäcker) erzeugt stärkeres Erkennen als eine abstrakte Aussage über Selbstfürsorge und hebt Saves pro Reichweite.",
-      "thoughts": [
-        "Du kennst das Lieblingsessen|von allen am Tisch.",
-        "Deins kennt hier|eigentlich niemand."
-      ],
-      "cta": "Wann hast du zuletzt etwas nur für dich gemacht?",
-      "clips": [
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, an empty wooden dining table after a family meal, four used plates pushed aside, one chair still tucked in, low evening sun across the wood, shot on clean modern digital cinema with rich contrast and deep shadows, natural warm light, no on-screen text, no faces, no people looking at camera, no film strip border, no letterbox, no vignette frame, slow contemplative camera move, 24fps"
-      ],
-      "music": "neoclassical cinematic ambient, warm and uplifting, solo felt piano with soft cello, slow arc from minor to major, 64 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
-      "caption": "Du weisst, wer keine Zwiebeln mag und wer die Kruste liebt.\n\nDu weisst es seit Jahren, ohne nachzudenken. Und wenn dich jemand fragt, worauf du selbst Lust hast, brauchst du einen Moment. Nicht weil es dir egal wäre, sondern weil dich lange niemand gefragt hat. Auch du nicht.\n\nKoch dir diese Woche einmal, was du willst.\n\n#eigenebeduerfnisse #selbstfürsorge #mindset #kopfundkompass"
-    },
-    {
       "name": "worte_die_halten",
       "theme": "Charakter",
       "kicker": "ZUVERLÄSSIGKEIT",
