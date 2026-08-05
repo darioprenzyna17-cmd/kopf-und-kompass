@@ -45,11 +45,19 @@ jobs:
       - name: Erkenntnisse sichern
         if: always()
         run: |
-          if [[ -n "$(git status --porcelain postings.jsonl regeln.md)" ]]; then
+          # regeln.md entsteht erst, wenn es belegte Regeln gibt. Solange es die Datei
+          # nicht gibt, brach "git add" mit Code 128 ab und es wurde NICHTS gesichert,
+          # auch postings.jsonl nicht. Der Account hat deshalb tagelang ausgewertet und
+          # das Ergebnis jedes Mal weggeworfen. Erst pruefen, was existiert.
+          DATEIEN=""
+          for f in postings.jsonl regeln.md learnings.json; do
+            [[ -e "$f" ]] && DATEIEN="$DATEIEN $f"
+          done
+          if [[ -n "$DATEIEN" && -n "$(git status --porcelain $DATEIEN)" ]]; then
             git config user.name "kk-autopilot-bot"
             git config user.email "bot@users.noreply.github.com"
-            git add postings.jsonl regeln.md
+            git add $DATEIEN
             git commit -m "lernen: Auswertung $(date -u +%FT%TZ)"
             git pull --rebase --autostash
-            git push
+            git push origin main || (git fetch -q origin main && git rebase -q origin/main && git push origin main)
           fi
