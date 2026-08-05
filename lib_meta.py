@@ -256,11 +256,15 @@ def post_reel(video_url, caption, trial=None):
     Followern. Reagieren sie nicht, stoppt die Verteilung, bevor je ein Fremder das Reel
     sieht. Trial Reels umgehen diesen Flaschenhals. Die eigene Strategie-Studie vom
     19.07.2026 nennt sie das strategisch wichtigste Werkzeug fuer diesen Account.
-    Standard ist AN, abschaltbar ueber KK_TRIAL_REELS=0.
+
+    ABGESCHALTET am 05.08.2026 auf Darios Ansage: Er will keine Testreels auf dem
+    Konto. In der App sind sie als Probe-Lauf markiert und tauchen im eigenen Feed
+    nicht normal auf, das ist nicht gewollt. Standard ist jetzt AUS. Wer es bewusst
+    testen will, setzt KK_TRIAL_REELS=1.
     """
     ig, token = _creds()
     if trial is None:
-        trial = os.environ.get("KK_TRIAL_REELS", "1") != "0"
+        trial = os.environ.get("KK_TRIAL_REELS", "0") == "1"
     body = {
         "media_type": "REELS",
         "video_url": video_url,

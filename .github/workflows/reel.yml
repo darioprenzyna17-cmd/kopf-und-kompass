@@ -77,8 +77,18 @@ jobs:
       - name: Ledger sichern
         if: always() && steps.gate.outputs.post == 'true'
         run: |
-          LEDGER="reel_pipeline.json used_reels.json learnings.json zeit_experiment.json quarantaene.json run_status.json budget.json vorrat.json postings.jsonl regeln.md"
-          if [[ -n "$(git status --porcelain $LEDGER)" ]]; then
+          # Nur Dateien nennen, die es wirklich gibt. Ein einziger fehlender Name
+          # (frueher: regeln.md) liess "git add" mit Code 128 abbrechen. Dann wurde
+          # NICHTS gesichert, auch nicht budget.json. Die Tagesbremse startete damit
+          # bei jedem Lauf wieder bei null und baute alle zwei Stunden ein neues Video
+          # auf Darios kie.ai-Rechnung. Siehe Auftrag 1.2.
+          LEDGER=""
+          for f in reel_pipeline.json used_reels.json learnings.json zeit_experiment.json \
+                   quarantaene.json run_status.json budget.json vorrat.json postings.jsonl regeln.md \
+                   assets/vorrat; do
+            [[ -e "$f" ]] && LEDGER="$LEDGER $f"
+          done
+          if [[ -n "$LEDGER" && -n "$(git status --porcelain $LEDGER)" ]]; then
             if [[ -f run_status.json ]] && python3 -c "import json,sys; sys.exit(0 if json.load(open('run_status.json'))['ok'] else 1)"; then
               MSG="reel bestaetigt online $(date -u +%FT%TZ)"
             else

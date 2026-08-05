@@ -37,5 +37,7 @@ jobs:
             git config user.email "bot@users.noreply.github.com"
             git add story_ledger.json
             git commit -m "chore: story posted $(date -u +%FT%TZ)"
-            git push
+            # Gleicher Rebase-Faenger wie im DC-Repo: Nebenlaeufe schreiben ins selbe
+            # Repo, ein blankes push faellt sonst an 'fetch first' rot aus.
+            git push origin main || (git fetch -q origin main && git rebase -q origin/main && git push origin main)
           fi

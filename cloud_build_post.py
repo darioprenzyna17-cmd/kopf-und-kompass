@@ -3,6 +3,7 @@ postet es direkt nach @kopfundkompass. Aktualisiert reel_pipeline.json + used_re
 Zugang aus Umgebung (GitHub-Secrets IG_USER_ID, IG_ACCESS_TOKEN, KIE_API_KEY).
 Aufruf in reel.yml. Committen/Pushen der Ledger macht der Workflow."""
 import json
+import shutil
 import sys
 from datetime import date
 from pathlib import Path
@@ -133,6 +134,35 @@ def main(ignoriere_slot: bool = False):
     return gepostet
 
 
+VORRATSORDNER = HERE / "assets" / "vorrat"
+
+
+def _in_vorratsordner(name, mp4):
+    """Legt das fertige Video dorthin, wo der naechste Lauf es wiederfindet.
+
+    assets/video_reels/ ist in .gitignore, dort landen die Rohclips und Zwischenstufen.
+    Der Poster laeuft aber als EIGENER Lauf auf einem frischen Checkout: was nicht im
+    Repo liegt, existiert fuer ihn nicht. Darum wandert nur das fertige Reel nach
+    assets/vorrat/ und wird mitgesichert. Genau dieses Muster laesst den DC-Autopiloten
+    seit Wochen stabil posten.
+    """
+    VORRATSORDNER.mkdir(parents=True, exist_ok=True)
+    ziel = VORRATSORDNER / f"{name}.mp4"
+    shutil.copyfile(mp4, ziel)
+    return str(ziel.relative_to(HERE))
+
+
+def _aufraeumen(pfad):
+    """Nach bestaetigtem Post wird die Datei geloescht. Das Repo soll nicht zuwachsen."""
+    try:
+        p = HERE / pfad
+        if p.is_file() and VORRATSORDNER in p.parents:
+            p.unlink()
+            print(f"Vorratsdatei entfernt: {pfad}", flush=True)
+    except Exception as e:
+        print("Aufraeumen uebersprungen:", e, flush=True)
+
+
 def _laenge(mp4):
     try:
         import subprocess
@@ -203,7 +233,12 @@ def _bauen(data, approved):
     try:
         print(f"=== BUILD {name} ===", flush=True)
         mp4 = bvr.produce(name, c)
-        url = meta.ensure_public_url(str(mp4))   # dauerhafte URL, Video muss nie neu gebaut werden
+        # Im Vorrat steht der Pfad im Repo, NICHT eine kie.ai-URL. Die kie.ai-Links
+        # sterben nach rund drei Tagen. Vorher lag genau so ein toter Link im Vorrat,
+        # Instagram konnte das Video nicht laden und meldete nur "container ERROR" -
+        # deshalb ging seit dem 02.08.2026 kein Reel mehr online. Die oeffentliche URL
+        # wird jetzt erst beim Posten frisch erzeugt, genau wie beim DC-Autopiloten.
+        url = _in_vorratsordner(name, mp4)
     except Exception as e:
         eintrag = res.fehler_vermerken(name, repr(e)[:300])
         res.status_schreiben(False, name=name, grund=f"{type(e).__name__}: {str(e)[:200]}")
@@ -231,7 +266,9 @@ def _posten(eintrag, data):
     name = eintrag["name"]
     print(f"=== POST {name} (aus Vorrat, gebaut {eintrag.get('gebaut')}) ===", flush=True)
     try:
-        mid, link = meta.post_reel(eintrag["url"], eintrag["caption"])
+        # ensure_public_url laedt den Repo-Pfad JETZT frisch in den kie.ai-Speicher hoch.
+        # Ein bereits fertiges http-Feld (Altbestand) wird unveraendert durchgereicht.
+        mid, link = meta.post_reel(meta.ensure_public_url(eintrag["url"]), eintrag["caption"])
     except Exception as e:
         # Nicht verloren geben: zurueck in den Vorrat, damit der naechste Lauf es erneut
         # versucht, ohne dass ein einziger Franken neu ausgegeben wird.
@@ -244,6 +281,7 @@ def _posten(eintrag, data):
         res.status_schreiben(False, name=name, grund=f"Kein Nachweis bei Instagram: {nachweis}")
         raise RuntimeError(f"Post gemeldet, aber bei Instagram nicht auffindbar: {nachweis}")
     print(f"=== LIVE UND BESTAETIGT {name}: {mid} {link} ===", flush=True)
+    _aufraeumen(eintrag["url"])
     try:
         budget.buchen("post")     # nur Buchhaltung, darf einen erfolgten Post nie kippen
     except budget.BudgetErschoepft as e:

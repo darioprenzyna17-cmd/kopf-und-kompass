@@ -13,3 +13,13 @@ _raw_seedance.mp4
 kk_run.py
 assets/video_reels/*.mp4
 assets/stories/*.png
+# Zwischenstufen der Reel-Produktion. Nur das fertige Video zaehlt, und das liegt
+# in assets/vorrat/ (bewusst NICHT ignoriert, der Poster braucht es im Repo).
+assets/video_reels/*.png
+assets/video_reels/*.mp3
+assets/video_reels/*.caption.txt
+# Laufprotokolle und lokaler Starter, gehoeren nicht ins Repo
+autopilot.log
+launchd.err
+launchd.out
+run.sh
