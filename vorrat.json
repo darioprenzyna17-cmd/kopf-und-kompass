@@ -1,17 +1,4 @@
 {
   "_hinweis": "Fertige, noch nicht gepostete Videos. Hoechstens 1 (Dario-Vorgabe).",
-  "videos": [
-    {
-      "name": "zehn_mal_nachschauen",
-      "url": "assets/vorrat/zehn_mal_nachschauen.mp4",
-      "caption": "Du checkst es zum zehnten Mal heute und siehst keine Veränderung. Wachstum passiert nicht auf Knopfdruck, es passiert, während du nicht hinschaust. Was wirklich zählt, geschieht zwischen den Blicken, nicht in ihnen.\n\n#geduld #gelassenheit #mindset #wachstum #kopfundkompass",
-      "theme": "Geduld",
-      "gebaut": "2026-08-06T00:55:55Z",
-      "laenge_sek": 9.9,
-      "testklasse": "basis",
-      "hypothese": "Das bewaehrte Kurzformat (rund 10s, Spannung zuerst, Frage am Schluss) haelt den Watchtime-Anteil ueber dem Kontodurchschnitt.",
-      "variable": "bewaehrtes Kurzformat",
-      "hook_typ": "Spannung zuerst, Aufloesung zum Schluss"
-    }
-  ]
+  "videos": []
 }

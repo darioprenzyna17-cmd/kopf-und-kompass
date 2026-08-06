@@ -7,7 +7,7 @@
       "thema": "Grenzen",
       "score_avg": 14.02,
       "n": 4,
-      "reichweite": 2818,
+      "reichweite": 2820,
       "saves": 6,
       "shares": 4
     },
@@ -15,7 +15,7 @@
       "thema": "Geduld",
       "score_avg": 10.89,
       "n": 2,
-      "reichweite": 888,
+      "reichweite": 889,
       "saves": 2,
       "shares": 2
     },
@@ -47,7 +47,7 @@
       "thema": "Selbstrespekt",
       "score_avg": 7.01,
       "n": 3,
-      "reichweite": 1408,
+      "reichweite": 1409,
       "saves": 3,
       "shares": 0
     },
@@ -101,9 +101,9 @@
     },
     {
       "thema": "Eigene Bedürfnisse",
-      "score_avg": 2.17,
+      "score_avg": 2.16,
       "n": 1,
-      "reichweite": 273,
+      "reichweite": 288,
       "saves": 0,
       "shares": 0
     }
@@ -251,11 +251,11 @@
       "name": "spaeter_antworten",
       "theme": "Grenzen",
       "score": 11.73,
-      "reach": 651,
+      "reach": 653,
       "saved": 1,
       "shares": 1,
       "total_interactions": 4,
-      "ig_reels_avg_watch_time": 5760
+      "ig_reels_avg_watch_time": 5754
     },
     {
       "name": "grenze_wiederholen",
@@ -265,7 +265,7 @@
       "saved": 2,
       "shares": 0,
       "total_interactions": 4,
-      "ig_reels_avg_watch_time": 5648
+      "ig_reels_avg_watch_time": 5642
     },
     {
       "name": "blick_zurueck",
@@ -275,7 +275,7 @@
       "saved": 3,
       "shares": 0,
       "total_interactions": 7,
-      "ig_reels_avg_watch_time": 4083
+      "ig_reels_avg_watch_time": 4084
     },
     {
       "name": "schuldgefuehl_nach_nein",
@@ -291,17 +291,17 @@
       "name": "entschuldigung_fuer_nichts",
       "theme": "Selbstrespekt",
       "score": 4.51,
-      "reach": 675,
+      "reach": 676,
       "saved": 0,
       "shares": 0,
       "total_interactions": 3,
-      "ig_reels_avg_watch_time": 5867
+      "ig_reels_avg_watch_time": 5860
     },
     {
       "name": "kleine_tage_zaehlen",
       "theme": "Geduld",
       "score": 7.66,
-      "reach": 395,
+      "reach": 396,
       "saved": 0,
       "shares": 1,
       "total_interactions": 4,
@@ -310,12 +310,12 @@
     {
       "name": "ein_jahr_zurueck",
       "theme": "Fortschritt",
-      "score": 2.79,
+      "score": 2.8,
       "reach": 517,
       "saved": 0,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 3955
+      "ig_reels_avg_watch_time": 3969
     },
     {
       "name": "vorbeigehen_am_schoenen",
@@ -340,12 +340,12 @@
     {
       "name": "vier_geschmaecker",
       "theme": "Eigene Bedürfnisse",
-      "score": 2.17,
-      "reach": 273,
+      "score": 2.16,
+      "reach": 288,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3802
+      "ig_reels_avg_watch_time": 3747
     }
   ]
 }
