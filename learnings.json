@@ -1,21 +1,21 @@
 {
   "_hinweis": "Automatisch aus Instagram-Insights. Nordstern: Save+Share+Follow. cloud_build_post.py priorisiert Gewinner-Themen.",
   "updated_utc": null,
-  "n_reels_mit_daten": 22,
+  "n_reels_mit_daten": 23,
   "themen_rang": [
     {
       "thema": "Grenzen",
       "score_avg": 14.02,
       "n": 4,
-      "reichweite": 2808,
+      "reichweite": 2813,
       "saves": 6,
       "shares": 4
     },
     {
       "thema": "Geduld",
-      "score_avg": 10.88,
+      "score_avg": 10.89,
       "n": 2,
-      "reichweite": 882,
+      "reichweite": 884,
       "saves": 2,
       "shares": 2
     },
@@ -23,7 +23,7 @@
       "thema": "Fortschritt",
       "score_avg": 10.28,
       "n": 3,
-      "reichweite": 1524,
+      "reichweite": 1525,
       "saves": 5,
       "shares": 1
     },
@@ -31,7 +31,7 @@
       "thema": "Charakter",
       "score_avg": 9.21,
       "n": 2,
-      "reichweite": 1284,
+      "reichweite": 1285,
       "saves": 1,
       "shares": 1
     },
@@ -45,9 +45,9 @@
     },
     {
       "thema": "Selbstrespekt",
-      "score_avg": 7.0,
+      "score_avg": 7.01,
       "n": 3,
-      "reichweite": 1404,
+      "reichweite": 1408,
       "saves": 3,
       "shares": 0
     },
@@ -63,7 +63,7 @@
       "thema": "Achtsamkeit",
       "score_avg": 6.5,
       "n": 2,
-      "reichweite": 721,
+      "reichweite": 722,
       "saves": 2,
       "shares": 0
     },
@@ -96,6 +96,14 @@
       "score_avg": 2.77,
       "n": 1,
       "reichweite": 435,
+      "saves": 0,
+      "shares": 0
+    },
+    {
+      "thema": "Eigene Bedürfnisse",
+      "score_avg": 1.96,
+      "n": 1,
+      "reichweite": 223,
       "saves": 0,
       "shares": 0
     }
@@ -233,11 +241,11 @@
       "name": "charakter_allein",
       "theme": "Charakter",
       "score": 12.04,
-      "reach": 736,
+      "reach": 737,
       "saved": 0,
       "shares": 1,
       "total_interactions": 14,
-      "ig_reels_avg_watch_time": 6213
+      "ig_reels_avg_watch_time": 6209
     },
     {
       "name": "spaeter_antworten",
@@ -257,47 +265,47 @@
       "saved": 2,
       "shares": 0,
       "total_interactions": 4,
-      "ig_reels_avg_watch_time": 5621
+      "ig_reels_avg_watch_time": 5624
     },
     {
       "name": "blick_zurueck",
       "theme": "Fortschritt",
       "score": 13.75,
-      "reach": 608,
+      "reach": 609,
       "saved": 3,
       "shares": 0,
       "total_interactions": 7,
-      "ig_reels_avg_watch_time": 4079
+      "ig_reels_avg_watch_time": 4077
     },
     {
       "name": "schuldgefuehl_nach_nein",
       "theme": "Grenzen",
       "score": 4.79,
-      "reach": 852,
+      "reach": 857,
       "saved": 0,
       "shares": 0,
       "total_interactions": 4,
-      "ig_reels_avg_watch_time": 5468
+      "ig_reels_avg_watch_time": 5464
     },
     {
       "name": "entschuldigung_fuer_nichts",
       "theme": "Selbstrespekt",
-      "score": 4.49,
-      "reach": 671,
+      "score": 4.51,
+      "reach": 675,
       "saved": 0,
       "shares": 0,
       "total_interactions": 3,
-      "ig_reels_avg_watch_time": 5845
+      "ig_reels_avg_watch_time": 5862
     },
     {
       "name": "kleine_tage_zaehlen",
       "theme": "Geduld",
-      "score": 7.63,
-      "reach": 389,
+      "score": 7.66,
+      "reach": 391,
       "saved": 0,
       "shares": 1,
       "total_interactions": 4,
-      "ig_reels_avg_watch_time": 4092
+      "ig_reels_avg_watch_time": 4141
     },
     {
       "name": "ein_jahr_zurueck",
@@ -312,12 +320,12 @@
     {
       "name": "vorbeigehen_am_schoenen",
       "theme": "Achtsamkeit",
-      "score": 2.6,
-      "reach": 372,
+      "score": 2.59,
+      "reach": 373,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 4451
+      "ig_reels_avg_watch_time": 4439
     },
     {
       "name": "passt_schon",
@@ -328,6 +336,16 @@
       "shares": 0,
       "total_interactions": 0,
       "ig_reels_avg_watch_time": 3478
+    },
+    {
+      "name": "vier_geschmaecker",
+      "theme": "Eigene Bedürfnisse",
+      "score": 1.96,
+      "reach": 223,
+      "saved": 0,
+      "shares": 0,
+      "total_interactions": 0,
+      "ig_reels_avg_watch_time": 3470
     }
   ]
 }
