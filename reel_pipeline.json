@@ -2,25 +2,6 @@
   "_hinweis": "Archivkino-Schema (Text-first, klar): name, theme, kicker (kurzes klares Wort, optional), thoughts[3-4] (klare Saetze, | = Zeilenumbruch), endcard_term (optional, meist leer), cta (klar: 'Folge fuer mehr.' / 'Speichern.' / 'Teile das.'), clips[3] (vollflaechig, keine Gesichter), music, caption. Zeilen aus bewaehrten Referenz-Accounts, KEIN erfundener Jargon.",
   "approved": [
     {
-      "name": "worte_die_halten",
-      "theme": "Charakter",
-      "kicker": "ZUVERLÄSSIGKEIT",
-      "thoughts": [
-        "Ein gehaltenes Wort|wiegt mehr als ein Versprechen.",
-        "Versprechen macht jeder leicht.",
-        "Halten nur wenige, wenn es unbequem wird.",
-        "Dein Wort ist dein Charakter."
-      ],
-      "cta": "Schick das jemandem, der es gerade braucht.",
-      "clips": [
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a coiled rope resting on weathered wooden planks of an old pier at sunrise, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a single lantern glowing on a wooden table in a dim quiet room with soft warm light, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a weathered wooden mooring post with a rope looped around it on a quiet foggy harbor at dawn, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
-      ],
-      "music": "neoclassical cinematic ambient, warm and uplifting, solo felt piano with warm strings and cello, soft sub drone, slow arc from minor to major, 68 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
-      "caption": "Jeder verspricht schnell etwas. Nur wenige halten es, wenn es unbequem wird. Dein Wort trägt mehr Gewicht als du denkst. Sei jemand, auf den man sich verlassen kann.\n\n#zuverlässigkeit #charakter #mindset #vertrauen #kopfundkompass"
-    },
-    {
       "name": "applaus_den_es_nicht_gibt",
       "theme": "Selbstwert",
       "kicker": "ANERKENNUNG",
