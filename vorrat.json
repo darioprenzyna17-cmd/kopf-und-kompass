@@ -1,17 +1,4 @@
 {
   "_hinweis": "Fertige, noch nicht gepostete Videos. Hoechstens 1 (Dario-Vorgabe).",
-  "videos": [
-    {
-      "name": "worte_die_halten",
-      "url": "assets/vorrat/worte_die_halten.mp4",
-      "caption": "Jeder verspricht schnell etwas. Nur wenige halten es, wenn es unbequem wird. Dein Wort trägt mehr Gewicht als du denkst. Sei jemand, auf den man sich verlassen kann.\n\n#zuverlässigkeit #charakter #mindset #vertrauen #kopfundkompass",
-      "theme": "Charakter",
-      "gebaut": "2026-08-07T00:25:56Z",
-      "laenge_sek": 9.9,
-      "testklasse": "basis",
-      "hypothese": "Das bewaehrte Kurzformat (rund 10s, Spannung zuerst, Frage am Schluss) haelt den Watchtime-Anteil ueber dem Kontodurchschnitt.",
-      "variable": "bewaehrtes Kurzformat",
-      "hook_typ": "Spannung zuerst, Aufloesung zum Schluss"
-    }
-  ]
+  "videos": []
 }
