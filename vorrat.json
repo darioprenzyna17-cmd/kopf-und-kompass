@@ -1,17 +1,4 @@
 {
   "_hinweis": "Fertige, noch nicht gepostete Videos. Hoechstens 1 (Dario-Vorgabe).",
-  "videos": [
-    {
-      "name": "ueberstunde_ohne_grund",
-      "url": "assets/vorrat/ueberstunde_ohne_grund.mp4",
-      "caption": "Du sagst ja, obwohl du schon leer bist. Ein Nein am Ende des Tages ist keine Schwäche, sondern Selbstachtung. Deine Zeit gehört zuerst dir.\n\n#grenzen #selbstachtung #mindset #arbeitsleben #kopfundkompass",
-      "theme": "Grenzen",
-      "gebaut": "2026-08-08T01:45:28Z",
-      "laenge_sek": 9.9,
-      "testklasse": "basis",
-      "hypothese": "Das bewaehrte Kurzformat (rund 10s, Spannung zuerst, Frage am Schluss) haelt den Watchtime-Anteil ueber dem Kontodurchschnitt.",
-      "variable": "bewaehrtes Kurzformat",
-      "hook_typ": "Spannung zuerst, Aufloesung zum Schluss"
-    }
-  ]
+  "videos": []
 }
