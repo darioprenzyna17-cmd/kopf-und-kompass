@@ -72,6 +72,36 @@ def pruefe(c, used_topics=(), used_hooks=(), streng=False):
         if p in text.lower():
             m.append(f"Leerformel im Text: '{p}'.")
 
+    # --- Sprachqualitaet (ergaenzt am 09.08.2026) --------------------------------
+    # Dario hat gemeldet, die Grammatik sei schlechter geworden. Sie ist es, und zwar
+    # auf drei nachweisbare Arten. Diese drei sind mechanisch pruefbar, deshalb stehen
+    # sie hier und nicht nur als Wunsch im Auftragstext.
+    caption = c.get("caption", "")
+
+    # 1) Anglizismen. Am 06.08. stand "Du checkst es zum zehnten Mal heute" in einer
+    #    Caption. Der Account spricht ruhiges, sauberes Deutsch, nicht Denglisch.
+    for wort in ("checkst", "checken", "gecheckt", "liken", "geliked", "posten", "gepostet",
+                 "canceln", "gecancelt", "chillen", "gechillt", "performen", "committen",
+                 "scrollst du weg", "mindset-shift", "gamechanger", "safe "):
+        if re.search(r"\b" + re.escape(wort), text.lower()):
+            m.append(f"Anglizismus im Text: '{wort.strip()}'.")
+
+    # 2) Fuerwort ohne Bezug. Dieselbe Caption sagte "Du checkst ES" und hat nie
+    #    aufgeloest, was 'es' ist. Der Leser haengt sofort.
+    erster = caption.strip().split("\n")[0]
+    if re.match(r"^\s*Du\s+\w+st\s+(es|ihn|sie|das)\b", erster) and len(erster.split()) < 14:
+        w.append(f"Erste Zeile nennt ein Fuerwort ohne Bezug: '{erster[:50]}'. "
+                 f"Sag, WORUM es geht, bevor du 'es' sagst.")
+
+    # 3) Aufbau. Die beiden bestlaufenden Captions (02.08. und 05.08., 600 und 603
+    #    Views) hatten drei durch Leerzeilen getrennte Teile: Haken, Gedanke, Schluss.
+    #    Die vier schwaechsten danach waren ein einziger dichter Block.
+    if caption:
+        teile = [t for t in caption.split("#")[0].split("\n\n") if t.strip()]
+        if len(teile) < 3:
+            w.append(f"Caption hat nur {len(teile)} Absatz/Absaetze. Die stärksten Beiträge "
+                     f"hatten drei: Haken, Gedanke, Schlusssatz. Ein dichter Block liest sich schwerer.")
+
     # Zeilen muessen lesbar bleiben. render_card faellt ab 30 Zeichen auf die kleinste
     # Schrift. Bei einer Zielgruppe von 45 bis 64 auf dem Handy ist das die Grenze,
     # ab 42 Zeichen wird es unzumutbar.

@@ -54,7 +54,22 @@ ST_MIN = 3.5; ST_MAX = 5.0
 # Neu: ZWEI Beats, EIN Bild, rund 10 Sekunden. Spannung zuerst, Aufloesung zum Schluss,
 # Frage auf der Schlusskarte. Nebeneffekt: ein Veo-Clip statt drei, also ein Drittel
 # der Produktionskosten.
-KURZ = os.environ.get("KK_KURZFORMAT", "1") != "0"
+# Kurzformat ZURUECKGENOMMEN am 09.08.2026, weil die Zahlen dagegen sprechen.
+#
+# Eingefuehrt am 02.08. mit der Begruendung: Watchtime 3,8 bis 5,7s bei 21s Laenge,
+# also 23 Prozent Completion, deshalb auf 10s kuerzen. Die Hypothese war plausibel,
+# sie ist aber widerlegt.
+#
+#   langes Format (8 Reels, 25.07 bis 02.08):   Median 826 Views
+#   Kurzformat ohne Trial Reels (5 Reels):      Median 341 Views
+#
+# Das sind 59 Prozent weniger. Der Trial-Reel-Effekt ist herausgerechnet: der eine
+# Ausreisser mit 111 Views lief zusaetzlich als Trial Reel und ist separat betrachtet.
+# Offenbar zaehlt fuer die Verteilung die absolute Sehdauer mehr als der Anteil: vier
+# Sekunden von zehn bringen weniger Sehzeit als vier Sekunden von einundzwanzig.
+#
+# Wieder einschaltbar ueber KK_KURZFORMAT=1, aber nur mit besseren Zahlen als diesen.
+KURZ = os.environ.get("KK_KURZFORMAT", "0") == "1"
 KURZ_ST_MIN, KURZ_ST_MAX = 2.9, 3.8
 KURZ_CLIP_MAX = 7.9        # Veo liefert 8 Sekunden, mehr geht mit einem Clip nicht
 
