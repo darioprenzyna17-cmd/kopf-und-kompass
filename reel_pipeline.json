@@ -2,25 +2,6 @@
   "_hinweis": "Archivkino-Schema (Text-first, klar): name, theme, kicker (kurzes klares Wort, optional), thoughts[3-4] (klare Saetze, | = Zeilenumbruch), endcard_term (optional, meist leer), cta (klar: 'Folge fuer mehr.' / 'Speichern.' / 'Teile das.'), clips[3] (vollflaechig, keine Gesichter), music, caption. Zeilen aus bewaehrten Referenz-Accounts, KEIN erfundener Jargon.",
   "approved": [
     {
-      "name": "applaus_den_es_nicht_gibt",
-      "theme": "Selbstwert",
-      "kicker": "ANERKENNUNG",
-      "thoughts": [
-        "Du wartest auf ein Lob,|das nie kommt.",
-        "Du leistest, du gibst, du hältst durch.",
-        "Doch das Wort bleibt aus, das du brauchst.",
-        "Gib dir selbst die Anerkennung, die fehlt."
-      ],
-      "cta": "Teile das mit jemandem, der es hören muss.",
-      "clips": [
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a lone empty bench facing a wide grey sea under a soft overcast sky, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a single unlit oil lamp standing on a windowsill as evening light fades outside, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, warm sunlight slowly breaking through parting clouds over a calm open field, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
-      ],
-      "music": "neoclassical cinematic ambient, warm and uplifting, solo felt piano with warm strings and cello, soft sub drone, slow arc from minor to major, 68 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
-      "caption": "Du leistest, du gibst, du hältst durch und wartest auf ein Wort, das nie kommt. Warte nicht länger auf fremde Anerkennung. Gib sie dir selbst. Das ist der Anfang von echtem Selbstwert.\n\n#selbstwert #anerkennung #mindset #innerestärke #kopfundkompass"
-    },
-    {
       "name": "moment_vor_der_ausrede",
       "theme": "Disziplin",
       "kicker": "WIDERSTAND",
