@@ -7,15 +7,15 @@
       "thema": "Grenzen",
       "score_avg": 11.66,
       "n": 5,
-      "reichweite": 3098,
+      "reichweite": 3111,
       "saves": 6,
       "shares": 4
     },
     {
       "thema": "Fortschritt",
-      "score_avg": 10.29,
+      "score_avg": 10.3,
       "n": 3,
-      "reichweite": 1587,
+      "reichweite": 1591,
       "saves": 5,
       "shares": 1
     },
@@ -29,9 +29,9 @@
     },
     {
       "thema": "Geduld",
-      "score_avg": 7.85,
+      "score_avg": 7.86,
       "n": 3,
-      "reichweite": 1157,
+      "reichweite": 1162,
       "saves": 2,
       "shares": 2
     },
@@ -55,7 +55,7 @@
       "thema": "Charakter",
       "score_avg": 6.88,
       "n": 3,
-      "reichweite": 1549,
+      "reichweite": 1552,
       "saves": 1,
       "shares": 1
     },
@@ -87,7 +87,7 @@
       "thema": "Eigene Bedürfnisse",
       "score_avg": 3.04,
       "n": 1,
-      "reichweite": 448,
+      "reichweite": 449,
       "saves": 0,
       "shares": 0
     },
@@ -260,32 +260,32 @@
     {
       "name": "grenze_wiederholen",
       "theme": "Grenzen",
-      "score": 10.82,
+      "score": 10.81,
       "reach": 744,
       "saved": 2,
       "shares": 0,
       "total_interactions": 4,
-      "ig_reels_avg_watch_time": 5744
+      "ig_reels_avg_watch_time": 5738
     },
     {
       "name": "blick_zurueck",
       "theme": "Fortschritt",
       "score": 13.79,
-      "reach": 639,
+      "reach": 640,
       "saved": 3,
       "shares": 0,
       "total_interactions": 7,
-      "ig_reels_avg_watch_time": 4110
+      "ig_reels_avg_watch_time": 4107
     },
     {
       "name": "schuldgefuehl_nach_nein",
       "theme": "Grenzen",
-      "score": 4.88,
+      "score": 4.89,
       "reach": 920,
       "saved": 0,
       "shares": 0,
       "total_interactions": 4,
-      "ig_reels_avg_watch_time": 5512
+      "ig_reels_avg_watch_time": 5531
     },
     {
       "name": "entschuldigung_fuer_nichts",
@@ -310,22 +310,22 @@
     {
       "name": "ein_jahr_zurueck",
       "theme": "Fortschritt",
-      "score": 2.8,
-      "reach": 547,
+      "score": 2.81,
+      "reach": 550,
       "saved": 0,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 3916
+      "ig_reels_avg_watch_time": 3915
     },
     {
       "name": "vorbeigehen_am_schoenen",
       "theme": "Achtsamkeit",
-      "score": 2.59,
+      "score": 2.58,
       "reach": 426,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 4330
+      "ig_reels_avg_watch_time": 4318
     },
     {
       "name": "passt_schon",
@@ -341,41 +341,41 @@
       "name": "vier_geschmaecker",
       "theme": "Eigene Bedürfnisse",
       "score": 3.04,
-      "reach": 448,
+      "reach": 449,
       "saved": 0,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 3985
+      "ig_reels_avg_watch_time": 3976
     },
     {
       "name": "zehn_mal_nachschauen",
       "theme": "Geduld",
-      "score": 1.79,
-      "reach": 241,
+      "score": 1.81,
+      "reach": 246,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3104
+      "ig_reels_avg_watch_time": 3125
     },
     {
       "name": "worte_die_halten",
       "theme": "Charakter",
-      "score": 2.16,
-      "reach": 245,
+      "score": 2.15,
+      "reach": 248,
       "saved": 0,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 3233
+      "ig_reels_avg_watch_time": 3207
     },
     {
       "name": "ueberstunde_ohne_grund",
       "theme": "Grenzen",
-      "score": 2.04,
-      "reach": 156,
+      "score": 2.03,
+      "reach": 169,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3758
+      "ig_reels_avg_watch_time": 3725
     }
   ]
 }
