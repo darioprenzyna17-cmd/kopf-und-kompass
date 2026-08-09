@@ -1,17 +1,4 @@
 {
   "_hinweis": "Fertige, noch nicht gepostete Videos. Hoechstens 1 (Dario-Vorgabe).",
-  "videos": [
-    {
-      "name": "applaus_den_es_nicht_gibt",
-      "url": "assets/vorrat/applaus_den_es_nicht_gibt.mp4",
-      "caption": "Du leistest, du gibst, du hältst durch und wartest auf ein Wort, das nie kommt. Warte nicht länger auf fremde Anerkennung. Gib sie dir selbst. Das ist der Anfang von echtem Selbstwert.\n\n#selbstwert #anerkennung #mindset #innerestärke #kopfundkompass",
-      "theme": "Selbstwert",
-      "gebaut": "2026-08-09T01:39:53Z",
-      "laenge_sek": 9.9,
-      "testklasse": "variation",
-      "hypothese": "Thema 'Selbstwert' ausserhalb der bisherigen Gewinner erreicht einen gleich hohen oder hoeheren Anteil an Nicht-Follower-Views.",
-      "variable": "Thema Selbstwert statt Gewinner-Thema",
-      "hook_typ": "Spannung zuerst, Aufloesung zum Schluss"
-    }
-  ]
+  "videos": []
 }
