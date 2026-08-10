@@ -7,7 +7,7 @@
       "thema": "Grenzen",
       "score_avg": 11.7,
       "n": 5,
-      "reichweite": 3246,
+      "reichweite": 3247,
       "saves": 6,
       "shares": 4
     },
@@ -31,7 +31,7 @@
       "thema": "Geduld",
       "score_avg": 7.89,
       "n": 3,
-      "reichweite": 1204,
+      "reichweite": 1206,
       "saves": 2,
       "shares": 2
     },
@@ -55,7 +55,7 @@
       "thema": "Charakter",
       "score_avg": 6.9,
       "n": 3,
-      "reichweite": 1590,
+      "reichweite": 1591,
       "saves": 1,
       "shares": 1
     },
@@ -71,7 +71,7 @@
       "thema": "Selbstwert",
       "score_avg": 5.96,
       "n": 2,
-      "reichweite": 776,
+      "reichweite": 779,
       "saves": 2,
       "shares": 0
     },
@@ -87,7 +87,7 @@
       "thema": "Eigene Bedürfnisse",
       "score_avg": 3.06,
       "n": 1,
-      "reichweite": 493,
+      "reichweite": 495,
       "saves": 0,
       "shares": 0
     },
@@ -281,31 +281,31 @@
       "name": "schuldgefuehl_nach_nein",
       "theme": "Grenzen",
       "score": 4.97,
-      "reach": 947,
+      "reach": 948,
       "saved": 0,
       "shares": 0,
       "total_interactions": 4,
-      "ig_reels_avg_watch_time": 5643
+      "ig_reels_avg_watch_time": 5653
     },
     {
       "name": "entschuldigung_fuer_nichts",
       "theme": "Selbstrespekt",
-      "score": 4.6,
+      "score": 4.61,
       "reach": 753,
       "saved": 0,
       "shares": 0,
       "total_interactions": 3,
-      "ig_reels_avg_watch_time": 5902
+      "ig_reels_avg_watch_time": 5904
     },
     {
       "name": "kleine_tage_zaehlen",
       "theme": "Geduld",
-      "score": 7.67,
-      "reach": 436,
+      "score": 7.66,
+      "reach": 438,
       "saved": 0,
       "shares": 1,
       "total_interactions": 4,
-      "ig_reels_avg_watch_time": 4058
+      "ig_reels_avg_watch_time": 4052
     },
     {
       "name": "ein_jahr_zurueck",
@@ -315,7 +315,7 @@
       "saved": 0,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 3951
+      "ig_reels_avg_watch_time": 3953
     },
     {
       "name": "vorbeigehen_am_schoenen",
@@ -341,11 +341,11 @@
       "name": "vier_geschmaecker",
       "theme": "Eigene Bedürfnisse",
       "score": 3.06,
-      "reach": 493,
+      "reach": 495,
       "saved": 0,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 3932
+      "ig_reels_avg_watch_time": 3936
     },
     {
       "name": "zehn_mal_nachschauen",
@@ -361,11 +361,11 @@
       "name": "worte_die_halten",
       "theme": "Charakter",
       "score": 2.21,
-      "reach": 286,
+      "reach": 287,
       "saved": 0,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 3255
+      "ig_reels_avg_watch_time": 3246
     },
     {
       "name": "ueberstunde_ohne_grund",
@@ -375,17 +375,17 @@
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3754
+      "ig_reels_avg_watch_time": 3749
     },
     {
       "name": "applaus_den_es_nicht_gibt",
       "theme": "Selbstwert",
       "score": 5.68,
-      "reach": 327,
+      "reach": 330,
       "saved": 1,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 4105
+      "ig_reels_avg_watch_time": 4096
     }
   ]
 }
