@@ -10,7 +10,17 @@
       ],
       "zuletzt": "2026-08-02T08:19:40Z",
       "gesperrt_seit": "2026-08-02T08:19:40Z"
+    },
+    "moment_vor_der_ausrede": {
+      "fehler": 1,
+      "status": "frei",
+      "gruende": [
+        "BudgetErschoepft(\"Tagesgrenze 'veo' erreicht: 2/2. Heute wird nichts mehr erzeugt.\")"
+      ],
+      "zuletzt": "2026-08-10T02:12:13Z"
     }
   },
-  "fehlversuche": {}
+  "fehlversuche": {
+    "2026-08-10": 1
+  }
 }
