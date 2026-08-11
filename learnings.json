@@ -31,7 +31,7 @@
       "thema": "Geduld",
       "score_avg": 7.89,
       "n": 3,
-      "reichweite": 1206,
+      "reichweite": 1207,
       "saves": 2,
       "shares": 2
     },
@@ -55,7 +55,7 @@
       "thema": "Charakter",
       "score_avg": 6.9,
       "n": 3,
-      "reichweite": 1591,
+      "reichweite": 1592,
       "saves": 1,
       "shares": 1
     },
@@ -71,7 +71,7 @@
       "thema": "Selbstwert",
       "score_avg": 5.96,
       "n": 2,
-      "reichweite": 784,
+      "reichweite": 785,
       "saves": 2,
       "shares": 0
     },
@@ -87,7 +87,7 @@
       "thema": "Eigene Bedürfnisse",
       "score_avg": 3.06,
       "n": 1,
-      "reichweite": 498,
+      "reichweite": 499,
       "saves": 0,
       "shares": 0
     },
@@ -295,17 +295,17 @@
       "saved": 0,
       "shares": 0,
       "total_interactions": 3,
-      "ig_reels_avg_watch_time": 5912
+      "ig_reels_avg_watch_time": 5914
     },
     {
       "name": "kleine_tage_zaehlen",
       "theme": "Geduld",
       "score": 7.66,
-      "reach": 438,
+      "reach": 439,
       "saved": 0,
       "shares": 1,
       "total_interactions": 4,
-      "ig_reels_avg_watch_time": 4052
+      "ig_reels_avg_watch_time": 4050
     },
     {
       "name": "ein_jahr_zurueck",
@@ -341,31 +341,31 @@
       "name": "vier_geschmaecker",
       "theme": "Eigene Bedürfnisse",
       "score": 3.06,
-      "reach": 498,
+      "reach": 499,
       "saved": 0,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 3931
+      "ig_reels_avg_watch_time": 3925
     },
     {
       "name": "zehn_mal_nachschauen",
       "theme": "Geduld",
-      "score": 1.88,
+      "score": 1.87,
       "reach": 273,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3208
+      "ig_reels_avg_watch_time": 3198
     },
     {
       "name": "worte_die_halten",
       "theme": "Charakter",
       "score": 2.21,
-      "reach": 287,
+      "reach": 288,
       "saved": 0,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 3246
+      "ig_reels_avg_watch_time": 3239
     },
     {
       "name": "ueberstunde_ohne_grund",
@@ -381,11 +381,11 @@
       "name": "applaus_den_es_nicht_gibt",
       "theme": "Selbstwert",
       "score": 5.68,
-      "reach": 335,
+      "reach": 336,
       "saved": 1,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 4099
+      "ig_reels_avg_watch_time": 4091
     }
   ]
 }
