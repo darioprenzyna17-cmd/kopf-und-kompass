@@ -18,9 +18,17 @@
         "BudgetErschoepft(\"Tagesgrenze 'veo' erreicht: 2/2. Heute wird nichts mehr erzeugt.\")"
       ],
       "zuletzt": "2026-08-10T02:12:13Z"
+    },
+    "was_du_noch_traegst": {
+      "fehler": 1,
+      "status": "frei",
+      "gruende": [
+        "BudgetErschoepft(\"Tagesgrenze 'veo' erreicht: 2/2. Heute wird nichts mehr erzeugt.\")"
+      ],
+      "zuletzt": "2026-08-11T01:22:27Z"
     }
   },
   "fehlversuche": {
-    "2026-08-10": 1
+    "2026-08-11": 1
   }
 }

@@ -39,7 +39,7 @@
       "thema": "Selbstrespekt",
       "score_avg": 7.04,
       "n": 3,
-      "reichweite": 1488,
+      "reichweite": 1489,
       "saves": 3,
       "shares": 0
     },
@@ -63,7 +63,7 @@
       "thema": "Achtsamkeit",
       "score_avg": 6.52,
       "n": 2,
-      "reichweite": 815,
+      "reichweite": 816,
       "saves": 2,
       "shares": 0
     },
@@ -71,7 +71,7 @@
       "thema": "Selbstwert",
       "score_avg": 5.96,
       "n": 2,
-      "reichweite": 779,
+      "reichweite": 784,
       "saves": 2,
       "shares": 0
     },
@@ -87,7 +87,7 @@
       "thema": "Eigene Bedürfnisse",
       "score_avg": 3.06,
       "n": 1,
-      "reichweite": 495,
+      "reichweite": 498,
       "saves": 0,
       "shares": 0
     },
@@ -291,11 +291,11 @@
       "name": "entschuldigung_fuer_nichts",
       "theme": "Selbstrespekt",
       "score": 4.61,
-      "reach": 753,
+      "reach": 754,
       "saved": 0,
       "shares": 0,
       "total_interactions": 3,
-      "ig_reels_avg_watch_time": 5904
+      "ig_reels_avg_watch_time": 5912
     },
     {
       "name": "kleine_tage_zaehlen",
@@ -321,11 +321,11 @@
       "name": "vorbeigehen_am_schoenen",
       "theme": "Achtsamkeit",
       "score": 2.62,
-      "reach": 463,
+      "reach": 464,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 4321
+      "ig_reels_avg_watch_time": 4319
     },
     {
       "name": "passt_schon",
@@ -341,11 +341,11 @@
       "name": "vier_geschmaecker",
       "theme": "Eigene Bedürfnisse",
       "score": 3.06,
-      "reach": 495,
+      "reach": 498,
       "saved": 0,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 3936
+      "ig_reels_avg_watch_time": 3931
     },
     {
       "name": "zehn_mal_nachschauen",
@@ -381,11 +381,11 @@
       "name": "applaus_den_es_nicht_gibt",
       "theme": "Selbstwert",
       "score": 5.68,
-      "reach": 330,
+      "reach": 335,
       "saved": 1,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 4096
+      "ig_reels_avg_watch_time": 4099
     }
   ]
 }
