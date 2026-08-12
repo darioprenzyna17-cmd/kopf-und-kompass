@@ -13,9 +13,9 @@
     },
     {
       "thema": "Fortschritt",
-      "score_avg": 10.32,
+      "score_avg": 10.33,
       "n": 3,
-      "reichweite": 1651,
+      "reichweite": 1654,
       "saves": 5,
       "shares": 1
     },
@@ -29,9 +29,9 @@
     },
     {
       "thema": "Geduld",
-      "score_avg": 7.88,
+      "score_avg": 7.89,
       "n": 3,
-      "reichweite": 1225,
+      "reichweite": 1227,
       "saves": 2,
       "shares": 2
     },
@@ -71,7 +71,7 @@
       "thema": "Selbstwert",
       "score_avg": 6.0,
       "n": 2,
-      "reichweite": 828,
+      "reichweite": 830,
       "saves": 2,
       "shares": 0
     },
@@ -300,8 +300,8 @@
     {
       "name": "kleine_tage_zaehlen",
       "theme": "Geduld",
-      "score": 7.67,
-      "reach": 446,
+      "score": 7.68,
+      "reach": 448,
       "saved": 0,
       "shares": 1,
       "total_interactions": 4,
@@ -310,12 +310,12 @@
     {
       "name": "ein_jahr_zurueck",
       "theme": "Fortschritt",
-      "score": 2.86,
-      "reach": 592,
+      "score": 2.87,
+      "reach": 595,
       "saved": 0,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 3941
+      "ig_reels_avg_watch_time": 3942
     },
     {
       "name": "vorbeigehen_am_schoenen",
@@ -365,7 +365,7 @@
       "saved": 0,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 3220
+      "ig_reels_avg_watch_time": 3214
     },
     {
       "name": "ueberstunde_ohne_grund",
@@ -381,11 +381,11 @@
       "name": "applaus_den_es_nicht_gibt",
       "theme": "Selbstwert",
       "score": 5.76,
-      "reach": 379,
+      "reach": 381,
       "saved": 1,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 4154
+      "ig_reels_avg_watch_time": 4160
     }
   ]
 }
