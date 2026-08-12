@@ -7,15 +7,15 @@
       "thema": "Grenzen",
       "score_avg": 11.7,
       "n": 5,
-      "reichweite": 3263,
+      "reichweite": 3264,
       "saves": 6,
       "shares": 4
     },
     {
       "thema": "Fortschritt",
-      "score_avg": 10.32,
+      "score_avg": 10.33,
       "n": 3,
-      "reichweite": 1648,
+      "reichweite": 1650,
       "saves": 5,
       "shares": 1
     },
@@ -39,7 +39,7 @@
       "thema": "Selbstrespekt",
       "score_avg": 7.05,
       "n": 3,
-      "reichweite": 1508,
+      "reichweite": 1510,
       "saves": 3,
       "shares": 0
     },
@@ -55,7 +55,7 @@
       "thema": "Charakter",
       "score_avg": 6.9,
       "n": 3,
-      "reichweite": 1607,
+      "reichweite": 1609,
       "saves": 1,
       "shares": 1
     },
@@ -87,7 +87,7 @@
       "thema": "Eigene Bedürfnisse",
       "score_avg": 3.05,
       "n": 1,
-      "reichweite": 518,
+      "reichweite": 520,
       "saves": 0,
       "shares": 0
     },
@@ -291,11 +291,11 @@
       "name": "entschuldigung_fuer_nichts",
       "theme": "Selbstrespekt",
       "score": 4.65,
-      "reach": 773,
+      "reach": 775,
       "saved": 0,
       "shares": 0,
       "total_interactions": 3,
-      "ig_reels_avg_watch_time": 5945
+      "ig_reels_avg_watch_time": 5944
     },
     {
       "name": "kleine_tage_zaehlen",
@@ -310,8 +310,8 @@
     {
       "name": "ein_jahr_zurueck",
       "theme": "Fortschritt",
-      "score": 2.86,
-      "reach": 589,
+      "score": 2.87,
+      "reach": 591,
       "saved": 0,
       "shares": 0,
       "total_interactions": 1,
@@ -341,11 +341,11 @@
       "name": "vier_geschmaecker",
       "theme": "Eigene Bedürfnisse",
       "score": 3.05,
-      "reach": 518,
+      "reach": 520,
       "saved": 0,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 3858
+      "ig_reels_avg_watch_time": 3868
     },
     {
       "name": "zehn_mal_nachschauen",
@@ -361,21 +361,21 @@
       "name": "worte_die_halten",
       "theme": "Charakter",
       "score": 2.21,
-      "reach": 303,
+      "reach": 305,
       "saved": 0,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 3224
+      "ig_reels_avg_watch_time": 3220
     },
     {
       "name": "ueberstunde_ohne_grund",
       "theme": "Grenzen",
       "score": 2.14,
-      "reach": 285,
+      "reach": 286,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3716
+      "ig_reels_avg_watch_time": 3713
     },
     {
       "name": "applaus_den_es_nicht_gibt",
