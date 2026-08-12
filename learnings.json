@@ -13,9 +13,9 @@
     },
     {
       "thema": "Fortschritt",
-      "score_avg": 10.33,
+      "score_avg": 10.32,
       "n": 3,
-      "reichweite": 1650,
+      "reichweite": 1651,
       "saves": 5,
       "shares": 1
     },
@@ -63,7 +63,7 @@
       "thema": "Achtsamkeit",
       "score_avg": 6.5,
       "n": 2,
-      "reichweite": 828,
+      "reichweite": 830,
       "saves": 2,
       "shares": 0
     },
@@ -310,22 +310,22 @@
     {
       "name": "ein_jahr_zurueck",
       "theme": "Fortschritt",
-      "score": 2.87,
-      "reach": 591,
+      "score": 2.86,
+      "reach": 592,
       "saved": 0,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 3949
+      "ig_reels_avg_watch_time": 3943
     },
     {
       "name": "vorbeigehen_am_schoenen",
       "theme": "Achtsamkeit",
       "score": 2.6,
-      "reach": 476,
+      "reach": 478,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 4257
+      "ig_reels_avg_watch_time": 4254
     },
     {
       "name": "passt_schon",
