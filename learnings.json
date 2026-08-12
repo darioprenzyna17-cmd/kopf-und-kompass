@@ -7,7 +7,7 @@
       "thema": "Grenzen",
       "score_avg": 11.7,
       "n": 5,
-      "reichweite": 3269,
+      "reichweite": 3270,
       "saves": 6,
       "shares": 4
     },
@@ -15,7 +15,7 @@
       "thema": "Fortschritt",
       "score_avg": 10.33,
       "n": 3,
-      "reichweite": 1656,
+      "reichweite": 1658,
       "saves": 5,
       "shares": 1
     },
@@ -71,7 +71,7 @@
       "thema": "Selbstwert",
       "score_avg": 6.0,
       "n": 2,
-      "reichweite": 838,
+      "reichweite": 840,
       "saves": 2,
       "shares": 0
     },
@@ -311,11 +311,11 @@
       "name": "ein_jahr_zurueck",
       "theme": "Fortschritt",
       "score": 2.87,
-      "reach": 597,
+      "reach": 599,
       "saved": 0,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 3945
+      "ig_reels_avg_watch_time": 3946
     },
     {
       "name": "vorbeigehen_am_schoenen",
@@ -365,27 +365,27 @@
       "saved": 0,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 3193
+      "ig_reels_avg_watch_time": 3186
     },
     {
       "name": "ueberstunde_ohne_grund",
       "theme": "Grenzen",
       "score": 2.14,
-      "reach": 291,
+      "reach": 292,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3690
+      "ig_reels_avg_watch_time": 3701
     },
     {
       "name": "applaus_den_es_nicht_gibt",
       "theme": "Selbstwert",
       "score": 5.77,
-      "reach": 389,
+      "reach": 391,
       "saved": 1,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 4159
+      "ig_reels_avg_watch_time": 4150
     }
   ]
 }
