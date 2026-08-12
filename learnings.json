@@ -31,7 +31,7 @@
       "thema": "Geduld",
       "score_avg": 7.89,
       "n": 3,
-      "reichweite": 1227,
+      "reichweite": 1230,
       "saves": 2,
       "shares": 2
     },
@@ -39,7 +39,7 @@
       "thema": "Selbstrespekt",
       "score_avg": 7.05,
       "n": 3,
-      "reichweite": 1510,
+      "reichweite": 1511,
       "saves": 3,
       "shares": 0
     },
@@ -55,7 +55,7 @@
       "thema": "Charakter",
       "score_avg": 6.9,
       "n": 3,
-      "reichweite": 1609,
+      "reichweite": 1610,
       "saves": 1,
       "shares": 1
     },
@@ -71,7 +71,7 @@
       "thema": "Selbstwert",
       "score_avg": 6.0,
       "n": 2,
-      "reichweite": 830,
+      "reichweite": 834,
       "saves": 2,
       "shares": 0
     },
@@ -290,12 +290,12 @@
     {
       "name": "entschuldigung_fuer_nichts",
       "theme": "Selbstrespekt",
-      "score": 4.65,
-      "reach": 775,
+      "score": 4.64,
+      "reach": 776,
       "saved": 0,
       "shares": 0,
       "total_interactions": 3,
-      "ig_reels_avg_watch_time": 5944
+      "ig_reels_avg_watch_time": 5938
     },
     {
       "name": "kleine_tage_zaehlen",
@@ -351,21 +351,21 @@
       "name": "zehn_mal_nachschauen",
       "theme": "Geduld",
       "score": 1.85,
-      "reach": 284,
+      "reach": 287,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3131
+      "ig_reels_avg_watch_time": 3118
     },
     {
       "name": "worte_die_halten",
       "theme": "Charakter",
       "score": 2.21,
-      "reach": 305,
+      "reach": 306,
       "saved": 0,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 3214
+      "ig_reels_avg_watch_time": 3201
     },
     {
       "name": "ueberstunde_ohne_grund",
@@ -380,12 +380,12 @@
     {
       "name": "applaus_den_es_nicht_gibt",
       "theme": "Selbstwert",
-      "score": 5.76,
-      "reach": 381,
+      "score": 5.75,
+      "reach": 385,
       "saved": 1,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 4160
+      "ig_reels_avg_watch_time": 4138
     }
   ]
 }
