@@ -1,8 +1,8 @@
 {
   "ok": false,
   "gepostet": false,
-  "konzept": "was_frueher_schwer_war",
+  "konzept": null,
   "permalink": null,
-  "grund": "BudgetErschoepft: Tagesgrenze 'veo' erreicht: 2/2. Heute wird nichts mehr erzeugt.",
-  "zeit": "2026-08-12T00:10:03Z"
+  "grund": "Bau gesperrt: Heute wurde bereits 1x gebaut (Grenze 1).",
+  "zeit": "2026-08-12T05:13:44Z"
 }
