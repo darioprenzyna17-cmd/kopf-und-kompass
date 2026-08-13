@@ -20,20 +20,20 @@
       "shares": 1
     },
     {
+      "thema": "Geduld",
+      "score_avg": 8.79,
+      "n": 3,
+      "reichweite": 1236,
+      "saves": 2,
+      "shares": 2
+    },
+    {
       "thema": "Ruhe",
       "score_avg": 8.14,
       "n": 1,
       "reichweite": 480,
       "saves": 0,
       "shares": 1
-    },
-    {
-      "thema": "Geduld",
-      "score_avg": 7.88,
-      "n": 3,
-      "reichweite": 1236,
-      "saves": 2,
-      "shares": 2
     },
     {
       "thema": "Selbstrespekt",
@@ -45,7 +45,7 @@
     },
     {
       "thema": "Charakter",
-      "score_avg": 6.91,
+      "score_avg": 6.92,
       "n": 3,
       "reichweite": 1620,
       "saves": 1,
@@ -61,17 +61,17 @@
     },
     {
       "thema": "Achtsamkeit",
-      "score_avg": 6.51,
+      "score_avg": 6.5,
       "n": 2,
-      "reichweite": 840,
+      "reichweite": 844,
       "saves": 2,
       "shares": 0
     },
     {
       "thema": "Selbstwert",
-      "score_avg": 6.02,
+      "score_avg": 6.04,
       "n": 2,
-      "reichweite": 855,
+      "reichweite": 860,
       "saves": 2,
       "shares": 0
     },
@@ -112,10 +112,10 @@
   "gewinner_themen": [
     "Grenzen",
     "Fortschritt",
-    "Ruhe"
+    "Geduld"
   ],
   "verlierer_themen": [],
-  "empfehlung": "Ausbauen: Grenzen, Fortschritt, Ruhe.",
+  "empfehlung": "Ausbauen: Grenzen, Fortschritt, Geduld.",
   "per_reel": [
     {
       "name": "charakter_statt_besitz",
@@ -300,12 +300,12 @@
     {
       "name": "kleine_tage_zaehlen",
       "theme": "Geduld",
-      "score": 7.68,
+      "score": 10.39,
       "reach": 449,
       "saved": 0,
       "shares": 1,
       "total_interactions": 4,
-      "ig_reels_avg_watch_time": 4060
+      "ig_reels_avg_watch_time": 9492
     },
     {
       "name": "ein_jahr_zurueck",
@@ -315,17 +315,17 @@
       "saved": 0,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 3954
+      "ig_reels_avg_watch_time": 3948
     },
     {
       "name": "vorbeigehen_am_schoenen",
       "theme": "Achtsamkeit",
-      "score": 2.61,
-      "reach": 488,
+      "score": 2.6,
+      "reach": 492,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 4235
+      "ig_reels_avg_watch_time": 4225
     },
     {
       "name": "passt_schon",
@@ -345,7 +345,7 @@
       "saved": 0,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 3852
+      "ig_reels_avg_watch_time": 3848
     },
     {
       "name": "zehn_mal_nachschauen",
@@ -360,12 +360,12 @@
     {
       "name": "worte_die_halten",
       "theme": "Charakter",
-      "score": 2.25,
+      "score": 2.27,
       "reach": 316,
       "saved": 0,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 3273
+      "ig_reels_avg_watch_time": 3305
     },
     {
       "name": "ueberstunde_ohne_grund",
@@ -375,17 +375,17 @@
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3689
+      "ig_reels_avg_watch_time": 3690
     },
     {
       "name": "applaus_den_es_nicht_gibt",
       "theme": "Selbstwert",
-      "score": 5.79,
-      "reach": 406,
+      "score": 5.83,
+      "reach": 411,
       "saved": 1,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 4169
+      "ig_reels_avg_watch_time": 4241
     }
   ]
 }
