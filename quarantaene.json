@@ -28,15 +28,17 @@
       "zuletzt": "2026-08-11T01:22:27Z"
     },
     "was_frueher_schwer_war": {
-      "fehler": 1,
-      "status": "frei",
+      "fehler": 2,
+      "status": "gesperrt",
       "gruende": [
+        "BudgetErschoepft(\"Tagesgrenze 'veo' erreicht: 2/2. Heute wird nichts mehr erzeugt.\")",
         "BudgetErschoepft(\"Tagesgrenze 'veo' erreicht: 2/2. Heute wird nichts mehr erzeugt.\")"
       ],
-      "zuletzt": "2026-08-12T00:10:03Z"
+      "zuletzt": "2026-08-13T01:32:17Z",
+      "gesperrt_seit": "2026-08-13T01:32:17Z"
     }
   },
   "fehlversuche": {
-    "2026-08-12": 1
+    "2026-08-13": 1
   }
 }
