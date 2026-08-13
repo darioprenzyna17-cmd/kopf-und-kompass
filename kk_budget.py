@@ -32,7 +32,13 @@ BUDGET = HERE / "budget.json"
 VORRAT = HERE / "vorrat.json"
 
 # --- Die Grenzen. Aenderungen hier sind Geldentscheidungen, nicht Technik. ---
-MAX_VEO_PRO_TAG = 2        # Kurzformat braucht 1 Clip, einer bleibt als Reserve fuer EINEN Ersatzversuch
+MAX_VEO_PRO_TAG = 4        # Langformat braucht 3 Clips, einer bleibt als Reserve fuer EINEN Ersatzversuch
+# Stand 13.08.2026 von 2 auf 4 erhoben. Die 2 stammten vom Kurzformat (1 Clip pro Reel).
+# Am 09.08.2026 wurde das Kurzformat zurueckgenommen, seither braucht ein Reel 3 Clips,
+# die Grenze blieb aber bei 2. Folge: der Bau bezahlte jede Nacht Clip 1 und 2 samt Musik
+# und brach bei Clip 3 an der eigenen Bremse ab. Vier Tage lang kein Reel online und rund
+# 550 Credits fuer nichts. Wer das Kurzformat wieder einschaltet (KK_KURZFORMAT=1),
+# setzt hier auf 2 zurueck.
 MAX_MUSIK_PRO_TAG = 2      # ein Musikstueck pro Reel, eines in Reserve
 MAX_BAUTEN_PRO_TAG = 1     # hoechstens EIN Video pro Tag, Dario-Vorgabe
 MAX_VORRAT = 1             # genau EIN fertiges Video auf Halde, Dario-Vorgabe 05.08.2026

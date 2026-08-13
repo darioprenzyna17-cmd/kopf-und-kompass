@@ -10,35 +10,7 @@
       ],
       "zuletzt": "2026-08-02T08:19:40Z",
       "gesperrt_seit": "2026-08-02T08:19:40Z"
-    },
-    "moment_vor_der_ausrede": {
-      "fehler": 1,
-      "status": "frei",
-      "gruende": [
-        "BudgetErschoepft(\"Tagesgrenze 'veo' erreicht: 2/2. Heute wird nichts mehr erzeugt.\")"
-      ],
-      "zuletzt": "2026-08-10T02:12:13Z"
-    },
-    "was_du_noch_traegst": {
-      "fehler": 1,
-      "status": "frei",
-      "gruende": [
-        "BudgetErschoepft(\"Tagesgrenze 'veo' erreicht: 2/2. Heute wird nichts mehr erzeugt.\")"
-      ],
-      "zuletzt": "2026-08-11T01:22:27Z"
-    },
-    "was_frueher_schwer_war": {
-      "fehler": 2,
-      "status": "gesperrt",
-      "gruende": [
-        "BudgetErschoepft(\"Tagesgrenze 'veo' erreicht: 2/2. Heute wird nichts mehr erzeugt.\")",
-        "BudgetErschoepft(\"Tagesgrenze 'veo' erreicht: 2/2. Heute wird nichts mehr erzeugt.\")"
-      ],
-      "zuletzt": "2026-08-13T01:32:17Z",
-      "gesperrt_seit": "2026-08-13T01:32:17Z"
     }
   },
-  "fehlversuche": {
-    "2026-08-13": 1
-  }
+  "fehlversuche": {}
 }

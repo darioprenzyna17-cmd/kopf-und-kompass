@@ -194,6 +194,57 @@ def _hypothese(klasse, c):
             "hebt Sends pro Reichweite ueber den Schnitt.", f"Wagnis {thema}")
 
 
+# Gemessene Preise auf kie.ai, Stand 13.08.2026: ein Bau mit 2 Veo-Clips und einem
+# Musikstueck kostete 142 Credits (653 auf 511). Daraus rund 60 pro Clip und 25 fuer die
+# Musik. Bewusst grosszuegig gerundet, lieber einmal zu frueh stoppen als ein halbes
+# Video bezahlen.
+CREDITS_CLIP = 65
+CREDITS_MUSIK = 30
+
+
+def _guthaben():
+    """Kontostand bei kie.ai, oder None wenn die Abfrage nicht klappt. Ein Netzfehler
+    darf den Bau nicht blockieren, ein leeres Konto schon."""
+    try:
+        import kk_credits
+        return kk_credits.guthaben()
+    except Exception as e:
+        print("Guthaben nicht abfragbar, Pruefung uebersprungen:", repr(e)[:150], flush=True)
+        return None
+
+
+def _reicht_es_fuer_den_ganzen_reel(c):
+    """Prueft VOR dem ersten bezahlten Aufruf, ob Tagesbudget UND Kontoguthaben fuer den
+    kompletten Reel reichen. Gibt die Gruende zurueck, warum nicht, sonst eine leere Liste.
+
+    Warum es das gibt: vom 10. bis 13.08.2026 startete der Bau jede Nacht, bezahlte Clip 1
+    und 2 samt Musik und lief bei Clip 3 in die eigene Tagesgrenze. Rund 550 Credits fuer
+    vier Naechte ohne ein einziges Video. Ein halb bezahlter Reel ist wertlos, also wird
+    entweder alles gebaut oder gar nichts.
+    """
+    n_clips = 1 if bvr.KURZ else len(c.get("clips") or [])
+    fehlt = []
+    if budget.rest("veo") < n_clips:
+        fehlt.append(f"Tagesbudget Veo reicht nicht ({budget.rest('veo')} frei, "
+                     f"{n_clips} noetig)")
+    if budget.rest("musik") < 1:
+        fehlt.append("Tagesbudget Musik ist aufgebraucht")
+    noetig = n_clips * CREDITS_CLIP + CREDITS_MUSIK
+    haben = _guthaben()
+    if haben is not None and haben < noetig:
+        fehlt.append(f"kie.ai-Guthaben reicht nicht ({haben:.0f} Credits da, "
+                     f"rund {noetig} noetig)")
+        try:
+            from kk_waechter import push
+            push("Kopf & Kompass: Guthaben reicht nicht fuer ein Reel",
+                 f"Nur noch {haben:.0f} Credits, ein Reel braucht rund {noetig}. "
+                 f"Es wird nichts mehr gebaut, bis du auflaedst. Bereits gebaute Videos "
+                 f"im Vorrat werden weiter gepostet.")
+        except Exception:
+            pass
+    return fehlt
+
+
 def _bauen(data, approved):
     """Erzeugt HOECHSTENS ein Video und legt es in den Vorrat. Gibt den Vorratseintrag
     zurueck oder None. Kostet Geld, darum sitzen hier alle Bremsen."""
@@ -234,6 +285,13 @@ def _bauen(data, approved):
         res.status_schreiben(False, grund="Kein Konzept hat die Pruefung bestanden.")
         return None
     name = c["name"]
+    fehlt = _reicht_es_fuer_den_ganzen_reel(c)
+    if fehlt:
+        grund = ("Bau gar nicht erst begonnen, sonst waere Geld fuer ein halbes Video "
+                 "geflossen: " + "; ".join(fehlt))
+        print("STOPP:", grund, flush=True)
+        res.status_schreiben(False, name=name, grund=grund[:300])
+        return None
     budget.buchen("bau")          # der Tag ist damit verbraucht, auch wenn es scheitert
     try:
         print(f"=== BUILD {name} ===", flush=True)
@@ -244,6 +302,14 @@ def _bauen(data, approved):
         # deshalb ging seit dem 02.08.2026 kein Reel mehr online. Die oeffentliche URL
         # wird jetzt erst beim Posten frisch erzeugt, genau wie beim DC-Autopiloten.
         url = _in_vorratsordner(name, mp4)
+    except budget.BudgetErschoepft as e:
+        # Die Tagesbremse sagt nichts ueber das Konzept aus. Frueher zaehlte sie als
+        # Fehlschlag, und nach zwei Naechten lag ein voellig intaktes Konzept in
+        # Quarantaene (siehe was_frueher_schwer_war, 13.08.2026). Nicht vermerken.
+        res.status_schreiben(False, name=name, grund=f"Tagesbudget: {str(e)[:200]}")
+        print(f"=== BAU ABGEBROCHEN {name}, Tagesbremse: {str(e)[:200]} ===", flush=True)
+        print("Das Konzept bleibt frei und wird beim naechsten Lauf erneut gezogen.", flush=True)
+        return None
     except Exception as e:
         eintrag = res.fehler_vermerken(name, repr(e)[:300])
         res.status_schreiben(False, name=name, grund=f"{type(e).__name__}: {str(e)[:200]}")
