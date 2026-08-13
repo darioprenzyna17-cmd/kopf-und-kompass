@@ -7,7 +7,7 @@
       "thema": "Grenzen",
       "score_avg": 11.7,
       "n": 5,
-      "reichweite": 3284,
+      "reichweite": 3285,
       "saves": 6,
       "shares": 4
     },
@@ -71,7 +71,7 @@
       "thema": "Selbstwert",
       "score_avg": 6.04,
       "n": 2,
-      "reichweite": 868,
+      "reichweite": 869,
       "saves": 2,
       "shares": 0
     },
@@ -305,7 +305,7 @@
       "saved": 0,
       "shares": 1,
       "total_interactions": 4,
-      "ig_reels_avg_watch_time": 9463
+      "ig_reels_avg_watch_time": 9451
     },
     {
       "name": "ein_jahr_zurueck",
@@ -371,21 +371,21 @@
       "name": "ueberstunde_ohne_grund",
       "theme": "Grenzen",
       "score": 2.14,
-      "reach": 306,
+      "reach": 307,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3671
+      "ig_reels_avg_watch_time": 3667
     },
     {
       "name": "applaus_den_es_nicht_gibt",
       "theme": "Selbstwert",
-      "score": 5.84,
-      "reach": 419,
+      "score": 5.85,
+      "reach": 420,
       "saved": 1,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 4251
+      "ig_reels_avg_watch_time": 4261
     }
   ]
 }
