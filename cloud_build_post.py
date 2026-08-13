@@ -184,8 +184,14 @@ def _hypothese(klasse, c):
     Die Testverteilung 70/20/10 steckt in lernen.testklasse()."""
     thema = c.get("theme", "?")
     if klasse == "basis":
-        return ("Das bewaehrte Kurzformat (rund 10s, Spannung zuerst, Frage am Schluss) haelt "
-                "den Watchtime-Anteil ueber dem Kontodurchschnitt.", "bewaehrtes Kurzformat")
+        # Der Satz muss beschreiben, was WIRKLICH gebaut wurde, sonst lernt die Auswertung
+        # gegen ein Format, das gar nicht online ging. Bis 13.08.2026 stand hier fest
+        # "Kurzformat, rund 10s", obwohl seit dem 09.08. wieder das Langformat laeuft.
+        if bvr.KURZ:
+            return ("Das Kurzformat (rund 10s, Spannung zuerst, Frage am Schluss) haelt "
+                    "den Watchtime-Anteil ueber dem Kontodurchschnitt.", "Kurzformat")
+        return ("Das bewaehrte Langformat (rund 20s, drei Clips, Aussage zuerst) haelt "
+                "den Watchtime-Anteil ueber dem Kontodurchschnitt.", "bewaehrtes Langformat")
     if klasse == "variation":
         return (f"Thema '{thema}' ausserhalb der bisherigen Gewinner erreicht einen "
                 "gleich hohen oder hoeheren Anteil an Nicht-Follower-Views.",

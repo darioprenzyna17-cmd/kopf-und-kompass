@@ -249,25 +249,6 @@
       "caption": "Der Name leuchtet auf, du gehst trotzdem nicht ran.\n\nNicht aus Wut, sondern aus Selbstschutz. Manche Gespräche kosten mehr Kraft, als sie dir geben.\n\nDeine Zeit gehört zuerst dir.\n\n#grenzen #selbstschutz #mindset #innererfrieden #kopfundkompass"
     },
     {
-      "name": "was_frueher_schwer_war",
-      "theme": "Fortschritt",
-      "kicker": "FORTSCHRITT",
-      "thoughts": [
-        "Vor einem Jahr|hättest du das nicht geschafft.",
-        "Heute machst du es,|ohne gross nachzudenken.",
-        "Das ist kein Zufall.|Das ist Übung.",
-        "Wachstum fühlt sich selten|wie Wachstum an."
-      ],
-      "cta": "Teile das mit jemandem, der gerade zweifelt.",
-      "clips": [
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, a narrow mountain path winding upward through soft morning mist, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, worn hiking boots left by a wooden cabin door in early light, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
-        "Cinematic vertical 9:16 footage filling the entire frame edge to edge, sunlight slowly breaking over a calm valley seen from a high ridge, shot on warm faded film with soft teal shadows and gentle natural light, muted desaturated palette, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
-      ],
-      "music": "neoclassical cinematic ambient, warm and gently uplifting, solo felt piano with warm strings and cello, major key throughout, resolving and hopeful from the first bar, 72 BPM, no drums, no drone, no low rumble, no dissonance, no minor key, no suspense, no tension, not eerie, not ominous, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
-      "caption": "Was heute leicht fällt, war vor einem Jahr noch schwer.\n\nFortschritt zeigt sich selten laut, sondern in kleinen Momenten wie diesem.\n\nSchau öfter zurück, nicht nur nach vorn.\n\n#fortschritt #wachstum #mindset #selbstentwicklung #kopfundkompass"
-    },
-    {
       "name": "vertrauen_braucht_zeit",
       "theme": "Geduld",
       "kicker": "GEDULD",
@@ -945,6 +926,11 @@
       "name": "applaus_den_es_nicht_gibt",
       "theme": "Selbstwert",
       "permalink": "https://www.instagram.com/reel/Db0-cGIFEV_/"
+    },
+    {
+      "name": "was_frueher_schwer_war",
+      "theme": "Fortschritt",
+      "permalink": "https://www.instagram.com/reel/Db_hdbzidsi/"
     }
   ]
 }
