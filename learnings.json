@@ -7,7 +7,7 @@
       "thema": "Grenzen",
       "score_avg": 11.7,
       "n": 5,
-      "reichweite": 3279,
+      "reichweite": 3280,
       "saves": 6,
       "shares": 4
     },
@@ -23,7 +23,7 @@
       "thema": "Geduld",
       "score_avg": 8.79,
       "n": 3,
-      "reichweite": 1237,
+      "reichweite": 1239,
       "saves": 2,
       "shares": 2
     },
@@ -71,7 +71,7 @@
       "thema": "Selbstwert",
       "score_avg": 6.04,
       "n": 2,
-      "reichweite": 861,
+      "reichweite": 862,
       "saves": 2,
       "shares": 0
     },
@@ -85,9 +85,9 @@
     },
     {
       "thema": "Eigene Bedürfnisse",
-      "score_avg": 3.05,
+      "score_avg": 3.06,
       "n": 1,
-      "reichweite": 527,
+      "reichweite": 530,
       "saves": 0,
       "shares": 0
     },
@@ -301,11 +301,11 @@
       "name": "kleine_tage_zaehlen",
       "theme": "Geduld",
       "score": 10.39,
-      "reach": 449,
+      "reach": 450,
       "saved": 0,
       "shares": 1,
       "total_interactions": 4,
-      "ig_reels_avg_watch_time": 9492
+      "ig_reels_avg_watch_time": 9474
     },
     {
       "name": "ein_jahr_zurueck",
@@ -315,7 +315,7 @@
       "saved": 0,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 3948
+      "ig_reels_avg_watch_time": 3947
     },
     {
       "name": "vorbeigehen_am_schoenen",
@@ -340,22 +340,22 @@
     {
       "name": "vier_geschmaecker",
       "theme": "Eigene Bedürfnisse",
-      "score": 3.05,
-      "reach": 527,
+      "score": 3.06,
+      "reach": 530,
       "saved": 0,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 3842
+      "ig_reels_avg_watch_time": 3853
     },
     {
       "name": "zehn_mal_nachschauen",
       "theme": "Geduld",
       "score": 1.84,
-      "reach": 293,
+      "reach": 294,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3103
+      "ig_reels_avg_watch_time": 3090
     },
     {
       "name": "worte_die_halten",
@@ -370,22 +370,22 @@
     {
       "name": "ueberstunde_ohne_grund",
       "theme": "Grenzen",
-      "score": 2.15,
-      "reach": 301,
+      "score": 2.14,
+      "reach": 302,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3690
+      "ig_reels_avg_watch_time": 3685
     },
     {
       "name": "applaus_den_es_nicht_gibt",
       "theme": "Selbstwert",
-      "score": 5.83,
-      "reach": 412,
+      "score": 5.84,
+      "reach": 413,
       "saved": 1,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 4232
+      "ig_reels_avg_watch_time": 4252
     }
   ]
 }
