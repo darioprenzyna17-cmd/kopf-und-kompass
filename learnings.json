@@ -23,7 +23,7 @@
       "thema": "Geduld",
       "score_avg": 8.79,
       "n": 3,
-      "reichweite": 1236,
+      "reichweite": 1237,
       "saves": 2,
       "shares": 2
     },
@@ -63,7 +63,7 @@
       "thema": "Achtsamkeit",
       "score_avg": 6.5,
       "n": 2,
-      "reichweite": 844,
+      "reichweite": 845,
       "saves": 2,
       "shares": 0
     },
@@ -71,7 +71,7 @@
       "thema": "Selbstwert",
       "score_avg": 6.04,
       "n": 2,
-      "reichweite": 860,
+      "reichweite": 861,
       "saves": 2,
       "shares": 0
     },
@@ -87,7 +87,7 @@
       "thema": "Eigene Bedürfnisse",
       "score_avg": 3.05,
       "n": 1,
-      "reichweite": 526,
+      "reichweite": 527,
       "saves": 0,
       "shares": 0
     },
@@ -321,11 +321,11 @@
       "name": "vorbeigehen_am_schoenen",
       "theme": "Achtsamkeit",
       "score": 2.6,
-      "reach": 492,
+      "reach": 493,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 4225
+      "ig_reels_avg_watch_time": 4219
     },
     {
       "name": "passt_schon",
@@ -341,17 +341,17 @@
       "name": "vier_geschmaecker",
       "theme": "Eigene Bedürfnisse",
       "score": 3.05,
-      "reach": 526,
+      "reach": 527,
       "saved": 0,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 3848
+      "ig_reels_avg_watch_time": 3842
     },
     {
       "name": "zehn_mal_nachschauen",
       "theme": "Geduld",
       "score": 1.84,
-      "reach": 292,
+      "reach": 293,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
@@ -381,11 +381,11 @@
       "name": "applaus_den_es_nicht_gibt",
       "theme": "Selbstwert",
       "score": 5.83,
-      "reach": 411,
+      "reach": 412,
       "saved": 1,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 4241
+      "ig_reels_avg_watch_time": 4232
     }
   ]
 }
