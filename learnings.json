@@ -69,7 +69,7 @@
     },
     {
       "thema": "Selbstwert",
-      "score_avg": 6.04,
+      "score_avg": 6.05,
       "n": 2,
       "reichweite": 869,
       "saves": 2,
@@ -87,7 +87,7 @@
       "thema": "Eigene Bedürfnisse",
       "score_avg": 3.07,
       "n": 1,
-      "reichweite": 535,
+      "reichweite": 537,
       "saves": 0,
       "shares": 0
     },
@@ -341,11 +341,11 @@
       "name": "vier_geschmaecker",
       "theme": "Eigene Bedürfnisse",
       "score": 3.07,
-      "reach": 535,
+      "reach": 537,
       "saved": 0,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 3870
+      "ig_reels_avg_watch_time": 3867
     },
     {
       "name": "zehn_mal_nachschauen",
@@ -380,12 +380,12 @@
     {
       "name": "applaus_den_es_nicht_gibt",
       "theme": "Selbstwert",
-      "score": 5.85,
+      "score": 5.86,
       "reach": 420,
       "saved": 1,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 4261
+      "ig_reels_avg_watch_time": 4274
     }
   ]
 }
