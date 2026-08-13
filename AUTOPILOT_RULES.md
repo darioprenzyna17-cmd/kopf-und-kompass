@@ -37,7 +37,8 @@ etwa 23 Prozent Completion. Instagram verteilt danach nicht weiter. Deshalb der 
 
 ## Stil (fixiert)
 - **Ton:** ruhig, tief, ehrlich, leicht männlich-warm, klar. Bringt zum Nachdenken UND richtet auf. Nie kitschig-platt, nie Kalenderspruch.
-- **Bild:** cineastisches, ruhiges KI-Footage (Veo), atmosphärisch, filmische Farbwelt (dunkel, warm). Einsame Figuren, Natur, Licht, Alltagsmomente mit Tiefe. 9:16.
+- **Bild:** ruhiges, **realistisch wirkendes** Footage (Veo), atmosphärisch, echte Lichtstimmung. Einsame Figuren, Natur, Licht, Alltagsmomente mit Tiefe. 9:16.
+- **Bild-Look (Dario-Vorgabe 13.08.2026, verbindlich):** Es soll aussehen wie gefilmt, nicht wie bearbeitet. Clip-Prompts enthalten darum `filmed on a modern full-frame camera with a 35mm lens, natural true-to-life colours, realistic daylight, natural contrast, no colour grading, no film look` und beginnen mit `Realistic documentary-style vertical 9:16 footage`. **Nicht mehr verwenden:** „warm faded film", „teal shadows", „muted desaturated palette", „16mm", „film grain". Der ffmpeg-Grade (`_grade_filter`) greift passend dazu kaum noch ein: keine Vignette, kein Teal-Orange-Splitting, Sättigung 1.02, Kontrast 1.03.
 - **Text:** EIN Gedanke, in Beats aufgebaut (Haken → Vertiefung → Wende/Aufrichtung). Serifen-Schrift für den Gedanken, harte Textschnitte (kein Weg-Bluren), Text bleibt lesbar stehen. Du-Ansprache.
 - **Hook (Sek 1):** Kontrast- oder Wahrheits-Satz, der stoppt (Vorbild: „Der Ruhigste im Raum ist fast nie der Schwächste"). Anstossend, nicht brav.
 - **Musik:** tief, warm, cineastisch (Piano/Ambient), ruhig, nie aggressiv. Je Thema variieren.

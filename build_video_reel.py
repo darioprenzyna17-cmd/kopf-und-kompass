@@ -349,31 +349,35 @@ def _lerp(a, b, t):
 
 
 def _grade_filter(t):
-    """t=0 = alter verwaschener Look, t=1 = HDR-Look (Dario-Vorgabe 2026-08-02).
+    """t=0 = alter verwaschener Look, t=1 = natuerlicher Look (Dario-Vorgabe 2026-08-13).
 
-    Der alte Zielpunkt war "sauber". Das reichte nicht: Die Videos wirkten wie billige
-    Kopien. Drei Ursachen, alle hier behoben.
-      1. Angehobenes Schwarz (0.055) machte milchige Tiefen. Jetzt echtes Schwarz.
-      2. Korn (noise alls=8) liest als Kompressionsdreck, nicht als Film. Jetzt aus.
-      3. Saettigung unter 1 und flacher Kontrast nahmen jede Tiefe. Jetzt darueber.
-    Dazu kommt Mikrokontrast (unsharp), das ist der eigentliche HDR-Eindruck: tiefe
-    Schatten, helle Lichter, knackige Kanten.
+    Vorgeschichte in zwei Schritten. Erst war der Look milchig und wirkte wie eine
+    billige Kopie, dagegen kam am 02.08.2026 ein HDR-Grade: Saettigung 1.14, Kontrast
+    1.20, S-Kurve, Teal-Orange-Splitting, Mikrokontrast 0.9 und Vignette. Das schlug ins
+    andere Extrem, die Videos sahen bearbeitet aus statt echt (Dario 13.08.2026:
+    "wirken aktuell zu stark bearbeitet").
+
+    Zielpunkt jetzt: so wenig Eingriff wie moeglich.
+      - Saettigung 1.02 und Kontrast 1.03 statt 1.14/1.20, Farben wie gesehen
+      - Kurve fast linear (0.22 auf 0.20, 0.78 auf 0.79), Schatten bleiben offen
+      - Teal-Orange-Splitting (colorbalance) und colorchannelmixer ganz raus, das war
+        der eigentliche Kino-Filter-Eindruck
+      - Vignette raus, die liest sofort als Effekt
+      - unsharp nur noch 0.25, gleicht die Hochskalierung nach dem Crop aus, mehr nicht
+    Echtes Schwarz und kein Korn bleiben, beides ist realistisch und nicht "bearbeitet".
     """
-    sat = round(_lerp(0.82, 1.14, t), 3)    # ueber 1: satte, nicht grelle Farben
+    sat = round(_lerp(0.82, 1.02, t), 3)    # knapp neutral, Farben wie gesehen
     blk = round(_lerp(0.055, 0.0, t), 3)    # echtes Schwarz statt Milch
-    sh = round(_lerp(0.16, 0.09, t), 3)     # Schatten tiefer ziehen
-    hl = round(_lerp(0.85, 0.93, t), 3)     # Lichter anheben, groessere Spannweite
+    sh = round(_lerp(0.16, 0.20, t), 3)     # fast linear, Schatten bleiben offen
+    hl = round(_lerp(0.85, 0.79, t), 3)     # Lichter nicht mehr hochziehen
     hi = round(_lerp(0.97, 1.0, t), 3)      # bis reinweiss
-    con = round(_lerp(1.08, 1.20, t), 3)
-    gam = round(_lerp(1.02, 0.97, t), 3)    # unter 1 = mehr Punch in den Mitten
-    vig = round(_lerp(5.0, 11.0, t), 2)     # groesserer Nenner = schwaechere Vignette
-    schaerfe = round(_lerp(0.0, 0.9, t), 2)  # Mikrokontrast, macht Kanten knackig
+    con = round(_lerp(1.08, 1.03, t), 3)    # nur ein Hauch Kontrast
+    gam = round(_lerp(1.02, 1.0, t), 3)     # neutral
+    schaerfe = round(_lerp(0.0, 0.25, t), 2)  # gleicht nur die Hochskalierung aus
     korn = "" if t >= 0.75 else f"noise=alls={int(round(_lerp(8, 0, t)))},"
     return (f"eq=saturation={sat}:contrast={con}:brightness=0.0:gamma={gam},"
             f"curves=m='0/{blk} 0.22/{sh} 0.5/0.5 0.78/{hl} 1/{hi}',"
-            "colorbalance=rs=-0.02:gs=0.01:bs=0.04:rm=0.03:gm=0.0:bm=-0.02:rh=0.04:gh=0.01:bh=-0.03,"
-            "colorchannelmixer=rr=1.01:gg=1.0:bb=0.98,"
-            f"{korn}unsharp=5:5:{schaerfe}:5:5:0.0,vignette=PI/{vig}:mode=backward")
+            f"{korn}unsharp=5:5:{schaerfe}:5:5:0.0")
 
 
 def _next_grade():
