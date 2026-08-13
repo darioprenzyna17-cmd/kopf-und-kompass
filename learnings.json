@@ -63,7 +63,7 @@
       "thema": "Achtsamkeit",
       "score_avg": 6.52,
       "n": 2,
-      "reichweite": 850,
+      "reichweite": 851,
       "saves": 2,
       "shares": 0
     },
@@ -71,7 +71,7 @@
       "thema": "Selbstwert",
       "score_avg": 6.05,
       "n": 2,
-      "reichweite": 869,
+      "reichweite": 871,
       "saves": 2,
       "shares": 0
     },
@@ -321,11 +321,11 @@
       "name": "vorbeigehen_am_schoenen",
       "theme": "Achtsamkeit",
       "score": 2.62,
-      "reach": 498,
+      "reach": 499,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 4246
+      "ig_reels_avg_watch_time": 4239
     },
     {
       "name": "passt_schon",
@@ -345,7 +345,7 @@
       "saved": 0,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 3867
+      "ig_reels_avg_watch_time": 3862
     },
     {
       "name": "zehn_mal_nachschauen",
@@ -355,7 +355,7 @@
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3071
+      "ig_reels_avg_watch_time": 3069
     },
     {
       "name": "worte_die_halten",
@@ -381,7 +381,7 @@
       "name": "applaus_den_es_nicht_gibt",
       "theme": "Selbstwert",
       "score": 5.86,
-      "reach": 420,
+      "reach": 422,
       "saved": 1,
       "shares": 0,
       "total_interactions": 1,
