@@ -73,6 +73,19 @@ KURZ = os.environ.get("KK_KURZFORMAT", "0") == "1"
 KURZ_ST_MIN, KURZ_ST_MAX = 2.9, 3.8
 KURZ_CLIP_MAX = 7.9        # Veo liefert 8 Sekunden, mehr geht mit einem Clip nicht
 
+# --- Sparmodus (Dario-Vorgabe 13.08.2026: ein Reel soll unter 100 Credits kosten) ---
+# Gemessen kostete ein Reel im Langformat 210 bis 240 Credits: drei bezahlte Veo-Clips
+# zu je 57 bis 75 plus Musik zu 17 bis 22. Uploads sind gratis, daran lag es nicht.
+# Unter 100 geht nur ueber die Struktur, nicht ueber Details:
+#   1. EIN bezahlter Clip statt drei, die Segmente 2 und 3 sind andere Bildausschnitte
+#      derselben Aufnahme (siehe _framing). Spart rund 130.
+#   2. Musik aus assets/musik statt jedes Mal neu von Suno. Spart rund 20.
+# Bleibt rund 60 bis 75 pro Reel. Die Laenge (rund 20s) und der Textaufbau bleiben
+# unveraendert, das ist NICHT die Rueckkehr zum Kurzformat vom 02.08.
+SPARMODUS = os.environ.get("KK_SPARMODUS", "1") == "1"
+MUSIK_NEU = os.environ.get("KK_MUSIK_NEU", "0") == "1"   # 1 = doch ein neues Stueck kaufen
+MUSIKLAGER = HERE / "assets" / "musik"
+
 # Ein echter Gesprächsanlass auf der Schlusskarte. Ueber 14 Reels kamen null
 # Kommentare, weil nie jemand gefragt wurde.
 FRAGEN = {
@@ -307,6 +320,56 @@ def veo_generate(prompt, out_mp4, model="veo3_fast", res="1080p", duration=8):
     raise VeoAusfall(str(letzter))
 
 
+def _framing(quelle, ziel, zoom, spiegeln, start, y_versatz=0):
+    """Macht aus EINER bezahlten Aufnahme eine zweite Einstellung.
+
+    Sparmodus (Dario-Vorgabe 13.08.2026: ein Reel soll unter 100 Credits kosten).
+    Drei Veo-Clips kosten 180 bis 220 Credits, einer rund 60. Statt drei Motive zu
+    kaufen wird eines gekauft und in mehreren Bildausschnitten gezeigt, so wie an
+    einem echten Drehort mit einer Kamera: einmal weiter, einmal naeher, einmal
+    von der anderen Seite. Anderer Startzeitpunkt heisst ausserdem andere Bewegung
+    im Bild, dadurch liest es nicht als Wiederholung.
+
+    Der Rahmen von Veo wird hier schon weggeschnitten, damit spaeter nicht ein
+    zweites Mal gezoomt wird und Aufloesung verloren geht.
+    """
+    cd = _inhaltscrop(quelle)
+    b, h = int(1080 * zoom) // 2 * 2, int(1920 * zoom) // 2 * 2
+    y = f"(ih-1920)/2{y_versatz:+d}"
+    vf = (f"{cd}scale={b}:{h}:force_original_aspect_ratio=increase:flags=lanczos,"
+          f"crop=1080:1920:(iw-1080)/2:{y}"
+          f"{',hflip' if spiegeln else ''},setsar=1")
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", str(start), "-i", str(quelle),
+                    "-vf", vf, "-c:v", "libx264", "-preset", "veryfast", "-crf", "17",
+                    "-pix_fmt", "yuv420p", "-an", str(ziel)], check=True, timeout=300)
+    print(f"  EINSTELLUNG: {Path(ziel).name} aus {Path(quelle).name} "
+          f"(Zoom {zoom}, ab {start}s{', gespiegelt' if spiegeln else ''}).", flush=True)
+
+
+# Bildausschnitte fuer die Segmente 2 und 3 im Sparmodus: (zoom, spiegeln, start, y-Versatz).
+# Bewusst unterschiedlich in Naehe UND Richtung, sonst sieht man die Wiederholung.
+FRAMINGS = [(1.24, False, 1.2, -70), (1.12, True, 0.5, 60), (1.34, False, 0.9, 40)]
+
+
+def musik_aus_lager(ziel, name=""):
+    """Nimmt ein bereits erzeugtes Stueck aus assets/musik statt Suno neu zu bezahlen.
+
+    Musik kostet 17 bis 22 Credits pro Reel und ist das Einzige, was sich ohne jeden
+    sichtbaren Verlust wiederverwenden laesst: instrumentales Ambient, 21 Sekunden lang
+    benutzt, danach nie wieder gehoert. Die Auswahl haengt am Konzeptnamen, damit nicht
+    immer dasselbe Stueck laeuft, aber derselbe Reel beim Neubau gleich klingt.
+    """
+    lager = sorted(MUSIKLAGER.glob("*.mp3")) if MUSIKLAGER.exists() else []
+    lager = [p for p in lager if p.stat().st_size >= 10000]
+    if not lager:
+        return False
+    import hashlib
+    i = int(hashlib.sha1(name.encode()).hexdigest(), 16) % len(lager)
+    shutil.copyfile(lager[i], ziel)
+    print(f"  MUSIK aus dem Lager: {lager[i].name} ({len(lager)} Stuecke, 0 Credits).", flush=True)
+    return True
+
+
 def _ersatzclip(quelle, ziel):
     """Auftrag 2.1: Faellt ein Clip aus, wird er ersetzt statt den Reel zu kippen.
     Gespiegelt und leicht herangezoomt, damit es nicht als plumpe Wiederholung liest."""
@@ -454,7 +517,13 @@ def compose_montage(clips, cl, out):
         # misst an einzelnen Bildern und trifft den Rand nicht immer symmetrisch, dann
         # bleiben duenne dunkle Streifen an den Kanten stehen. 5 Prozent kosten kaum
         # Schaerfe und raeumen sie zuverlaessig weg.
-        cd = _inhaltscrop(c)
+        # clips[i], NICHT c: c war die Laufvariable der Schleife darueber und zeigte
+        # immer auf den LETZTEN Clip. Gemessen wurde also dreimal derselbe, und das
+        # Ergebnis auf alle drei angewendet. Solange alle drei frisch von Veo kamen,
+        # fiel es nicht auf, weil sie denselben Rahmen hatten. Sobald ein Clip keinen
+        # Rahmen hat (Sparmodus), findet cropdetect am letzten nichts, es wird gar
+        # nicht gecroppt und der Rahmen des ersten Clips steht im fertigen Video.
+        cd = _inhaltscrop(clips[i])
         parts.append(f"[{i}:v]trim=0:{cl},setpts=PTS-STARTPTS,{cd}"
                      f"scale=1134:2016:force_original_aspect_ratio=increase:flags=lanczos,"
                      f"crop=1080:1920,fps=24,setsar=1,format=yuv420p[c{i}]")
@@ -557,12 +626,19 @@ def produce(name, r):
     import concurrent.futures as cf
     clips_raw = [OUT / f"{name}_clip{i}_raw.mp4" for i in range(len(r["clips"]))]
     mus = OUT / f"{name}_music.mp3"
+    # Im Sparmodus wird nur die erste Aufnahme gekauft. Die anderen Segmente entstehen
+    # weiter unten als andere Bildausschnitte daraus.
+    gekauft = clips_raw[:1] if SPARMODUS else clips_raw
     jobs = []
     for i, cp in enumerate(r["clips"]):
         cr = clips_raw[i]
+        if cr not in gekauft:
+            continue
         if not (cr.exists() and cr.stat().st_size > 100000):
             jobs.append(("clip", cp, cr))
     music_ready = mus.exists() and mus.stat().st_size >= 10000
+    if not music_ready and not MUSIK_NEU and musik_aus_lager(mus, name):
+        music_ready = True
     if not music_ready:
         jobs.append(("music", r["music"], mus))
     if jobs:
@@ -598,6 +674,16 @@ def produce(name, r):
         return p.exists() and p.stat().st_size > 100000
     fehlend = [c for c in clips_raw if not _da(c)]
     vorhanden = [c for c in clips_raw if _da(c)]
+    if fehlend and vorhanden and SPARMODUS:
+        # Geplante Zweit- und Drittansicht, kein Ausfall: andere Bildausschnitte
+        # derselben bezahlten Aufnahme.
+        print(f"[{name}] Sparmodus: {len(vorhanden)} bezahlte Aufnahme, "
+              f"{len(fehlend)} weitere Einstellung(en) daraus.", flush=True)
+        for i, weiterer in enumerate(fehlend):
+            zoom, spiegeln, start, yv = FRAMINGS[i % len(FRAMINGS)]
+            _framing(vorhanden[i % len(vorhanden)], weiterer, zoom, spiegeln, start, yv)
+        fehlend = [c for c in clips_raw if not _da(c)]
+        vorhanden = [c for c in clips_raw if _da(c)]
     if fehlend:
         if not vorhanden:
             raise RuntimeError(f"Alle {len(clips_raw)} Clips ausgefallen, Reel nicht baubar.")
