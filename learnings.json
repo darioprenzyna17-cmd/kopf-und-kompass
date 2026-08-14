@@ -13,9 +13,9 @@
     },
     {
       "thema": "Fortschritt",
-      "score_avg": 9.3,
+      "score_avg": 9.34,
       "n": 4,
-      "reichweite": 1833,
+      "reichweite": 1866,
       "saves": 6,
       "shares": 1
     },
@@ -71,7 +71,7 @@
       "thema": "Selbstwert",
       "score_avg": 6.21,
       "n": 2,
-      "reichweite": 878,
+      "reichweite": 879,
       "saves": 2,
       "shares": 0
     },
@@ -310,12 +310,12 @@
     {
       "name": "ein_jahr_zurueck",
       "theme": "Fortschritt",
-      "score": 2.88,
-      "reach": 612,
+      "score": 2.89,
+      "reach": 613,
       "saved": 0,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 3946
+      "ig_reels_avg_watch_time": 3951
     },
     {
       "name": "vorbeigehen_am_schoenen",
@@ -381,21 +381,21 @@
       "name": "applaus_den_es_nicht_gibt",
       "theme": "Selbstwert",
       "score": 6.19,
-      "reach": 429,
+      "reach": 430,
       "saved": 1,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 4324
+      "ig_reels_avg_watch_time": 4323
     },
     {
       "name": "was_frueher_schwer_war",
       "theme": "Fortschritt",
-      "score": 6.21,
-      "reach": 162,
+      "score": 6.36,
+      "reach": 194,
       "saved": 1,
       "shares": 0,
       "total_interactions": 3,
-      "ig_reels_avg_watch_time": 4303
+      "ig_reels_avg_watch_time": 4538
     }
   ]
 }
