@@ -77,12 +77,24 @@ KURZ_CLIP_MAX = 7.9        # Veo liefert 8 Sekunden, mehr geht mit einem Clip ni
 # Gemessen kostete ein Reel im Langformat 210 bis 240 Credits: drei bezahlte Veo-Clips
 # zu je 57 bis 75 plus Musik zu 17 bis 22. Uploads sind gratis, daran lag es nicht.
 # Unter 100 geht nur ueber die Struktur, nicht ueber Details:
-#   1. EIN bezahlter Clip statt drei, die Segmente 2 und 3 sind andere Bildausschnitte
-#      derselben Aufnahme (siehe _framing). Spart rund 130.
+#   1. EIN Kauf statt drei. Der eine gekaufte Clip enthaelt selbst drei Szenen mit
+#      harten Schnitten (Zeitmarken im Prompt, siehe szenen_prompt). Spart rund 130.
+#      Dario 14.08.2026: "ein video das 3 szenen hat", nicht drei Videos aneinander
+#      und auch nicht ein Motiv in drei Bildausschnitten.
 #   2. Musik aus assets/musik statt jedes Mal neu von Suno. Spart rund 20.
-# Bleibt rund 60 bis 75 pro Reel. Die Laenge (rund 20s) und der Textaufbau bleiben
-# unveraendert, das ist NICHT die Rueckkehr zum Kurzformat vom 02.08.
+# Bleibt rund 60 bis 75 pro Reel.
+# Preis dafuer: Veo liefert hoechstens 8 Sekunden pro Generierung (erlaubt sind 4, 6
+# oder 8, eine Verlaengerung gibt es nicht). Die Textphase braucht rund 15, also laeuft
+# das Material mit Faktor 2,1 langsamer, mit echten Zwischenbildern statt verdoppelter
+# Bilder. Gemessenes Ergebnis: 18,8 Sekunden Reel, damit ueber der Warnschwelle von 18
+# und weit ueber dem Kurzformat vom 02.08. (9,9s), das wegen zu kurzer Sehdauer
+# zurueckgenommen wurde.
 SPARMODUS = os.environ.get("KK_SPARMODUS", "1") == "1"
+# 8s mal 2.0 sind 16s Material, damit kommt der Reel auf rund 18 Sekunden und bleibt
+# ueber der internen Warnschwelle. Ohne Zwischenbilder waere Faktor 2 sichtbares
+# Ruckeln, mit ihnen bleibt die Bewegung fluessig (siehe _dehnen).
+DEHNUNG_MAX = float(os.environ.get("KK_DEHNUNG_MAX", "2.1"))
+ZWISCHENBILDER = os.environ.get("KK_ZWISCHENBILDER", "1") == "1"
 MUSIK_NEU = os.environ.get("KK_MUSIK_NEU", "0") == "1"   # 1 = doch ein neues Stueck kaufen
 MUSIKLAGER = HERE / "assets" / "musik"
 
@@ -320,35 +332,94 @@ def veo_generate(prompt, out_mp4, model="veo3_fast", res="1080p", duration=8):
     raise VeoAusfall(str(letzter))
 
 
-def _framing(quelle, ziel, zoom, spiegeln, start, y_versatz=0):
-    """Macht aus EINER bezahlten Aufnahme eine zweite Einstellung.
+def _motiv(clip_prompt):
+    """Zieht das reine Motiv aus einem fertigen Clip-Prompt heraus.
 
-    Sparmodus (Dario-Vorgabe 13.08.2026: ein Reel soll unter 100 Credits kosten).
-    Drei Veo-Clips kosten 180 bis 220 Credits, einer rund 60. Statt drei Motive zu
-    kaufen wird eines gekauft und in mehreren Bildausschnitten gezeigt, so wie an
-    einem echten Drehort mit einer Kamera: einmal weiter, einmal naeher, einmal
-    von der anderen Seite. Anderer Startzeitpunkt heisst ausserdem andere Bewegung
-    im Bild, dadurch liest es nicht als Wiederholung.
-
-    Der Rahmen von Veo wird hier schon weggeschnitten, damit spaeter nicht ein
-    zweites Mal gezoomt wird und Aufloesung verloren geht.
+    Die Prompts sind aufgebaut als "<Vorspann>, <MOTIV>, filmed on a modern ...".
+    Fuer den Ein-Kauf-Prompt wird nur das Motiv gebraucht, der Look-Teil steht dort
+    einmal fuer alle drei Szenen.
     """
-    cd = _inhaltscrop(quelle)
-    b, h = int(1080 * zoom) // 2 * 2, int(1920 * zoom) // 2 * 2
-    y = f"(ih-1920)/2{y_versatz:+d}"
-    vf = (f"{cd}scale={b}:{h}:force_original_aspect_ratio=increase:flags=lanczos,"
-          f"crop=1080:1920:(iw-1080)/2:{y}"
-          f"{',hflip' if spiegeln else ''},setsar=1")
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", str(start), "-i", str(quelle),
-                    "-vf", vf, "-c:v", "libx264", "-preset", "veryfast", "-crf", "17",
-                    "-pix_fmt", "yuv420p", "-an", str(ziel)], check=True, timeout=300)
-    print(f"  EINSTELLUNG: {Path(ziel).name} aus {Path(quelle).name} "
-          f"(Zoom {zoom}, ab {start}s{', gespiegelt' if spiegeln else ''}).", flush=True)
+    t = clip_prompt
+    for vorspann in ("filling the entire frame edge to edge, ", "9:16 footage, "):
+        if vorspann in t:
+            t = t.split(vorspann, 1)[1]
+            break
+    for ende in (", filmed on a modern", ", shot on warm faded film", ", no on-screen text"):
+        if ende in t:
+            t = t.split(ende, 1)[0]
+            break
+    return t.strip().rstrip(".")
 
 
-# Bildausschnitte fuer die Segmente 2 und 3 im Sparmodus: (zoom, spiegeln, start, y-Versatz).
-# Bewusst unterschiedlich in Naehe UND Richtung, sonst sieht man die Wiederholung.
-FRAMINGS = [(1.24, False, 1.2, -70), (1.12, True, 0.5, 60), (1.34, False, 0.9, 40)]
+def szenen_prompt(r):
+    """Baut aus den drei Motiven EINEN Prompt mit drei Szenen und harten Schnitten.
+
+    Dario-Vorgabe 14.08.2026: "er soll ja ein video kaufen und nicht 3 und sie zusammen
+    tun, sondern ein video das 3 szenen hat". Veo 3.1 kann das ueber Zeitmarken im
+    Prompt, es schneidet dann innerhalb der einen Generierung. Ein Kauf, drei echte
+    Motive, rund 60 Credits statt 180.
+
+    Die 8 Sekunden sind die harte Grenze von Veo (erlaubt sind 4, 6 oder 8), laenger
+    geht pro Generierung nicht. Die drei Szenen teilen sich diese 8 Sekunden.
+    """
+    m = [_motiv(c) for c in (r.get("clips") or [])][:3]
+    while len(m) < 3:
+        m.append(m[-1] if m else "a quiet natural scene in soft daylight")
+    return (
+        "Realistic documentary-style vertical 9:16 video made of three different shots "
+        "with a hard cut between them, consistent look and light mood across all three, "
+        "filmed on a modern full-frame camera with a 35mm lens, natural true-to-life "
+        "colours, realistic daylight, natural contrast, no colour grading, no film look. "
+        f"[00:00-00:03] {m[0]}. "
+        f"[00:03-00:05] {m[1]}. "
+        f"[00:05-00:08] {m[2]}. "
+        "Slow contemplative camera motion in every shot, no on-screen text, no people, "
+        "no faces, no letterbox, no vignette frame, no film strip border, 24fps"
+    )
+
+
+def _dehnen(quelle, ziel, ziel_len):
+    """Zieht die gekauften 8 Sekunden auf die Laenge der Textphase.
+
+    Veo liefert hoechstens 8 Sekunden pro Kauf, die Textphase braucht rund 14. Statt
+    einen zweiten Clip zu kaufen laeuft das Material langsamer.
+
+    Wichtig ist das WIE: setpts allein verdoppelt nur vorhandene Bilder, bei Faktor 2
+    steht jedes Bild doppelt so lange und die Bewegung ruckelt sichtbar. minterpolate
+    rechnet echte Zwischenbilder aus der Bewegung, damit bleibt der Schwenk fluessig.
+    Kostet rund eine Minute Rechenzeit pro Clip, aber kein Geld. Faellt es aus, wird
+    einfach gedehnt, lieber ein leichtes Ruckeln als kein Video.
+    """
+    quell_len = _laenge_sek(quelle)
+    faktor = min(DEHNUNG_MAX, max(1.0, ziel_len / max(quell_len, 0.1)))
+    basis = ["ffmpeg", "-y", "-loglevel", "error", "-i", str(quelle)]
+    ende = ["-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "17",
+            "-pix_fmt", "yuv420p", str(ziel)]
+    glatt = (f"minterpolate=fps={int(round(24 * faktor))}:mi_mode=mci:mc_mode=aobmc:"
+             f"vsbmc=1,setpts={faktor:.4f}*PTS,fps=24")
+    einfach = f"setpts={faktor:.4f}*PTS,fps=24"
+    if ZWISCHENBILDER and faktor > 1.15:
+        try:
+            subprocess.run(basis + ["-vf", glatt] + ende, check=True, timeout=900)
+            print(f"  TEMPO: {quell_len:.1f}s auf {quell_len * faktor:.1f}s gedehnt "
+                  f"(Faktor {faktor:.2f}, mit Zwischenbildern).", flush=True)
+            return quell_len * faktor
+        except Exception as e:
+            print(f"  Zwischenbilder fehlgeschlagen ({repr(e)[:120]}), dehne einfach.",
+                  flush=True)
+    subprocess.run(basis + ["-vf", einfach] + ende, check=True, timeout=600)
+    print(f"  TEMPO: {quell_len:.1f}s auf {quell_len * faktor:.1f}s gedehnt "
+          f"(Faktor {faktor:.2f}).", flush=True)
+    return quell_len * faktor
+
+
+def _laenge_sek(p):
+    r = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
+                        "-of", "csv=p=0", str(p)], capture_output=True, text=True, timeout=60)
+    try:
+        return float(r.stdout.strip())
+    except Exception:
+        return 8.0
 
 
 def musik_aus_lager(ziel, name=""):
@@ -596,6 +667,13 @@ def produce(name, r):
         r = kurzfassung(r)
         print(f"[{name}] Kurzformat: {len(r['thoughts'])} Beats, "
               f"{len(r['clips'])} Clip, Frage \"{r['cta']}\"", flush=True)
+    elif SPARMODUS:
+        # EIN Kauf, der selbst drei Szenen enthaelt. Ab hier ist es genau ein Clip,
+        # die Montage braucht damit auch keine Blenden mehr, die Schnitte sitzen
+        # bereits im gekauften Material.
+        r = dict(r)
+        r["clips"] = [szenen_prompt(r)]
+        print(f"[{name}] Sparmodus: 1 Kauf mit 3 Szenen statt 3 Kaeufen.", flush=True)
     thoughts = r["thoughts"]
     n = len(thoughts)
     wins, sts = _fenster(thoughts, kurz)
@@ -603,6 +681,24 @@ def produce(name, r):
     cl = round((foot_len + HEADROOM + (len(r["clips"]) - 1) * DISSOLVE) / len(r["clips"]), 3)
     # Ein Veo-Clip liefert 8 Sekunden. Passt die Textphase nicht hinein, werden die
     # Standzeiten gestaucht statt einen zweiten Clip zu kaufen.
+    if SPARMODUS and not kurz:
+        grenze = round(8.0 * DEHNUNG_MAX, 2)
+        for _ in range(20):
+            if cl <= grenze:
+                break
+            skala = grenze / cl
+            sts = [max(2.6, round(st * skala, 3)) for st in sts]
+            wins, s = [], 0.0
+            for st in sts:
+                wins.append((round(s, 3), round(s + st, 3)))
+                s = round(s + st - OVERLAP, 3)
+            foot_len = wins[-1][1]
+            neu = round(foot_len + HEADROOM, 3)
+            if abs(neu - cl) < 0.01:
+                break
+            cl = neu
+        print(f"[{name}] Textphase {foot_len:.1f}s, Gesamt rund "
+              f"{foot_len + END_LEN:.1f}s", flush=True)
     if kurz:
         for _ in range(20):
             if cl <= KURZ_CLIP_MAX:
@@ -626,14 +722,9 @@ def produce(name, r):
     import concurrent.futures as cf
     clips_raw = [OUT / f"{name}_clip{i}_raw.mp4" for i in range(len(r["clips"]))]
     mus = OUT / f"{name}_music.mp3"
-    # Im Sparmodus wird nur die erste Aufnahme gekauft. Die anderen Segmente entstehen
-    # weiter unten als andere Bildausschnitte daraus.
-    gekauft = clips_raw[:1] if SPARMODUS else clips_raw
     jobs = []
     for i, cp in enumerate(r["clips"]):
         cr = clips_raw[i]
-        if cr not in gekauft:
-            continue
         if not (cr.exists() and cr.stat().st_size > 100000):
             jobs.append(("clip", cp, cr))
     music_ready = mus.exists() and mus.stat().st_size >= 10000
@@ -674,16 +765,6 @@ def produce(name, r):
         return p.exists() and p.stat().st_size > 100000
     fehlend = [c for c in clips_raw if not _da(c)]
     vorhanden = [c for c in clips_raw if _da(c)]
-    if fehlend and vorhanden and SPARMODUS:
-        # Geplante Zweit- und Drittansicht, kein Ausfall: andere Bildausschnitte
-        # derselben bezahlten Aufnahme.
-        print(f"[{name}] Sparmodus: {len(vorhanden)} bezahlte Aufnahme, "
-              f"{len(fehlend)} weitere Einstellung(en) daraus.", flush=True)
-        for i, weiterer in enumerate(fehlend):
-            zoom, spiegeln, start, yv = FRAMINGS[i % len(FRAMINGS)]
-            _framing(vorhanden[i % len(vorhanden)], weiterer, zoom, spiegeln, start, yv)
-        fehlend = [c for c in clips_raw if not _da(c)]
-        vorhanden = [c for c in clips_raw if _da(c)]
     if fehlend:
         if not vorhanden:
             raise RuntimeError(f"Alle {len(clips_raw)} Clips ausgefallen, Reel nicht baubar.")
@@ -698,6 +779,24 @@ def produce(name, r):
             raise RuntimeError("Musik ausgefallen und kein Ersatz im Lager.")
         shutil.copyfile(alt[0], mus)
         print(f"  ERSATZ-MUSIK aus {alt[0].name}.", flush=True)
+    if SPARMODUS and not kurz:
+        # Die gekauften 8 Sekunden auf die Textphase ziehen. Reicht die Dehnung nicht
+        # ganz, wird die Textphase auf das Machbare gekuerzt, damit am Schluss kein
+        # eingefrorenes Bild steht.
+        gedehnt = OUT / f"{name}_clip0_lang.mp4"
+        echt = _dehnen(clips_raw[0], gedehnt, cl)
+        clips_raw = [gedehnt]
+        if echt + 0.05 < cl:
+            fehlt = cl - echt
+            sts = [max(2.4, round(st - fehlt / len(sts), 3)) for st in sts]
+            wins, s = [], 0.0
+            for st in sts:
+                wins.append((round(s, 3), round(s + st, 3)))
+                s = round(s + st - OVERLAP, 3)
+            foot_len = wins[-1][1]
+            cl = round(min(echt, foot_len + HEADROOM), 3)
+            print(f"  Textphase auf {foot_len:.1f}s gekuerzt, Material reicht nur "
+                  f"{echt:.1f}s.", flush=True)
     # 2) Montage + Grade
     montage = OUT / f"{name}_montage.mp4"
     print(f"[{name}] 2/5 Montage + Grade + Korn ...", flush=True)
