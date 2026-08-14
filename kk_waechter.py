@@ -6,7 +6,6 @@ Ursache an Darios Push-Kanal. Stillstand ist ein Vorfall, keine Randnotiz.
 """
 import json
 import os
-import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
@@ -19,12 +18,33 @@ GRENZE_REEL_H = 36
 GRENZE_STORY_H = 16
 
 
+# Umlaute, die im Titel vorkommen koennen. HTTP-Kopfzeilen vertragen kein UTF-8,
+# deshalb wird umgeschrieben statt kodiert.
+_UMLAUTE = {"ä": "ae", "ö": "oe", "ü": "ue", "Ä": "Ae", "Ö": "Oe", "Ü": "Ue",
+            "ß": "ss", "é": "e", "è": "e", "à": "a"}
+
+
+def _titel_fuer_kopfzeile(titel):
+    """Titel so aufbereiten, dass ntfy ihn lesbar anzeigt.
+
+    Vorher stand hier urllib.parse.quote(titel). Das kodiert prozentweise, und
+    ntfy dekodiert die Kopfzeile nicht wieder. Auf dem Handy kam deshalb
+    woertlich "Kopf%20%26%20Kompass%3A%20Guthaben%20reicht%20nicht..." an
+    (gesehen am 14.08.2026). Umlaute werden umgeschrieben, alles andere
+    Nicht-ASCII faellt weg, der Rest bleibt so stehen, wie er gemeint war.
+    """
+    for zeichen, ersatz in _UMLAUTE.items():
+        titel = titel.replace(zeichen, ersatz)
+    return titel.encode("ascii", "ignore").decode("ascii")
+
+
 def push(titel, text, prio="high"):
     try:
         r = urllib.request.Request(
             f"https://ntfy.sh/{NTFY_KANAL}",
             data=text.encode("utf-8"),
-            headers={"Title": urllib.parse.quote(titel), "Priority": prio, "Tags": "warning"},
+            headers={"Title": _titel_fuer_kopfzeile(titel), "Priority": prio,
+                     "Tags": "warning"},
             method="POST")
         urllib.request.urlopen(r, timeout=25).read()
         print("Push abgesetzt.", flush=True)
