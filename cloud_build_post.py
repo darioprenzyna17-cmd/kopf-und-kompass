@@ -233,7 +233,14 @@ def _reicht_es_fuer_den_ganzen_reel(c):
     vier Naechte ohne ein einziges Video. Ein halb bezahlter Reel ist wertlos, also wird
     entweder alles gebaut oder gar nichts.
     """
-    n_clips = 1 if bvr.KURZ else len(c.get("clips") or [])
+    # Nur die WIRKLICH bezahlten Aufnahmen zaehlen. Im Sparmodus wird eine gekauft,
+    # die anderen Segmente sind Bildausschnitte daraus und kosten nichts. Ohne diese
+    # Unterscheidung haette die Pruefung Guthaben fuer drei Clips verlangt und den Bau
+    # gesperrt, obwohl er nur einen braucht.
+    if bvr.KURZ or bvr.SPARMODUS:
+        n_clips = 1
+    else:
+        n_clips = len(c.get("clips") or [])
     fehlt = []
     if budget.rest("veo") < n_clips:
         fehlt.append(f"Tagesbudget Veo reicht nicht ({budget.rest('veo')} frei, "
