@@ -200,12 +200,17 @@ def _hypothese(klasse, c):
             "hebt Sends pro Reichweite ueber den Schnitt.", f"Wagnis {thema}")
 
 
-# Gemessene Preise auf kie.ai, Stand 13.08.2026: ein Bau mit 2 Veo-Clips und einem
-# Musikstueck kostete 142 Credits (653 auf 511). Daraus rund 60 pro Clip und 25 fuer die
-# Musik. Bewusst grosszuegig gerundet, lieber einmal zu frueh stoppen als ein halbes
-# Video bezahlen.
-CREDITS_CLIP = 65
-CREDITS_MUSIK = 30
+# Gemessene Preise auf kie.ai, drei echte Laeufe:
+#   13.08. Fehllauf, 2 Clips + Musik: 653 -> 511 = 142
+#   13.08. Handbau,  1 Clip  + Musik: 511 -> 434 =  77
+#   14.08. Nachtlauf, 3 Clips + Musik: 434 -> 197 = 237
+# Ein vollstaendiger Reel im Langformat kostet also rund 240 Credits, nicht 210. Die
+# ersten beiden Messungen legten 65 pro Clip nahe, der volle Lauf war teurer, es kommt
+# Nebenverbrauch dazu (Upload in den kie.ai-Speicher beim Posten). Darum wird nach dem
+# teuersten gemessenen Lauf gerechnet: lieber einmal zu frueh stoppen als am letzten
+# Clip stehenbleiben und ein halbes Video bezahlt haben.
+CREDITS_CLIP = 72
+CREDITS_MUSIK = 25
 
 
 def _guthaben():
