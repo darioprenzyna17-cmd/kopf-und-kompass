@@ -1,29 +1,29 @@
 {
   "_hinweis": "Automatisch aus Instagram-Insights. Nordstern: Save+Share+Follow. cloud_build_post.py priorisiert Gewinner-Themen.",
   "updated_utc": null,
-  "n_reels_mit_daten": 27,
+  "n_reels_mit_daten": 28,
   "themen_rang": [
     {
       "thema": "Grenzen",
       "score_avg": 11.7,
       "n": 5,
-      "reichweite": 3285,
+      "reichweite": 3291,
       "saves": 6,
       "shares": 4
     },
     {
       "thema": "Fortschritt",
-      "score_avg": 10.33,
-      "n": 3,
-      "reichweite": 1667,
-      "saves": 5,
+      "score_avg": 9.3,
+      "n": 4,
+      "reichweite": 1833,
+      "saves": 6,
       "shares": 1
     },
     {
       "thema": "Geduld",
       "score_avg": 8.78,
       "n": 3,
-      "reichweite": 1245,
+      "reichweite": 1249,
       "saves": 2,
       "shares": 2
     },
@@ -45,9 +45,9 @@
     },
     {
       "thema": "Charakter",
-      "score_avg": 6.92,
+      "score_avg": 6.93,
       "n": 3,
-      "reichweite": 1625,
+      "reichweite": 1626,
       "saves": 1,
       "shares": 1
     },
@@ -63,15 +63,15 @@
       "thema": "Achtsamkeit",
       "score_avg": 6.52,
       "n": 2,
-      "reichweite": 851,
+      "reichweite": 855,
       "saves": 2,
       "shares": 0
     },
     {
       "thema": "Selbstwert",
-      "score_avg": 6.05,
+      "score_avg": 6.21,
       "n": 2,
-      "reichweite": 871,
+      "reichweite": 878,
       "saves": 2,
       "shares": 0
     },
@@ -87,7 +87,7 @@
       "thema": "Eigene Bedürfnisse",
       "score_avg": 3.07,
       "n": 1,
-      "reichweite": 537,
+      "reichweite": 540,
       "saves": 0,
       "shares": 0
     },
@@ -300,32 +300,32 @@
     {
       "name": "kleine_tage_zaehlen",
       "theme": "Geduld",
-      "score": 10.38,
-      "reach": 451,
+      "score": 10.37,
+      "reach": 453,
       "saved": 0,
       "shares": 1,
       "total_interactions": 4,
-      "ig_reels_avg_watch_time": 9451
+      "ig_reels_avg_watch_time": 9434
     },
     {
       "name": "ein_jahr_zurueck",
       "theme": "Fortschritt",
       "score": 2.88,
-      "reach": 608,
+      "reach": 612,
       "saved": 0,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 3945
+      "ig_reels_avg_watch_time": 3946
     },
     {
       "name": "vorbeigehen_am_schoenen",
       "theme": "Achtsamkeit",
       "score": 2.62,
-      "reach": 499,
+      "reach": 503,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 4239
+      "ig_reels_avg_watch_time": 4235
     },
     {
       "name": "passt_schon",
@@ -341,51 +341,61 @@
       "name": "vier_geschmaecker",
       "theme": "Eigene Bedürfnisse",
       "score": 3.07,
-      "reach": 537,
+      "reach": 540,
       "saved": 0,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 3862
+      "ig_reels_avg_watch_time": 3852
     },
     {
       "name": "zehn_mal_nachschauen",
       "theme": "Geduld",
       "score": 1.83,
-      "reach": 299,
+      "reach": 301,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3069
+      "ig_reels_avg_watch_time": 3066
     },
     {
       "name": "worte_die_halten",
       "theme": "Charakter",
-      "score": 2.27,
-      "reach": 321,
+      "score": 2.3,
+      "reach": 322,
       "saved": 0,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 3297
+      "ig_reels_avg_watch_time": 3353
     },
     {
       "name": "ueberstunde_ohne_grund",
       "theme": "Grenzen",
-      "score": 2.14,
-      "reach": 307,
+      "score": 2.15,
+      "reach": 313,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3667
+      "ig_reels_avg_watch_time": 3670
     },
     {
       "name": "applaus_den_es_nicht_gibt",
       "theme": "Selbstwert",
-      "score": 5.86,
-      "reach": 422,
+      "score": 6.19,
+      "reach": 429,
       "saved": 1,
       "shares": 0,
-      "total_interactions": 1,
-      "ig_reels_avg_watch_time": 4274
+      "total_interactions": 2,
+      "ig_reels_avg_watch_time": 4324
+    },
+    {
+      "name": "was_frueher_schwer_war",
+      "theme": "Fortschritt",
+      "score": 6.21,
+      "reach": 162,
+      "saved": 1,
+      "shares": 0,
+      "total_interactions": 3,
+      "ig_reels_avg_watch_time": 4303
     }
   ]
 }

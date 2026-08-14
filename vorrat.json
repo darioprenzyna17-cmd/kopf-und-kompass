@@ -1,4 +1,17 @@
 {
   "_hinweis": "Fertige, noch nicht gepostete Videos. Hoechstens 1 (Dario-Vorgabe).",
-  "videos": []
+  "videos": [
+    {
+      "name": "handy_beim_essen",
+      "url": "assets/vorrat/handy_beim_essen.mp4",
+      "caption": "Das Handy neben dem Teller kostet mehr, als du denkst.\n\nWer wirklich da ist, schenkt das seltenste Geschenk von allen: Aufmerksamkeit.\n\nLeg es weg und schau hin.\n\n#präsenz #grenzen #achtsamkeit #mindset #kopfundkompass",
+      "theme": "Grenzen",
+      "gebaut": "2026-08-14T01:35:27Z",
+      "laenge_sek": 19.2,
+      "testklasse": "basis",
+      "hypothese": "Das bewaehrte Langformat (rund 20s, drei Clips, Aussage zuerst) haelt den Watchtime-Anteil ueber dem Kontodurchschnitt.",
+      "variable": "bewaehrtes Langformat",
+      "hook_typ": "Aussage zuerst"
+    }
+  ]
 }

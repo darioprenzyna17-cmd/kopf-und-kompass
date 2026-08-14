@@ -10,6 +10,15 @@
       ],
       "zuletzt": "2026-08-02T08:19:40Z",
       "gesperrt_seit": "2026-08-02T08:19:40Z"
+    },
+    "vertrauen_braucht_zeit": {
+      "fehler": 1,
+      "status": "gesperrt",
+      "gruende": [
+        "Konzeptpruefung: Zeile zu lang (47 Zeichen): 'Geduld ist die Sprache, die Vertrauen ve...'"
+      ],
+      "zuletzt": "2026-08-14T01:29:31Z",
+      "gesperrt_seit": "2026-08-14T01:29:31Z"
     }
   },
   "fehlversuche": {}
