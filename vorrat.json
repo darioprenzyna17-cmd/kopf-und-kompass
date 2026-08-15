@@ -1,17 +1,4 @@
 {
   "_hinweis": "Fertige, noch nicht gepostete Videos. Hoechstens 1 (Dario-Vorgabe).",
-  "videos": [
-    {
-      "name": "ueben_ohne_lust",
-      "url": "assets/vorrat/ueben_ohne_lust.mp4",
-      "caption": "Motivation kommt und geht.\n\nWas bleibt, ist die Entscheidung, trotzdem weiterzumachen.\n\nFünf Minuten ohne Lust zählen mehr, als du glaubst.\n\n#dranbleiben #fortschritt #disziplin #mindset #kopfundkompass",
-      "theme": "Fortschritt",
-      "gebaut": "2026-08-15T01:05:15Z",
-      "laenge_sek": 18.8,
-      "testklasse": "basis",
-      "hypothese": "Das bewaehrte Langformat (rund 20s, drei Clips, Aussage zuerst) haelt den Watchtime-Anteil ueber dem Kontodurchschnitt.",
-      "variable": "bewaehrtes Langformat",
-      "hook_typ": "Aussage zuerst"
-    }
-  ]
+  "videos": []
 }
