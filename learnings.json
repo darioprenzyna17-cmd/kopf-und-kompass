@@ -5,9 +5,9 @@
   "themen_rang": [
     {
       "thema": "Grenzen",
-      "score_avg": 10.23,
+      "score_avg": 10.24,
       "n": 6,
-      "reichweite": 3486,
+      "reichweite": 3491,
       "saves": 6,
       "shares": 4
     },
@@ -15,7 +15,7 @@
       "thema": "Fortschritt",
       "score_avg": 9.53,
       "n": 4,
-      "reichweite": 2001,
+      "reichweite": 2005,
       "saves": 6,
       "shares": 1
     },
@@ -375,7 +375,7 @@
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3661
+      "ig_reels_avg_watch_time": 3665
     },
     {
       "name": "applaus_den_es_nicht_gibt",
@@ -390,22 +390,22 @@
     {
       "name": "was_frueher_schwer_war",
       "theme": "Fortschritt",
-      "score": 7.11,
-      "reach": 327,
+      "score": 7.13,
+      "reach": 331,
       "saved": 1,
       "shares": 0,
       "total_interactions": 5,
-      "ig_reels_avg_watch_time": 4558
+      "ig_reels_avg_watch_time": 4601
     },
     {
       "name": "handy_beim_essen",
       "theme": "Grenzen",
-      "score": 2.9,
-      "reach": 189,
+      "score": 2.92,
+      "reach": 194,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 5412
+      "ig_reels_avg_watch_time": 5451
     }
   ]
 }
