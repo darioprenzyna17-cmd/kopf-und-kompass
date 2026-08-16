@@ -7,7 +7,7 @@
       "thema": "Grenzen",
       "score_avg": 10.33,
       "n": 6,
-      "reichweite": 3748,
+      "reichweite": 3751,
       "saves": 6,
       "shares": 4
     },
@@ -31,7 +31,7 @@
       "thema": "Fortschritt",
       "score_avg": 8.02,
       "n": 5,
-      "reichweite": 2298,
+      "reichweite": 2299,
       "saves": 6,
       "shares": 1
     },
@@ -71,7 +71,7 @@
       "thema": "Selbstwert",
       "score_avg": 6.24,
       "n": 2,
-      "reichweite": 932,
+      "reichweite": 933,
       "saves": 2,
       "shares": 0
     },
@@ -87,7 +87,7 @@
       "thema": "Eigene Bedürfnisse",
       "score_avg": 3.07,
       "n": 1,
-      "reichweite": 557,
+      "reichweite": 559,
       "saves": 0,
       "shares": 0
     },
@@ -341,11 +341,11 @@
       "name": "vier_geschmaecker",
       "theme": "Eigene Bedürfnisse",
       "score": 3.07,
-      "reach": 557,
+      "reach": 559,
       "saved": 0,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 3827
+      "ig_reels_avg_watch_time": 3822
     },
     {
       "name": "zehn_mal_nachschauen",
@@ -381,11 +381,11 @@
       "name": "applaus_den_es_nicht_gibt",
       "theme": "Selbstwert",
       "score": 6.23,
-      "reach": 483,
+      "reach": 484,
       "saved": 1,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 4287
+      "ig_reels_avg_watch_time": 4284
     },
     {
       "name": "was_frueher_schwer_war",
@@ -395,27 +395,27 @@
       "saved": 1,
       "shares": 0,
       "total_interactions": 5,
-      "ig_reels_avg_watch_time": 4474
+      "ig_reels_avg_watch_time": 4468
     },
     {
       "name": "handy_beim_essen",
       "theme": "Grenzen",
-      "score": 3.42,
-      "reach": 433,
+      "score": 3.46,
+      "reach": 436,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 5971
+      "ig_reels_avg_watch_time": 6040
     },
     {
       "name": "ueben_ohne_lust",
       "theme": "Fortschritt",
-      "score": 1.97,
-      "reach": 229,
+      "score": 1.98,
+      "reach": 230,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3473
+      "ig_reels_avg_watch_time": 3502
     }
   ]
 }
