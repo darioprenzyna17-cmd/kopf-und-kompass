@@ -7,7 +7,7 @@
       "thema": "Grenzen",
       "score_avg": 10.31,
       "n": 6,
-      "reichweite": 3689,
+      "reichweite": 3690,
       "saves": 6,
       "shares": 4
     },
@@ -31,7 +31,7 @@
       "thema": "Fortschritt",
       "score_avg": 7.99,
       "n": 5,
-      "reichweite": 2241,
+      "reichweite": 2242,
       "saves": 6,
       "shares": 1
     },
@@ -61,7 +61,7 @@
     },
     {
       "thema": "Achtsamkeit",
-      "score_avg": 6.54,
+      "score_avg": 6.53,
       "n": 2,
       "reichweite": 878,
       "saves": 2,
@@ -320,12 +320,12 @@
     {
       "name": "vorbeigehen_am_schoenen",
       "theme": "Achtsamkeit",
-      "score": 2.66,
+      "score": 2.65,
       "reach": 526,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 4263
+      "ig_reels_avg_watch_time": 4257
     },
     {
       "name": "passt_schon",
@@ -401,21 +401,21 @@
       "name": "handy_beim_essen",
       "theme": "Grenzen",
       "score": 3.35,
-      "reach": 377,
+      "reach": 378,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 5942
+      "ig_reels_avg_watch_time": 5952
     },
     {
       "name": "ueben_ohne_lust",
       "theme": "Fortschritt",
       "score": 1.82,
-      "reach": 185,
+      "reach": 186,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3276
+      "ig_reels_avg_watch_time": 3263
     }
   ]
 }
