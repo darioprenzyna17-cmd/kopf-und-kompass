@@ -7,7 +7,7 @@
       "thema": "Grenzen",
       "score_avg": 10.34,
       "n": 6,
-      "reichweite": 3812,
+      "reichweite": 3815,
       "saves": 6,
       "shares": 4
     },
@@ -29,9 +29,9 @@
     },
     {
       "thema": "Fortschritt",
-      "score_avg": 8.02,
+      "score_avg": 8.03,
       "n": 5,
-      "reichweite": 2324,
+      "reichweite": 2325,
       "saves": 6,
       "shares": 1
     },
@@ -71,7 +71,7 @@
       "thema": "Selbstwert",
       "score_avg": 6.23,
       "n": 2,
-      "reichweite": 941,
+      "reichweite": 942,
       "saves": 2,
       "shares": 0
     },
@@ -371,17 +371,17 @@
       "name": "ueberstunde_ohne_grund",
       "theme": "Grenzen",
       "score": 2.18,
-      "reach": 342,
+      "reach": 343,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3684
+      "ig_reels_avg_watch_time": 3678
     },
     {
       "name": "applaus_den_es_nicht_gibt",
       "theme": "Selbstwert",
       "score": 6.22,
-      "reach": 492,
+      "reach": 493,
       "saved": 1,
       "shares": 0,
       "total_interactions": 2,
@@ -400,22 +400,22 @@
     {
       "name": "handy_beim_essen",
       "theme": "Grenzen",
-      "score": 3.51,
-      "reach": 492,
+      "score": 3.52,
+      "reach": 494,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 6036
+      "ig_reels_avg_watch_time": 6049
     },
     {
       "name": "ueben_ohne_lust",
       "theme": "Fortschritt",
-      "score": 1.96,
-      "reach": 245,
+      "score": 1.99,
+      "reach": 246,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3432
+      "ig_reels_avg_watch_time": 3494
     }
   ]
 }
