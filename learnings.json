@@ -7,7 +7,7 @@
       "thema": "Grenzen",
       "score_avg": 10.32,
       "n": 6,
-      "reichweite": 3727,
+      "reichweite": 3730,
       "saves": 6,
       "shares": 4
     },
@@ -31,7 +31,7 @@
       "thema": "Fortschritt",
       "score_avg": 8.02,
       "n": 5,
-      "reichweite": 2280,
+      "reichweite": 2285,
       "saves": 6,
       "shares": 1
     },
@@ -400,22 +400,22 @@
     {
       "name": "handy_beim_essen",
       "theme": "Grenzen",
-      "score": 3.4,
-      "reach": 414,
+      "score": 3.41,
+      "reach": 417,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 5978
+      "ig_reels_avg_watch_time": 5994
     },
     {
       "name": "ueben_ohne_lust",
       "theme": "Fortschritt",
-      "score": 1.98,
-      "reach": 213,
+      "score": 1.96,
+      "reach": 218,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3532
+      "ig_reels_avg_watch_time": 3480
     }
   ]
 }
