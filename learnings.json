@@ -7,7 +7,7 @@
       "thema": "Grenzen",
       "score_avg": 10.34,
       "n": 6,
-      "reichweite": 3770,
+      "reichweite": 3773,
       "saves": 6,
       "shares": 4
     },
@@ -15,7 +15,7 @@
       "thema": "Geduld",
       "score_avg": 8.78,
       "n": 3,
-      "reichweite": 1270,
+      "reichweite": 1271,
       "saves": 2,
       "shares": 2
     },
@@ -31,7 +31,7 @@
       "thema": "Fortschritt",
       "score_avg": 8.03,
       "n": 5,
-      "reichweite": 2309,
+      "reichweite": 2314,
       "saves": 6,
       "shares": 1
     },
@@ -351,11 +351,11 @@
       "name": "zehn_mal_nachschauen",
       "theme": "Geduld",
       "score": 1.84,
-      "reach": 322,
+      "reach": 323,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3043
+      "ig_reels_avg_watch_time": 3036
     },
     {
       "name": "worte_die_halten",
@@ -390,32 +390,32 @@
     {
       "name": "was_frueher_schwer_war",
       "theme": "Fortschritt",
-      "score": 7.15,
-      "reach": 398,
+      "score": 7.14,
+      "reach": 401,
       "saved": 1,
       "shares": 0,
       "total_interactions": 5,
-      "ig_reels_avg_watch_time": 4502
+      "ig_reels_avg_watch_time": 4486
     },
     {
       "name": "handy_beim_essen",
       "theme": "Grenzen",
       "score": 3.48,
-      "reach": 451,
+      "reach": 454,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 6065
+      "ig_reels_avg_watch_time": 6054
     },
     {
       "name": "ueben_ohne_lust",
       "theme": "Fortschritt",
       "score": 1.99,
-      "reach": 235,
+      "reach": 237,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3503
+      "ig_reels_avg_watch_time": 3498
     }
   ]
 }
