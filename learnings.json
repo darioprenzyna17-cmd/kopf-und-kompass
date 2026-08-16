@@ -31,7 +31,7 @@
       "thema": "Fortschritt",
       "score_avg": 7.99,
       "n": 5,
-      "reichweite": 2239,
+      "reichweite": 2241,
       "saves": 6,
       "shares": 1
     },
@@ -47,7 +47,7 @@
       "thema": "Charakter",
       "score_avg": 6.92,
       "n": 3,
-      "reichweite": 1641,
+      "reichweite": 1642,
       "saves": 1,
       "shares": 1
     },
@@ -61,9 +61,9 @@
     },
     {
       "thema": "Achtsamkeit",
-      "score_avg": 6.53,
+      "score_avg": 6.54,
       "n": 2,
-      "reichweite": 877,
+      "reichweite": 878,
       "saves": 2,
       "shares": 0
     },
@@ -320,12 +320,12 @@
     {
       "name": "vorbeigehen_am_schoenen",
       "theme": "Achtsamkeit",
-      "score": 2.65,
-      "reach": 525,
+      "score": 2.66,
+      "reach": 526,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 4259
+      "ig_reels_avg_watch_time": 4263
     },
     {
       "name": "passt_schon",
@@ -361,11 +361,11 @@
       "name": "worte_die_halten",
       "theme": "Charakter",
       "score": 2.29,
-      "reach": 336,
+      "reach": 337,
       "saved": 0,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 3309
+      "ig_reels_avg_watch_time": 3303
     },
     {
       "name": "ueberstunde_ohne_grund",
@@ -410,12 +410,12 @@
     {
       "name": "ueben_ohne_lust",
       "theme": "Fortschritt",
-      "score": 1.8,
-      "reach": 183,
+      "score": 1.82,
+      "reach": 185,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3226
+      "ig_reels_avg_watch_time": 3276
     }
   ]
 }
