@@ -31,7 +31,7 @@
       "thema": "Fortschritt",
       "score_avg": 8.02,
       "n": 5,
-      "reichweite": 2271,
+      "reichweite": 2273,
       "saves": 6,
       "shares": 1
     },
@@ -391,7 +391,7 @@
       "name": "was_frueher_schwer_war",
       "theme": "Fortschritt",
       "score": 7.13,
-      "reach": 389,
+      "reach": 390,
       "saved": 1,
       "shares": 0,
       "total_interactions": 5,
@@ -405,17 +405,17 @@
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 5890
+      "ig_reels_avg_watch_time": 5888
     },
     {
       "name": "ueben_ohne_lust",
       "theme": "Fortschritt",
       "score": 1.96,
-      "reach": 206,
+      "reach": 207,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3507
+      "ig_reels_avg_watch_time": 3496
     }
   ]
 }
