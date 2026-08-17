@@ -7,15 +7,15 @@
       "thema": "Grenzen",
       "score_avg": 10.36,
       "n": 6,
-      "reichweite": 3924,
+      "reichweite": 3926,
       "saves": 6,
       "shares": 4
     },
     {
       "thema": "Geduld",
-      "score_avg": 8.78,
+      "score_avg": 8.77,
       "n": 3,
-      "reichweite": 1274,
+      "reichweite": 1275,
       "saves": 2,
       "shares": 2
     },
@@ -350,12 +350,12 @@
     {
       "name": "zehn_mal_nachschauen",
       "theme": "Geduld",
-      "score": 1.84,
-      "reach": 326,
+      "score": 1.83,
+      "reach": 327,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3022
+      "ig_reels_avg_watch_time": 3015
     },
     {
       "name": "worte_die_halten",
@@ -370,12 +370,12 @@
     {
       "name": "ueberstunde_ohne_grund",
       "theme": "Grenzen",
-      "score": 2.2,
-      "reach": 355,
+      "score": 2.19,
+      "reach": 356,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3682
+      "ig_reels_avg_watch_time": 3674
     },
     {
       "name": "applaus_den_es_nicht_gibt",
@@ -401,11 +401,11 @@
       "name": "handy_beim_essen",
       "theme": "Grenzen",
       "score": 3.61,
-      "reach": 591,
+      "reach": 592,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 6033
+      "ig_reels_avg_watch_time": 6030
     },
     {
       "name": "ueben_ohne_lust",
