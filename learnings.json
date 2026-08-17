@@ -7,7 +7,7 @@
       "thema": "Grenzen",
       "score_avg": 10.35,
       "n": 6,
-      "reichweite": 3827,
+      "reichweite": 3831,
       "saves": 6,
       "shares": 4
     },
@@ -31,7 +31,7 @@
       "thema": "Fortschritt",
       "score_avg": 8.03,
       "n": 5,
-      "reichweite": 2332,
+      "reichweite": 2333,
       "saves": 6,
       "shares": 1
     },
@@ -87,7 +87,7 @@
       "thema": "Eigene Bedürfnisse",
       "score_avg": 3.08,
       "n": 1,
-      "reichweite": 563,
+      "reichweite": 564,
       "saves": 0,
       "shares": 0
     },
@@ -341,7 +341,7 @@
       "name": "vier_geschmaecker",
       "theme": "Eigene Bedürfnisse",
       "score": 3.08,
-      "reach": 563,
+      "reach": 564,
       "saved": 0,
       "shares": 0,
       "total_interactions": 2,
@@ -365,7 +365,7 @@
       "saved": 0,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 3274
+      "ig_reels_avg_watch_time": 3266
     },
     {
       "name": "ueberstunde_ohne_grund",
@@ -400,22 +400,22 @@
     {
       "name": "handy_beim_essen",
       "theme": "Grenzen",
-      "score": 3.54,
-      "reach": 503,
+      "score": 3.56,
+      "reach": 507,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 6071
+      "ig_reels_avg_watch_time": 6109
     },
     {
       "name": "ueben_ohne_lust",
       "theme": "Fortschritt",
       "score": 2.0,
-      "reach": 253,
+      "reach": 254,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3497
+      "ig_reels_avg_watch_time": 3491
     }
   ]
 }
