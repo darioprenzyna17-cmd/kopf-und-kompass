@@ -7,7 +7,7 @@
       "thema": "Grenzen",
       "score_avg": 10.36,
       "n": 6,
-      "reichweite": 3858,
+      "reichweite": 3867,
       "saves": 6,
       "shares": 4
     },
@@ -31,7 +31,7 @@
       "thema": "Fortschritt",
       "score_avg": 8.02,
       "n": 5,
-      "reichweite": 2344,
+      "reichweite": 2348,
       "saves": 6,
       "shares": 1
     },
@@ -71,7 +71,7 @@
       "thema": "Selbstwert",
       "score_avg": 6.25,
       "n": 2,
-      "reichweite": 947,
+      "reichweite": 948,
       "saves": 2,
       "shares": 0
     },
@@ -370,52 +370,52 @@
     {
       "name": "ueberstunde_ohne_grund",
       "theme": "Grenzen",
-      "score": 2.17,
-      "reach": 347,
+      "score": 2.19,
+      "reach": 349,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3653
+      "ig_reels_avg_watch_time": 3674
     },
     {
       "name": "applaus_den_es_nicht_gibt",
       "theme": "Selbstwert",
       "score": 6.25,
-      "reach": 498,
+      "reach": 499,
       "saved": 1,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 4305
+      "ig_reels_avg_watch_time": 4298
     },
     {
       "name": "was_frueher_schwer_war",
       "theme": "Fortschritt",
       "score": 7.12,
-      "reach": 408,
+      "reach": 411,
       "saved": 1,
       "shares": 0,
       "total_interactions": 5,
-      "ig_reels_avg_watch_time": 4430
+      "ig_reels_avg_watch_time": 4413
     },
     {
       "name": "handy_beim_essen",
       "theme": "Grenzen",
       "score": 3.61,
-      "reach": 533,
+      "reach": 540,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 6159
+      "ig_reels_avg_watch_time": 6146
     },
     {
       "name": "ueben_ohne_lust",
       "theme": "Fortschritt",
-      "score": 1.99,
-      "reach": 260,
+      "score": 1.98,
+      "reach": 261,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3454
+      "ig_reels_avg_watch_time": 3447
     }
   ]
 }
