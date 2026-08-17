@@ -71,7 +71,7 @@
       "thema": "Selbstwert",
       "score_avg": 6.25,
       "n": 2,
-      "reichweite": 944,
+      "reichweite": 946,
       "saves": 2,
       "shares": 0
     },
@@ -381,11 +381,11 @@
       "name": "applaus_den_es_nicht_gibt",
       "theme": "Selbstwert",
       "score": 6.25,
-      "reach": 495,
+      "reach": 497,
       "saved": 1,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 4302
+      "ig_reels_avg_watch_time": 4305
     },
     {
       "name": "was_frueher_schwer_war",
@@ -405,7 +405,7 @@
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 6132
+      "ig_reels_avg_watch_time": 6138
     },
     {
       "name": "ueben_ohne_lust",
@@ -415,7 +415,7 @@
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3485
+      "ig_reels_avg_watch_time": 3476
     }
   ]
 }
