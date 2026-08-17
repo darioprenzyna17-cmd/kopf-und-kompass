@@ -5,9 +5,9 @@
   "themen_rang": [
     {
       "thema": "Grenzen",
-      "score_avg": 9.89,
+      "score_avg": 10.36,
       "n": 6,
-      "reichweite": 3887,
+      "reichweite": 3889,
       "saves": 6,
       "shares": 4
     },
@@ -31,8 +31,24 @@
       "thema": "Fortschritt",
       "score_avg": 8.02,
       "n": 5,
-      "reichweite": 2357,
+      "reichweite": 2359,
       "saves": 6,
+      "shares": 1
+    },
+    {
+      "thema": "Selbstrespekt",
+      "score_avg": 7.05,
+      "n": 3,
+      "reichweite": 1511,
+      "saves": 3,
+      "shares": 0
+    },
+    {
+      "thema": "Charakter",
+      "score_avg": 6.91,
+      "n": 3,
+      "reichweite": 1651,
+      "saves": 1,
       "shares": 1
     },
     {
@@ -44,24 +60,8 @@
       "shares": 0
     },
     {
-      "thema": "Selbstrespekt",
-      "score_avg": 6.84,
-      "n": 3,
-      "reichweite": 880,
-      "saves": 3,
-      "shares": 0
-    },
-    {
-      "thema": "Charakter",
-      "score_avg": 6.08,
-      "n": 3,
-      "reichweite": 1103,
-      "saves": 1,
-      "shares": 1
-    },
-    {
       "thema": "Achtsamkeit",
-      "score_avg": 4.5,
+      "score_avg": 6.53,
       "n": 2,
       "reichweite": 878,
       "saves": 2,
@@ -69,9 +69,9 @@
     },
     {
       "thema": "Selbstwert",
-      "score_avg": 4.23,
+      "score_avg": 6.25,
       "n": 2,
-      "reichweite": 955,
+      "reichweite": 957,
       "saves": 2,
       "shares": 0
     },
@@ -120,22 +120,22 @@
     {
       "name": "charakter_statt_besitz",
       "theme": "Charakter",
-      "score": 3.9,
-      "reach": 0,
+      "score": 6.39,
+      "reach": 548,
       "saved": 1,
       "shares": 0,
       "total_interactions": 3,
-      "ig_reels_avg_watch_time": 0
+      "ig_reels_avg_watch_time": 3884
     },
     {
       "name": "hundert_gruende",
       "theme": "Selbstwert",
-      "score": 4.35,
+      "score": 6.24,
       "reach": 449,
       "saved": 1,
       "shares": 0,
       "total_interactions": 3,
-      "ig_reels_avg_watch_time": 0
+      "ig_reels_avg_watch_time": 3781
     },
     {
       "name": "stille_disziplin",
@@ -150,12 +150,12 @@
     {
       "name": "momente_zu_spaet",
       "theme": "Achtsamkeit",
-      "score": 6.35,
+      "score": 10.41,
       "reach": 352,
       "saved": 2,
       "shares": 0,
-      "total_interactions": 0,
-      "ig_reels_avg_watch_time": 0
+      "total_interactions": 7,
+      "ig_reels_avg_watch_time": 3923
     },
     {
       "name": "satz_den_du_brauchst",
@@ -210,8 +210,8 @@
     {
       "name": "selbstrespekt",
       "theme": "Selbstrespekt",
-      "score": 14.04,
-      "reach": 0,
+      "score": 14.67,
+      "reach": 631,
       "saved": 3,
       "shares": 0,
       "total_interactions": 8,
@@ -280,12 +280,12 @@
     {
       "name": "schuldgefuehl_nach_nein",
       "theme": "Grenzen",
-      "score": 2.15,
+      "score": 4.99,
       "reach": 953,
       "saved": 0,
       "shares": 0,
       "total_interactions": 4,
-      "ig_reels_avg_watch_time": 0
+      "ig_reels_avg_watch_time": 5666
     },
     {
       "name": "entschuldigung_fuer_nichts",
@@ -380,32 +380,32 @@
     {
       "name": "applaus_den_es_nicht_gibt",
       "theme": "Selbstwert",
-      "score": 4.11,
-      "reach": 506,
+      "score": 6.27,
+      "reach": 508,
       "saved": 1,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 0
+      "ig_reels_avg_watch_time": 4317
     },
     {
       "name": "was_frueher_schwer_war",
       "theme": "Fortschritt",
       "score": 7.1,
-      "reach": 418,
+      "reach": 420,
       "saved": 1,
       "shares": 0,
       "total_interactions": 5,
-      "ig_reels_avg_watch_time": 4365
+      "ig_reels_avg_watch_time": 4356
     },
     {
       "name": "handy_beim_essen",
       "theme": "Grenzen",
-      "score": 3.62,
-      "reach": 557,
+      "score": 3.63,
+      "reach": 559,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 6132
+      "ig_reels_avg_watch_time": 6137
     },
     {
       "name": "ueben_ohne_lust",
