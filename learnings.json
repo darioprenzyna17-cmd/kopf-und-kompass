@@ -7,7 +7,7 @@
       "thema": "Grenzen",
       "score_avg": 10.36,
       "n": 6,
-      "reichweite": 3852,
+      "reichweite": 3858,
       "saves": 6,
       "shares": 4
     },
@@ -31,7 +31,7 @@
       "thema": "Fortschritt",
       "score_avg": 8.02,
       "n": 5,
-      "reichweite": 2343,
+      "reichweite": 2344,
       "saves": 6,
       "shares": 1
     },
@@ -47,7 +47,7 @@
       "thema": "Charakter",
       "score_avg": 6.92,
       "n": 3,
-      "reichweite": 1649,
+      "reichweite": 1651,
       "saves": 1,
       "shares": 1
     },
@@ -71,7 +71,7 @@
       "thema": "Selbstwert",
       "score_avg": 6.25,
       "n": 2,
-      "reichweite": 946,
+      "reichweite": 947,
       "saves": 2,
       "shares": 0
     },
@@ -361,27 +361,27 @@
       "name": "worte_die_halten",
       "theme": "Charakter",
       "score": 2.27,
-      "reach": 344,
+      "reach": 346,
       "saved": 0,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 3259
+      "ig_reels_avg_watch_time": 3246
     },
     {
       "name": "ueberstunde_ohne_grund",
       "theme": "Grenzen",
-      "score": 2.18,
+      "score": 2.17,
       "reach": 347,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3661
+      "ig_reels_avg_watch_time": 3653
     },
     {
       "name": "applaus_den_es_nicht_gibt",
       "theme": "Selbstwert",
       "score": 6.25,
-      "reach": 497,
+      "reach": 498,
       "saved": 1,
       "shares": 0,
       "total_interactions": 2,
@@ -400,22 +400,22 @@
     {
       "name": "handy_beim_essen",
       "theme": "Grenzen",
-      "score": 3.6,
-      "reach": 527,
+      "score": 3.61,
+      "reach": 533,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 6136
+      "ig_reels_avg_watch_time": 6159
     },
     {
       "name": "ueben_ohne_lust",
       "theme": "Fortschritt",
       "score": 1.99,
-      "reach": 259,
+      "reach": 260,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3464
+      "ig_reels_avg_watch_time": 3454
     }
   ]
 }
