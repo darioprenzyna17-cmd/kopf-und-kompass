@@ -7,7 +7,7 @@
       "thema": "Grenzen",
       "score_avg": 10.35,
       "n": 6,
-      "reichweite": 3836,
+      "reichweite": 3844,
       "saves": 6,
       "shares": 4
     },
@@ -31,7 +31,7 @@
       "thema": "Fortschritt",
       "score_avg": 8.03,
       "n": 5,
-      "reichweite": 2334,
+      "reichweite": 2335,
       "saves": 6,
       "shares": 1
     },
@@ -47,7 +47,7 @@
       "thema": "Charakter",
       "score_avg": 6.92,
       "n": 3,
-      "reichweite": 1648,
+      "reichweite": 1649,
       "saves": 1,
       "shares": 1
     },
@@ -71,7 +71,7 @@
       "thema": "Selbstwert",
       "score_avg": 6.25,
       "n": 2,
-      "reichweite": 943,
+      "reichweite": 944,
       "saves": 2,
       "shares": 0
     },
@@ -87,7 +87,7 @@
       "thema": "Eigene Bedürfnisse",
       "score_avg": 3.08,
       "n": 1,
-      "reichweite": 564,
+      "reichweite": 565,
       "saves": 0,
       "shares": 0
     },
@@ -341,11 +341,11 @@
       "name": "vier_geschmaecker",
       "theme": "Eigene Bedürfnisse",
       "score": 3.08,
-      "reach": 564,
+      "reach": 565,
       "saved": 0,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 3829
+      "ig_reels_avg_watch_time": 3826
     },
     {
       "name": "zehn_mal_nachschauen",
@@ -360,12 +360,12 @@
     {
       "name": "worte_die_halten",
       "theme": "Charakter",
-      "score": 2.28,
-      "reach": 343,
+      "score": 2.27,
+      "reach": 344,
       "saved": 0,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 3266
+      "ig_reels_avg_watch_time": 3259
     },
     {
       "name": "ueberstunde_ohne_grund",
@@ -381,11 +381,11 @@
       "name": "applaus_den_es_nicht_gibt",
       "theme": "Selbstwert",
       "score": 6.25,
-      "reach": 494,
+      "reach": 495,
       "saved": 1,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 4305
+      "ig_reels_avg_watch_time": 4302
     },
     {
       "name": "was_frueher_schwer_war",
@@ -400,22 +400,22 @@
     {
       "name": "handy_beim_essen",
       "theme": "Grenzen",
-      "score": 3.58,
-      "reach": 512,
+      "score": 3.59,
+      "reach": 520,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 6141
+      "ig_reels_avg_watch_time": 6146
     },
     {
       "name": "ueben_ohne_lust",
       "theme": "Fortschritt",
       "score": 2.0,
-      "reach": 255,
+      "reach": 256,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3488
+      "ig_reels_avg_watch_time": 3485
     }
   ]
 }
