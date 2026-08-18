@@ -7,7 +7,7 @@
       "thema": "Grenzen",
       "score_avg": 10.36,
       "n": 6,
-      "reichweite": 3927,
+      "reichweite": 3928,
       "saves": 6,
       "shares": 4
     },
@@ -15,7 +15,7 @@
       "thema": "Geduld",
       "score_avg": 8.77,
       "n": 3,
-      "reichweite": 1275,
+      "reichweite": 1276,
       "saves": 2,
       "shares": 2
     },
@@ -31,7 +31,7 @@
       "thema": "Fortschritt",
       "score_avg": 8.02,
       "n": 5,
-      "reichweite": 2379,
+      "reichweite": 2380,
       "saves": 6,
       "shares": 1
     },
@@ -47,7 +47,7 @@
       "thema": "Charakter",
       "score_avg": 6.92,
       "n": 3,
-      "reichweite": 1657,
+      "reichweite": 1658,
       "saves": 1,
       "shares": 1
     },
@@ -71,7 +71,7 @@
       "thema": "Selbstwert",
       "score_avg": 6.25,
       "n": 2,
-      "reichweite": 967,
+      "reichweite": 969,
       "saves": 2,
       "shares": 0
     },
@@ -85,7 +85,7 @@
     },
     {
       "thema": "Eigene Bedürfnisse",
-      "score_avg": 3.09,
+      "score_avg": 3.08,
       "n": 1,
       "reichweite": 571,
       "saves": 0,
@@ -340,32 +340,32 @@
     {
       "name": "vier_geschmaecker",
       "theme": "Eigene Bedürfnisse",
-      "score": 3.09,
+      "score": 3.08,
       "reach": 571,
       "saved": 0,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 3830
+      "ig_reels_avg_watch_time": 3824
     },
     {
       "name": "zehn_mal_nachschauen",
       "theme": "Geduld",
       "score": 1.83,
-      "reach": 327,
+      "reach": 328,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3015
+      "ig_reels_avg_watch_time": 3008
     },
     {
       "name": "worte_die_halten",
       "theme": "Charakter",
       "score": 2.27,
-      "reach": 352,
+      "reach": 353,
       "saved": 0,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 3232
+      "ig_reels_avg_watch_time": 3224
     },
     {
       "name": "ueberstunde_ohne_grund",
@@ -381,31 +381,31 @@
       "name": "applaus_den_es_nicht_gibt",
       "theme": "Selbstwert",
       "score": 6.27,
-      "reach": 518,
+      "reach": 520,
       "saved": 1,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 4308
+      "ig_reels_avg_watch_time": 4303
     },
     {
       "name": "was_frueher_schwer_war",
       "theme": "Fortschritt",
-      "score": 7.12,
-      "reach": 428,
+      "score": 7.11,
+      "reach": 429,
       "saved": 1,
       "shares": 0,
       "total_interactions": 5,
-      "ig_reels_avg_watch_time": 4376
+      "ig_reels_avg_watch_time": 4368
     },
     {
       "name": "handy_beim_essen",
       "theme": "Grenzen",
       "score": 3.61,
-      "reach": 592,
+      "reach": 593,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 6030
+      "ig_reels_avg_watch_time": 6043
     },
     {
       "name": "ueben_ohne_lust",
