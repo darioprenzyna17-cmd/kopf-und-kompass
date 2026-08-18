@@ -5,9 +5,9 @@
   "themen_rang": [
     {
       "thema": "Grenzen",
-      "score_avg": 10.37,
+      "score_avg": 10.39,
       "n": 6,
-      "reichweite": 3959,
+      "reichweite": 3991,
       "saves": 6,
       "shares": 4
     },
@@ -15,7 +15,7 @@
       "thema": "Geduld",
       "score_avg": 8.77,
       "n": 3,
-      "reichweite": 1276,
+      "reichweite": 1279,
       "saves": 2,
       "shares": 2
     },
@@ -31,7 +31,7 @@
       "thema": "Fortschritt",
       "score_avg": 8.02,
       "n": 5,
-      "reichweite": 2394,
+      "reichweite": 2412,
       "saves": 6,
       "shares": 1
     },
@@ -47,7 +47,7 @@
       "thema": "Charakter",
       "score_avg": 6.91,
       "n": 3,
-      "reichweite": 1660,
+      "reichweite": 1661,
       "saves": 1,
       "shares": 1
     },
@@ -71,7 +71,7 @@
       "thema": "Selbstwert",
       "score_avg": 6.27,
       "n": 2,
-      "reichweite": 975,
+      "reichweite": 983,
       "saves": 2,
       "shares": 0
     },
@@ -87,7 +87,7 @@
       "thema": "Eigene Bedürfnisse",
       "score_avg": 3.08,
       "n": 1,
-      "reichweite": 573,
+      "reichweite": 577,
       "saves": 0,
       "shares": 0
     },
@@ -341,81 +341,81 @@
       "name": "vier_geschmaecker",
       "theme": "Eigene Bedürfnisse",
       "score": 3.08,
-      "reach": 573,
+      "reach": 577,
       "saved": 0,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 3822
+      "ig_reels_avg_watch_time": 3816
     },
     {
       "name": "zehn_mal_nachschauen",
       "theme": "Geduld",
       "score": 1.83,
-      "reach": 328,
+      "reach": 331,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3008
+      "ig_reels_avg_watch_time": 2995
     },
     {
       "name": "worte_die_halten",
       "theme": "Charakter",
       "score": 2.26,
-      "reach": 355,
+      "reach": 356,
       "saved": 0,
       "shares": 0,
       "total_interactions": 1,
-      "ig_reels_avg_watch_time": 3211
+      "ig_reels_avg_watch_time": 3204
     },
     {
       "name": "ueberstunde_ohne_grund",
       "theme": "Grenzen",
-      "score": 2.19,
-      "reach": 361,
+      "score": 2.2,
+      "reach": 367,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3653
+      "ig_reels_avg_watch_time": 3664
     },
     {
       "name": "applaus_den_es_nicht_gibt",
       "theme": "Selbstwert",
-      "score": 6.29,
-      "reach": 526,
+      "score": 6.3,
+      "reach": 534,
       "saved": 1,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 4329
+      "ig_reels_avg_watch_time": 4325
     },
     {
       "name": "was_frueher_schwer_war",
       "theme": "Fortschritt",
-      "score": 7.1,
-      "reach": 439,
+      "score": 7.11,
+      "reach": 448,
       "saved": 1,
       "shares": 0,
       "total_interactions": 5,
-      "ig_reels_avg_watch_time": 4325
+      "ig_reels_avg_watch_time": 4315
     },
     {
       "name": "handy_beim_essen",
       "theme": "Grenzen",
-      "score": 3.68,
-      "reach": 620,
+      "score": 3.76,
+      "reach": 646,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 6125
+      "ig_reels_avg_watch_time": 6221
     },
     {
       "name": "ueben_ohne_lust",
       "theme": "Fortschritt",
       "score": 1.99,
-      "reach": 279,
+      "reach": 288,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3431
+      "ig_reels_avg_watch_time": 3404
     }
   ]
 }
