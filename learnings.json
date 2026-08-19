@@ -7,7 +7,7 @@
       "thema": "Grenzen",
       "score_avg": 10.38,
       "n": 6,
-      "reichweite": 3992,
+      "reichweite": 3994,
       "saves": 6,
       "shares": 4
     },
@@ -15,7 +15,7 @@
       "thema": "Geduld",
       "score_avg": 8.77,
       "n": 3,
-      "reichweite": 1279,
+      "reichweite": 1281,
       "saves": 2,
       "shares": 2
     },
@@ -351,11 +351,11 @@
       "name": "zehn_mal_nachschauen",
       "theme": "Geduld",
       "score": 1.83,
-      "reach": 331,
+      "reach": 333,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 2995
+      "ig_reels_avg_watch_time": 2999
     },
     {
       "name": "worte_die_halten",
@@ -401,11 +401,11 @@
       "name": "handy_beim_essen",
       "theme": "Grenzen",
       "score": 3.75,
-      "reach": 647,
+      "reach": 649,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 6199
+      "ig_reels_avg_watch_time": 6195
     },
     {
       "name": "ueben_ohne_lust",
