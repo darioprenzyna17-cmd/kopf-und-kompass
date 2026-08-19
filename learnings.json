@@ -7,7 +7,7 @@
       "thema": "Grenzen",
       "score_avg": 10.99,
       "n": 6,
-      "reichweite": 4010,
+      "reichweite": 4016,
       "saves": 7,
       "shares": 4
     },
@@ -31,7 +31,7 @@
       "thema": "Fortschritt",
       "score_avg": 8.02,
       "n": 5,
-      "reichweite": 2422,
+      "reichweite": 2426,
       "saves": 6,
       "shares": 1
     },
@@ -71,7 +71,7 @@
       "thema": "Selbstwert",
       "score_avg": 6.27,
       "n": 2,
-      "reichweite": 988,
+      "reichweite": 991,
       "saves": 2,
       "shares": 0
     },
@@ -87,7 +87,7 @@
       "thema": "Eigene Bedürfnisse",
       "score_avg": 3.08,
       "n": 1,
-      "reichweite": 580,
+      "reichweite": 581,
       "saves": 0,
       "shares": 0
     },
@@ -341,11 +341,11 @@
       "name": "vier_geschmaecker",
       "theme": "Eigene Bedürfnisse",
       "score": 3.08,
-      "reach": 580,
+      "reach": 581,
       "saved": 0,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 3807
+      "ig_reels_avg_watch_time": 3802
     },
     {
       "name": "zehn_mal_nachschauen",
@@ -381,41 +381,41 @@
       "name": "applaus_den_es_nicht_gibt",
       "theme": "Selbstwert",
       "score": 6.3,
-      "reach": 539,
+      "reach": 542,
       "saved": 1,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 4313
+      "ig_reels_avg_watch_time": 4316
     },
     {
       "name": "was_frueher_schwer_war",
       "theme": "Fortschritt",
       "score": 7.12,
-      "reach": 453,
+      "reach": 455,
       "saved": 1,
       "shares": 0,
       "total_interactions": 5,
-      "ig_reels_avg_watch_time": 4329
+      "ig_reels_avg_watch_time": 4323
     },
     {
       "name": "handy_beim_essen",
       "theme": "Grenzen",
       "score": 7.37,
-      "reach": 665,
+      "reach": 671,
       "saved": 1,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 6212
+      "ig_reels_avg_watch_time": 6207
     },
     {
       "name": "ueben_ohne_lust",
       "theme": "Fortschritt",
-      "score": 1.99,
-      "reach": 293,
+      "score": 1.98,
+      "reach": 295,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3385
+      "ig_reels_avg_watch_time": 3377
     }
   ]
 }
