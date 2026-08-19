@@ -31,7 +31,7 @@
       "thema": "Fortschritt",
       "score_avg": 8.02,
       "n": 5,
-      "reichweite": 2419,
+      "reichweite": 2422,
       "saves": 6,
       "shares": 1
     },
@@ -45,9 +45,9 @@
     },
     {
       "thema": "Charakter",
-      "score_avg": 6.91,
+      "score_avg": 6.92,
       "n": 3,
-      "reichweite": 1666,
+      "reichweite": 1667,
       "saves": 1,
       "shares": 1
     },
@@ -87,7 +87,7 @@
       "thema": "Eigene Bedürfnisse",
       "score_avg": 3.08,
       "n": 1,
-      "reichweite": 579,
+      "reichweite": 580,
       "saves": 0,
       "shares": 0
     },
@@ -341,11 +341,11 @@
       "name": "vier_geschmaecker",
       "theme": "Eigene Bedürfnisse",
       "score": 3.08,
-      "reach": 579,
+      "reach": 580,
       "saved": 0,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 3811
+      "ig_reels_avg_watch_time": 3807
     },
     {
       "name": "zehn_mal_nachschauen",
@@ -360,8 +360,8 @@
     {
       "name": "worte_die_halten",
       "theme": "Charakter",
-      "score": 2.26,
-      "reach": 359,
+      "score": 2.27,
+      "reach": 360,
       "saved": 0,
       "shares": 0,
       "total_interactions": 1,
@@ -391,11 +391,11 @@
       "name": "was_frueher_schwer_war",
       "theme": "Fortschritt",
       "score": 7.12,
-      "reach": 451,
+      "reach": 453,
       "saved": 1,
       "shares": 0,
       "total_interactions": 5,
-      "ig_reels_avg_watch_time": 4334
+      "ig_reels_avg_watch_time": 4329
     },
     {
       "name": "handy_beim_essen",
@@ -405,17 +405,17 @@
       "saved": 1,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 6211
+      "ig_reels_avg_watch_time": 6212
     },
     {
       "name": "ueben_ohne_lust",
       "theme": "Fortschritt",
       "score": 1.99,
-      "reach": 292,
+      "reach": 293,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3391
+      "ig_reels_avg_watch_time": 3385
     }
   ]
 }
