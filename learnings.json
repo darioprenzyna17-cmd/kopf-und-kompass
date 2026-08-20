@@ -5,7 +5,7 @@
   "themen_rang": [
     {
       "thema": "Grenzen",
-      "score_avg": 11.09,
+      "score_avg": 11.1,
       "n": 6,
       "reichweite": 4091,
       "saves": 7,
@@ -71,7 +71,7 @@
       "thema": "Selbstwert",
       "score_avg": 6.28,
       "n": 2,
-      "reichweite": 999,
+      "reichweite": 1000,
       "saves": 2,
       "shares": 0
     },
@@ -381,11 +381,11 @@
       "name": "applaus_den_es_nicht_gibt",
       "theme": "Selbstwert",
       "score": 6.32,
-      "reach": 550,
+      "reach": 551,
       "saved": 1,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 4339
+      "ig_reels_avg_watch_time": 4347
     },
     {
       "name": "was_frueher_schwer_war",
@@ -400,12 +400,12 @@
     {
       "name": "handy_beim_essen",
       "theme": "Grenzen",
-      "score": 7.98,
+      "score": 8.0,
       "reach": 726,
       "saved": 1,
       "shares": 0,
       "total_interactions": 4,
-      "ig_reels_avg_watch_time": 6101
+      "ig_reels_avg_watch_time": 6144
     },
     {
       "name": "ueben_ohne_lust",
