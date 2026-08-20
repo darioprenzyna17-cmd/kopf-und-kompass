@@ -7,7 +7,7 @@
       "thema": "Grenzen",
       "score_avg": 11.04,
       "n": 6,
-      "reichweite": 4060,
+      "reichweite": 4062,
       "saves": 7,
       "shares": 4
     },
@@ -71,7 +71,7 @@
       "thema": "Selbstwert",
       "score_avg": 6.27,
       "n": 2,
-      "reichweite": 993,
+      "reichweite": 995,
       "saves": 2,
       "shares": 0
     },
@@ -371,21 +371,21 @@
       "name": "ueberstunde_ohne_grund",
       "theme": "Grenzen",
       "score": 2.23,
-      "reach": 375,
+      "reach": 377,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3707
+      "ig_reels_avg_watch_time": 3701
     },
     {
       "name": "applaus_den_es_nicht_gibt",
       "theme": "Selbstwert",
       "score": 6.3,
-      "reach": 544,
+      "reach": 546,
       "saved": 1,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 4311
+      "ig_reels_avg_watch_time": 4310
     },
     {
       "name": "was_frueher_schwer_war",
@@ -405,7 +405,7 @@
       "saved": 1,
       "shares": 0,
       "total_interactions": 3,
-      "ig_reels_avg_watch_time": 6147
+      "ig_reels_avg_watch_time": 6143
     },
     {
       "name": "ueben_ohne_lust",
