@@ -5,7 +5,7 @@
   "themen_rang": [
     {
       "thema": "Grenzen",
-      "score_avg": 11.1,
+      "score_avg": 11.11,
       "n": 6,
       "reichweite": 4135,
       "saves": 7,
@@ -31,7 +31,7 @@
       "thema": "Fortschritt",
       "score_avg": 8.06,
       "n": 5,
-      "reichweite": 2498,
+      "reichweite": 2499,
       "saves": 6,
       "shares": 1
     },
@@ -370,12 +370,12 @@
     {
       "name": "ueberstunde_ohne_grund",
       "theme": "Grenzen",
-      "score": 2.22,
+      "score": 2.24,
       "reach": 395,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3650
+      "ig_reels_avg_watch_time": 3683
     },
     {
       "name": "applaus_den_es_nicht_gibt",
@@ -411,11 +411,11 @@
       "name": "ueben_ohne_lust",
       "theme": "Fortschritt",
       "score": 2.11,
-      "reach": 329,
+      "reach": 330,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3563
+      "ig_reels_avg_watch_time": 3557
     }
   ]
 }
