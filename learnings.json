@@ -7,7 +7,7 @@
       "thema": "Grenzen",
       "score_avg": 11.1,
       "n": 6,
-      "reichweite": 4115,
+      "reichweite": 4116,
       "saves": 7,
       "shares": 4
     },
@@ -31,7 +31,7 @@
       "thema": "Fortschritt",
       "score_avg": 8.04,
       "n": 5,
-      "reichweite": 2472,
+      "reichweite": 2474,
       "saves": 6,
       "shares": 1
     },
@@ -71,7 +71,7 @@
       "thema": "Selbstwert",
       "score_avg": 6.29,
       "n": 2,
-      "reichweite": 1002,
+      "reichweite": 1004,
       "saves": 2,
       "shares": 0
     },
@@ -371,31 +371,31 @@
       "name": "ueberstunde_ohne_grund",
       "theme": "Grenzen",
       "score": 2.22,
-      "reach": 385,
+      "reach": 386,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3673
+      "ig_reels_avg_watch_time": 3669
     },
     {
       "name": "applaus_den_es_nicht_gibt",
       "theme": "Selbstwert",
       "score": 6.33,
-      "reach": 553,
+      "reach": 555,
       "saved": 1,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 4348
+      "ig_reels_avg_watch_time": 4344
     },
     {
       "name": "was_frueher_schwer_war",
       "theme": "Fortschritt",
       "score": 7.14,
-      "reach": 478,
+      "reach": 479,
       "saved": 1,
       "shares": 0,
       "total_interactions": 5,
-      "ig_reels_avg_watch_time": 4332
+      "ig_reels_avg_watch_time": 4331
     },
     {
       "name": "handy_beim_essen",
@@ -410,12 +410,12 @@
     {
       "name": "ueben_ohne_lust",
       "theme": "Fortschritt",
-      "score": 2.07,
-      "reach": 315,
+      "score": 2.06,
+      "reach": 316,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3501
+      "ig_reels_avg_watch_time": 3496
     }
   ]
 }
