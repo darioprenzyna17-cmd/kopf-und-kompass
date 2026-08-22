@@ -912,6 +912,121 @@
       ],
       "music": "neoclassical cinematic ambient, warm and uplifting, solo felt piano with warm strings and cello, soft sub drone, slow arc from minor to major, 68 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
       "caption": "Du musst deine Leistung nicht verkleinern, damit andere sich wohler fühlen. Stolz auf das, was du geschafft hast, ist keine Anmassung. Es ist Selbstrespekt.\n\n#selbstrespekt #stolz #mindset #selbstwert #erfolg #kopfundkompass"
+    },
+    {
+      "name": "umzug_immer_du",
+      "theme": "Grenzen",
+      "kicker": "GRENZEN",
+      "thoughts": [
+        "Dein Freund zieht wieder um.|Du sollst wieder helfen.",
+        "Du hast schon dreimal geholfen.",
+        "Doch dir fehlt die Kraft dafür.",
+        "Nein sagen ist kein Verrat.|Es ist Selbstachtung."
+      ],
+      "cta": "Speichern für den nächsten Gefallen.",
+      "clips": [
+        "Realistic documentary-style vertical 9:16 footage filling the entire frame edge to edge, cardboard moving boxes stacked quietly in an empty hallway, filmed on a modern full-frame camera with a 35mm lens, natural true-to-life colours, realistic daylight, natural contrast, no colour grading, no film look, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
+        "Realistic documentary-style vertical 9:16 footage filling the entire frame edge to edge, a set of car keys resting on a kitchen counter in soft morning light, filmed on a modern full-frame camera with a 35mm lens, natural true-to-life colours, realistic daylight, natural contrast, no colour grading, no film look, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
+        "Realistic documentary-style vertical 9:16 footage filling the entire frame edge to edge, a phone screen glowing quietly on a table with an unanswered message, filmed on a modern full-frame camera with a 35mm lens, natural true-to-life colours, realistic daylight, natural contrast, no colour grading, no film look, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
+      ],
+      "music": "neoclassical cinematic ambient, warm and uplifting, solo felt piano with warm strings and cello, soft sub drone, slow arc from minor to major, 68 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
+      "caption": "Du hilfst schon wieder beim Umzug deines Freundes.\n\nEin Gefallen war nie das Problem. Die Selbstverständlichkeit schon.\n\nDu darfst auch einmal nein sagen, ohne dich zu rechtfertigen.\n\n#grenzen #neinsagen #mindset #selbstrespekt #beziehungen #kopfundkompass",
+      "ausloeser": "Erkennen",
+      "wer_schickt_wem": "Wer sich staendig fuer Freunde einspannen laesst, schickt es dem Freund, der immer fragt und nie hilft.",
+      "hypothese": "Grenzen-Content im Freundschafts-Winkel (Gefallen, Umzug) zieht aehnlich starke Saves wie der bisher beste Grenzen-Winkel bei Kollegen/Familie.",
+      "neuer_winkel": "Freundschaft und wiederkehrender Gefallen statt Arbeit oder Familie."
+    },
+    {
+      "name": "gruppenchat_organisierst_du",
+      "theme": "Grenzen",
+      "kicker": "GRENZEN",
+      "thoughts": [
+        "Im Gruppenchat bleibt es still.|Am Ende organisierst wieder du.",
+        "Alle warten, bis du entscheidest.",
+        "Niemand fragt, ob du das willst.",
+        "Dein Nein zählt.|Genauso wie dein Ja."
+      ],
+      "cta": "Folge für mehr ehrliche Grenzen.",
+      "clips": [
+        "Realistic documentary-style vertical 9:16 footage filling the entire frame edge to edge, a phone lying face up on a table with a soft notification glow, filmed on a modern full-frame camera with a 35mm lens, natural true-to-life colours, realistic daylight, natural contrast, no colour grading, no film look, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
+        "Realistic documentary-style vertical 9:16 footage filling the entire frame edge to edge, hands closing a laptop lid at the end of a long task, filmed on a modern full-frame camera with a 35mm lens, natural true-to-life colours, realistic daylight, natural contrast, no colour grading, no film look, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
+        "Realistic documentary-style vertical 9:16 footage filling the entire frame edge to edge, an empty meeting room chair standing quietly in soft afternoon light, filmed on a modern full-frame camera with a 35mm lens, natural true-to-life colours, realistic daylight, natural contrast, no colour grading, no film look, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
+      ],
+      "music": "neoclassical cinematic ambient, warm and uplifting, solo felt piano with warm strings and cello, soft sub drone, slow arc from minor to major, 68 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
+      "caption": "Du organisierst wieder die ganze Gruppe.\n\nNiemand hat dich gefragt, ob du das willst. Du hast es einfach übernommen.\n\nAuch dein Nein darf in der Gruppe zählen, nicht nur dein Ja.\n\n#grenzen #gruppenchat #mindset #selbstrespekt #neinsagen #kopfundkompass",
+      "ausloeser": "Erkennen",
+      "wer_schickt_wem": "Wer immer die Gruppe organisiert, schickt es der Gruppe, die es nie bemerkt.",
+      "hypothese": "Die Rolle in der Gruppe ist ein bisher unbespieltes Grenzen-Bild und dürfte hohe Identifikation bei still Organisierenden erzeugen.",
+      "neuer_winkel": "Rolle in der Gruppe statt einzelne Situation mit einer Person."
+    },
+    {
+      "name": "sprache_seit_monaten",
+      "theme": "Geduld",
+      "kicker": "GEDULD",
+      "thoughts": [
+        "Du übst die Sprache seit Monaten.|Noch stockst du bei jedem Satz.",
+        "Andere sprechen längst fliessend.",
+        "Dein Fortschritt zeigt sich still.",
+        "Geduld ist kein Stillstand.|Es ist leises Weitermachen."
+      ],
+      "cta": "Speichern für den Tag ohne Fortschritt.",
+      "clips": [
+        "Realistic documentary-style vertical 9:16 footage filling the entire frame edge to edge, a language notebook filled with handwriting resting on a wooden table, filmed on a modern full-frame camera with a 35mm lens, natural true-to-life colours, realistic daylight, natural contrast, no colour grading, no film look, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
+        "Realistic documentary-style vertical 9:16 footage filling the entire frame edge to edge, a pencil resting beside a half finished page in soft window light, filmed on a modern full-frame camera with a 35mm lens, natural true-to-life colours, realistic daylight, natural contrast, no colour grading, no film look, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
+        "Realistic documentary-style vertical 9:16 footage filling the entire frame edge to edge, a cup of tea cooling quietly next to an open book at a window, filmed on a modern full-frame camera with a 35mm lens, natural true-to-life colours, realistic daylight, natural contrast, no colour grading, no film look, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
+      ],
+      "music": "neoclassical cinematic ambient, warm and uplifting, solo felt piano with warm strings and cello, soft sub drone, slow arc from minor to major, 68 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
+      "caption": "Du lernst die neue Sprache seit Monaten.\n\nAndere sprechen längst fliessend, du übst noch jeden Satz. Das macht deinen Weg nicht falsch.\n\nFortschritt zeigt sich oft erst im Rückblick, nicht im Moment selbst.\n\n#geduld #lernen #mindset #durchhalten #wachstum #kopfundkompass",
+      "ausloeser": "Erkennen",
+      "wer_schickt_wem": "Wer gerade selbst etwas Neues und Langsames lernt, schickt es sich selbst als Erinnerung.",
+      "hypothese": "Der Skill-Lern-Winkel bei Geduld ist neuer als der bisherige Warten-auf-Ergebnis-Winkel und dürfte zusätzlich eine jüngere Zielgruppe ansprechen.",
+      "neuer_winkel": "Eine neue Fähigkeit langsam lernen statt auf ein aussenstehendes Ereignis warten."
+    },
+    {
+      "name": "familienessen_streit",
+      "theme": "Ruhe",
+      "kicker": "RUHE",
+      "thoughts": [
+        "Am Esstisch beginnt wieder Streit.|Du bleibst still.",
+        "Alle reden lauter als nötig.",
+        "Du musst nicht mitziehen.",
+        "Ruhig bleiben ist keine Schwäche.|Es ist eine Entscheidung."
+      ],
+      "cta": "Teile das mit jemandem, der oft laut wird.",
+      "clips": [
+        "Realistic documentary-style vertical 9:16 footage filling the entire frame edge to edge, a dinner table setting left untouched in warm evening light, filmed on a modern full-frame camera with a 35mm lens, natural true-to-life colours, realistic daylight, natural contrast, no colour grading, no film look, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
+        "Realistic documentary-style vertical 9:16 footage filling the entire frame edge to edge, a glass of water standing calmly beside empty plates, filmed on a modern full-frame camera with a 35mm lens, natural true-to-life colours, realistic daylight, natural contrast, no colour grading, no film look, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
+        "Realistic documentary-style vertical 9:16 footage filling the entire frame edge to edge, a hallway light glowing softly beyond a closed door, filmed on a modern full-frame camera with a 35mm lens, natural true-to-life colours, realistic daylight, natural contrast, no colour grading, no film look, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
+      ],
+      "music": "neoclassical cinematic ambient, warm and uplifting, solo felt piano with warm strings and cello, soft sub drone, slow arc from minor to major, 68 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
+      "caption": "Beim Familienessen wird es wieder laut.\n\nAlle reden lauter, du musst nicht mitziehen. Ruhe ist keine Schwäche.\n\nManchmal ist stillbleiben die stärkere Antwort im Raum.\n\n#ruhe #gelassenheit #mindset #innereruhe #familie #kopfundkompass",
+      "ausloeser": "Erkennen",
+      "wer_schickt_wem": "Wer bei Familienfeiern oft in Streit hineingezogen wird, schickt es sich selbst vor dem nächsten Fest.",
+      "hypothese": "Der Familien-Kontext ist bei Ruhe-Themen bisher unbespielt und dürfte um Feiertage herum besonders hohe Wiedererkennung erzeugen.",
+      "neuer_winkel": "Familienkonflikt am Esstisch statt Strassenverkehr oder Kollegen."
+    },
+    {
+      "name": "kommentar_nur_einmal",
+      "theme": "Fortschritt",
+      "kicker": "FORTSCHRITT",
+      "thoughts": [
+        "Ein Kommentar trifft dich.|Du liest ihn nur einmal.",
+        "Früher hättest du ihn oft gelesen.",
+        "Heute liest du einmal weiter.",
+        "Das ist kein Zufall.|Das ist Fortschritt."
+      ],
+      "cta": "Speichern für den Moment danach.",
+      "clips": [
+        "Realistic documentary-style vertical 9:16 footage filling the entire frame edge to edge, a phone resting screen down on a wooden table in soft light, filmed on a modern full-frame camera with a 35mm lens, natural true-to-life colours, realistic daylight, natural contrast, no colour grading, no film look, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
+        "Realistic documentary-style vertical 9:16 footage filling the entire frame edge to edge, a window with calm daylight falling across an empty desk, filmed on a modern full-frame camera with a 35mm lens, natural true-to-life colours, realistic daylight, natural contrast, no colour grading, no film look, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps",
+        "Realistic documentary-style vertical 9:16 footage filling the entire frame edge to edge, a pair of shoes standing ready by a front door in morning light, filmed on a modern full-frame camera with a 35mm lens, natural true-to-life colours, realistic daylight, natural contrast, no colour grading, no film look, no on-screen text, no people, no faces, no bokeh light dots, no film strip border, no letterbox, no vignette frame, slow contemplative motion, 24fps"
+      ],
+      "music": "neoclassical cinematic ambient, warm and uplifting, solo felt piano with warm strings and cello, soft sub drone, slow arc from minor to major, 68 BPM, no drums, no lo-fi, no vinyl, no tape hiss, clean high fidelity, instrumental",
+      "caption": "Ein Kommentar trifft dich, du liest ihn nur einmal.\n\nFrüher hättest du ihn zehnmal gelesen. Heute reicht dir ein Blick.\n\nDas zeigt keinen Zufall, das zeigt echten Fortschritt.\n\n#fortschritt #wachstum #mindset #selbstwert #innereruhe #kopfundkompass",
+      "ausloeser": "Erkennen",
+      "wer_schickt_wem": "Wer online oft kritisiert wird, schickt es sich selbst nach einem harten Kommentar.",
+      "hypothese": "Der Vergleich frueher/heute im Umgang mit Kritik dürfte ähnlich stark performen wie der bisher beste Fortschritt-Rückblick (Score 13.83).",
+      "neuer_winkel": "Reaktion auf Kritik statt reiner Zeit- oder Fotovergleich."
     }
   ],
   "built": [
