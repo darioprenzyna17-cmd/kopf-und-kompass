@@ -29,9 +29,9 @@
     },
     {
       "thema": "Fortschritt",
-      "score_avg": 8.05,
+      "score_avg": 8.06,
       "n": 5,
-      "reichweite": 2531,
+      "reichweite": 2533,
       "saves": 6,
       "shares": 1
     },
@@ -71,7 +71,7 @@
       "thema": "Selbstwert",
       "score_avg": 6.29,
       "n": 2,
-      "reichweite": 1018,
+      "reichweite": 1020,
       "saves": 2,
       "shares": 0
     },
@@ -381,21 +381,21 @@
       "name": "applaus_den_es_nicht_gibt",
       "theme": "Selbstwert",
       "score": 6.33,
-      "reach": 569,
+      "reach": 571,
       "saved": 1,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 4323
+      "ig_reels_avg_watch_time": 4319
     },
     {
       "name": "was_frueher_schwer_war",
       "theme": "Fortschritt",
-      "score": 7.15,
-      "reach": 509,
+      "score": 7.16,
+      "reach": 511,
       "saved": 1,
       "shares": 0,
       "total_interactions": 5,
-      "ig_reels_avg_watch_time": 4290
+      "ig_reels_avg_watch_time": 4289
     },
     {
       "name": "handy_beim_essen",
