@@ -29,9 +29,9 @@
     },
     {
       "thema": "Fortschritt",
-      "score_avg": 8.06,
+      "score_avg": 8.05,
       "n": 5,
-      "reichweite": 2530,
+      "reichweite": 2531,
       "saves": 6,
       "shares": 1
     },
@@ -69,7 +69,7 @@
     },
     {
       "thema": "Selbstwert",
-      "score_avg": 6.28,
+      "score_avg": 6.29,
       "n": 2,
       "reichweite": 1018,
       "saves": 2,
@@ -380,12 +380,12 @@
     {
       "name": "applaus_den_es_nicht_gibt",
       "theme": "Selbstwert",
-      "score": 6.32,
+      "score": 6.33,
       "reach": 569,
       "saved": 1,
       "shares": 0,
       "total_interactions": 2,
-      "ig_reels_avg_watch_time": 4306
+      "ig_reels_avg_watch_time": 4323
     },
     {
       "name": "was_frueher_schwer_war",
@@ -410,12 +410,12 @@
     {
       "name": "ueben_ohne_lust",
       "theme": "Fortschritt",
-      "score": 2.12,
-      "reach": 342,
+      "score": 2.11,
+      "reach": 343,
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "ig_reels_avg_watch_time": 3550
+      "ig_reels_avg_watch_time": 3543
     }
   ]
 }
